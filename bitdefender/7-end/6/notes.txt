@@ -1,0 +1,6 @@
+﻿fisier: test.in
+
+1 egal
+1 paranteza deschisa
+1 paranteza inchisa
+mai mult de 5 operatori

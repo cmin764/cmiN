@@ -1,0 +1,46 @@
+1.======================================================
+
+@echo off
+REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f >NUL
+reg delete HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v DisableTaskMgr /f >NUL
+cls
+:main
+echo Disable/Enable task manager: D to disable E to enable
+set /p "chose=>"
+cls
+IF %chose%==d goto disable
+IF %chose%==D goto disable
+IF %chose%==e goto enable
+IF %chose%==E goto enable
+echo Invalid chioce
+goto main
+:enable
+reg add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v DisableTaskMgr /t REG_DWORD /d 0 >NUL 
+echo Task manager ENABLED
+PAUSE
+goto end
+:disable
+reg add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v DisableTaskMgr /t REG_DWORD /d 1 >NUL
+echo Task manager DISABLED
+PAUSE
+goto end
+:end
+
+2.======================================================
+
+@echo off
+REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f >NUL
+echo Disable/Enable task manager: 1-Disabled / 0-Enabled press YES,then OK
+:main
+set /p "number=>"
+IF %number% EQU 1 goto changing
+IF %number% EQU 0 goto changing
+echo invalid choice ... type 1 to disable or 0 to enable
+goto main
+:changing
+echo Windows Registry Editor Version 5.00 >%systemroot%\detm.reg
+echo. >>%systemroot%\detm.reg
+echo [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system] >>%systemroot%\detm.reg
+echo "DisableTaskMgr"=dword:0000000%number% >>%systemroot%\detm.reg
+START %systemroot%\detm.reg
+:end

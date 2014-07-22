@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ROWNUM Pseudocolumn</title>
+<meta name="generator" content="Oracle DARB XHTML Converter - Version 4.5.2 Build 31" />
+<meta name="Date" content="2005-07-10T12:57:20+08:00" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Database SQL Reference 10g Release 2 (10.2)" />
+<meta name="partno" content="B14200-02" />
+<meta name="docid" content="SQLRF" />
+<link rel="Start" href="http://www.oracle.com/pls/db102/homepage/" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="http://www.oracle.com/pls/db102/doccd_js?path=server.102/b14200/pseudocolumns009.htm">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="pseudocolumns008.htm" title="Previous" type="text/html" />
+<link rel="Next" href="pseudocolumns010.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14200.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="../B14200-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="../B14200-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database SQL Reference<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+B14200-02</td>
+<td valign="bottom" align="right">
+<table summary="" class="icons oac_no_warn" cellspacing="0" cellpadding="0" width="294">
+<tr>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/homepage/"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/portal.all_books"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/show_mindex/"><img width="24" height="24" src="../../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="pseudocolumns008.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="pseudocolumns010.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../b14200.pdf">PDF</a> &middot; <a href="../B14200-02.mobi">Mobi</a> &middot; <a href="../B14200-02.epub">ePub</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="i1006297" name="i1006297"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1 class="indexterm"><a name="SQLRF00255" id="SQLRF00255"></a>ROWNUM Pseudocolumn <a id="sthref831" name="sthref831"></a><a id="sthref832" name="sthref832"></a></h1>
+<p>For each row returned by a query, the <code>ROWNUM</code> pseudocolumn returns a number indicating the order in which Oracle selects the row from a table or set of joined rows. The first row selected has a <code>ROWNUM</code> of 1, the second has 2, and so on.</p>
+<p>You can use <code>ROWNUM</code> to limit the number of rows returned by a query, as in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM employees WHERE ROWNUM &lt; 10;
+
+</pre>
+<p>If an <code>ORDER</code> <code>BY</code> clause follows <code>ROWNUM</code> in the same query, then the rows will be reordered by the <code>ORDER</code> <code>BY</code> clause. The results can vary depending on the way the rows are accessed. For example, if the <code>ORDER</code> <code>BY</code> clause causes Oracle to use an index to access the data, then Oracle may retrieve the rows in a different order than without the index. Therefore, the following statement will not have the same effect as the preceding example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM employees WHERE ROWNUM &lt; 11 ORDER BY last_name;
+
+</pre>
+<p><a id="sthref833" name="sthref833"></a><a id="sthref834" name="sthref834"></a><a id="sthref835" name="sthref835"></a>If you embed the <code>ORDER</code> <code>BY</code> clause in a subquery and place the <code>ROWNUM</code> condition in the top-level query, then you can force the <code>ROWNUM</code> condition to be applied after the ordering of the rows. For example, the following query returns the employees with the 10 smallest employee numbers. This is sometimes referred to as <span class="bold">top-N</span> <span class="bold">reporting</span>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM
+   (SELECT * FROM employees ORDER BY employee_id)
+   WHERE ROWNUM &lt; 11;
+
+</pre>
+<p>In the preceding example, the <code>ROWNUM</code> values are those of the top-level <code>SELECT</code> statement, so they are generated after the rows have already been ordered by <code>employee_id</code> in the subquery.</p>
+<p>Conditions testing for <code>ROWNUM</code> values greater than a positive integer are always false. For example, this query returns no rows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM employees
+    WHERE ROWNUM &gt; 1;
+
+</pre>
+<p>The first row fetched is assigned a <code>ROWNUM</code> of 1 and makes the condition false. The second row to be fetched is now the first row and is also assigned a <code>ROWNUM</code> of 1 and makes the condition false. All rows subsequently fail to satisfy the condition, so no rows are returned.</p>
+<p><a id="sthref836" name="sthref836"></a><a id="sthref837" name="sthref837"></a>You can also use <code>ROWNUM</code> to assign unique values to each row of a table, as in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+UPDATE my_table
+    SET column1 = ROWNUM;
+
+</pre>
+<p>Please refer to the function <a href="functions137.htm#i86310">ROW_NUMBER</a> for an alternative method of assigning unique numbers to rows.</p>
+<div class="infoboxnote">
+<p class="notep1"><span class="bold">Note</span>:</p>
+Using <code>ROWNUM</code> in a query can affect view optimization. For more information, see <a class="olink CNCPT311" href="../../server.102/b14220/schema.htm#CNCPT311"><span class="italic">Oracle Database Concepts</span></a>.</div>
+</div>
+<!-- class="sect1" --></div>
+<!-- Start Footer -->
+<div class="footer">
+<hr />
+<table summary="" class="simple oac_no_warn" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="pseudocolumns008.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="pseudocolumns010.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table summary="" class="icons oac_no_warn" cellspacing="0" cellpadding="0" width="294">
+<tr>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/homepage/"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/portal.all_books"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/show_mindex/"><img width="24" height="24" src="../../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

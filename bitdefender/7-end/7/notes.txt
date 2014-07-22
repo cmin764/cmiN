@@ -1,0 +1,14 @@
+- se deschide pe sine si isi citeste dimensiunea, apoi se inchide
+- se prelucreaza dimensiunea (vezi script) si se obtine un nume de fisier
+- awj este fisierul, citeste din el 8192 octeti si ii scrie intr-un buffer global
+- verifica bufferul (litere, paranteza patrata deschisa apoi inchisa, etc)
+- siruri de forma (.ini) ->
+[litere...]
+litere = "chestii... (>=32) / litere"
+
+Formula stanga: sum([char for char in key])
+Formula dreapta: S[k] = 2*(S[k-1] + 4*S[k-1]) + (chr-48)
+stanga: 528 -> string
+stanga: 633 -> dreapta: byte0 = optiuni
+stanga: 744 -> dreapta: byte1 = sectiuni
+stanga: 870 -> dreapta: byte2 = comentarii

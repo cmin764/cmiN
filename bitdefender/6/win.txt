@@ -1,0 +1,23 @@
+advapi32.lib
+psapi.lib
+
+RegOpenKeyEx (..., hKey) -> ERROR_SUCCESS | errors
+
+RegQueryInfoKey <all info about a key>
+RegEnumKeyEx
+RegQueryValueEx -> citire valoare cheie
+
+listare cheie de registru
+afisarea continutului unei valori
+adaugare/stergere valoare
+sa creeze subcheie
+sa stearga recursiv o cheie
+copie recursiv o cheie
+
+value types:
+REG_DWORD - int
+REG_QWORD - long long
+REG_BINARY - unsigned char (raw)
+REG_SZ - null terminated const char
+REG_EXPAND_SZ - null terminated const char that expands environment variables
+REG_MULTI_SZ - null terminated const char strings with an extra null at the end

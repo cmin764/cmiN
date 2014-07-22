@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>13.1.17.1 CREATE TABLE ... SELECT Syntax</title><link rel="stylesheet" type="text/css" href="mvl.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="index.html" title="MySQL 5.5 Reference Manual" /><link rel="up" href="create-table.html" title="13.1.17 CREATE TABLE Syntax" /><link rel="prev" href="create-table.html" title="13.1.17 CREATE TABLE Syntax" /><link rel="next" href="create-table-foreign-keys.html" title="13.1.17.2 Using FOREIGN KEY Constraints" />
+<script language="javascript" type="text/javascript">
+  function addOnload(theFunc)
+  {
+    var previous = window.onload;
+    if (typeof window.onload != 'function')
+    {
+      window.onload = theFunc;
+    }
+    else
+    {
+      window.onload = function()
+      {
+        previous();
+        theFunc();
+      }
+    }
+  }
+
+  addOnload(function()
+  {
+    var base = new Date(1385298528*1000);
+    var now = new Date();
+    var diff = ((now-base)/1000)/(24*3600);
+
+    if (diff > 90) {
+      var nodes = document.getElementsByClassName('titlepage');
+      nodes[0].innerHTML = '<p style="border: 5px #ff0000 solid; padding: 5px; margin 5px">' +
+        'This copy of the manual is more than 90 days old. We encourage you to download a ' +
+        'new version from <a href="http://dev.mysql.com">dev.mysql.com/doc</a>.</p>' + nodes[0].innerHTML;
+    }
+  });
+</script>
+<noscript></noscript>
+</head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">13.1.17.1 <code class="literal">CREATE TABLE ...
+        SELECT</code> Syntax</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="create-table.html">Prev</a> </td><th width="60%" align="center">13.1.17 <code class="literal">CREATE TABLE</code> Syntax</th><td width="20%" align="right"> <a accesskey="n" href="create-table-foreign-keys.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="create-table-select"></a>13.1.17.1 <code class="literal">CREATE TABLE ...
+        SELECT</code> Syntax</h4></div></div></div><a id="idm47074913109344" class="indexterm"></a><a id="idm47074913108272" class="indexterm"></a><p>
+        You can create one table from another by adding a
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> statement at the end of
+        the <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a> statement:
+      </p><pre class="programlisting">
+CREATE TABLE <em class="replaceable"><code>new_tbl</code></em> [AS] SELECT * FROM <em class="replaceable"><code>orig_tbl</code></em>;
+</pre><p>
+        MySQL creates new columns for all elements in the
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a>. For example:
+      </p><pre class="programlisting">
+mysql&gt; <strong class="userinput"><code>CREATE TABLE test (a INT NOT NULL AUTO_INCREMENT,</code></strong>
+    -&gt;        <strong class="userinput"><code>PRIMARY KEY (a), KEY(b))</code></strong>
+    -&gt;        <strong class="userinput"><code>ENGINE=MyISAM SELECT b,c FROM test2;</code></strong>
+</pre><p>
+        This creates a <a class="link" href="myisam-storage-engine.html" title="14.4 The MyISAM Storage Engine"><code class="literal">MyISAM</code></a> table with
+        three columns, <code class="literal">a</code>, <code class="literal">b</code>, and
+        <code class="literal">c</code>. The <code class="literal">ENGINE</code> option is
+        part of the <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a>
+        statement, and should not be used following the
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a>; this would result in a
+        syntax error. The same is true for other
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a> options such as
+        <code class="literal">CHARSET</code>.
+      </p><p>
+        Notice that the columns from the
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> statement are appended to
+        the right side of the table, not overlapped onto it. Take the
+        following example:
+      </p><pre class="programlisting">
+mysql&gt; <strong class="userinput"><code>SELECT * FROM foo;</code></strong>
++---+
+| n |
++---+
+| 1 |
++---+
+
+mysql&gt; <strong class="userinput"><code>CREATE TABLE bar (m INT) SELECT n FROM foo;</code></strong>
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql&gt; <strong class="userinput"><code>SELECT * FROM bar;</code></strong>
++------+---+
+| m    | n |
++------+---+
+| NULL | 1 |
++------+---+
+1 row in set (0.00 sec)
+</pre><p>
+        For each row in table <code class="literal">foo</code>, a row is inserted
+        in <code class="literal">bar</code> with the values from
+        <code class="literal">foo</code> and default values for the new columns.
+      </p><p>
+        In a table resulting from
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE ...
+        SELECT</code></a>, columns named only in the
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a> part come first.
+        Columns named in both parts or only in the
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> part come after that. The
+        data type of <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> columns can
+        be overridden by also specifying the column in the
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a> part.
+      </p><p>
+        If any errors occur while copying the data to the table, it is
+        automatically dropped and not created.
+      </p><p>
+        You can precede the <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> by
+        <code class="literal">IGNORE</code> or
+        <a class="link" href="replace.html" title="13.2.8 REPLACE Syntax"><code class="literal">REPLACE</code></a> to indicate how to handle
+        rows that duplicate unique key values. With
+        <code class="literal">IGNORE</code>, new rows that duplicate an existing
+        row on a unique key value are discarded. With
+        <a class="link" href="replace.html" title="13.2.8 REPLACE Syntax"><code class="literal">REPLACE</code></a>, new rows replace rows
+        that have the same unique key value. If neither
+        <code class="literal">IGNORE</code> nor
+        <a class="link" href="replace.html" title="13.2.8 REPLACE Syntax"><code class="literal">REPLACE</code></a> is specified, duplicate
+        unique key values result in an error.
+      </p><p>
+        Because the ordering of the rows in the underlying
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> statements cannot always
+        be determined, <code class="literal">CREATE TABLE ... IGNORE SELECT</code>
+        and <code class="literal">CREATE TABLE ... REPLACE SELECT</code>
+        statements in MySQL 5.5.18 and later are flagged as unsafe for
+        statement-based replication. With this change, such statements
+        produce a warning in the log when using statement-based mode and
+        are logged using the row-based format when using
+        <code class="literal">MIXED</code> mode. See also
+        <a class="xref" href="replication-sbr-rbr.html" title="16.1.2.1 Advantages and Disadvantages of Statement-Based and Row-Based Replication">Section 16.1.2.1, “Advantages and Disadvantages of Statement-Based and Row-Based
+        Replication”</a>.
+      </p><p>
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE ...
+        SELECT</code></a> does not automatically create any indexes for
+        you. This is done intentionally to make the statement as
+        flexible as possible. If you want to have indexes in the created
+        table, you should specify these before the
+        <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> statement:
+      </p><pre class="programlisting">
+mysql&gt; <strong class="userinput"><code>CREATE TABLE bar (UNIQUE (n)) SELECT n FROM foo;</code></strong>
+</pre><p>
+        Some conversion of data types might occur. For example, the
+        <code class="literal">AUTO_INCREMENT</code> attribute is not preserved,
+        and <a class="link" href="char.html" title="11.4.1 The CHAR and VARCHAR Types"><code class="literal">VARCHAR</code></a> columns can become
+        <a class="link" href="char.html" title="11.4.1 The CHAR and VARCHAR Types"><code class="literal">CHAR</code></a> columns. Retrained
+        attributes are <code class="literal">NULL</code> (or <code class="literal">NOT
+        NULL</code>) and, for those columns that have them,
+        <code class="literal">CHARACTER SET</code>, <code class="literal">COLLATION</code>,
+        <code class="literal">COMMENT</code>, and the <code class="literal">DEFAULT</code>
+        clause.
+      </p><p>
+        When creating a table with
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE ... SELECT</code></a>, make sure to alias any function
+        calls or expressions in the query. If you do not, the
+        <code class="literal">CREATE</code> statement might fail or result in
+        undesirable column names.
+      </p><pre class="programlisting">
+CREATE TABLE artists_and_works
+  SELECT artist.name, COUNT(work.artist_id) AS number_of_works
+  FROM artist LEFT JOIN work ON artist.id = work.artist_id
+  GROUP BY artist.id;
+</pre><p>
+        You can also explicitly specify the data type for a generated
+        column:
+      </p><pre class="programlisting">
+CREATE TABLE foo (a TINYINT NOT NULL) SELECT b+1 AS a FROM bar;
+</pre><p>
+        For <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE
+        ... SELECT</code></a>, if <code class="literal">IF NOT EXISTS</code> is
+        given and the destination table already exists, the result is
+        version dependent. Before MySQL 5.5.6, MySQL handles the
+        statement as follows:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            The table definition given in the
+            <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE</code></a> part is ignored.
+            No error occurs, even if the definition does not match that
+            of the existing table. MySQL attempts to insert the rows
+            from the <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> part anyway.
+          </p></li><li class="listitem"><p>
+            If there is a mismatch between the number of columns in the
+            table and the number of columns produced by the
+            <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> part, the selected
+            values are assigned to the rightmost columns. For example,
+            if the table contains <em class="replaceable"><code>n</code></em> columns
+            and the <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> produces
+            <em class="replaceable"><code>m</code></em> columns, where
+            <em class="replaceable"><code>m</code></em> &lt;
+            <em class="replaceable"><code>n</code></em>, the selected values are
+            assigned to the <em class="replaceable"><code>m</code></em> rightmost
+            columns in the table. Each of the initial
+            <em class="replaceable"><code>n</code></em> –
+            <em class="replaceable"><code>m</code></em> columns is assigned its default
+            value, either that specified explicitly in the column
+            definition or the implicit column data type default if the
+            definition contains no default. If the
+            <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> part produces too many
+            columns (<em class="replaceable"><code>m</code></em> &gt;
+            <em class="replaceable"><code>n</code></em>), an error occurs.
+          </p></li><li class="listitem"><p>
+            If strict SQL mode is enabled and any of these initial
+            columns do not have an explicit default value, the statement
+            fails with an error.
+          </p></li></ul></div><p>
+        The following example illustrates <code class="literal">IF NOT
+        EXISTS</code> handling:
+      </p><pre class="programlisting">
+mysql&gt; <strong class="userinput"><code>CREATE TABLE t1 (i1 INT DEFAULT 0, i2 INT, i3 INT, i4 INT);</code></strong>
+Query OK, 0 rows affected (0.05 sec)
+
+mysql&gt; <strong class="userinput"><code>CREATE TABLE IF NOT EXISTS t1 (c1 CHAR(10)) SELECT 1, 2;</code></strong>
+Query OK, 1 row affected, 1 warning (0.01 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql&gt; <strong class="userinput"><code>SELECT * FROM t1;</code></strong>
++------+------+------+------+
+| i1   | i2   | i3   | i4   |
++------+------+------+------+
+|    0 | NULL |    1 |    2 |
++------+------+------+------+
+1 row in set (0.00 sec)
+</pre><p>
+        As of MySQL 5.5.6, handling of
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a> statements was changed
+        for the case that the destination table already exists. This
+        change also involves a change in MySQL 5.1 beginning with
+        5.1.51.
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            Previously, for
+            <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+            TABLE IF NOT EXISTS ... SELECT</code></a>, MySQL produced a
+            warning that the table exists, but inserted the rows and
+            wrote the statement to the binary log anyway. By contrast,
+            <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+            TABLE ... SELECT</code></a> (without <code class="literal">IF NOT
+            EXISTS</code>) failed with an error, but MySQL inserted
+            no rows and did not write the statement to the binary log.
+          </p></li><li class="listitem"><p>
+            MySQL now handles both statements the same way when the
+            destination table exists, in that neither statement inserts
+            rows or is written to the binary log. The difference between
+            them is that MySQL produces a warning when <code class="literal">IF NOT
+            EXISTS</code> is present and an error when it is not.
+          </p></li></ul></div><p>
+        This change means that, for the preceding example, the
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a> statement inserts
+        nothing into the destination table as of MySQL 5.5.6.
+      </p><p>
+        This change in handling of <code class="literal">IF NOT EXISTS</code>
+        results in an incompatibility for statement-based replication
+        from a MySQL 5.1 master with the original behavior and a MySQL
+        5.5 slave with the new behavior. Suppose that
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a> is executed on the
+        master and the destination table exists. The result is that rows
+        are inserted on the master but not on the slave. (Row-based
+        replication does not have this problem.)
+      </p><p>
+        To address this issue, statement-based binary logging for
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a> is changed in MySQL 5.1
+        as of 5.1.51:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            If the destination table does not exist, there is no change:
+            The statement is logged as is.
+          </p></li><li class="listitem"><p>
+            If the destination table does exist, the statement is logged
+            as the equivalent pair of
+            <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+            TABLE IF NOT EXISTS</code></a> and
+            <a class="link" href="insert-select.html" title="13.2.5.1 INSERT ... SELECT Syntax"><code class="literal">INSERT ...
+            SELECT</code></a> statements. (If the
+            <a class="link" href="select.html" title="13.2.9 SELECT Syntax"><code class="literal">SELECT</code></a> in the original
+            statement is preceded by <code class="literal">IGNORE</code> or
+            <a class="link" href="replace.html" title="13.2.8 REPLACE Syntax"><code class="literal">REPLACE</code></a>, the
+            <a class="link" href="insert.html" title="13.2.5 INSERT Syntax"><code class="literal">INSERT</code></a> becomes
+            <a class="link" href="insert.html" title="13.2.5 INSERT Syntax"><code class="literal">INSERT
+            IGNORE</code></a> or <a class="link" href="replace.html" title="13.2.8 REPLACE Syntax"><code class="literal">REPLACE</code></a>,
+            respectively.)
+          </p></li></ul></div><p>
+        This change provides forward compatibility for statement-based
+        replication from MySQL 5.1 to 5.5 because when the destination
+        table exists, the rows will be inserted on both the master and
+        slave. To take advantage of this compatibility measure, the 5.1
+        server must be at least 5.1.51 and the 5.5 server must be at
+        least 5.5.6.
+      </p><p>
+        To upgrade an existing 5.1-to-5.5 replication scenario, upgrade
+        the master first to 5.1.51 or higher. Note that this differs
+        from the usual replication upgrade advice of upgrading the slave
+        first.
+      </p><p>
+        A workaround for applications that wish to achieve the original
+        effect (rows inserted regardless of whether the destination
+        table exists) is to use
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS</code></a> and
+        <a class="link" href="insert-select.html" title="13.2.5.1 INSERT ... SELECT Syntax"><code class="literal">INSERT ...
+        SELECT</code></a> statements rather than
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a> statements.
+      </p><p>
+        Along with the change just described, the following related
+        change was made: Previously, if an existing view was named as
+        the destination table for
+        <a class="link" href="create-table-select.html" title="13.1.17.1 CREATE TABLE ... SELECT Syntax"><code class="literal">CREATE
+        TABLE IF NOT EXISTS ... SELECT</code></a>, rows were inserted
+        into the underlying base table and the statement was written to
+        the binary log. As of MySQL 5.1.51 and 5.5.6, nothing is
+        inserted or logged.
+      </p><p>
+        To ensure that the binary log can be used to re-create the
+        original tables, MySQL does not permit concurrent inserts during
+        <a class="link" href="create-table.html" title="13.1.17 CREATE TABLE Syntax"><code class="literal">CREATE TABLE ...
+        SELECT</code></a>.
+      </p></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="create-table.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="create-table.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="create-table-foreign-keys.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">13.1.17 <code class="literal">CREATE TABLE</code> Syntax </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 13.1.17.2 Using <code class="literal">FOREIGN KEY</code> Constraints</td></tr></table></div><div class="copyright-footer"><p>
+    Copyright © 1997, 2013, Oracle and/or its affiliates. All
+    rights reserved.
+  <a href="preface.html#legalnotice" target="legal">Legal Notices</a></p></div></body></html>

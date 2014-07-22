@@ -1,0 +1,105 @@
+************************[+]   LooP-of-DeatH [+]
+***************************[+]    made by    [+]
+******************************[+]   cmiN   [+]
+
+*************************:::::22.08.2008:::::
+cls
+@echo off
+title ANTI .: LooP-of-DeatH :. by cmiN
+echo erasing LooP-of-DeatH
+echo.
+echo Set the root drive "C:\" (by default)  and the windows directory "C:\windows" (by default) for your infected system without quotes
+echo.
+echo You root drive:  ( egz. C:\ )
+set /p "pathx=>"
+echo And now your windows directory: ( egz. C:\windows )
+set /p "systemroot=>"
+attrib -r -h -s %systemroot%\system32\path.txt
+attrib -r -h -s %systemroot%\system32\verif.bat
+attrib -r -h -s %systemroot%\system32\nscvr32.sys
+attrib -r -h -s %systemroot%\system32\nrvcs64.sys
+attrib -r -h -s %systemroot%\buclemaker.bat
+attrib -r -h -s %systemroot%\buclafinala.bat
+attrib -r -h -s %systemroot%\bucla.bat
+attrib -r -h -s %systemroot%\bucla1.bat
+attrib -r -h -s %systemroot%\bucla2.bat
+attrib -r -h -s %systemroot%\bucla3.bat
+attrib -r -h -s %systemroot%\bucla4.bat
+attrib -r -h -s %systemroot%\bucla5.bat
+attrib -r -h -s %systemroot%\bucla6.bat
+attrib -r -h -s %systemroot%\bucla7.bat
+attrib -r -h -s %systemroot%\bucla8.bat
+attrib -r -h -s %systemroot%\bucla9.bat
+attrib -r -h -s %pathx%AUTOEXEC.BAT
+
+del /q /f %systemroot%\system32\path.txt
+del /q /f %systemroot%\system32\verif.bat
+del /q /f %systemroot%\system32\nscvr32.sys
+del /q /f %systemroot%\system32\nrvcs64.sys
+del /q /f %systemroot%\buclemaker.bat
+del /q /f %pathx%AUTOEXEC.BAT
+del /q /f %systemroot%\bucla.bat
+del /q /f %systemroot%\bucla1.bat
+del /q /f %systemroot%\bucla2.bat
+del /q /f %systemroot%\bucla3.bat
+del /q /f %systemroot%\bucla4.bat
+del /q /f %systemroot%\bucla5.bat
+del /q /f %systemroot%\bucla6.bat
+del /q /f %systemroot%\bucla7.bat
+del /q /f %systemroot%\bucla8.bat
+del /q /f %systemroot%\bucla9.bat
+del /q /f %systemroot%\buclafinala.bat
+
+copy %systemroot%\lanay32\ftp.pol %systemroot%\system32\dllcache\regedit.exe
+copy %systemroot%\lanay32\fto.pol %systemroot%\system32\dllcache\regedt32.exe
+copy %systemroot%\lanay32\ftp.pol %systemroot%\system32\regedit.exe
+copy %systemroot%\lanay32\ftp.pol %systemroot%\regedit.exe
+copy %systemroot%\lanay\ntdc.bak %pathx%AUTOEXEC.BAT
+rd /q /s %systemroot%\lanay
+rd /q /s %systemroot%\lanay32
+
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f
+reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /f
+reg delete HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /f
+reg delete HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /f
+reg delete HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\dmboots.sys /v SystemVerif /f 
+reg delete HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\Base /v SystemVerif /f
+reg delete HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\dmboots.sys /v SystemVerif /f
+reg delete HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Base /v SystemVerif /f
+
+echo ***************************************creditz:    ****  cmiN ****
+echo.
+echo files/folders created:
+echo %systemroot%\lanay                *  a folder where is placed a copy of original AUTOEXEC.BAT 
+echo %systemroot%\lanay\ntdc.bak  * a copy of the original AUTOEXEC.BAT
+
+echo %systemroot%\system32\path.txt * a file contains the string of your current root drive
+
+echo %systemroot%\system32\nscvr32.sys * a file created to create other files (bucla.bat , bucla1.bat , etc)
+echo %systemroot%\bucla.bat
+echo %systemroot%\bucla1.bat
+echo %systemroot%\bucla2.bat
+echo %systemroot%\bucla3.bat
+echo %systemroot%\bucla4.bat
+echo %systemroot%\bucla5.bat
+echo %systemroot%\bucla6.bat
+echo %systemroot%\bucla7.bat
+echo %systemroot%\bucla8.bat
+echo %systemroot%\bucla9.bat ** files that start simultaneous and f*cks your pc
+
+echo %systemroot%\system32\nrvcs64.sys * a file that opens simultaneous files like (bucla.bat , bucla1.bat , etc)
+echo %systemroot%\buclemaker.bat * a copy of nscvr32.sys
+echo %systemroot%\buclafinala.bat * a copy of nrvcs64.sys
+
+echo %systemroot%\system32\verif.bat * a file that start with system startup and replace any missing file except nscvr32.sys and nrvcs64.sys
+
+echo %systemroot%\lanay32 * a folder where is placed a copy of regedit.exe and regedt32.exe
+echo %systemroot%\lanay32\ftp.pol * a copy of regedit.exe
+echo %systemroot%\lanay32\fto.pol * a copy of regedt32.exe
+
+PAUSE
+echo.
+echo.
+echo.
+echo Erasing successfully !!!   ---- * Unwanted files were deleted, Original files were replaced, Virus registries deleted ! 
+PAUSE

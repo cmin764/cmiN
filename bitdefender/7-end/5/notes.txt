@@ -1,0 +1,24 @@
+﻿functie_verifica
+476 bytes
+
+#1. Numele fisierului de citit
+name = "{cmck.mkc`"
+>>> print "".join([chr(ord(name[i]) ^ ((i+1) %3)) for i in xrange(len(name))])
+zambi.lica
+
+#2. De citit 400 octeti
+
+-15 ->
+#3. foloseste 10 octeti
+bufferul incepe de la -424 de lungime 400
+unde din 3 in 3 octeti se face xor cu un random
+
+offsetul de la -452 de lungime 10
+
+.....
+
+se citesc 400 octeti si se scriu intr-un buffer
+din 3 in 3 se face xor pe fiecare octet cu random
+apoi se face iar xor tot cu random dintre acei octeti (din 3 in 3)
+doar daca pozitia pe care se gasesc (0+rezultat[0], 1+rezultat[1], ...)
+este si ea divizibila cu 3 (ca si mai sus, doar acei octeti din 3 in 3)

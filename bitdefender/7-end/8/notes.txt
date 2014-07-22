@@ -1,0 +1,17 @@
+- face rost de calea absoluta a executabilului si ii returneaza dimensiunea
+- gaseste cel mai mare divizor comun intre dimensiunea fisierului si
+  localtime decrementat pana ultimii 2 biti sunt 00 (mai exact 2008 de la 2011)
+- decripteaza si executa instructiuni (254 de la 40121C)
+  le decripteaza facand xor pe ele cu (cmmdc(size, time)=8 + contor % 10)
+  
+fileSize = 8192
+year = 2011 - 3 -> 2008
+cmmdc(2008, 8192) = 8
+xorul incepe de la 8 + contor % 10
+
+- trebuie sa existe o cheie HKCU\Software\BMR cu o valoare
+  binara (de fapt cred ca e string) numita "virus" de lungime 29
+- pentru bufferul global din program, se ia fiecare caracter si se face xor
+  cu valoarea=(8+pozitie), apoi pentru fiecare caracter se mai face o data xor cu 8
+  si astfel am obtinut continutul lui virus
+  "have no fear, blinky is here!"

@@ -1,0 +1,5 @@
+1. List all files in the working directory
+__import__("sys").stdout.write(str(__import__("os").listdir(__import__("os").getcwd())) + "\n")
+
+2. Open one certain file and print its content
+__import__("sys").stdout.write(open("secret.txt", "r").read())

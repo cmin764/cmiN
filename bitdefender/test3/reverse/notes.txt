@@ -1,0 +1,23 @@
+in.txt -> out.crypt
+read max. 65535 (2^16 - 1)
+dimensiunea citita trebuie sa fie para
+valoare = dimensiune AND 255 -> maxim 255 (pentru modulo)
+
+
+dimensiune vector2 = 1678
+valoare = 142
+
+am x si y
+a+b=x
+a-b=y -> a=y+b -> y+2b=x -> b=(x-y)/2 | a=x-b
+
+#1. Scrie intr-un alt buffer suma si diferenta a doi cate doi
+octeti cititi din fisier. Acestia trebuie sa fie in numar par.
+
+#2. Se calculeaza o valoare (dimensiune AND 255 = 142), apoi pentru fiecare
+caracter din vector (bufferul procesat) se face XOR cu restul impartirii
+al pozitiei curente la acea valoare determinata mai sus.
+
+#3. Face swap la 2 cate 2 octeti pentru toti octetii din vector.
+
+#4. Face reverse pe primul vector si scrie rezultatul in al doilea vector.

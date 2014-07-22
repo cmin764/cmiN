@@ -1,0 +1,27 @@
+﻿<windows.h>
+BOOL
+CHAR, BYTE
+WCHAR, WORD
+TCHAR
+DWORD
+HANDLE
+LP[(C)(STR|WSTR|TSTR)]
+------------------------
+CreateFile (fname, GENERIC_READ|GENERIC_WIRTE, FILE_SHARE_READ, CREATE_ALWAYS)
+    -> handle
+ReadFile (handle, ...)
+    -> readed
+WriteFile -> (handle, ...)
+    -> wrote
+CloseHandle (handle)
+
+FindFirstFile ("C:\\Windows\\*.*", lpFindData)
+    -> handle
+FindNextFile
+FindClose
+
+DeleteFile
+CreateDirectory
+RemoveDirectory
+
+GetLastError

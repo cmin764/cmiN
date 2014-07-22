@@ -1,0 +1,15 @@
+push + jmp = call
+ex.: call suma
+pop + jmp = ret
+
+extend
+movsx - signed fill
+movzx - zero fill
+
+call $+X -> pune in stiva adresa curenta si sare la
+urmatoarea relativa (+X) fata de cea curenta
+
+rdtsc -> random in eax
+
+cdq - convert dword to qword
+seto - get overflow flag

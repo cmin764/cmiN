@@ -1,0 +1,47 @@
+... de cmiN, inspirat din niste jocuri puzzle / adventure ...
+
+
+  Te doare capul cumplit si deodata deschizi ochii si te trezesti intr-o camera abandonata, ca o celula. Te uiti speriat in stanga si in dreapta si nu vezi decat 4 ziduri de beton rece, o usa metalica cu gratii in loc de macar un gemulet si un birou langa peretele din fata ta.
+  Incerci usa, care e incuiata si apoi o iei razna, incepi sa tipi, sa plangi, nu stii unde te afli, ce cauti aici si de ce nu poti macar iesi afara. Tremurand, incepi sa cotrobai prin camera, prin sertare si nu gasesti absolut nimic decat o lanterna cu lumina slaba, un creion, un tabel ascii si o foaie de hartie nici prea mare nici prea mica pe care scrie cu font mic si de mana: "Toti cand eram mici am invatat ca cifrele incep de la 0 si se termina la 9.". Nedumerit bagi hartiuta, creionul si lanterna in buzunar si cauti in continuare, dar in zadar. Nu mai gasesti absolut nimic si deodata niste sunete stranii, ca niste tipete, se aud de dupa perete! Ingrozit nu stii ce sa mai faci, incerci sa tragi biroul sa spargi usa cumva cu el, dar fara sa vrei descoperi o gura de aerisire fara gratar in spatele biroului. Intri pe ea, tragi biroul inapoi in locul care era pentru a bloca intrarea si apoi mergi cu grija mai departe, luminand cu lanterna bezna rece din tubul stramt prin care te tarai, la fel cum mintea ti-ar fi dictat pas cu pas ce trebuie sa faci -,-. Auzi usa camerei din care ai plecat trantindu-se si realizezi ca sunt pe urmele tale, insa continui sa mergi.
+  De-a lungul tubului de abia observi cu lanterna blocuri de numere numerotate si, sperand sa te ajute la ceva, le scrii mic si inghesuit cu creionul pe foaia de hartie, pastrand ordinea. Observi ca toate blocurile de numere pe care le gasesti contin cifre de la 0 la 9 in ordine diferita, fiecare bloc avand lungimea de 9 sau 10 caractere (de e.x.: 043658971 sau 5678934201 ). Continui sa mergi prin tub, iar pe toti peretii nicio alta gura, ci numai numere. Miraculos foaia iti ajunge la fix pentru toate numerele si zaresti din departare in capatul tubului o alta gura de aerisire, fara sa mai fie si alte numere. Lanterna incepe sa palpaie, semne ca bateriile sunt pe terminate si te indrepti cu repeziciune spre gura de aerisire, care spre mahnirea ta are gratarul pus. Deodata se aud aceleasi sunete stranii, numai ca de aceasta data se aud din spatele tau prin tubul de aerisire. Speriat, incerci sa bati in gratar / sa-l scoti, dar acesta nici nu se clinteste... sunetele se aud din ce in ce mai tare si devin din ce in ce mai sinistre si plin de adrenalina generata de frica cu o ultima lovitura reusesti a scoate gratarul din suruburi. Cobori si ajungi intr-o alta camera. Intuneric peste tot nu vezi nimic, insa auzi undeva pe langa tine sunetul unui ventilator ... ti se pare ceva cunoscut ... te apropii usor incepi sa pipai si realizezi ca este o unitate centrala. Pipai in continuare si dai si de monitor pe care il aprinzi si astfel se lumineaza cat de cat incaperea. Imediat blochezi gura de aerisire pe care ai coborat cu un dulap mare si greu gasit in acea incapere. Cotrobai in continuare, dar nu gasesti nimic decat doar acel PC si o usa metalica ce pare a fi conectata la el printr-un cablu. Nu iti dai seama deloc ce sistem de operare ar putea avea acel pc, pentru ca pe un fundal complet negru nu vezi decat un fel de executabil si atat. Avand doar tastatura la dispozitie, il accesezi si o consola ce pare cunoscuta iti afiseaza mesajul "Password: ". Folosind talentele tale de "hecher" incerci mai multe parole si alte trucuri insa nimic nu pare sa se schimbe. Te gandesti putin si scoti foaia din buzunar pe care scrie mic si inghesuit: 
+86432105982497316539764158023065784927896532149652480376152308497576309248713248
+96556912470319863472059570826436829143571790468238473296150765823104812643057620
+81457397504293685637249182491607837091534826569742830827564093974821503391085426
+77830426152950134689532081476356702894672845309679380125641785309279836420574189
+35266078214933149028765176249085215807694756813429061728054960851394791560374284
+37182590938026417964120735875829063442837165989237641072804691358291764050148793
+65187265943072534806905248379695203481746925708313264807597683045295081962736418
+95230773942608584513296759470238603452167895620147833427601585781320694023947856
+59468037259263104835912460873902786547624589039412087530547916832865409712675810
+34969705328147420365985148673296937512487025136489285034796869421375587396204871
+54293608920761546801534790183647529627530948865037429380561947963501742872864593
+09358674022630915873415098267375298406475986213298430761956832104793082675458964
+31278054123670437296518056894723870593246984361502409765281382530749659217846353
+27409614807631295892641570145063987951842037627346905885643209763549172867485392
+10062549873416952837934780621074693258179603245827864395090214753645397806124506
+93728371469852756092483340618792558794236098263145797314206543981052767630852918
+92517340042186579327409165875980613483471692507642013597935164829315820476385176
+40253409821642980567317035429683602957488510672931382765049243670598603859472289
+70563481365724904532690788729541639127450635620479138840157632521349068537420968
+16725890416901857348657104293746952380342598706618403597358910674237456802936724
+98155240973864673150928068792543472098356537861924703149286524530968798234056757
+30841299127584063794503268462983570901378562896421350753648072928906473502861354
+98690312574480975216640359178530764128976342081548093256118962740535174806920346
+58179723164580960235987457943126841269753826437815909342857064691825734263098753
+02498756103785164241236705932465709189645823706217438599234715062610743859203569
+78437295084645093678289320164573172856400253716845321407698413705286083512694923
+87604157895641021736598409584672031564802739490387265569241830349012786593862407
+58620753499827634017235864109768124035860413592614528930762548709175946830134702
+69581293768450675142839290683475601754829397632548032476850939486721090587216347
+09835462754902683378294105925013764839654782076315284929307864524805173963068791
+24734259061758160293449625871086419735014380279560375241969273864514309152768084
+32576163905281483401972658250967434251687392518367947681542390285419360092715438
+51430928670396428754289675037430825695192647083812546370704356218869042173524375
+86098273541961389246500193687524178052963761520483472053198662708943168594710295
+42083671743168920984502317890236417568701243926408915792385074612187603490739254
+687190463258 
+apoi incerci a introduce tot codul de numere, insa din nou nimic nu se intampla, apoi te uiti mai bine la cod si incerci sa-l decodifici cumva. Ai incredere in instinctele tale si stii ca textul obtinut in final trebuie sa fie un string alfanumeric, si ca 100% iti va folosi acel tabel ascii insa mai trebuie sa fie ceva, ceva legat de dexteritatea ta de a te juca cu numere chiar daca nu prea le ai cu matematica. Parola finala este singura ta scapare !!!
+
+Cerinta: Sa se construiasca un algoritm prin care sa se afle parola din spatele codului sau macar sa se afle parola fara a fi nevoie neaparat si de algoritm.
+
+Eu am facut in python o librarie pentru ambele functii si codare si decodare si merge excelent. O voi posta cand se da batuta toata lumea. Modul de codare e extrem de simplu, doar trebuie sa fiti atenti la ce am scris si sigur va prindeti. Succes!

@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Views, Sequences, and Synonyms</title>
+<meta name="generator" content="Oracle DARB XHTML converter - Version 4.5 Build 274_RSB" />
+<meta name="Date" content="May 23, 2006 14:17:06" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Database Administrator's Guide 10g Release 2 (10.2)" />
+<meta name="partno" content="B14231-02" />
+<meta name="docid" content="ADMIN" />
+<link rel="Start" href="http://www.oracle.com/pls/db102/homepage/" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="http://www.oracle.com/pls/db102/doccd_js?path=server.102/b14231/views.htm">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="hash.htm" title="Previous" type="text/html" />
+<link rel="Next" href="repair.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14231.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="../B14231-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="../B14231-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Administrator's Guide<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+B14231-02</td>
+<td valign="bottom" align="right">
+<table summary="" class="icons oac_no_warn" cellspacing="0" cellpadding="0" width="294">
+<tr>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/homepage/"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/portal.all_books"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/show_mindex/"><img width="24" height="24" src="../../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="hash.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="repair.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../b14231.pdf">PDF</a> &middot; <a href="../B14231-02.mobi">Mobi</a> &middot; <a href="../B14231-02.epub">ePub</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="g1016456" name="g1016456"></a><a id="i1006849" name="i1006849"></a>
+<h1 class="chapter"><span class="secnum">20</span> <a name="ADMIN020" id="ADMIN020"></a> Managing Views, Sequences, and Synonyms</h1>
+<p>This chapter describes the management of views, sequences, and synonyms and contains the following topics:</p>
+<ul>
+<li>
+<p><a href="#i1006127">Managing Views</a></p>
+</li>
+<li>
+<p><a href="#i1106548">Managing Sequences</a></p>
+</li>
+<li>
+<p><a href="#i1106663">Managing Synonyms</a></p>
+</li>
+<li>
+<p><a href="#i1006739">Viewing Information About Views, Synonyms, and Sequences</a></p>
+</li>
+</ul>
+<a id="i1006127" name="i1006127"></a>
+<div class="sect1"><a id="sthref3024" name="sthref3024"></a>
+<h2 class="sect1">Managing Views<a id="sthref3025" name="sthref3025"></a><a id="sthref3026" name="sthref3026"></a></h2>
+<p>This section describes aspects of managing views, and contains the following topics:</p>
+<ul>
+<li>
+<p><a href="#i1007900">About Views</a></p>
+</li>
+<li>
+<p><a href="#i1006152">Creating Views</a></p>
+</li>
+<li>
+<p><a href="#i1006887">Replacing Views</a></p>
+</li>
+<li>
+<p><a href="#i1007148">Using Views in Queries</a></p>
+</li>
+<li>
+<p><a href="#i1006232">Updating a Join View</a></p>
+</li>
+<li>
+<p><a href="#i1106481">Altering Views</a></p>
+</li>
+<li>
+<p><a href="#i1006502">Dropping Views</a></p>
+</li>
+</ul>
+<a id="i1007900" name="i1007900"></a>
+<div class="sect2"><a id="sthref3027" name="sthref3027"></a>
+<h3 class="sect2">About Views</h3>
+<p>A <span class="bold">view</span> is a logical representation of another table or combination of tables. A view derives its data from the tables on which it is based. These tables are called <span class="bold">base tables</span>. Base tables might in turn be actual tables or might be views themselves. All operations performed on a view actually affect the base table of the view. You can use views in almost the same way as tables. You can query, update, insert into, and delete from views, just as you can standard tables.</p>
+<p>Views can provide a different representation (such as subsets or supersets) of the data that resides within other tables and views. Views are very powerful because they allow you to tailor the presentation of data to different types of users.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a class="olink CNCPT311" href="../../server.102/b14220/schema.htm#CNCPT311"><span class="italic">Oracle Database Concepts</span></a> for a more complete description of views</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1006152" name="i1006152"></a>
+<div class="sect2"><a id="sthref3028" name="sthref3028"></a>
+<h3 class="sect2">Creating Views</h3>
+<p><a id="sthref3029" name="sthref3029"></a>To create a view, you must meet the following requirements:</p>
+<ul>
+<li>
+<p>To create a view in your schema, you must have the <code>CREATE VIEW</code> privilege. To create a view in another user's schema, you must have the <code>CREATE ANY VIEW</code> system privilege. You can acquire these privileges explicitly or through a role.</p>
+</li>
+<li>
+<p>The owner of the view (whether it is you or another user) must have been explicitly granted privileges to access all objects referenced in the view definition. The owner <span class="italic">cannot</span> have obtained these privileges through roles. Also, the functionality of the view depends on the privileges of the view owner. For example, if the owner of the view has only the <code>INSERT</code> privilege for Scott's <code>emp</code> table, then the view can be used only to insert new rows into the <code>emp</code> table, not to <code>SELECT</code>, <code>UPDATE</code>, or <code>DELETE</code> rows.</p>
+</li>
+<li>
+<p>If the owner of the view intends to grant access to the view to other users, the owner must have received the object privileges to the base objects with the <code>GRANT OPTION</code> or the system privileges with the <code>ADMIN OPTION</code>.</p>
+</li>
+</ul>
+<p><a id="sthref3030" name="sthref3030"></a><a id="sthref3031" name="sthref3031"></a><a id="sthref3032" name="sthref3032"></a>You can create views using the <code>CREATE VIEW</code> statement. Each view is defined by a query that references tables, materialized views, or other views. As with all subqueries, the query that defines a view cannot contain the <code>FOR UPDATE</code> clause.</p>
+<p>The following statement creates a view on a subset of data in the <code>emp</code> table:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW sales_staff AS
+      SELECT empno, ename, deptno
+      FROM emp
+      WHERE deptno = 10
+    WITH CHECK OPTION CONSTRAINT sales_staff_cnst;
+      
+</pre>
+<p><a id="sthref3033" name="sthref3033"></a><a id="sthref3034" name="sthref3034"></a><a id="sthref3035" name="sthref3035"></a><a id="sthref3036" name="sthref3036"></a>The query that defines the <code>sales_staff</code> view references only rows in department 10. Furthermore, the <code>CHECK OPTION</code> creates the view with the constraint (named <code>sales_staff_cnst</code>) that <code>INSERT</code> and <code>UPDATE</code> statements issued against the view cannot result in rows that the view cannot select. For example, the following <code>INSERT</code> statement successfully inserts a row into the <code>emp</code> table by means of the <code>sales_staff</code> view, which contains all rows with department number 10:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO sales_staff VALUES (7584, 'OSTER', 10);
+
+</pre>
+<p>However, the following <code>INSERT</code> statement returns an error because it attempts to insert a row for department number 30, which cannot be selected using the <code>sales_staff</code> view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO sales_staff VALUES (7591, 'WILLIAMS', 30);
+
+</pre>
+<p>The view could have been constructed specifying the <code>WITH READ ONLY</code> clause, which prevents any updates, inserts, or deletes from being done to the base table through the view. If no <code>WITH</code> clause is specified, the view, with some restrictions, is inherently updatable.</p>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+<span class="italic"><a class="olink SQLRF01504" href="../../server.102/b14200/statements_8004.htm#SQLRF01504">Oracle Database SQL Reference</a></span> for syntax and semantics of the <code>CREATE VIEW</code> statement</div>
+<div class="sect3"><a id="sthref3037" name="sthref3037"></a>
+<h4 class="sect3"><a id="sthref3038" name="sthref3038"></a>Join Views</h4>
+<p>You can also create views that specify more than one base table or view in the <code>FROM</code> clause. These are called <span class="bold">join views</span>. The following statement creates the <code>division1_staff</code> view that joins data from the <code>emp</code> and <code>dept</code> tables:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW division1_staff AS
+      SELECT ename, empno, job, dname
+      FROM emp, dept
+      WHERE emp.deptno IN (10, 30)
+         AND emp.deptno = dept.deptno;
+
+</pre>
+<p>An <span class="bold">updatable join view</span> is a join view where <code>UPDATE</code>, <code>INSERT</code>, and <code>DELETE</code> operations are allowed. See <a href="#i1006232">"Updating a Join View"</a> for further discussion.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref3039" name="sthref3039"></a>
+<h4 class="sect3">Expansion of Defining Queries at View Creation Time</h4>
+<p>When a view is created, Oracle Database expands any wildcard (*) in a top-level view query into a column list. The resulting query is stored in the data dictionary; any subqueries are left intact. The column names in an expanded column list are enclosed in quote marks to account for the possibility that the columns of the base object were originally entered with quotes and require them for the query to be syntactically correct.</p>
+<p>As an example, assume that the <code>dept</code> view is created as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW dept AS SELECT * FROM scott.dept;
+
+</pre>
+<p>The database stores the defining query of the <code>dept</code> view as:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT "DEPTNO", "DNAME", "LOC" FROM scott.dept;
+
+</pre>
+<p>Views created with errors do not have wildcards expanded. However, if the view is eventually compiled without errors, wildcards in the defining query are expanded.<a id="sthref3040" name="sthref3040"></a><a id="sthref3041" name="sthref3041"></a></p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref3042" name="sthref3042"></a>
+<h4 class="sect3">Creating Views with Errors</h4>
+<p><a id="sthref3043" name="sthref3043"></a>If there are no syntax errors in a <code>CREATE VIEW</code> statement, the database can create the view even if the defining query of the view cannot be executed. In this case, the view is considered "created with errors." For example, when a view is created that refers to a nonexistent table or an invalid column of an existing table, or when the view owner does not have the required privileges, the view can be created anyway and entered into the data dictionary. However, the view is not yet usable.</p>
+<p>To create a view with errors, you must include the <code>FORCE</code> clause of the <code>CREATE VIEW</code> statement.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE FORCE VIEW AS ...;
+
+</pre>
+<p>By default, views with errors are created as <code>INVALID</code>. When you try to create such a view, the database returns a message indicating the view was created with errors. If conditions later change so that the query of an invalid view can be executed, the view can be recompiled and be made valid (usable). For information changing conditions and their impact on views, see <a href="general.htm#i1006919">"Managing Object Dependencies"</a>.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="i1006887" name="i1006887"></a>
+<div class="sect2"><a id="sthref3044" name="sthref3044"></a>
+<h3 class="sect2">Replacing Views</h3>
+<p><a id="sthref3045" name="sthref3045"></a>To replace a view, you must have all of the privileges required to drop and create a view. If the definition of a view must change, the view must be replaced; you cannot use an <code>ALTER VIEW</code> statement to change the definition of a view. You can replace views in the following ways:</p>
+<ul>
+<li>
+<p>You can drop and re-create the view.</p>
+<div class="infoboxnote">
+<p class="notep1">Caution:</p>
+When a view is dropped, all grants of corresponding object privileges are revoked from roles and users. After the view is re-created, privileges must be regranted.</div>
+</li>
+<li>
+<p><a id="sthref3046" name="sthref3046"></a>You can redefine the view with a <code>CREATE VIEW</code> statement that contains the <code>OR REPLACE</code> clause. The <code>OR REPLACE</code> clause replaces the current definition of a view and preserves the current security authorizations. For example, assume that you created the <code>sales_staff</code> view as shown earlier, and, in addition, you granted several object privileges to roles and other users. However, now you need to redefine the <code>sales_staff</code> view to change the department number specified in the <code>WHERE</code> clause. You can replace the current version of the <code>sales_staff</code> view with the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE OR REPLACE VIEW sales_staff AS
+     SELECT empno, ename, deptno
+     FROM emp
+     WHERE deptno = 30
+     WITH CHECK OPTION CONSTRAINT sales_staff_cnst;
+
+</pre></li>
+</ul>
+<p>Before replacing a view, consider the following effects:</p>
+<ul>
+<li>
+<p>Replacing a view replaces the view definition in the data dictionary. All underlying objects referenced by the view are not affected.</p>
+</li>
+<li>
+<p>If a constraint in the <code>CHECK OPTION</code> was previously defined but not included in the new view definition, the constraint is dropped.</p>
+</li>
+<li>
+<p><a id="sthref3047" name="sthref3047"></a>All views dependent on a replaced view become invalid (not usable). In addition, dependent PL/SQL program units may become invalid, depending on what was changed in the new version of the view. For example, if only the <code>WHERE</code> clause of the view changes, dependent PL/SQL program units remain valid. However, if any changes are made to the number of view columns or to the view column names or data types, dependent PL/SQL program units are invalidated. See <a href="general.htm#i1006919">"Managing Object Dependencies"</a> for more information on how the database manages such dependencies.<a id="sthref3048" name="sthref3048"></a></p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="i1007148" name="i1007148"></a>
+<div class="sect2"><a id="sthref3049" name="sthref3049"></a>
+<h3 class="sect2">Using Views in Queries <a id="sthref3050" name="sthref3050"></a></h3>
+<p><a id="sthref3051" name="sthref3051"></a>To issue a query or an <code>INSERT,</code> <code>UPDATE</code>, or <code>DELETE</code> statement against a view, you must have the <code>SELECT,</code> <code>INSERT,</code> <code>UPDATE,</code> or <code>DELETE</code> object privilege for the view, respectively, either explicitly or through a role.</p>
+<p>Views can be queried in the same manner as tables. For example, to query the <code>Division1_staff</code> view, enter a valid <code>SELECT</code> statement that references the view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM Division1_staff;
+
+ENAME        EMPNO       JOB             DNAME
+------------------------------------------------------
+CLARK         7782       MANAGER         ACCOUNTING
+KING          7839       PRESIDENT       ACCOUNTING
+MILLER        7934       CLERK           ACCOUNTING
+ALLEN         7499       SALESMAN        SALES
+WARD          7521       SALESMAN        SALES
+JAMES         7900       CLERK           SALES
+TURNER        7844       SALESMAN        SALES
+MARTIN        7654       SALESMAN        SALES
+BLAKE         7698       MANAGER         SALES
+
+</pre>
+<p>With some restrictions, rows can be inserted into, updated in, or deleted from a base table using a view. The following statement inserts a new row into the <code>emp</code> table using the <code>sales_staff</code> view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO sales_staff
+    VALUES (7954, 'OSTER', 30);
+
+</pre>
+<p>Restrictions on DML operations for views use the following criteria in the order listed:<a id="sthref3052" name="sthref3052"></a></p>
+<ol>
+<li>
+<p>If a view is defined by a query that contains <code>SET</code> or <code>DISTINCT</code> operators, a <code>GROUP</code> <code>BY</code> clause, or a group function, then rows cannot be inserted into, updated in, or deleted from the base tables using the view.</p>
+</li>
+<li>
+<p><a id="sthref3053" name="sthref3053"></a>If a view is defined with <code>WITH</code> <code>CHECK</code> <code>OPTION</code>, a row cannot be inserted into, or updated in, the base table (using the view), if the view cannot select the row from the base table.</p>
+</li>
+<li>
+<p>If a <code>NOT</code> <code>NULL</code> column that does not have a <code>DEFAULT</code> clause is omitted from the view, then a row cannot be inserted into the base table using the view.</p>
+</li>
+<li>
+<p>If the view was created by using an expression, such as <code>DECODE(deptno, 10, "SALES", ...)</code>, then rows cannot be inserted into or updated in the base table using the view.</p>
+</li>
+</ol>
+<p>The constraint created by <code>WITH</code> <code>CHECK</code> <code>OPTION</code> of the <code>sales_staff</code> view only allows rows that have a department number of 30 to be inserted into, or updated in, the <code>emp</code> table. Alternatively, assume that the <code>sales_staff</code> view is defined by the following statement (that is, excluding the <code>deptno</code> column):</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW sales_staff AS
+    SELECT empno, ename
+    FROM emp
+    WHERE deptno = 10
+    WITH CHECK OPTION CONSTRAINT sales_staff_cnst;
+
+</pre>
+<p>Considering this view definition, you can update the <code>empno</code> or <code>ename</code> fields of existing records, but you cannot insert rows into the <code>emp</code> table through the <code>sales_staff</code> view because the view does not let you alter the <code>deptno</code> field. If you had defined a <code>DEFAULT</code> value of 10 on the <code>deptno</code> field, then you could perform inserts.</p>
+<p><a id="sthref3054" name="sthref3054"></a>When a user attempts to reference an invalid view, the database returns an error message to the user:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ORA-04063: view 'view_name' has errors
+
+</pre>
+<p>This error message is returned when a view exists but is unusable due to errors in its query (whether it had errors when originally created or it was created successfully but became unusable later because underlying objects were altered or dropped).</p>
+</div>
+<!-- class="sect2" -->
+<a id="i1006232" name="i1006232"></a>
+<div class="sect2"><a id="sthref3055" name="sthref3055"></a>
+<h3 class="sect2">Updating a Join View</h3>
+<p>An updatable <a id="sthref3056" name="sthref3056"></a>join view (also referred to as a <span class="bold">modifiable <a id="sthref3057" name="sthref3057"></a>join view</span>) is a view that contains more than one table in the top-level <code>FROM</code> clause of the <code>SELECT</code> statement, and is not restricted by the <code>WITH READ ONLY</code> clause.</p>
+<p>The rules for updatable join views are shown in the following table. Views that meet these criteria are said to be inherently updatable.</p>
+<div class="inftblinformal">
+<table class="Informal" title="Rules for Updatable Join Views" summary="Column 1 lists the rules for updatable join views, column 2 describes each rule." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Rule</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">General Rule</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">Any <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code> operation on a join view can modify only one underlying base table at a time.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><code>UPDATE</code> Rule</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">All updatable columns of a join view must map to columns of a <span class="bold">key-preserved table</span>. See <a href="#i1006318">"Key-Preserved Tables"</a> for a discussion of key-preserved tables. If the view is defined with the <code>WITH CHECK OPTION</code> clause, then all join columns and all columns of repeated tables are not updatable.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><code>DELETE</code> Rule</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">Rows from a join view can be deleted as long as there is exactly one key-preserved table in the join. The key preserved table can be repeated in the <code>FROM</code> clause. If the view is defined with the <code>WITH CHECK OPTION</code> clause and the key preserved table is repeated, then the rows cannot be deleted from the view.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><code>INSERT</code> Rule</td>
+<td align="left" headers="r5c1-t5 r1c2-t5">An <code>INSERT</code> statement must not explicitly or implicitly refer to the columns of a <span class="bold">non-key-preserved table</span>. If the join view is defined with the <code>WITH CHECK OPTION</code> clause, <code>INSERT</code> statements are not permitted.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal -->
+<p>There are data dictionary views that indicate whether the columns in a join view are inherently updatable. See <a href="#i1006433">"Using the UPDATABLE_ COLUMNS Views"</a> for descriptions of these views.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+There are some additional restrictions and conditions that can affect whether a join view is inherently updatable. Specifics are listed in the description of the <code>CREATE VIEW</code> statement in the <span class="italic"><a class="olink SQLRF01504" href="../../server.102/b14200/statements_8004.htm#SQLRF01504">Oracle Database SQL Reference</a>.</span>
+<p>If a view is not inherently updatable, it can be made updatable by creating an <code>INSTEAD</code> <code>OF</code> trigger on it. This is described in <span class="italic"><a class="olink ADFNS012" href="../../appdev.102/b14251/adfns_triggers.htm#ADFNS012">Oracle Database Application Developer's Guide - Fundamentals</a></span>.</p>
+<p>Additionally, if a view is a join on other nested views, then the other nested views must be mergeable into the top level view. For a discussion of mergeable and unmergeable views, and more generally, how the optimizer optimizes statements that reference views, see the <span class="italic"><a class="olink PFGRF001" href="../../server.102/b14211/optimops.htm#PFGRF001">Oracle Database Performance Tuning Guide</a>.</span></p>
+</div>
+<p>Examples illustrating the rules for inherently updatable join views, and a discussion of key-preserved tables, are presented in following sections. The examples in these sections work only if you explicitly define the primary and foreign keys in the tables, or define unique indexes. The following statements create the appropriately constrained table definitions for <code>emp</code> and <code>dept</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE TABLE dept (
+      deptno        NUMBER(4) PRIMARY KEY,
+      dname         VARCHAR2(14),
+      loc           VARCHAR2(13));
+ 
+CREATE TABLE emp (
+      empno        NUMBER(4) PRIMARY KEY,
+      ename        VARCHAR2(10),
+      job          VARCHAR2(9),
+      mgr          NUMBER(4),
+      sal          NUMBER(7,2),
+      comm         NUMBER(7,2),
+      deptno       NUMBER(2),
+      FOREIGN KEY (DEPTNO) REFERENCES DEPT(DEPTNO));
+
+</pre>
+<p>You could also omit the primary and foreign key constraints listed in the preceding example, and create a <code>UNIQUE INDEX</code> on <code>dept (deptno)</code> to make the following examples work.</p>
+<p>The following statement created the <code>emp_dept</code> join view which is referenced in the examples:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_dept AS
+      SELECT emp.empno, emp.ename, emp.deptno, emp.sal, dept.dname, dept.loc
+      FROM emp, dept
+      WHERE emp.deptno = dept.deptno
+         AND dept.loc IN ('DALLAS', 'NEW YORK', 'BOSTON');
+</pre>
+<a id="i1006318" name="i1006318"></a>
+<div class="sect3"><a id="sthref3058" name="sthref3058"></a>
+<h4 class="sect3">Key-Preserved Tables</h4>
+<p>The concept of a <span class="bold">key-preserved table</span> is fundamental to understanding the restrictions on modifying join views. A table is key-preserved if every key of the table can also be a key of the result of the join. So, a key-preserved table has its keys preserved<a id="sthref3059" name="sthref3059"></a> through<a id="sthref3060" name="sthref3060"></a> a <a id="sthref3061" name="sthref3061"></a>join.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+It is not necessary that the key or keys of a table be selected for it to be key preserved. It is sufficient that if the key or keys were selected, then they would also be keys of the result of the join.</div>
+<p>The key-preserving property of a table does not depend on the actual data in the table. It is, rather, a property of its schema. For example, if in the <code>emp</code> table there was at most one employee in each department, then <code>deptno</code> would be unique in the result of a join of <code>emp</code> and <code>dept</code>, but <code>dept</code> would still not be a key-preserved table.</p>
+<p>If you select all rows from <code>emp_dept</code>, the results are:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EMPNO      ENAME      DEPTNO  DNAME          LOC 
+---------- ---------- ------- -------------- -----------
+      7782 CLARK           10 ACCOUNTING     NEW YORK
+      7839 KING            10 ACCOUNTING     NEW YORK
+      7934 MILLER          10 ACCOUNTING     NEW YORK
+      7369 SMITH           20 RESEARCH       DALLAS
+      7876 ADAMS           20 RESEARCH       DALLAS
+      7902 FORD            20 RESEARCH       DALLAS
+      7788 SCOTT           20 RESEARCH       DALLAS
+      7566 JONES           20 RESEARCH       DALLAS
+8 rows selected.
+
+</pre>
+<p>In this view, <code>emp</code> is a key-preserved table, because <code>empno</code> is a key of the <code>emp</code> table, and also a key of the result of the join. <code>dept</code> is <span class="italic">not</span> a key-preserved table, because although <code>deptno</code> is a key of the <code>dept</code> table, it is not a key of the join.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref3062" name="sthref3062"></a>
+<h4 class="sect3">DML Statements and Join Views<a id="sthref3063" name="sthref3063"></a></h4>
+<p>The general rule is that any <code>UPDATE</code>, <code>DELETE</code>, or <code>INSERT</code> statement on a join view can modify only one underlying base table. The following examples illustrate rules specific to <code>UPDATE</code>, <code>DELETE</code>, and <code>INSERT</code> statements.</p>
+<div class="sect4"><a id="sthref3064" name="sthref3064"></a>
+<h5 class="sect4">UPDATE Statements</h5>
+<p>The following example shows an <code>UPDATE</code> statement that successfully modifies the <code>emp_dept</code> view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+UPDATE emp_dept
+     SET sal = sal * 1.10 
+     WHERE deptno = 10;
+
+</pre>
+<p>The following <code>UPDATE</code> statement would be disallowed on the <code>emp_dept</code> view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+UPDATE emp_dept
+     SET loc = 'BOSTON'
+     WHERE ename = 'SMITH';
+
+</pre>
+<p>This statement fails with an error (<code>ORA-01779</code> <code>cannot modify a column which maps to a non key-preserved table</code>), because it attempts to modify the base <code>dept</code> table, and the <code>dept</code> table is not key-preserved in the <code>emp_dept</code> view.</p>
+<p>In general, all updatable columns of a join view must map to columns of a key-preserved table. If the view is defined using the <code>WITH CHECK OPTION</code> clause, then all join columns and all columns taken from tables that are referenced more than once in the view are not modifiable.</p>
+<p>So, for example, if the <code>emp_dept</code> view were defined using <code>WITH CHECK OPTION</code>, the following <code>UPDATE</code> statement would fail:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+UPDATE emp_dept
+     SET deptno = 10
+     WHERE ename = 'SMITH';
+
+</pre>
+<p>The statement fails because it is trying to update a join column.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF01708" href="../../server.102/b14200/statements_10007.htm#SQLRF01708">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>UPDATE</code> statement</div>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref3065" name="sthref3065"></a>
+<h5 class="sect4">DELETE Statements <a id="sthref3066" name="sthref3066"></a></h5>
+<p>You can delete from a join view provided there is <span class="italic">one and only one</span> key-preserved table in the join. The key-preserved table can be repeated in the <code>FROM</code> clause.</p>
+<p>The following <code>DELETE</code> statement works on the <code>emp_dept</code> view:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DELETE FROM emp_dept
+     WHERE ename = 'SMITH';
+
+</pre>
+<p>This <code>DELETE</code> statement on the <code>emp_dept</code> view is legal because it can be translated to a <code>DELETE</code> operation on the base <code>emp</code> table, and because the <code>emp</code> table is the only key-preserved table in the join.</p>
+<p>In the following view, a <code>DELETE</code> operation is permitted, because although there are two key-preserved tables, they are the same table. That is, the key-preserved table is repeated. In this case, the delete statement operates on the first table in the <code>FROM</code> list (<code>e1</code>, in this example):</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_emp AS
+     SELECT e1.ename, e2.empno, e2.deptno
+     FROM emp e1, emp e2
+     WHERE e1.empno = e2.empno;
+
+</pre>
+<p>If a view is defined using the <code>WITH CHECK OPTION</code> clause and the key-preserved table is repeated, rows cannot be deleted from such a view.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_mgr AS
+     SELECT e1.ename, e2.ename mname
+     FROM emp e1, emp e2
+     WHERE e1.mgr = e2.empno
+     WITH CHECK OPTION;
+</pre>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF01505" href="../../server.102/b14200/statements_8005.htm#SQLRF01505">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>DELETE</code> statement</div>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref3067" name="sthref3067"></a>
+<h5 class="sect4">INSERT Statements</h5>
+<p>The following <code>INSERT</code> statement on the <code>emp_dept</code> view succeeds:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO emp_dept (ename, empno, deptno)
+   VALUES ('KURODA', 9010, 40);
+
+</pre>
+<p>This statement works because only one key-preserved base table is being modified (<code>emp</code>), and 40 is a valid <code>deptno</code> in the <code>dept</code> table (thus satisfying the <code>FOREIGN KEY</code> integrity constraint on the <code>emp</code> table).</p>
+<p>An <code>INSERT</code> statement, such as the following, would fail for the same reason that such an <code>UPDATE</code> on the base <code>emp</code> table would fail: the <code>FOREIGN KEY</code> integrity constraint on the <code>emp</code> table is violated (because there is no <code>deptno</code> 77).</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO emp_dept (ename, empno, deptno)
+   VALUES ('KURODA', 9010, 77);
+
+</pre>
+<p>The following <code>INSERT</code> statement would fail with an error (<code>ORA-01776</code> <code>cannot modify more than one base table through a join view</code>):</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO emp_dept (empno, ename, loc)
+   VALUES (9010, 'KURODA', 'BOSTON');
+
+</pre>
+<p>An <code>INSERT</code> cannot implicitly or explicitly refer to columns of a non-key-preserved table. If the join view is defined using the <code>WITH CHECK OPTION</code> clause, then you cannot perform an <code>INSERT</code> to it.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF01604" href="../../server.102/b14200/statements_9014.htm#SQLRF01604">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>INSERT</code> statement</div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref3068" name="sthref3068"></a>
+<h4 class="sect3">Updating Views That Involve Outer Joins <a id="sthref3069" name="sthref3069"></a></h4>
+<p>Views that involve outer joins are modifiable in some cases. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_dept_oj1 AS
+    SELECT empno, ename, e.deptno, dname, loc
+    FROM emp e, dept d
+    WHERE e.deptno = d.deptno (+);
+
+</pre>
+<p>The statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM emp_dept_oj1;
+
+</pre>
+<p>Results in:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EMPNO   ENAME      DEPTNO  DNAME          LOC         
+------- ---------- ------- -------------- -------------
+7369    SMITH      40      OPERATIONS     BOSTON       
+7499    ALLEN      30      SALES          CHICAGO      
+7566    JONES      20      RESEARCH       DALLAS       
+7654    MARTIN     30      SALES          CHICAGO      
+7698    BLAKE      30      SALES          CHICAGO      
+7782    CLARK      10      ACCOUNTING     NEW YORK     
+7788    SCOTT      20      RESEARCH       DALLAS       
+7839    KING       10      ACCOUNTING     NEW YORK     
+7844    TURNER     30      SALES          CHICAGO      
+7876    ADAMS      20      RESEARCH       DALLAS       
+7900    JAMES      30      SALES          CHICAGO      
+7902    FORD       20      RESEARCH       DALLAS       
+7934    MILLER     10      ACCOUNTING     NEW YORK     
+7521    WARD       30      SALES          CHICAGO      
+14 rows selected.
+
+</pre>
+<p>Columns in the base <code>emp</code> table of <code>emp_dept_oj1</code> are modifiable through the view, because <code>emp</code> is a key-preserved table in the join.</p>
+<p>The following view also contains an outer join: <a id="sthref3070" name="sthref3070"></a><a id="sthref3071" name="sthref3071"></a></p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_dept_oj2 AS
+SELECT e.empno, e.ename, e.deptno, d.dname, d.loc
+FROM emp e, dept d
+WHERE e.deptno (+) = d.deptno;
+
+</pre>
+<p>The following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM emp_dept_oj2;
+
+</pre>
+<p>Results in:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EMPNO      ENAME      DEPTNO    DNAME          LOC
+---------- ---------- --------- -------------- ----
+7782       CLARK      10        ACCOUNTING     NEW YORK
+7839       KING       10        ACCOUNTING     NEW YORK
+7934       MILLER     10        ACCOUNTING     NEW YORK
+7369       SMITH      20        RESEARCH       DALLAS
+7876       ADAMS      20        RESEARCH       DALLAS
+7902       FORD       20        RESEARCH       DALLAS
+7788       SCOTT      20        RESEARCH       DALLAS 
+7566       JONES      20        RESEARCH       DALLAS
+7499       ALLEN      30        SALES          CHICAGO
+7698       BLAKE      30        SALES          CHICAGO
+7654       MARTIN     30        SALES          CHICAGO
+7900       JAMES      30        SALES          CHICAGO
+7844       TURNER     30        SALES          CHICAGO
+7521       WARD       30        SALES          CHICAGO
+                                OPERATIONS     BOSTON
+15 rows selected.
+
+</pre>
+<p>In this view, <code>emp</code> is no longer a key-preserved table, because the <code>empno</code> column in the result of the join can have nulls (the last row in the preceding <code>SELECT</code> statement). So, <code>UPDATE</code>, <code>DELETE</code>, and <code>INSERT</code> operations cannot be performed on this view.</p>
+<p>In the case of views containing an outer join on other nested views, a table is key preserved if the view or views containing the table are merged into their outer views, all the way to the top. A view which is being outer-joined is currently merged only if it is "simple." For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT col1, col2, ... FROM T;
+
+</pre>
+<p>The select list of the view has no expressions, and there is no <code>WHERE</code> clause.</p>
+<p>Consider the following set of views:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_v AS
+    SELECT empno, ename, deptno
+        FROM emp;
+CREATE VIEW emp_dept_oj1 AS
+    SELECT e.*, Loc, d.dname
+        FROM emp_v e, dept d
+            WHERE e.deptno = d.deptno (+);
+
+</pre>
+<p>In these examples, <code>emp_v</code> is merged into <code>emp_dept_oj1</code> because <code>emp_v</code> is a simple view, and so <code>emp</code> is a key-preserved table. But if <code>emp_v</code> is changed as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE VIEW emp_v_2 AS
+    SELECT empno, ename, deptno
+        FROM emp
+            WHERE sal &gt; 1000;
+
+</pre>
+<p>Then, because of the presence of the <code>WHERE</code> clause, <code>emp_v_2</code> cannot be merged into <code>emp_dept_oj1</code>, and hence <code>emp</code> is no longer a key-preserved table.</p>
+<p>If you are in doubt whether a view is modifiable, then you can select from the <code>USER_UPDATABLE_COLUMNS</code> view to see if it is. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT owner, table_name, column_name, updatable FROM USER_UPDATABLE_COLUMNS 
+     WHERE TABLE_NAME = 'EMP_DEPT_VIEW';
+
+</pre>
+<p>This returns output similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+OWNER       TABLE_NAME      COLUMN_NAM      UPD
+----------  ----------      ----------      ---
+SCOTT       EMP_DEPT_V      EMPNO           NO
+SCOTT       EMP_DEPT_V      ENAME           NO
+SCOTT       EMP_DEPT_V      DEPTNO          NO
+SCOTT       EMP_DEPT_V      DNAME           NO
+SCOTT       EMP_DEPT_V      LOC             NO
+5 rows selected.
+</pre></div>
+<!-- class="sect3" -->
+<a id="i1006433" name="i1006433"></a>
+<div class="sect3"><a id="sthref3072" name="sthref3072"></a>
+<h4 class="sect3">Using the UPDATABLE_ COLUMNS Views</h4>
+<p>The views described in the following table can assist you to identify inherently updatable join views.</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" title="Viewing Information About Updatable Join Views" summary="Column 1 lists views that are useful for identifying inherently updatable join views, column 2 describes each view." dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11">View</th>
+<th align="left" valign="bottom" id="r1c2-t11">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11"><code>DBA_UPDATABLE_COLUMNS</code></td>
+<td align="left" headers="r2c1-t11 r1c2-t11">Shows all columns in all tables and views that are modifiable.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11"><code>ALL_UPDATABLE_COLUMNS</code></td>
+<td align="left" headers="r3c1-t11 r1c2-t11">Shows all columns in all tables and views accessible to the user that are modifiable.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11"><code>USER_UPDATABLE_COLUMNS</code></td>
+<td align="left" headers="r4c1-t11 r1c2-t11">Shows all columns in all tables and views in the user's schema that are modifiable.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal -->
+<p>The updatable columns in view <code>emp_dept</code> are shown below.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT COLUMN_NAME, UPDATABLE
+      FROM USER_UPDATABLE_COLUMNS
+      WHERE TABLE_NAME = 'EMP_DEPT';
+
+COLUMN_NAME                    UPD
+------------------------------ ---
+EMPNO                          YES
+ENAME                          YES
+DEPTNO                         YES
+SAL                            YES
+DNAME                          NO
+LOC                            NO
+
+6 rows selected.
+</pre>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink REFRN" href="../../server.102/b14237/toc.htm">Oracle Database Reference</a></span> for complete descriptions of the updatable column views</div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="i1106481" name="i1106481"></a>
+<div class="sect2"><a id="sthref3073" name="sthref3073"></a>
+<h3 class="sect2">Altering Views</h3>
+<p>You use the <code>ALTER VIEW</code> statement only to explicitly recompile a view that is invalid. If you want to change the definition of a view, see <a href="#i1006887">"Replacing Views"</a>.</p>
+<p>The <code>ALTER VIEW</code> statement lets you locate recompilation errors before run time. To ensure that the alteration does not affect the view or other objects that depend on it, you can explicitly recompile a view after altering one of its base tables.</p>
+<p>To use the <code>ALTER VIEW</code> statement, the view must be in your schema, or you must have the <code>ALTER ANY TABLE</code> system privilege.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF01104" href="../../server.102/b14200/statements_4004.htm#SQLRF01104">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>ALTER VIEW</code> statement</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1006502" name="i1006502"></a>
+<div class="sect2"><a id="sthref3074" name="sthref3074"></a>
+<h3 class="sect2">Dropping Views</h3>
+<p><a id="sthref3075" name="sthref3075"></a>You can drop any view contained in your schema. To drop a view in another user's schema, you must have the <code>DROP ANY VIEW</code> system privilege. Drop a view using the <code>DROP VIEW</code> statement. For example, the following statement drops the <code>emp_dept</code> view:<a id="sthref3076" name="sthref3076"></a></p>
+<pre xml:space="preserve" class="oac_no_warn">
+DROP VIEW emp_dept;
+</pre>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF016" href="../../server.102/b14200/statements_9.htm#SQLRF016">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>DROP VIEW</code> statement</div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1106548" name="i1106548"></a>
+<div class="sect1"><a id="sthref3077" name="sthref3077"></a>
+<h2 class="sect1">Managing Sequences</h2>
+<p>This section describes aspects of managing sequences, and contains the following topics:</p>
+<ul>
+<li>
+<p><a href="#i1107995">About Sequences</a></p>
+</li>
+<li>
+<p><a href="#i1006575">Creating Sequences</a></p>
+</li>
+<li>
+<p><a href="#i1006623">Altering Sequences</a></p>
+</li>
+<li>
+<p><a href="#i1007824">Using Sequences</a></p>
+</li>
+<li>
+<p><a href="#i1006644">Dropping Sequences</a></p>
+</li>
+</ul>
+<a id="i1107995" name="i1107995"></a>
+<div class="sect2"><a id="sthref3078" name="sthref3078"></a>
+<h3 class="sect2">About Sequences</h3>
+<p><span class="bold"><a id="sthref3079" name="sthref3079"></a><a id="sthref3080" name="sthref3080"></a>Sequences</span> are database objects from which multiple users can generate unique integers. The sequence generator generates sequential numbers, which can help to generate unique primary keys automatically, and to coordinate keys across multiple rows or tables.</p>
+<p>Without sequences, sequential values can only be produced programmatically. A new primary key value can be obtained by selecting the most recently produced value and incrementing it. This method requires a lock during the transaction and causes multiple users to wait for the next value of the primary key; this waiting is known as <span class="bold">serialization</span>. If developers have such constructs in applications, then you should encourage the developers to replace them with access to sequences. Sequences eliminate serialization and improve the concurrency of an application.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink CNCPT611" href="../../server.102/b14220/schema.htm#CNCPT611">Oracle Database Concepts</a></span> for a more complete description of sequences</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1006575" name="i1006575"></a>
+<div class="sect2"><a id="sthref3081" name="sthref3081"></a>
+<h3 class="sect2">Creating Sequences</h3>
+<p><a id="sthref3082" name="sthref3082"></a>To create a sequence in your schema, you must have the <code>CREATE SEQUENCE</code> system privilege. To create a sequence in another user's schema, you must have the <code>CREATE ANY SEQUENCE</code> privilege.</p>
+<p><a id="sthref3083" name="sthref3083"></a>Create a sequence using the <code>CREATE SEQUENCE</code> statement. For example, the following statement creates a sequence used to generate employee numbers for the <code>empno</code> column of the <code>emp</code> table:<a id="sthref3084" name="sthref3084"></a><a id="sthref3085" name="sthref3085"></a><a id="sthref3086" name="sthref3086"></a></p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE SEQUENCE emp_sequence
+      INCREMENT BY 1
+      START WITH 1
+      NOMAXVALUE
+      NOCYCLE
+      CACHE 10;
+
+</pre>
+<p>Notice that several parameters can be specified to control the function of sequences. You can use these parameters to indicate whether the sequence is ascending or descending, the starting point of the sequence, the minimum and maximum values, and the interval between sequence values. The <code>NOCYCLE</code> option indicates that the sequence cannot generate more values after reaching its maximum or minimum value.</p>
+<p>The <code>CACHE</code> clause preallocates a set of sequence numbers and keeps them in memory so that sequence numbers can be accessed faster. When the last of the sequence numbers in the cache has been used, the database reads another set of numbers into the cache.</p>
+<p>The database might skip sequence numbers if you choose to cache a set of sequence numbers. For example, when an instance abnormally shuts down (for example, when an instance failure occurs or a <code>SHUTDOWN ABORT</code> statement is issued), sequence numbers that have been cached but not used are lost. Also, sequence numbers that have been used but not saved are lost as well. The database might also skip cached sequence numbers after an export and import. See <span class="italic"><a class="olink SUTIL" href="../../server.102/b14215/toc.htm">Oracle Database Utilities</a></span> for details.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<ul>
+<li>
+<p><span class="italic"><a class="olink SQLRF01314" href="../../server.102/b14200/statements_6015.htm#SQLRF01314">Oracle Database SQL Reference</a></span> for the <code>CREATE SEQUENCE</code> statement syntax</p>
+</li>
+<li>
+<p><span class="italic"><a class="olink RACDP" href="http://www.oracle.com/pls/topic/lookup?ctx=db102&amp;id=RACDP">Oracle Real Application Clusters Deployment and Performance Guide</a></span><a id="sthref3087" name="sthref3087"></a><a id="sthref3088" name="sthref3088"></a> for information about how caching sequence numbers improves performance in an Oracle Real Application Clusters environment</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1006623" name="i1006623"></a>
+<div class="sect2"><a id="sthref3089" name="sthref3089"></a>
+<h3 class="sect2">Altering Sequences</h3>
+<p>To alter a sequence, your schema must contain the sequence, or you must have the <code>ALTER ANY SEQUENCE</code> system privilege.<a id="sthref3090" name="sthref3090"></a> You can alter a sequence to change any of the parameters that define how it generates sequence numbers except the sequence starting number. To change the starting point of a sequence, drop the sequence and then re-create it.</p>
+<p><a id="sthref3091" name="sthref3091"></a>Alter a sequence using the <code>ALTER SEQUENCE</code> statement. For example, the following statement alters the <code>emp_sequence</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SEQUENCE emp_sequence
+    INCREMENT BY 10
+    MAXVALUE 10000
+    CYCLE
+    CACHE 20;
+</pre>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF00817" href="../../server.102/b14200/statements_2011.htm#SQLRF00817">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>ALTER SEQUENCE</code> statement</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1007824" name="i1007824"></a>
+<div class="sect2"><a id="sthref3092" name="sthref3092"></a>
+<h3 class="sect2">Using Sequences</h3>
+<p>To use a sequence, your schema must contain the sequence or you must have been granted the <code>SELECT</code> object privilege for another user's sequence.<a id="sthref3093" name="sthref3093"></a> Once a sequence is defined, it can be accessed and incremented by multiple users (who have <code>SELECT</code> object privilege for the sequence containing the sequence) with no waiting. The database does not wait for a transaction that has incremented a sequence to complete before that sequence can be incremented again. <a id="sthref3094" name="sthref3094"></a></p>
+<p>The examples outlined in the following sections show how sequences can be used in master/detail table relationships. Assume an order entry system is partially comprised of two tables, <code>orders_tab</code> (master table) and <code>line_items_tab</code> (detail table), that hold information about customer orders. A sequence named <code>order_seq</code> is defined by the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE SEQUENCE Order_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOMAXVALUE
+    NOCYCLE
+    CACHE 20;
+</pre>
+<div class="sect3"><a id="sthref3095" name="sthref3095"></a>
+<h4 class="sect3">Referencing a Sequence</h4>
+<p>A sequence is referenced in SQL statements with the <code>NEXTVAL</code> and <code>CURRVAL</code> pseudocolumns; each new sequence number is generated by a reference to the sequence pseudocolumn <code>NEXTVAL</code>, while the current sequence number can be repeatedly referenced using the pseudo-column <code>CURRVAL</code>. <a id="sthref3096" name="sthref3096"></a><a id="sthref3097" name="sthref3097"></a></p>
+<p><code>NEXTVAL</code> and <code>CURRVAL</code> are not reserved words or keywords and can be used as pseudocolumn names in SQL statements such as <code>SELECT</code>, <code>INSERT</code>, or <code>UPDATE</code>.</p>
+<div class="sect4"><a id="sthref3098" name="sthref3098"></a>
+<h5 class="sect4">Generating Sequence Numbers with NEXTVAL <a id="sthref3099" name="sthref3099"></a><a id="sthref3100" name="sthref3100"></a></h5>
+<p>To generate and use a sequence number, reference <span class="italic">seq_name</span>.<code>NEXTVAL</code>. For example, assume a customer places an order. The sequence number can be referenced in a values list. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO Orders_tab (Orderno, Custno)
+    VALUES (Order_seq.NEXTVAL, 1032);
+
+</pre>
+<p>Or, the sequence number can be referenced in the <code>SET</code> clause of an <code>UPDATE</code> statement. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+UPDATE Orders_tab
+    SET Orderno = Order_seq.NEXTVAL
+    WHERE Orderno = 10112;
+
+</pre>
+<p>The sequence number can also be referenced outermost <code>SELECT</code> of a query or subquery. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT Order_seq.NEXTVAL FROM dual;
+
+</pre>
+<p>As defined, the first reference to <code>order_seq.NEXTVAL</code> returns the value 1. Each subsequent statement that references <code>order_seq.NEXTVAL</code> generates the next sequence number (2, 3, 4,. . .). The pseudo-column <code>NEXTVAL</code> can be used to generate as many new sequence numbers as necessary. However, only a single sequence number can be generated for each row. In other words, if <code>NEXTVAL</code> is referenced more than once in a single statement, then the first reference generates the next number, and all subsequent references in the statement return the same number.</p>
+<p>Once a sequence number is generated, the sequence number is available only to the session that generated the number. Independent of transactions committing or rolling back, other users referencing <code>order_seq.NEXTVAL</code> obtain unique values. If two users are accessing the same sequence concurrently, then the sequence numbers each user receives might have gaps because sequence numbers are also being generated by the other user.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref3101" name="sthref3101"></a>
+<h5 class="sect4">Using Sequence Numbers with CURRVAL</h5>
+<p><a id="sthref3102" name="sthref3102"></a>To use or refer to the current sequence value of your session, reference <span class="italic">seq_name</span>.<code>CURRVAL</code>. <code>CURRVAL</code> can only be used if <span class="italic">seq_name</span>.<code>NEXTVAL</code> has been referenced in the current user session (in the current or a previous transaction). <code>CURRVAL</code> can be referenced as many times as necessary, including multiple times within the same statement. The next sequence number is not generated until <code>NEXTVAL</code> is referenced. Continuing with the previous example, you would finish placing the customer's order by inserting the line items for the order:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO Line_items_tab (Orderno, Partno, Quantity)
+    VALUES (Order_seq.CURRVAL, 20321, 3);
+
+INSERT INTO Line_items_tab (Orderno, Partno, Quantity)
+    VALUES (Order_seq.CURRVAL, 29374, 1);
+
+</pre>
+<p>Assuming the <code>INSERT</code> statement given in the previous section generated a new sequence number of 347, both rows inserted by the statements in this section insert rows with order numbers of 347.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref3103" name="sthref3103"></a>
+<h5 class="sect4">Uses and Restrictions of NEXTVAL and CURRVAL <a id="sthref3104" name="sthref3104"></a><a id="sthref3105" name="sthref3105"></a></h5>
+<p><code>CURRVAL</code> and <code>NEXTVAL</code> can be used in the following places:</p>
+<ul>
+<li>
+<p><code>VALUES</code> clause of <code>INSERT</code> statements</p>
+</li>
+<li>
+<p>The <code>SELECT</code> list of a <code>SELECT</code> statement</p>
+</li>
+<li>
+<p>The <code>SET</code> clause of an <code>UPDATE</code> statement</p>
+</li>
+</ul>
+<p><code>CURRVAL</code> and <code>NEXTVAL</code> cannot be used in these places:</p>
+<ul>
+<li>
+<p>A subquery</p>
+</li>
+<li>
+<p>A view query or materialized view query</p>
+</li>
+<li>
+<p>A <code>SELECT</code> statement with the <code>DISTINCT</code> operator</p>
+</li>
+<li>
+<p>A <code>SELECT</code> statement with a <code>GROUP</code> <code>BY</code> or <code>ORDER</code> <code>BY</code> clause</p>
+</li>
+<li>
+<p>A <code>SELECT</code> statement that is combined with another <code>SELECT</code> statement with the <code>UNION,</code> <code>INTERSECT</code>, or <code>MINUS</code> set operator</p>
+</li>
+<li>
+<p>The <code>WHERE</code> clause of a <code>SELECT</code> statement</p>
+</li>
+<li>
+<p><code>DEFAULT</code> value of a column in a <code>CREATE</code> <code>TABLE</code> or <code>ALTER</code> <code>TABLE</code> statement</p>
+</li>
+<li>
+<p>The condition of a <code>CHECK</code> constraint</p>
+</li>
+</ul>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="i1007674" name="i1007674"></a>
+<div class="sect3"><a id="sthref3106" name="sthref3106"></a>
+<h4 class="sect3">Caching Sequence Numbers <a id="sthref3107" name="sthref3107"></a><a id="sthref3108" name="sthref3108"></a></h4>
+<p>Sequence numbers can be kept in the sequence cache in the System Global Area (SGA). Sequence numbers can be accessed more quickly in the sequence cache than they can be read from disk.</p>
+<p>The sequence cache consists of entries. Each entry can hold many sequence numbers for a single sequence.</p>
+<p>Follow these guidelines for fast access to all sequence numbers:</p>
+<ul>
+<li>
+<p>Be sure the sequence cache can hold all the sequences used concurrently by your applications.</p>
+</li>
+<li>
+<p>Increase the number of values for each sequence held in the sequence cache.</p>
+</li>
+</ul>
+<div class="sect4"><a id="sthref3109" name="sthref3109"></a>
+<h5 class="sect4">The Number of Entries in the Sequence Cache</h5>
+<p>When an application accesses a sequence in the sequence cache, the sequence numbers are read quickly. However, if an application accesses a sequence that is not in the cache, then the sequence must be read from disk to the cache before the sequence numbers are used.</p>
+<p>If your applications use many sequences concurrently, then your sequence cache might not be large enough to hold all the sequences. In this case, access to sequence numbers might often require disk reads. For fast access to all sequences, be sure your cache has enough entries to hold all the sequences used concurrently by your applications.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref3110" name="sthref3110"></a>
+<h5 class="sect4"><a id="sthref3111" name="sthref3111"></a>The Number of Values in Each Sequence Cache Entry</h5>
+<p>When a sequence is read into the sequence cache, sequence values are generated and stored in a cache entry. These values can then be accessed quickly. The number of sequence values stored in the cache is determined by the <code>CACHE<a id="sthref3112" name="sthref3112"></a></code> parameter in the <code>CREATE</code> <code>SEQUENCE</code><a id="sthref3113" name="sthref3113"></a> statement. The default value for this parameter is 20.</p>
+<p>This <code>CREATE</code> <code>SEQUENCE<a id="sthref3114" name="sthref3114"></a></code> statement creates the <code>seq2</code> sequence so that 50 values of the sequence are stored in the <code>SEQUENCE</code> cache<a id="sthref3115" name="sthref3115"></a><a id="sthref3116" name="sthref3116"></a>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE SEQUENCE seq2
+    CACHE 50<span class="bold">;</span>
+
+</pre>
+<p>The first 50 values of <code>seq2</code> can then be read from the cache. When the 51st value is accessed, the next 50 values will be read from disk.</p>
+<p>Choosing a high value for <code>CACHE</code> lets you access more successive sequence numbers with fewer reads from disk to the sequence cache. However, if there is an instance failure, then all sequence values in the cache are lost. Cached sequence numbers also could be skipped after an export and import if transactions continue to access the sequence numbers while the export is running.</p>
+<p>If you use the <code>NOCACHE<a id="sthref3117" name="sthref3117"></a></code> option in the <code>CREATE</code> <code>SEQUENCE<a id="sthref3118" name="sthref3118"></a></code> statement, then the values of the sequence are not stored in the sequence cache. In this case, every access to the sequence requires a disk read. Such disk reads slow access to the sequence. This <code>CREATE</code> <code>SEQUENCE</code> statement creates the <code>SEQ3</code> sequence so that its values are never stored in the cache:<a id="sthref3119" name="sthref3119"></a><a id="sthref3120" name="sthref3120"></a></p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE SEQUENCE seq3
+    NOCACHE;
+</pre></div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="i1006644" name="i1006644"></a>
+<div class="sect2"><a id="sthref3121" name="sthref3121"></a>
+<h3 class="sect2">Dropping Sequences</h3>
+<p><a id="sthref3122" name="sthref3122"></a>You can drop any sequence in your schema. To drop a sequence in another schema, you must have the <code>DROP ANY SEQUENCE</code> system privilege.<a id="sthref3123" name="sthref3123"></a> If a sequence is no longer required, you can drop the sequence using the <code>DROP SEQUENCE</code> statement. For example, the following statement drops the <code>order_seq</code> sequence:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DROP SEQUENCE order_seq;
+
+</pre>
+<p>When a sequence is dropped, its definition is removed from the data dictionary. Any synonyms for the sequence remain, but return an error when referenced.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF016" href="../../server.102/b14200/statements_9.htm#SQLRF016">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>DROP SEQUENCE</code> statement</div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1106663" name="i1106663"></a>
+<div class="sect1"><a id="sthref3124" name="sthref3124"></a>
+<h2 class="sect1">Managing Synonyms</h2>
+<p>This section describes aspects of managing synonyms, and contains the following topics:</p>
+<ul>
+<li>
+<p><a href="#i1008031">About Synonyms</a></p>
+</li>
+<li>
+<p><a href="#i1006692">Creating Synonyms</a></p>
+</li>
+<li>
+<p><a href="#i1007877">Using Synonyms in DML Statements</a></p>
+</li>
+<li>
+<p><a href="#i1106711">Dropping Synonyms</a></p>
+</li>
+</ul>
+<a id="i1008031" name="i1008031"></a>
+<div class="sect2"><a id="sthref3125" name="sthref3125"></a>
+<h3 class="sect2">About Synonyms</h3>
+<p><a id="sthref3126" name="sthref3126"></a><a id="sthref3127" name="sthref3127"></a><a id="sthref3128" name="sthref3128"></a><a id="sthref3129" name="sthref3129"></a><a id="sthref3130" name="sthref3130"></a><a id="sthref3131" name="sthref3131"></a>A synonym is an alias for a schema object. Synonyms can provide a level of security by masking the name and owner of an object and by providing location transparency for remote objects of a distributed database. Also, they are convenient to use and reduce the complexity of SQL statements for database users.</p>
+<p>Synonyms allow underlying objects to be renamed or moved, where only the synonym needs to be redefined and applications based on the synonym continue to function without modification.</p>
+<p>You can create both public and private synonyms. A <span class="bold">public</span> synonym is owned by the special user group named <code>PUBLIC</code> and is accessible to every user in a database. A <span class="bold">private</span> synonym is contained in the schema of a specific user and available only to the user and the user's grantees.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink CNCPT711" href="../../server.102/b14220/schema.htm#CNCPT711">Oracle Database Concepts</a></span> for a more complete description of synonyms</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1006692" name="i1006692"></a>
+<div class="sect2"><a id="sthref3132" name="sthref3132"></a>
+<h3 class="sect2">Creating Synonyms</h3>
+<p><a id="sthref3133" name="sthref3133"></a>To create a private synonym in your own schema, you must have the <code>CREATE SYNONYM</code> privilege. To create a private synonym in another user's schema, you must have the <code>CREATE ANY SYNONYM</code> privilege. To create a public synonym, you must have the <code>CREATE PUBLIC SYNONYM</code> system privilege.<a id="sthref3134" name="sthref3134"></a><a id="sthref3135" name="sthref3135"></a><a id="sthref3136" name="sthref3136"></a></p>
+<p>Create a synonym using the <code>CREATE SYNONYM</code> statement. The underlying schema object need not exist, nor do you need privileges to access the object. The following statement creates a public synonym named <code>public_emp</code> on the <code>emp</code> table contained in the schema of <code>jward</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE PUBLIC SYNONYM public_emp FOR jward.emp
+
+</pre>
+<p>When you create a synonym for a remote procedure or function, you must qualify the remote object with its schema name. Alternatively, you can create a local public synonym on the database where the remote object resides, in which case the database link must be included in all subsequent calls to the procedure or function.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF01401" href="../../server.102/b14200/statements_7001.htm#SQLRF01401">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>CREATE SYNONYM</code> statement</div>
+</div>
+<!-- class="sect2" -->
+<a id="i1007877" name="i1007877"></a>
+<div class="sect2"><a id="sthref3137" name="sthref3137"></a>
+<h3 class="sect2">Using Synonyms in DML Statements <a id="sthref3138" name="sthref3138"></a></h3>
+<p>You can successfully use any private synonym contained in your schema or any public synonym, assuming that you have the necessary privileges to access the underlying object, either explicitly, from an enabled role, or from <code>PUBLIC</code>. You can also reference any private synonym contained in another schema if you have been granted the necessary object privileges for the private synonym.</p>
+<p>You can only reference another user's synonym using the object privileges that you have been granted. For example, if you have the <code>SELECT</code> privilege for the <code>jward</code>.<code>emp</code> synonym, then you can query the <code>jward</code>.<code>emp</code> synonym, but you cannot insert rows using the <code>jward</code>.<code>emp</code> synonym.</p>
+<p>A synonym can be referenced in a DML statement the same way that the underlying object of the synonym can be referenced. For example, if a synonym named <code>emp</code> refers to a table or view, then the following statement is valid:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+INSERT INTO emp (empno, ename, job)
+    VALUES (emp_sequence.NEXTVAL, 'SMITH', 'CLERK');
+
+</pre>
+<p>If the synonym named <code>fire_emp</code> refers to a standalone procedure or package procedure, then you could execute it with the command</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXECUTE Fire_emp(7344);
+</pre></div>
+<!-- class="sect2" -->
+<a id="i1106711" name="i1106711"></a>
+<div class="sect2"><a id="sthref3139" name="sthref3139"></a>
+<h3 class="sect2">Dropping Synonyms</h3>
+<p><a id="sthref3140" name="sthref3140"></a>You can drop any private synonym in your own schema. To drop a private synonym in another user's schema, you must have the <code>DROP ANY SYNONYM</code> system privilege. To drop a public synonym, you must have the <code>DROP PUBLIC SYNONYM</code> system privilege.</p>
+<p><a id="sthref3141" name="sthref3141"></a><a id="sthref3142" name="sthref3142"></a>Drop a synonym that is no longer required using <code>DROP SYNONYM</code> statement. To drop a private synonym, omit the <code>PUBLIC</code> keyword. To drop a public synonym, include the <code>PUBLIC</code> keyword.</p>
+<p>For example, the following statement drops the private synonym named <code>emp</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DROP SYNONYM emp;
+
+</pre>
+<p>The following statement drops the public synonym named <code>public_emp</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DROP PUBLIC SYNONYM public_emp;
+
+</pre>
+<p>When you drop a synonym, its definition is removed from the data dictionary. All objects that reference a dropped synonym remain. However, they become invalid (not usable). For more information about how dropping synonyms can affect other schema objects, see <a href="general.htm#i1006919">"Managing Object Dependencies"</a><a id="sthref3143" name="sthref3143"></a>.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink SQLRF016" href="../../server.102/b14200/statements_9.htm#SQLRF016">Oracle Database SQL Reference</a></span> for syntax and additional information about the <code>DROP SYNONYM</code> statement</div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006739" name="i1006739"></a>
+<div class="sect1"><a id="sthref3144" name="sthref3144"></a>
+<h2 class="sect1">Viewing Information About Views, Synonyms, and Sequences</h2>
+<p>The following views display information about views, synonyms, and sequences:</p>
+<div class="inftblruleinformalwide">
+<table class="RuleInformalWide" title="Viewing Information About Views, Synonyms, and Sequences" summary="Column 1 lists the views that display information about views, synonyms, or sequences. Column 2 describes each view." dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22">View</th>
+<th align="left" valign="bottom" id="r1c2-t22">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22"><code>DBA_VIEWS</code>
+<p><code>ALL_VIEWS</code></p>
+<p><code>USER_VIEWS</code></p>
+</td>
+<td align="left" headers="r2c1-t22 r1c2-t22"><code>DBA</code> view describes all views in the database. <code>ALL</code> view is restricted to views accessible to the current user. <code>USER</code> view is restricted to views owned by the current user.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22"><code>DBA_SYNONYMS</code>
+<p><code>ALL_SYNONYMS</code></p>
+<p><code>USER_SYNONYMS</code></p>
+</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">These views describe synonyms.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22"><code>DBA_SEQUENCES</code>
+<p><code>ALL_SEQUENCES</code></p>
+<p><code>USER_SEQUENCES</code></p>
+</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">These views describe sequences.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22"><code>DBA_UPDATABLE_COLUMNS</code>
+<p><code>ALL_UPDATABLE_COLUMNS</code></p>
+<p><code>USER_UPDATABLE_COLUMNS</code></p>
+</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">These views describe all columns in join views that are updatable.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformalwide -->
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olink REFRN" href="../../server.102/b14237/toc.htm">Oracle Database Reference</a></span> for complete descriptions of these views</div>
+</div>
+<!-- class="sect1" --></div>
+<!-- Start Footer -->
+<div class="footer">
+<hr />
+<table summary="" class="simple oac_no_warn" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="hash.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="repair.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2001, 2006,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table summary="" class="icons oac_no_warn" cellspacing="0" cellpadding="0" width="294">
+<tr>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/homepage/"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/portal.all_books"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="http://www.oracle.com/pls/db102/show_mindex/"><img width="24" height="24" src="../../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,75 @@
+Release Management System
+=========================
+
+
+Despre
+------
+
+RMS este un proiect ce are ca scop managementul comod al
+modulelor/pachetelor limbajului de programare Python.
+Acest serviciu ofera posibilitatea utilizatorilor vizualizarii
+listei existente a extensiilor dar si descarcarea unor anumite
+pachete si/sau versiuni.
+
+Proiectul se imparte in partea de server (scrisa in C) si in
+partea de client (scrisa in Python).
+
+
+Structura
+---------
+
+src/    -> surse
+bin/    -> executabile
+res/    -> resurse
+    packages/   -> pachete (extensii)
+doc/    -> documentatie
+
+
+Instalare
+---------
+
+Nu este necesara o instalare "standard"... ajunge doar a se rula
+comanda `make` pentru obtinerea binariilor, apoi `make clean`,
+daca se doreste stergerea lor.
+Dupa compilare, atat binariile, fisierul de configurare cat si
+folderul cu pachete pot fi mutate in locatiile dorite si in cele
+din urma pot fi folosite de acolo.
+
+
+Serverul -> rms-server
+----------------------
+
+Acesta este un binar executabil ce poate fi pornit cu un parametru
+ce reprezinta fisierul de configurare. Daca acest parametru lipseste,
+atunci se vor incarca setarile dintr-un fisier de la o locatie
+prestabilita, cum ar fi `res/rms.conf`.
+
+Serverul va rula pentru totdeauna, va accepta clienti si va procesa
+comenzi primite de la acestia in paralel. Capabilitatile acestuia
+sunt de a furniza o lista cu pachetele disponibile si de a trimite
+pachete cerute la clienti.
+
+
+Clientul -> rms-cli
+----------------------
+
+Acesta este un fisier script ce are nevoie de interpretorul Python
+pentru a putea rula si poate primi mai multi parametri de la linia
+de comanda, cu ajutorul carora se pot trimite diverse comenzi catre
+server, cum ar fi:
+    - search   -> cauta un anumit pachet sau afiseaza toate pachetele
+    - download -> descarca un anume pachet
+    - install  -> instaleaza respectivul pachet
+Aceste comenzi pot fi insotite de diverse optiuni ce pot specifica:
+    - adresa IP a serverului spre care se doreste a se face conexiunea
+    - portul catre acesta
+    - directorul de iesire (pentru stocarea pachetelor descarcate)
+    - afisarea sau nu a mesajelor de depanare
+
+
+Buguri
+------
+
+- validarea partiala a datelor de intrare si/sau primite
+- nu sunt verificate si tratate toate exceptiile ce pot aparea
+  in urma rularii programelor in mod gresit de catre utilizator

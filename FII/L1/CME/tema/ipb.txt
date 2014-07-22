@@ -1,0 +1,15 @@
+﻿Ideea initiala era cea cu trenuri (http://pastebin.com/bQvpY39u), dar am adaptat-o putin la cea cu circuite integrate.
+Diferenta consta in minimizarea cailor ferate la nivelul unor fire si semiconductoare ce intra in alcatuirea circuitelor integrate. Miezul circuitului este impartit in mai multe subdiviziuni si fiecare subdiviziune se poate conecta la oricare alte N subdiviziuni doar prin anumite "trasee", de aici nevoia de APM, iar treaba cu "segmentarea" ramane valabila (pentru cmmdc). La fabricarea componentelor se foloseste un aliaj bazat pe iridium, de aceea costurile trebuiesc minimizate.
+
+(Povestea)
+Proaspat concediat, din cauza punerii in practica fara autorizatie a ideii de mai sus, eu (Poieana Cosmin) am inceput construirea si testarea de diferite prototipuri (embedded systems) ce folosesc astfel de circuite integrate, in propriul garaj. La scurt timp, mi-a venit in ajutor Leoca Constantin si am reusit construirea primului sistem functional mai rapid decat cele conventionale. Am reusit sa fac reclama produsului cu ajutorul lui Petricioiu Robert, acesta punand bazele unui site ce promoveaza si descrie de ce tehnologia noastra depaseste limitele actuale de viteza, pastrand un raport calitate-pret destul de bun.
+Astfel am primit numeroase oferte si contracte de la diferite firme pentru fabricarea bunurilor la scara larga [urmeaza sa mai adaugam niste modele/exemple de firme + cereri/oferte din partea acestora]. Datorita succesului imens, am incercat si fabricarea unor procesoare (atat centrale cat si video), iar rezultatele au pus corporatia IPB [mai bine Corporation decat Enterprises :)] in concurenta cu nume sonore ca IBM si Motorola.
+Momentan, conduc afacerea si ma ocup de schitarea sabloanelor conform carora vin produse piesele necesare, Leoaca Constantin contribuie la construirea segmentelor de aliaj si manageriaza corporatia (controlul calitatii, teste, rapoarte, locuri de munca), Petricioiu Robert mentine siteul si lucreaza la divizia "Reciclare" [ma refer la divide and conquer pentru taietura de arie maxima], iar Munteanu Petru si Timofte Elisei sunt proaspeti angajati (juniori), ce contribuie cu diferite metode de sortare (gasirea algoritmului optimal in functie de caz) respectiv optimizarea algoritmilor greedy.
+Lucreaza la noi! Avem posturi libere pentru [...] unde se cer aptitudini ca [...].
+
+
+-----------------------------------
+
+Ia ce ti se pare interesant din ce e mai sus si adapteaza, modifica, sterge, pentru a completa pe site la diferite sectiuni, nu are importanta ce scrii, imaginatie sa ai :).
+Parantezele patrate nu vin scrise, le-am pus pentru clarificarea unor lucruri. Urmeaza sa mai adaugam documente fictive (word/excell) cu oferte de angajare, contracte din partea firmelor, rapoarte/constatari, studii, chestionare si ce va mai trece prin cap. Eu o sa mai pun implementari cu APM, cmmdc, mergesort, quicksort, maximum area cut.
+P.S.: Poate contribui oricine cu orice, important este sa strangem aici materialele (brut) si partea prelucrata/finita (net) sa fie disponibila pe site.

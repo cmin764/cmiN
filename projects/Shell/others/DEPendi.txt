@@ -1,0 +1,64 @@
+@echo off
+:: 29.08.2009 <> 29.08.2009 | cmiN
+:: Challenge [Batch] Bcc DEP [prosoft] @ rstcenter.com
+
+
+:main
+
+cd %systemroot%
+cd ..
+echo E - Enable Data Execution Prevention
+echo D - Disable Data Execution Prevention
+set /p answer=
+if "%answer%"=="E" (
+    set status=noexecute
+    goto replace     
+)
+if "%answer%"=="D" (
+    set status=execute
+    goto replace
+)
+echo Invalid option!
+pause >nul
+exit
+
+
+:replace
+
+type nul>boot.tmp
+for /f "tokens=1,2* delims==" %%a in (boot.ini) do (
+    if "%%b"=="" (
+        echo %%a>>boot.tmp
+    ) else (
+        for /f "tokens=1,2 delims=/" %%x in ("%%b") do (
+            if "%%y"=="noexecute" (
+                if "%%c"=="" (
+                    echo %%a=%%x/%status%>>boot.tmp
+                ) else (
+                    echo %%a=%%x/%status%=%%c>>boot.tmp
+                )
+            ) else (
+                if "%%y"=="execute" (
+                    if "%%c"=="" (
+                        echo %%a=%%x/%status%>>boot.tmp
+                    ) else (
+                        echo %%a=%%x/%status%=%%c>>boot.tmp
+                    )
+                ) else (
+                    if "%%c"=="" (
+                        echo %%a=%%b>>boot.tmp
+                    ) else (
+                        echo %%a=%%b=%%c>>boot.tmp
+                    )
+                )
+            )
+        )
+    )
+)
+attrib -s -h -r boot.ini
+del boot.ini /f /q
+ren boot.tmp boot.ini
+attrib +r +h +s boot.ini
+echo Ready.
+pause >nul
+exit

@@ -1,0 +1,198 @@
+﻿Impartim (ISK) sirul de 12 caractere intr-un sir de 6 grupuri a cate 2 caractere.
+Fiecare grup este un numar hexazecimal intre 00 si FF adica intre 0 si 255 inclusiv.
+Fiecare octet (grup de 2 caractere) este transformat in alt octet, fiind trecut printr-o functie.
+Functia difera de la o pozitie la alta (6 pozitii => 6 functii diferite).
+Noii octeti obtinuti sunt concatenati astfel obtinandu-se noul sir de 12 caractere (APV).
+
+f(str) == cat(f_i(str[i])) for i from 0 to 5
+
+<f5>======================================================
+(8, 1, 2, 4)
+(8, 1, 2, 4)
+y in {all}
+x in {all} - {1 3 C E F}
+[0y] -> 00 80 10 90, 02 82 12 92, 40 C0 50 D0, 42 C2 52 D2
+[x0] ->
+
+00
+xx
+01
+xx
+
+20
+28
+21
+29
+
+04
+0C
+05
+0D
+
+xx
+2C
+xx
+xx
+==========================================================
+
+<f4>======================================================
+(8, -1, 2, -4)
+(-8, 1, 2, -4)
+y in {all}
+x in {all} - {3 6 7}
+[0y] -> 5C DC 4C CC, 5E DE 4E CE, 1C 9C 0C 8C, 1E 9E 0E 8E
+[x0] ->
+
+5C
+54
+5D
+xx
+
+7C
+74
+xx
+xx
+
+58
+50
+59
+51
+
+78
+70
+79
+71
+==========================================================
+
+<f3>======================================================
+(8, 1, 2, 4)
+(8, 1, -2, -4)
+y in {all}
+x in {all}
+[0y] -> 24 A4 34 B4, 26 A6 36 B6, 64 E4 74 F4, 66 E6 76 F6
+[x0] ->
+
+24
+2C
+25
+2D
+
+04
+0C
+05
+0D
+
+20
+28
+21
+29
+
+00
+08
+01
+09
+==========================================================
+
+<f2>======================================================
+(8, -1, 2, 4)
+(8, 1, 2, -4)
+y in {all}
+x in {all} - {B C}
+[0y] -> 14 94 04 84, 16 96 06 86, 54 D4 44 C4, 56 D6 46 C6
+[x0] ->
+
+14
+1C
+15
+1D
+
+34
+3C
+35
+3D
+
+10
+18
+11
+xx
+
+xx
+38
+31
+39
+==========================================================
+
+<f1>======================================================
+(-8, -1, -2, -4)
+(8, -1, 2, -4)
+y in {all}
+x in {all} - {3 B}
+[0y] -> D7 57 C7 47, D5 55 C5 45, 97 17 87 07, 95 15 85 05
+[x0] ->
+
+D7
+DF
+D6
+xx
+
+F7
+FF
+F6
+FE
+
+D3
+DB
+D2
+xx
+
+F3
+FB
+F2
+FA
+==========================================================
+
+<f0>======================================================
+(8, 1, 2, 4)
+(-8, -1, -2, -4)
+y in {all}
+x in {all} - {3 C}
+[0y] -> 2D AD 3D BD, 2F AF 3F BF, 6D ED 7D FD, 6F EF 7F FF
+[x0] ->
+
+2D
+25
+2C
+xx
+
+0D
+05
+0C
+04
+
+29
+21
+28
+20
+
+xx
+01
+08
+00
+==========================================================
+
+Pentru a converti numarul "xy" care este pe pozitia "i" il trecem prin "fi" care face urmatoarele:
+Daca "x" se afla printre cazurile irelevante numarul obtinut va fi "xx",
+altfel la numarul care corespunde lui 0y se aduna cel care corespunde lui x0 apoi se scade
+cel care ii corespunde lui 00 si se returneaza rezultatul.
+
+Desi difera, functiile sunt oarecum similare,
+fiindca pleaca de la un numar de start caruia ii sunt modificati primii si ultimii 4 biti.
+Astfel fiecare numar nou obtinut este adaugat alaturi de numarul de start, si tot asa pana cand
+se obtin de total 16 numere pentru ultimii 4 biti (coloane) si alte 16 pentru primii 4 biti (linii).
+Generarile se fac pe baza intregilor 8 1 2 4 (avand combinatii de "+" si "-").
+Singurul lucru care difera de la o functie la alta, sunt acele combinatii de "+" si "-" si numarul de start.
+Analiza bruta ar fi avut 2^(8*6) verificari manuale, dar pentru ca functiile nu depind una de alta
+s-a ajuns la (2^8)*6 si pentru ca octet[n] se obtine adunand o anumita suma la octet[n-1]
+cazurile se rezuma la 2*(2^4)*6 == (2^6)*3 == 192 care sunt mult mai putine decat 2^48 == 281.474.976.710.656 verificari manuale :).
+
+Am scris o clasa in Python3.x pentru functia inversabila de conversie ISK / APV.

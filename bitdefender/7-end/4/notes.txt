@@ -1,0 +1,7 @@
+﻿int v[100]
+v[0] == [ebp+(-408)]
+-408 -> -8
+
+-sorteaza vectorul
+
+-cautare binara
