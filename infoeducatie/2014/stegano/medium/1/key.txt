@@ -1,0 +1,3 @@
+- R: morse
+
+Hints: play the song and watch carefully everything except audio

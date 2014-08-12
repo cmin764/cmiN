@@ -1,0 +1,3 @@
+- R: are 10 pere
+
+Hints: lsb + aes (prefixed by string length in 32 bits), from the bottom to the top, PIL (pixel by pixel, channel by channel)

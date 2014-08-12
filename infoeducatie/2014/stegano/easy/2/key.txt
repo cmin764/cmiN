@@ -1,0 +1,6 @@
+- R: - what about some weird values -
+- K: 123456-cops-like (1)
+- E: D/yicaibT8zrAqeTSEYDjSxcEszQ5Ic95bnKwy2TT14=
+- W: AES, ECB
+
+Hints: strings, crypto standard
