@@ -1,0 +1,1483 @@
+<div class="slides">
+    <section class="" data-id="23a2356078e8e30fb61b743f1acfcd88">
+        <h1>Steganografie în fișiere cu tipuri comune</h1>
+<div>
+        <br>
+    </div>
+<div>
+    <br>
+    </div>
+<h2>Cosmin Poieană</h2>
+<h3>&lt;<font color="#660000">cmin</font>@ropython.org&gt;</h3>
+</section>
+<section class="stack" data-id="4ec9d207ff8d538fb9fedd1b79eaa62c">
+    <section class="" data-id="1af86e09fb6e9d0846e944ef83fe238c">
+        <h2>I. Ce este steganografia</h2>
+<div>
+        <br>
+    </div>
+<div>
+    <br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>arta de a ascunde mesaje în mesaje</li>
+<li>ste<b>ga</b>nografie&nbsp;vs. stenografie</li>
+<li>steganaliză</li>
+<li>criptografie</li>
+<li>ascundere fizică (tatuaj, gravură, clipire, micro puncte, vizibilitate temporară, U.V.)</li>
+<li>ascundere software (fișiere audio/video, imagini, documente)</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="173687de9bac0b27c1ccf2c4cb10f6d4">
+    <h2 style="font-style: normal; font-variant: normal;">I. Ce este steganografia</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>încărcătură (payload)</li>
+<li>transport (carrier)</li>
+<li>pachet (package)</li>
+<li>dimensiuni</li>
+<li>compresie</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="2c9bfe1112f814220b4fd7e81f67071a">
+    <h2 style="font-style: normal; font-variant: normal;">I. Ce este steganografia</h2>
+<div>
+    <br>
+</div>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516448/stegosystem.jpg" style="width: 912.4098291601189px; height: 324.78303421704004px; max-height: none; max-width: none;">
+<br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>payload: <i>emb</i>
+</li>
+<li>carrier: <i>cover</i>
+</li>
+<li>package: <i>stego</i>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="8f14263a38ed8a1a8e2c667006a4610f">
+    <h2 style="font-style: normal; font-variant: normal;">I. Ce este steganografia</h2>
+<div>
+    <br>
+</div>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516461/goodstego.jpg" style="width: 819.4961142059561px; height: 414.94739488670183px; max-height: none; max-width: none;">
+<br>
+</div>
+<div style="text-align: left; ">
+<h3>
+    <ul>
+        <li>pierderea mesajului în cazul procesărilor</li>
+    </ul>
+</h3>
+</div>
+</section>
+</section>
+<section class="stack" data-id="e6a185d172a1c8f4f5b811fe79e6b7e9">
+    <section class="" data-id="84c0830d2e1006653b55dfa7a3912a01">
+        <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<div>
+        <br>
+    </div>
+<div>
+    <br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>folosirea majusculei pentru a marca litere relevante</li>
+<li>scrierea împreunată a cuvintelor de interes</li>
+<li>greșirea în mod intenționat a unor cuvinte</li>
+<li>folosirea unui cifru pentru selectarea literelor/cuvintelor ce ajung să compună mesajul ascuns</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="05e33888cfb7a5325863932575b3cc2c">
+    <h2>II. Metode</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>fișiere de interes:<i>&nbsp;doc, bmp, png, pdf, wav</i>&nbsp;etc.</li>
+<li>înțelegerea formatului</li>
+<li>identificarea și exploatarea secțiunilor&nbsp;<i>container</i>
+</li>
+<li>reprezentarea datelor</li>
+<li>compresie scăzută -&gt; redundanță</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="20a8973cbd87199981a571bd0a25b323">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h2>
+</h2>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">ascunderea evidentă în interiorul unui fișier<br>
+</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">scrierea într-o porțiune necitită</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">folosirea fonturilor diferite pentru evidențierea unor caractere</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">spațiere cu semnificație (sau alte caractere ignorate)</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">tag-uri html ce nu fac nimic, dar au un înțeles ascuns</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">text ce se confundă cu fundalul</li>
+<li style="text-align: left; font-size: 48.05260467529297px; font-style: normal; font-variant: normal;">obiecte ce acoperă alte obiecte</li>
+</section>
+<section class="" data-id="076a35bb14e779a907c0b8b3e91cdce8">
+    <h2>II. Metode</h2>
+<div>
+    <br>
+</div>
+<h3 style="text-align: left;">
+<i>
+<font color="#666666">
+    <b>&nbsp; &nbsp; L</b>east<b>S</b>ignificant<b>B</b>it</font>
+</i>
+</h3>
+<div>
+<i>
+<font color="#666666">
+    <br>
+</font>
+</i>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>
+<font color="#000000">tipuri deloc/puțin compresate: <i>bmp, png</i>
+</font>
+</li>
+<li>
+<font color="#000000">header, matrice pixeli</font>
+</li>
+<li>
+<font color="#000000">RGB[A] 24/32bit</font>
+</li>
+<li>
+<font color="#000000">MSB(payload) -&gt; LSB(cover)</font>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="64de54c3450b8ecaa804468184f5adb2">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<div>
+    <br>
+</div>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<i>
+<font color="#666666">
+    <b>&nbsp; &nbsp; L</b>east<b>S</b>ignificant<b>B</b>it</font>
+</i>
+</h3>
+<div>
+<font color="#000000">
+    <span>2x2 pixeli</span>
+</font>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516251/4pixel.png" style="width: 858.4805258932774px; height: 750.6208579136077px; max-height: none; max-width: none;">
+</section>
+<section class="" data-id="38ca008fab664b38e51ee393bdabf755">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2>
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<i>
+<font color="#666666">
+    <b>&nbsp; &nbsp; L</b>east<b>S</b>ignificant<b>B</b>it</font>
+</i>
+</h3>
+<div>
+<font color="#000000">
+    <span>54 octeti header și paletă + matrice pixeli</span>
+</font>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516254/4pixel-data.png" style="width: 858.3697519934292px; height: 845.8373554861026px; max-height: none; max-width: none;">
+</section>
+<section class="" data-id="348997c775018ae5cbb10801d5bcaac0">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2>
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<i>
+<font color="#666666">
+    <b>&nbsp; &nbsp; L</b>east<b>S</b>ignificant<b>B</b>it</font>
+</i>
+</h3>
+<div style="text-align: left;">
+<i>
+<font color="#666666">
+    <br>
+</font>
+</i>
+</div>
+<h3 style="text-align: left; ">
+<ol>
+<li style="text-align: left;">transformare șir de caractere în șir binar</li>
+<li style="text-align: left;">alterarea pixelilor</li>
+<li style="text-align: left;">salvarea noului conținut</li>
+</ol>
+<div style="text-align: left;">
+<span>
+    <br>
+</span>
+</div>
+<div>
+<ol>
+<li style="text-align: left;">citirea fiecărui <i>LSB</i>
+</li>
+<li style="text-align: left;">transformare șir binar în șir de caractere</li>
+<li style="text-align: left;">afișarea textului extras</li>
+</ol>
+</div>
+</h3>
+</section>
+<section class="" data-id="0a7b8fbf9df47042854e0790786aa89e">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<i>
+<font color="#666666">
+    <b>&nbsp; &nbsp; L</b>east<b>S</b>ignificant<b>B</b>it</font>
+</i>
+</h3>
+<div>
+<font color="#000000">
+    <span>diferențe insesizabile ochiului</span>
+</font>
+</div>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516301/ps-comp.png" style="width: 759.5912997931257px; height: 576.761757216853px; max-height: none; max-width: none;">
+</div>
+</section>
+<section class="" data-id="a3c341882a5e35ac4d04f70dba19c320">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="text-align: left;">
+<i style="font-style: normal; font-variant: normal;">
+<font color="#666666">
+    <b>&nbsp; &nbsp;&nbsp;</b>
+</font>
+</i>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>D</b>iscrete <b>C</b>osine <b>T</b>ransform</i>
+    </font>
+</span>
+</h3>
+<div>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <br>
+    </i>
+</font>
+</span>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>
+<font color="#000000">tratamentul fișierelor media</font>
+</li>
+<li>
+<font color="#000000">compresie (jpeg, mp3, mpeg)</font>
+</li>
+<li>
+<font color="#000000">alterarea minoră a coeficienților</font>
+</li>
+<li>
+<font color="#000000">robustețe crescută</font>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="c6600b9a0e4017d5548168cf9f3d8aa3">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="text-align: left;">
+<i style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</i>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of <b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<div>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <br>
+    </i>
+</font>
+</span>
+</div>
+<h3 style="text-align: left; ">
+</h3>
+<h3>
+<ul>
+<li>
+<font color="#000000">fișiere PDF</font>
+</li>
+<li>
+<font color="#000000">header, obiecte, tabelă referințe, trailer</font>
+</li>
+<li>
+<font color="#000000">reprezentare diversă pentru șiruri de caractere și nume de identificatori</font>
+</li>
+<li>
+<font color="#000000">actualizarea tabelei de referințe cu valori de deplasament valide</font>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="18a7639a2cc2c065b0aeb9eb93332ca8">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<span style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</span>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of&nbsp;<b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516322/hello-pdf.png" style="width: 598.2534141077438px; height: 529.326478378848px; max-height: none; max-width: none;">
+</section>
+<section class="" data-id="4a764ad3fb81728eb034ab7fd521df01">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<span style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</span>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of&nbsp;<b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<div>
+<font color="#000000">
+    <span>PDF content example</span>
+</font>
+</div>
+<h3 style="text-align: left; ">
+<pre><code>%PDF-1.7
+
+1 0 obj  % entry point
+&lt;&lt;
+  /Type /Catalog
+  /Pages 2 0 R
+&gt;&gt;
+endobj
+
+2 0 obj
+&lt;&lt;
+  /Type /Pages
+  /MediaBox [ 0 0 200 200 ]
+  /Count 1
+  /Kids [ 3 0 R ]
+&gt;&gt;
+endobj
+
+3 0 obj
+&lt;&lt;
+  /Type /Page
+  /Parent 2 0 R
+  /Resources &lt;&lt;
+    /Font &lt;&lt;
+      /F1 4 0 R 
+    &gt;&gt;
+  &gt;&gt;
+  /Contents 5 0 R
+&gt;&gt;
+endobj
+
+4 0 obj
+&lt;&lt;
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Times-Roman
+&gt;&gt;
+endobj
+
+5 0 obj  % page content
+&lt;&lt;
+  /Length 44
+&gt;&gt;
+stream
+BT
+70 50 TD
+/F1 12 Tf
+(Hello, world!) Tj
+ET
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000079 00000 n 
+0000000173 00000 n 
+0000000301 00000 n 
+0000000380 00000 n 
+trailer
+&lt;&lt;
+  /Size 6
+  /Root 1 0 R
+&gt;&gt;
+startxref
+492
+%%EOF<br></code></pre>
+</h3>
+<br>
+</section>
+<section class="" data-id="75c5936fbcb82f7dd2d58e41b8c060a7">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<span style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</span>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of&nbsp;<b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<div>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <br>
+    </i>
+</font>
+</span>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>
+<span style="color: rgb(0, 0, 0);">șiruri de caractere: </span>
+<font color="#274e13">(Hello, world!)</font>
+<br>
+</li>
+<li>
+<span style="color: rgb(0, 0, 0);">reprezentare octală: </span>
+<font color="#274e13">(He\154\154o, world!)</font>
+<br>
+</li>
+<li>
+<span style="color: rgb(0, 0, 0);">hexazecimal:&nbsp;</span>
+<font color="#274e13">&lt;48656c6c6f2c20776f726c6421&gt;</font>
+</li>
+<li>
+<font color="#000000">existența a două tipuri de reprezentări</font>
+</li>
+<li>
+<font color="#000000">număr variabil de spații</font>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="b1e25b19c56f06b9223647eccd9ca46e">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<span style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</span>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of&nbsp;<b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<div>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <br>
+    </i>
+</font>
+</span>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>
+<font color="#000000">nume de identificatori: </font>
+<font color="#4c1130">/Root</font>
+</li>
+<li>
+<font color="#000000">reprezentare hexazecimală: </font>
+<font color="#4c1130">/Roo</font>
+<font color="#a64d79">#74</font>
+</li>
+<li>
+<font color="#000000">nu se permit alte forme sau spații</font>
+</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="697cddb9b100cfff24996fa9053475e2">
+    <h2 style="font-style: normal; font-variant: normal;">II. Metode</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+    <div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+        <br>
+    </div>
+</h2>
+<h3 style="font-style: normal; font-variant: normal; text-align: left;">
+<span style="font-style: normal; font-variant: normal;">
+<font color="#666666">&nbsp; &nbsp;&nbsp;</font>
+</span>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <b>V</b>ariation of&nbsp;<b>R</b>epresentation</i>
+    </font>
+</span>
+</h3>
+<div>
+<span style="text-align: center;">
+    <font color="#666666">
+        <i>
+        <br>
+    </i>
+</font>
+</span>
+</div>
+<h3 style="text-align: left; ">
+<pre><code> %PDF-1.7
+
+1 0 obj  % entry point
+&lt;&lt;
+  /Type /Catalog
+  /Pages 2 0 R
+&gt;&gt;
+endobj
+
+2 0 obj
+&lt;&lt;
+  /Type /Pages
+  /MediaBox [ 0 0 200 200 ]
+  /Count 1
+  /Kids [ 3 0 R ]
+&gt;&gt;
+endobj
+
+3 0 obj
+&lt;&lt;
+  /Type /Page
+  /Parent 2 0 R
+  /Resources &lt;&lt;
+    /Font &lt;&lt;
+      /F1 4 0 R 
+    &gt;&gt;
+  &gt;&gt;
+  /Contents 5 0 R
+&gt;&gt;
+endobj
+
+4 0 obj
+&lt;&lt;
+  /Typ#65 /Font
+  /Subtype /Type1
+  /BaseFont /Times-Roman
+&gt;&gt;
+endobj
+
+5 0 obj  % page content
+&lt;&lt;
+  /L#65ngth 44
+&gt;&gt;
+stream
+BT
+70 50 TD
+/F1 12 Tf
+(Hello, world!) Tj
+ET
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000079 00000 n 
+0000000173 00000 n 
+0000000301 00000 n 
+0000000382 00000 n 
+trailer
+&lt;&lt;
+  /Size 6
+  /Root 1 0 R
+&gt;&gt;
+startxref
+496
+%%EOF</code></pre>
+</h3>
+<br>
+</section>
+<section class="" data-id="ce9bfde80ae02a9dcbc931e3461775ed">
+    <h2>II. Metode</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h3 style="text-align: left;">
+</h3>
+<h3>
+<ul>
+<li style="text-align: left;">acoperirea întregului spațiu disponibil</li>
+<li style="text-align: left;">dispersia biților</li>
+<li style="text-align: left;">date aleatoare</li>
+<li style="text-align: left;">cheie steganografică</li>
+<li style="text-align: left;">generator pseudo-aleator</li>
+<li>încorporare pachet în alte fișiere</li>
+</ul>
+</h3>
+</section>
+</section>
+<section class="stack" data-id="97c59c0071ebe892e243ed554b6be7c6">
+    <section class="" data-id="2043e09d155c54ddfb693b4dbb9b09fa">
+        <h2>III. Modificare, validare și recuperare</h2>
+<div>
+        <br>
+    </div>
+<div>
+    <br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>analiza în detaliu a structurii <i>carrier</i>-ului</li>
+<li>transformarea până la nivel de bit a datelor ce se doresc a fi ascunse</li>
+<li>modificarea efectivă a conținutului</li>
+<li>păstrarea integrității structurii</li>
+<li>afișarea (aproape) identică a vechiului conținut</li>
+</ul>
+</h3>
+</section>
+<section class="" data-id="bc756da1e9ead7f2b7fc422ad7698ba1">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<div>
+    <br>
+    </div>
+<div>
+<i>Script naiv ce aplică metoda LSB</i>
+    <br>
+</div>
+<h3 style="text-align: left; ">
+<pre><code>#! /usr/bin/env python3
+# 05.04.2010 &lt;&gt; 06.04.2010 | cmiN
+# Text In Bmp (console)
+
+import sys
+from hashlib import md5
+
+class Image:
+
+    def load(self, path):
+        with open(path, "rb") as file:
+            buffer = file.read()
+        self.bfType = buffer[0:2]
+        if self.bfType != b"BM":
+            raise Exception("not a bitmap")
+        self.bfSize = buffer[2:6]
+        self.bfReserved1 = buffer[6:8]
+        self.bfReserved2 = buffer[8:10]
+        self.bfOffBits = buffer[10:14]
+        self.biSize = buffer[14:18]
+        self.biWidth = buffer[18:22]
+        self.biHeight = buffer[22:26]
+        self.biPlanes = buffer[26:28]
+        self.biBitCount = buffer[28:30]
+        if baconvert(self.biBitCount) != 24:
+            raise Exception("not 24-bit")
+        self.biCompression = buffer[30:34]
+        self.biSizeImage = buffer[34:38]
+        self.biXPelsPerMeter = buffer[38:42]
+        self.biYPelsPerMeter = buffer[42:46]
+        self.biClrUsed = buffer[46:50]
+        self.biClrImportant = buffer[50:54]
+        self.bHeader = buffer[:54]
+        self.bMatrix = list(buffer[54:])
+
+    def create(self, path, buffer):
+        with open(path, "wb") as file:
+            file.write(buffer)
+
+def process(digsig, mode, infile, outfile=None, string=None):
+    bmp = Image()
+    bmp.load(infile)
+    bmp.width = baconvert(bmp.biWidth)
+    bmp.height = baconvert(bmp.biHeight)
+    bmp.index = 0
+    bmp.count = 0
+    rem = (bmp.width * 3) % 4
+    if rem:
+        bmp.padding = 4 - rem
+    else:
+        bmp.padding = 0
+    if mode == "write":
+        bits = str()
+        for char in md5(bytes(digsig, "ascii")).digest():
+            bits += bin(char).replace("0b", "").zfill(8)
+        bits += bin(len(string)).replace("0b", "").zfill(16)
+        for char in string:
+            bits += bin(ord(char)).replace("0b", "").zfill(8)
+        if len(bits) &gt; bmp.width * bmp.height * 3:
+            raise Exception("string too long")
+        for bit in bits:
+            char = bin(bmp.bMatrix[bmp.index])
+            char = int(char[:-1] + bit, 2)
+            bmp.bMatrix[bmp.index] = char
+            bmp.index += 1
+            bmp.count += 1
+            if bmp.count == (bmp.width * 3):
+                bmp.count = 0
+                bmp.index += bmp.padding
+        bmp.create(outfile, bmp.bHeader + bytes(bmp.bMatrix))
+    elif mode == "read":
+        bits = bitjoin(bmp, 128)
+        if bytes([int(bits[i:i + 8], 2) for i in range(0, 128, 8)]) == md5(bytes(digsig, "ascii")).digest():
+            nr = int(bitjoin(bmp, 16), 2) * 8
+            bits = bitjoin(bmp, nr)
+            string = "".join([chr(int(bits[i:i + 8], 2)) for i in range(0, nr, 8)])
+            print(string)
+        else:
+            raise Exception("invalid signature")
+    else:
+        raise Exception("invalid mode")
+
+def bitjoin(bmp, nr):
+    bits = str()
+    for i in range(nr):
+        bits += bin(bmp.bMatrix[bmp.index])[-1]
+        bmp.index += 1
+        bmp.count += 1
+        if bmp.count == (bmp.width * 3):
+            bmp.count = 0
+            bmp.index += bmp.padding
+    return bits
+        
+def baconvert(buffer):
+    return int("".join([hex(char).replace("0x", "").zfill(2) for char in reversed(buffer)]), 16)
+
+def main(args):
+    usage = """\t\t Text In Bmp 1.0
+
+\t Usage: source.ext digsig mode infile [outfile text]
+
+Where digsig is a digital signature string
+      mode can be write or read
+      infile is a valid 24-bit bitmap image
+      outfile is the output image name (used with write mode)
+      text is the string that will be written in image (used with write mode)
+
+\t Example: tib.py cmiN write image1.bmp image2.bmp http://rstcenter.com
+\t          tib.py cmiN read image2.bmp"""
+    try:
+        print("Please wait...")
+        if len(args) == 4:
+            process(args[1], args[2], args[3])
+        elif len(args) == 6:
+            process(args[1], args[2], args[3], args[4], args[5])
+        else:
+            print(usage)
+    except Exception as message:
+        print("An error occurred: {}".format(message))
+    except:
+        print("Unknown error.")
+    else:
+        print("Ready!")
+
+if __name__ == "__main__":
+    main(sys.argv)</code></pre>
+</h3>
+<br>
+</section>
+<section class="" data-id="d34703498fb09dc469460e1bb795a151">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<div>
+    <br>
+    </div>
+<div>
+<i>Rularea comenzilor de scriere și respectiv citire</i>
+    <br>
+</div>
+<div>
+<pre><code>$ ./tib.py sparks2014 write pylogo.bmp out.bmp "Hello, world!"
+Please wait...
+Ready!
+$ ./tib.py sparks2014 read out.bmp
+Please wait...
+Hello, world!
+Ready!
+$ ./tib.py sparks2013 read out.bmp
+Please wait...
+An error occurred: invalid signature
+
+</code></pre>
+</div>
+<br>
+</section>
+<section class="" data-id="76bf917de3837fb77c3595d16843a383">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<h2>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>Diferența între original și&nbsp;<b>package</b>
+</i>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>
+<b>
+<br>
+</b>
+</i>
+</div>
+<div style="text-align: center; font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516386/pylogo-out.png" style="width: 773.4294383869548px; height: 383.46332159786846px; max-height: none; max-width: none;">
+<i>
+<b>
+<br>
+</b>
+</i>
+</div>
+</h2>
+</section>
+<section class="" data-id="0c2ce53be3a7111e09695693bb3bb85a">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<div>
+    <br>
+</div>
+<div>
+<i>Diferența între original și <b>package</b>
+</i>
+</div>
+<div class="absolute-element" style="position: absolute; width: 1235px; height: 708px; z-index: 4; left: -144px; top: 263px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516382/tib-diff.png" style="width: 1195.0096103646988px; height: 667.0584672433995px; max-height: none; max-width: none;">
+<i>
+<b>
+<br>
+</b>
+</i>
+</div>
+</section>
+<section class="" data-id="f12a22cb45a9f68eba7a482711b82b00">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<h2>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>Diferența între original și&nbsp;<b>package</b>
+</i>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516391/human-diff.png" style="width: 554.3378855290892px; height: 475.7746661593357px; max-height: none; max-width: none;">
+<i>
+<b>
+<br>
+</b>
+</i>
+</div>
+</h2>
+</section>
+<section class="" data-id="1922d67028cfc5c733fb2cef1ea447e6">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<h2>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>Un exemplu mai complex</i>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516417/tii-intro.png" style="width: 459.9249191262913px; height: 405.89327247901343px; max-height: none; max-width: none;">
+<i>
+<br>
+</i>
+</div>
+</h2>
+</section>
+<section class="" data-id="b7854a7ee1a52e51e488b276aff23cd5">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<div>
+    <br>
+</div>
+<div>
+<i>Un exemplu mai complex</i>
+</div>
+<div>
+<pre><code>#! /usr/bin/env python
+# Text In Image
+# 02.01.2012 cmiN
+#
+# This is a simple GUI script which can hide text in pictures
+# using least significant bit method.
+# Also the input text can be encrypted and the output can be decrypted too
+# with a symmetric key using AES.
+# Writing is done directly on input image so be careful with certain extensions
+# because the output will always have the BMP format.
+#
+# Contact: cmin764@yahoo/gmail.com
+
+
+import os
+from Tkinter import * # widgets's classes
+from tkFileDialog import askopenfilename # get file name
+from tkMessageBox import showerror, showinfo # user dialog
+
+from PIL import Image # image converting
+from Crypto.Cipher import AES # text cipher
+
+
+class Engine:
+    """
+    Code for processing the image.
+    Separated from GUI.
+    """
+    
+    def __init__(self):
+        """ Initialize parameters. """
+        self.ext = "bmp" # save format
+        self.name = None # save name
+        self.path = None # save path
+        self.im = None # image object, read and write
+        self.generator = None # get locations to write/read bits
+        self.useAES = None # use it or not
+        self.aes = None # AES object
+        self.data = None # data to be written to image
+        self.width = None # image width
+        self.height = None # image height
+        self.tmp = None # last string, used when key changes
+        
+    def binary(self, nr, size):
+        """ Get 1&amp;0 representation. """
+        return bin(nr).replace("0b", "").zfill(size * 8)
+        
+    def path_name(self, path):
+        """ Split a file path in path and name. """
+        ind = path.rfind("/") + 1
+        return (path[:ind], path[ind:])
+        
+    def set_generator(self):
+        """ Useful for resetting. """
+        self.generator = ((wp, hp, ch) for wp in xrange(self.width) # WxHxC
+                                       for hp in xrange(self.height)
+                                       for ch in xrange(3))
+    
+    def load(self, path):
+        """ Load image. """
+        self.im = Image.open(path)
+        (self.width, self.height) = self.im.size
+        (self.path, self.name) = self.path_name(path)
+        return self.width * self.height * 3 # total useful bytes
+        
+    def parse_key(self, key):
+        """ If key exists make an AES object from it. """
+        if not key:
+            self.aes = None # empty key == no encryption
+            return self.parse_string(self.tmp) # must return size (see the next return)
+        key.decode() # test availability
+        size = len(key)
+        for padding in (16, 24, 32): # fixed key size
+            if size &lt;= padding:
+                break
+        key += chr(0) * (padding - size)
+        self.aes = AES.new(key)
+        return self.parse_string(self.tmp) # if key changes you must update string
+        
+    def parse_string(self, string):
+        """ Convert to bitstring. """
+        if not string: # without string can't start the process
+            self.tmp = None
+            self.data = None
+            return 0
+        string.decode() # test availability
+        self.tmp = string
+        if self.useAES and self.aes: # encrypt it
+            string += chr(0) * ((16 - len(string) % 16) % 16) # multiple of 16 string
+            string = self.aes.encrypt(string)
+        string = str().join([self.binary(ord(x), 1) for x in string]) # convert every char in a set of 8 bits
+        size = self.binary(len(string), 4) # get binary representation of string's length in 4 bytes
+        self.data = size + string
+        return len(self.data)
+            
+    def write(self):
+        """ Write using LSB. """
+        self.set_generator() # rearm
+        for bit in self.data:
+            (wp, hp, ch) = self.generator.next() # get next position
+            values = list(self.im.getpixel((wp, hp))) # retrieve its values
+            tmp = self.binary(values[ch], 1) # convert one of them
+            values[ch] = int(tmp[:7] + bit, 2) # alter that channel
+            self.im.putpixel((wp, hp), tuple(values)) # put it back
+        self.im.save(self.path + self.name, format=self.ext) # save the new output
+        
+    def read(self):
+        """ Read from every LSB. """
+        self.set_generator() # rearm
+        total = self.width * self.height * 3
+        if total &lt; 32:
+            raise Exception("Text not found.")
+        size = chunk = string = str()
+        i = 0 # for(i=0; true; ++i)
+        while True:
+            (wp, hp, ch) = self.generator.next() # i byte
+            values = self.im.getpixel((wp, hp))
+            tmp = self.binary(values[ch], 1)
+            if i &lt; 32: # it's lame but I prefer string/bitset
+                size += tmp[7]
+                if i == 31:
+                    size = int(size, 2)
+                    if size &lt; 1 or (size + 32) &gt; total:
+                        raise Exception("Text not found.")
+            elif i &lt; size + 32:
+                chunk += tmp[7]
+                if len(chunk) == 8:
+                    string += chr(int(chunk, 2))
+                    chunk = str()
+            else:
+                break
+            i += 1
+        if self.useAES and self.aes:
+            if len(string) % 16 != 0:
+                raise Exception("Text not encrypted.")
+            string = self.aes.decrypt(string).rstrip(chr(0))
+        string.decode() # rise an exception if invalid
+        return string
+                
+
+class GUI(Frame):
+    """
+    Main window, inherited from Frame.
+    Here we put our widgets and set their behavior.
+    """
+    
+    def __init__(self, master=None, margin=30):
+        """ Same as Frame's constructor. """
+        Frame.__init__(self, master, padx=margin, pady=margin)
+        self.grid()
+        self.widgets()
+        self.behavior()
+        
+    def widgets(self):
+        """ Build and grid widgets. """
+        # ---- create variables ----
+        self.totalBytes = IntVar() # depends on image size
+        self.usedBytes = IntVar() # how many of them are used
+        self.textStatus = StringVar() # used per total bytes
+        self.useEncryption = IntVar() # 0-plain 1-AES
+        self.mode = IntVar() # 0-read 1-write
+        self.textOpt = dict() # text last config
+        self.keyOpt = dict() # key last config
+        self.loaded = False # image loaded or not
+        # ---- create widgets ----
+        self.label = Label(self, textvariable=self.textStatus)
+        self.about = Label(self, text="About", fg="blue")
+        self.text = Text(self, width=30, height=5, fg="grey")
+        self.scrollbar = Scrollbar(self, orient="vertical", command=self.text.yview)
+        self.loadButton = Button(self, text="Load", width=5, command=lambda: self.action("load"))
+        self.readRadio = Radiobutton(self, text="Read", variable=self.mode, value=0, command=self.set_state)
+        self.checkButton = Checkbutton(self, text="Use AES", variable=self.useEncryption, onvalue=1, offvalue=0, command=self.set_state)
+        self.startButton = Button(self, text="Start", width=5, state="disabled", command=lambda: self.action("start"))
+        self.writeRadio = Radiobutton(self, text="Write", variable=self.mode, value=1, command=self.set_state)
+        self.keyEntry = Entry(self, width=10, fg="grey", show="*")
+        # ---- show widgets ----
+        self.label.grid(row=0, column=0, columnspan=2, sticky="w")
+        self.about.grid(row=0, column=2, sticky="e")
+        self.text.grid(row=1, column=0, rowspan=3, columnspan=3)
+        self.scrollbar.grid(row=1, column=3, rowspan=3, sticky="ns")
+        self.loadButton.grid(row=4, column=0, sticky="w", pady=5)
+        self.readRadio.grid(row=4, column=1)
+        self.checkButton.grid(row=4, column=2, sticky="e")
+        self.startButton.grid(row=5, column=0, sticky="w")
+        self.writeRadio.grid(row=5, column=1)
+        self.keyEntry.grid(row=5, column=2, sticky="e")
+        
+    def behavior(self):
+        """ Customize widgets. """
+        self.text.config(yscrollcommand=self.scrollbar.set)
+        self.text.insert(0.0, "Text here")
+        self.keyEntry.insert(0, "Key here")
+        self.text.bind("&lt;Button&gt;", self.handle_event)
+        self.text.bind("&lt;KeyRelease&gt;", self.handle_event)
+        self.keyEntry.bind("&lt;Button&gt;", self.handle_event)
+        self.keyEntry.bind("&lt;KeyRelease&gt;", self.handle_event)
+        self.textOpt = self.get_opt(self.text)
+        self.keyOpt = self.get_opt(self.keyEntry)
+        self.about.bind("&lt;Button&gt;", self.handle_event)
+        self.set_state()
+        
+    def action(self, arg):
+        """ What every button triggers. """
+        if arg == "load":
+            fileTypes = [("BMP", "*.bmp"), ("JPEG", ("*.jpeg", "*.jpg")), ("PNG", "*.png"), ("All Files", "*.*")]
+            path = askopenfilename(parent=self, title="Open image", filetypes=fileTypes)
+            if path != "":
+                try:
+                    self.totalBytes.set(app.load(path))
+                except IOError as msg:
+                    showerror("Error", str(msg).capitalize().strip(".") + ".") # some formatting
+                else:
+                    self.loaded = True
+                    self.set_state()
+                    self.master.title("Text In Image - %s" % app.name) # update name in title
+        elif arg == "start":
+            if self.mode.get():
+                try:
+                    app.write()
+                except Exception as msg:
+                    showerror("Error", str(msg).capitalize().strip(".") + ".")
+                else:
+                    showinfo("Info", "Done.")
+            else:
+                try:
+                    string = app.read()
+                except UnicodeError:
+                    showerror("Error", "Text not found or wrong key.")
+                except Exception as msg:
+                    showerror("Error", str(msg).capitalize().strip(".") + ".")
+                else:
+                    self.text.config(state="normal")
+                    self.textOpt["fg"] = "black" # touched
+                    self.text.delete(0.0, END)
+                    self.text.insert(0.0, string)
+                    self.text.config(state="disabled")
+                    self.usedBytes.set(app.parse_string(string))
+                    self.set_status()
+                    showinfo("Info", "Done.")
+                    
+    def set_status(self):
+        """ Get used per total bytes. """
+        string = "%9.3f%s/%9.3f%s"
+        unit1 = unit2 = "b"
+        used = self.usedBytes.get()
+        total = self.totalBytes.get()
+        if used &gt; total:
+            self.label.config(fg="red")
+        else:
+            self.label.config(fg="black")
+        if used &gt; 999999:
+            unit1 = "Mb"
+            used /= 1000000.0
+        elif used &gt; 999:
+            unit1 = "Kb"
+            used /= 1000.0
+        if total &gt; 999999:
+            unit2 = "Mb"
+            total /= 1000000.0
+        elif total &gt; 999:
+            unit2 = "Kb"
+            total /= 1000.0
+        self.textStatus.set(string % (used, unit1, total, unit2))
+        
+    def get_opt(self, widget):
+        """ Get some options from a widget then pack them. """
+        opt = dict()
+        opt["state"] = widget["state"]
+        opt["fg"] = widget["fg"]
+        opt["bg"] = widget["bg"]
+        return opt
+        
+    def set_state(self):
+        """ Enable or disable a widget according to option selected. """
+        if self.mode.get(): # write
+            self.text.config(**self.textOpt)
+        else:
+            self.text.config(state="disabled", bg="lightgrey", fg="darkgrey")
+        if self.useEncryption.get(): # use AES
+            self.keyEntry.config(**self.keyOpt)
+            app.useAES = True
+        else:
+            self.keyEntry.config(state="disabled")
+            app.useAES = False
+        length = app.parse_string(app.tmp)
+        self.usedBytes.set(length)
+        self.set_status()
+        if self.loaded: # a file is loaded
+            if self.mode.get() == 0: # read mode
+                ok = True
+            elif app.data != None and self.usedBytes.get() &lt;= self.totalBytes.get():
+                ok = True
+            else:
+                ok = False
+        else:
+            ok = False # no file loaded
+        if ok:
+            self.startButton.config(state="normal")
+        else:
+            self.startButton.config(state="disabled")
+                
+    def handle_event(self, event):
+        """ Handle events for specific widgets. """
+        if event.widget is self.text and self.text["state"] == "normal":
+            if self.text["fg"] == "grey":
+                self.text.delete(0.0, END)
+                self.textOpt["fg"] = self.text["fg"] = "black"
+            string = self.text.get(0.0, END).strip()
+            try:
+                length = app.parse_string(string)
+            except UnicodeError:
+                showerror("Error", "Invalid text.")
+            else:
+                self.usedBytes.set(length)
+                self.set_state()
+        elif event.widget is self.keyEntry and self.keyEntry["state"] == "normal":
+            if self.keyEntry["fg"] == "grey":
+                self.keyEntry.delete(0, END)
+                self.keyOpt["fg"] = self.keyEntry["fg"] = "black"
+            key = self.keyEntry.get()[:32] # first 32 (max size is 32)
+            try:
+                length = app.parse_key(key)
+            except UnicodeError:
+                showerror("Error", "Invalid key.")
+            else:
+                self.usedBytes.set(length)
+                self.set_state()
+        elif event.widget is self.about:
+            showinfo("About", "Hide text, which can be encrypted with AES, in pictures (bitmaps). Coded by cmiN. Visit rstforums.com.")
+
+
+if __name__ == "__main__":
+    app = Engine() # core
+    root = Tk() # toplevel
+    root.title("Text In Image")
+    root.maxsize(350, 250)
+    icon = "tii.ico"
+    if os.path.isfile(icon):
+        root.iconbitmap(icon)
+    GUI(root)
+    root.mainloop()</code></pre>
+</div>
+<br>
+</section>
+<section class="" data-id="3d7f6bcf061555380553c8b8abdac750">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>Un exemplu mai complex</i>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516418/tii-write.png" style="width: 487.1125559544193px; height: 402.0996457718814px; max-height: none; max-width: none;">
+<i>
+<br>
+</i>
+</div>
+</h2>
+</section>
+<section class="" data-id="d37a85c34a79af4bab089c917f892672">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<h2 style="font-style: normal; font-variant: normal;">
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<i>Un exemplu mai complex</i>
+</div>
+<div style="font-size: 35.40718460083008px; font-style: normal; font-variant: normal;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516419/tii-read.png" style="width: 488.7419997369434px; height: 399.5705613004601px; max-height: none; max-width: none;">
+<i>
+<br>
+</i>
+</div>
+</h2>
+</section>
+<section class="" data-id="58a71b5d01b34ed7cf7a0abf184ffc68">
+    <h2 style="font-style: normal; font-variant: normal;">III. Modificare, validare și recuperare</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>"steganoception"</li>
+<li>LSB2 (tradițional LSB1)</li>
+<li>creare obiecte dezactivate</li>
+</ul>
+</h3>
+</section>
+</section>
+<section class="" data-id="a7803c13d15365dc0a9bbf8aa72e452f">
+    <h2>IV. Criptare și eclipsare</h2>
+<p>
+    <br>
+</p>
+<h3 style="text-align: left; ">
+<ul>
+<li>extra, dar combinație bună</li>
+<li>tehnica&nbsp;<i>chaffing and winnowing</i>
+</li>
+</ul>
+<i>
+<br>
+</i>
+</h3>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516488/c_w.png" style="width: 566.9547142009537px; height: 425.32271102226076px; max-height: none; max-width: none;">
+<i>
+<br>
+</i>
+</div>
+</section>
+<section class="" data-id="47743b8faf45caead1ed4f00da2739eb">
+    <h2>V. Steganaliză</h2>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+<li>comparația cu originalul</li>
+<li>indetificarea datelor "straine" sau redundante</li>
+<li>examinarea paletelor de culori</li>
+<li>distingerea anomaliilor</li>
+<li>distrugerea mesajului</li>
+</ul>
+</h3>
+</section>
+<section class="stack" data-id="0b1f4a1deffcc698e6a5b7d0422f0e9e">
+    <section class="" data-id="b6ab929ce561048aa3ca44a041574f11">
+        <h2>VI. Steganografia în practică</h2>
+<div>
+        <br>
+    </div>
+<div style="text-align: left; ">
+<h2>
+</h2>
+<h3>
+<ul>
+<li>comunicare</li>
+<li>watermarking</li>
+<li>scopuri (i)legale</li>
+<li>cicada 3301</li>
+</ul>
+</h3>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516479/cicada-logo1.jpg" style="width: 549.9953163028507px; height: 362.86292346535635px; max-height: none; max-width: none;">
+</section>
+<section class="" data-id="39c82324574d17d04a7657d82fc3d9a9">
+    <h2 style="font-style: normal; font-variant: normal;">VI. Steganografia în practică</h2>
+<div>
+    <br>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516480/cicada-msg1.jpg" style="width: 658.2084744362498px; height: 652.8780979721848px; max-height: none; max-width: none;">
+</section>
+<section class="" data-id="1a0fb06dffca86f6205b3fc4b1a2c6ae">
+    <h2 style="font-style: normal; font-variant: normal;">VI. Steganografia în practică</h2>
+<div>
+    <br>
+</div>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/cmin/images/516481/cicada-qr1.jpg" style="width: 829.2260940788224px; height: 467.0151743505359px; max-height: none; max-width: none;">
+<br>
+</div>
+</section>
+</section>
+<section class="" data-id="61047aa1d0be67604fa26a70047df847">
+    <h2>Bibliografie</h2>
+<div>
+    <br>
+</div>
+<h3 style="text-align: left; ">
+<ul>
+    <font color="#073763" style="font-size: 42px;">
+        <li>http://en.wikipedia.org/wiki/Steganography<br>
+</li>
+<li>http://arxiv.org/pdf/0912.2319.pdf<br>
+</li>
+<li>http://arxiv.org/pdf/1111.3758.pdf<br>
+</li>
+<li>http://www.cse.wustl.edu/~jain/cse571-09/ftp/stegano/<br>
+</li>
+<li>http://www.gnupdf.org/Introduction_to_PDF<br>
+</li>
+<li>http://blog.didierstevens.com/2008/04/29/pdf-let-me-count-the-ways/</li>
+    </font>
+</ul>
+</h3>
+<h2 style="text-align: center; ">
+<font color="#660000">Întrebări?</font>
+</h2>
+<div>
+<font color="#3d85c6">http://ropython.org</font>
+</div>
+</section>
+</div>
+
