@@ -12,9 +12,11 @@
 # Contact: cmin764@yahoo/gmail.com
 
 
+import os
 from Tkinter import * # widgets's classes
 from tkFileDialog import askopenfilename # get file name
 from tkMessageBox import showerror, showinfo # user dialog
+
 from PIL import Image # image converting
 from Crypto.Cipher import AES # text cipher
 
@@ -332,6 +334,8 @@ if __name__ == "__main__":
     root = Tk() # toplevel
     root.title("Text In Image")
     root.maxsize(350, 250)
-    root.iconbitmap("tii.ico") # comment if you don't have one
+    icon = "tii.ico"
+    if os.path.isfile(icon):
+        root.iconbitmap(icon) # comment if you don't have one
     GUI(root)
     root.mainloop()
