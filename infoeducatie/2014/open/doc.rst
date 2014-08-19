@@ -2,6 +2,7 @@
 ------------
 
 Fiecare proiect se va evalua in felul urmator:
+
 a) se pregateste emitatorul cu tot cu mesajul de testat si primit de la juriu incarcat, iar declansarea se va face rapid cu o tasta sau un click etc.
 b) inainte ca emitatorul sa fie pornit, se porneste receptorul prin script-ul *run.py* unde se da ca parametru calea catre executabilul ce porneste receptorul in sine si asteapta sa se sincronizeze cu emitatorul, ca mai apoi sa scrie in timp real intr-un fisier mesajul primit si decodificat; imediat cum script-ul respectiv va fi pornit, este indicat ca si emitatorul din celalalt dispozitiv sa fie pornit pentru a nu pierde timpul
 c) in limita de timp setata sau a rularii normale, procesul va fi inchis si se va crea un fisier special cu rezultatul primit de receptor
