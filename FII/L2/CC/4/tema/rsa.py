@@ -184,7 +184,7 @@ def newKey(a, b, k):
             q = findAPrime(a, b, k)
             if q != p:
                 break
-    except:
+    except ValueError:
         raise ValueError
     n = p * q
     m = (p - 1) * (q - 1)
@@ -264,12 +264,18 @@ def decrypt(secret, modN, d, blockSize, padding=True):
 
 if __name__ == '__main__':
     (n, e, d) = newKey(10 ** 100, 10 ** 101, 50)
+    bsize = 16
+    show = True
     print ('n = {0}'.format(n))
     print ('e = {0}'.format(e))
     print ('d = {0}'.format(d))
     message = "ana are multe mere"
     print(message)
-    cipher = encrypt(message, n, e, 15)
-    print(cipher)
-    rmessage = decrypt(cipher, n, d, 15)
+    cipher = encrypt(message, n, e, bsize)
+    if show:
+        nl = blocks2numList(cipher, bsize)
+        print(numList2string(nl))
+    else:
+        print(cipher)
+    rmessage = decrypt(cipher, n, d, bsize)
     print(rmessage)
