@@ -73,7 +73,7 @@ def int2baseTwo(x):
     return bitInverse
 
 
-def modExp(a, d, n):
+def modExp(a, d, n, p=None, q=None):
     '''returns a ** d (mod n)'''
     assert d >= 0
     assert n >= 0
@@ -193,7 +193,17 @@ def newKey(a, b, k):
         if coprime([e, m]):
             break
     d = modInv(e, m)
-    return (n, e, d)
+    return (n, e, d), (p, q)
+
+
+def mod2prime(a, n, m, m1, m2):
+    n1 = n % (m1 - 1)
+    n2 = n % (m2 - 1)
+    x1 = pow((a % m1), n1, m1)
+    x2 = pow((a % m2), n2, m2)
+    w = pow(m1, -1) % m2
+    x = x1 + m1 * ((x2 - x1) * w % m2)
+    return int(x)
 
 
 def string2numList(strn):
@@ -252,9 +262,10 @@ def encrypt(message, modN, e, blockSize, padding=True):
     return [modExp(blocks, e, modN) for blocks in numBlocks]
 
 
-def decrypt(secret, modN, d, blockSize, padding=True):
+def decrypt(secret, modN, d, blockSize, padding=True, p=None, q=None):
     '''reverse function of encrypt'''
-    numBlocks = [modExp(blocks, d, modN) for blocks in secret]
+    #numBlocks = [modExp(blocks, d, modN) for blocks in secret]
+    numBlocks = [mod2prime(blocks, d, modN, p, q) for blocks in secret]
     numList = blocks2numList(numBlocks, blockSize)
     rmessage = numList2string(numList)
     if padding:
@@ -263,13 +274,13 @@ def decrypt(secret, modN, d, blockSize, padding=True):
 
 
 if __name__ == '__main__':
-    (n, e, d) = newKey(10 ** 100, 10 ** 101, 50)
+    (n, e, d), (p, q) = newKey(10 ** 100, 10 ** 101, 50)
     bsize = 16
     show = True
     print ('n = {0}'.format(n))
     print ('e = {0}'.format(e))
     print ('d = {0}'.format(d))
-    message = "ana are multe mere"
+    message = "abc"
     print(message)
     cipher = encrypt(message, n, e, bsize)
     if show:
@@ -277,5 +288,5 @@ if __name__ == '__main__':
         print(numList2string(nl))
     else:
         print(cipher)
-    rmessage = decrypt(cipher, n, d, bsize)
+    rmessage = decrypt(cipher, n, d, bsize, p=p, q=q)
     print(rmessage)
