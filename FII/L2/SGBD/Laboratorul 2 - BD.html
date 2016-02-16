@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://85.122.23.37/BD/index.php?title=Laboratorul_2&printable=yes -->
+<html lang="ro" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Laboratorul 2 - BD</title>
+<meta name="generator" content="MediaWiki 1.25.2">
+<meta name="robots" content="noindex,follow">
+<link rel="shortcut icon" href="http://85.122.23.37/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://85.122.23.37/BD/opensearch_desc.php" title="BD (ro)">
+<link rel="EditURI" type="application/rsd+xml" href="http://85.122.23.37/BD/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="http://85.122.23.37/BD/index.php/Laboratorul_2">
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="BD Abonare Atom" href="http://85.122.23.37/BD/index.php?title=Special:Schimb%C4%83ri_recente&amp;feed=atom">
+<link rel="stylesheet" href="./Laboratorul 2 - BD_files/load.php">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:e1ffd603cbaaa5f1a36e0d13fe843535 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(http://85.122.23.37/BD/resources/src/mediawiki.action/images/green-checkmark.png?2015-08-10T21:21:40Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:566361dca40950cccc5906c4d76454b2 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:4eedb904ce35ef0c8baac4b7176a0fb5 */</style>
+<script src="./Laboratorul 2 - BD_files/load(1).php"></script><script src="./Laboratorul 2 - BD_files/load(2).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Laboratorul_2","wgTitle":"Laboratorul 2","wgCurRevisionId":224,"wgRevisionId":224,"wgArticleId":7,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"ro","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"],"wgMonthNamesShort":["","ian","feb","mar","apr","mai","iun","iul","aug","sept","oct","nov","dec"],"wgRelevantPageName":"Laboratorul_2","wgRelevantArticleId":7,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"ro"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-js:7:3f6eaa1d9b6729eb983fa77595a6da3e */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script><script src="./Laboratorul 2 - BD_files/load(3).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/BD/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Laboratorul_2 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="ro">Laboratorul 2</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De la BD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Salt la:					<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#mw-head">navigare</a>, 					<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#p-search">căutare</a>
+				</div>
+				<div id="mw-content-text" lang="ro" dir="ltr" class="mw-content-ltr"><p><b>Obiective:</b>
+</p>
+<ul>
+<li>Înțelegerea modelului relațional al bazelor de date
+</li><li>Realizarea unei imagini de ansamblu asupra limbajului SQL
+</li><li>Fraza SELECT: Operatori, clauza WHERE si ORDER BY
+</li></ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Cuprins</h2><span class="toctoggle">&nbsp;[<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#" id="togglelink">ascunde</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Modelul_rela.C8.9Bional"><span class="tocnumber">1</span> <span class="toctext">Modelul relațional</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Limbajul_SQL"><span class="tocnumber">2</span> <span class="toctext">Limbajul SQL</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Comenzi_DDL_.28de_definire_a_datelor.29"><span class="tocnumber">2.1</span> <span class="toctext">Comenzi DDL (de definire a datelor)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Crearea_tabelelor"><span class="tocnumber">2.1.1</span> <span class="toctext">Crearea tabelelor</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#.C5.9Etergerea_unui_tabel"><span class="tocnumber">2.1.2</span> <span class="toctext">Ştergerea unui tabel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Comenzi_DML_.28de_manipulare_a_datelor.29"><span class="tocnumber">2.2</span> <span class="toctext">Comenzi DML (de manipulare a datelor)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Inserarea_.C3.AEnregistr.C4.83rilor"><span class="tocnumber">2.2.1</span> <span class="toctext">Inserarea înregistrărilor</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Actualizarea_valorilor"><span class="tocnumber">2.2.2</span> <span class="toctext">Actualizarea valorilor</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#.C5.9Etergerea_.C3.AEnregistr.C4.83rilor"><span class="tocnumber">2.2.3</span> <span class="toctext">Ştergerea înregistrărilor</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Interogarea_bazei_de_date"><span class="tocnumber">2.2.4</span> <span class="toctext">Interogarea bazei de date</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Tipuri_de_date_.28.C3.AEn_Oracle.29"><span class="tocnumber">3</span> <span class="toctext">Tipuri de date (în Oracle)</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori"><span class="tocnumber">4</span> <span class="toctext">Operatori</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori_aritmetici_uzuali"><span class="tocnumber">4.1</span> <span class="toctext">Operatori aritmetici uzuali</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori_pentru_.C5.9Firuri"><span class="tocnumber">4.2</span> <span class="toctext">Operatori pentru şiruri</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori_de_comparare"><span class="tocnumber">4.3</span> <span class="toctext">Operatori de comparare</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori_logici"><span class="tocnumber">4.4</span> <span class="toctext">Operatori logici</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Operatori_pentru_mul.C5.A3imi"><span class="tocnumber">4.5</span> <span class="toctext">Operatori pentru mulţimi</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Schema_bazei_de_date_-_studiu_de_caz"><span class="tocnumber">5</span> <span class="toctext">Schema bazei de date - studiu de caz</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Comanda_SELECT_.28si_clauzele_WHERE.2C_ORDER_BY.29"><span class="tocnumber">6</span> <span class="toctext">Comanda SELECT (si clauzele WHERE, ORDER BY)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Selectarea_datelor_dintr-un_tabel"><span class="tocnumber">6.1</span> <span class="toctext">Selectarea datelor dintr-un tabel</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Valori_NULL"><span class="tocnumber">6.2</span> <span class="toctext">Valori NULL</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Concatenarea_.C5.9Firurilor_de_caractere"><span class="tocnumber">6.3</span> <span class="toctext">Concatenarea şirurilor de caractere</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Afi.C5.9Farea_anumitor_r.C3.A2nduri"><span class="tocnumber">6.4</span> <span class="toctext">Afişarea anumitor rânduri</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Ordonarea_rezultatelor"><span class="tocnumber">6.5</span> <span class="toctext">Ordonarea rezultatelor</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#Exerci.C8.9Bii"><span class="tocnumber">7</span> <span class="toctext">Exerciții</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Modelul_rela.C8.9Bional">Modelul relațional</span></h2>
+<ul><li> este un model simplu, cu implementări foarte eficiente şi un limbaj de interogare (SQL) descriptiv simplu si expresiv;</li>
+<li> propus in anii '70 de catre Edgar Frank Codd, se regaseste in cele mai populare sisteme de gestiune de baze de date: <a rel="nofollow" class="external free" href="http://db-engines.com/en/ranking_trend">http://db-engines.com/en/ranking_trend</a></li></ul>
+<p>Elemente:
+</p>
+<ul><li> Baza de date constă dintr-un set de tabele/relaţii</li>
+<li> Fiecare tabel/relaţie are un nume unic in baza de date şi conţine un set de coloane/atribute/câmpuri</li>
+<li> Fiecare atribut are un nume unic in tabelul la care aparţine si are asociat tip/domeniu din care poate lua valori</li>
+<li> Fiecare linie/înregistrare/tuplu din tabel conţine valori pentru toate atributele</li>
+<li> Ordinea liniilor/tuplelor nu are semnificaţie</li></ul>
+<p><b>Schema bazei de date relaţionale </b> reprezintă descrierea structurală a tabelelor în baza de date.
+</p><p><b>Instanţa bazei de date </b> reprezintă conţinutul bazei de date la un anumit moment
+</p><p><b>NULL</b> – este o valoare specială utilizată când nu se cunoaşte (sau e nedefinită) valoarea unui atribut pentru o înregistrare.
+</p><p><b>Cheie candidat</b> – un atribut care are valori unice pentru fiecare înregistrare 
+- sau un set de atribute ale căror valori combinate sunt unice, minimală în raport cu această proprietate (nici o submulţime nu e cheie); dacă nu este îndeplinită proprietatea de mulţime minimală avem de a face cu o supercheie
+</p><p><b>Cheie primară</b> – una dintre cheile candidat aleasă pentru a identifica în mod unic înregistrările din tabel; nici un atribut implicat nu poate avea valoarea NULL
+</p><p><b>Cheie alternativă</b> – cheie candidat care nu a fost aleasă drept cheie primară
+</p><p><b>Cheie străină</b> – un atribut sau un set de atribute dintr-o relaţie care are corespondent o cheie candidat a altei relaţii ( sau chiar a relaţiei curente, caz în care o numim cheie străină recursivă)
+</p><p>Obţinerea de informaţii din baza de date se realizează cu ajutorul interogărilor SQL. Rezultatul unei interogări este un nou tabel.
+</p><p><b>Algebra relaţională</b>
+</p>
+<ul><li> Un limbaj formal</li>
+<li> Operatorii de bază din algebra relaţională: selecţie, proiecţie, produs cartezian, intersecţie, diferenţă, redenumire</li>
+<li> Bazată pe mulţimi (duplicatele se elimină)</li></ul>
+<h2><span class="mw-headline" id="Limbajul_SQL">Limbajul SQL</span></h2>
+<p>SQL - Structured Query Language
+</p>
+<ul><li> limbajul utilizat în manipularea bazelor de date relaţionale</li>
+<li> un limbaj esenţial declarativ; exprimă ce se doreşte de la baza de date, nu şi cum se obţine rezultatul</li>
+<li> un limbaj implementat cu fundamente în algebra relaţională (semantica este definită cu ajutorul algebrei relaţionale), bazat pe multi-seturi  (nu se elimină duplicatele)</li>
+<li> deşi considerat un limbaj de programare non-procedural, majoritatea SGBD-urilor relaţionale oferă şi extensii procedurale.</li></ul>
+<p>Limbajul SQL a fost pentru prima dată standardizat de către Organizaţia Internaţională pentru Standardizare (ISO) în anul 1987. De atunci limbajul a suferit modificări/îmbunătăţiri în mai multe rânduri, ultima versiune stabilă fiind SQL:2008 (denumită ISO/IEC 9075:2008).
+</p><p>Deşi standardizat la nivel internaţional, fiecare dezvoltator de baze de date a modificat şi a extins versiunea standard pentru a exploata avantajele oferite de implementarea particulară a produsului propriu. Datorită dimensiunii mari şi a complexităţii standardului cei mai mulţi dezvoltatori nu l-au implementat în totalitate. Vice-versa, standardul nu specifică comportamentul bazei de date în anumite situaţii, decizille ramânând la latitudinea dezvoltatorilor. Se vorbeşte astfel de dialecte SQL. Rezultatul este apariţia de incompatibilităţi între SGBD-uri relaţionale diferite. Unele incompatibilităţi sunt intenţionat păstrate de dezvoltatori cu scopul de fidelizare a clienţilor.
+</p><p>Declaraţia de conformitate Oracle cu standardul ISO SQL:2008 poate fi studiată la adresa <a rel="nofollow" class="external free" href="http://download.oracle.com/docs/cd/E14072_01/server.112/e10592/ap_standard_sql003.htm">http://download.oracle.com/docs/cd/E14072_01/server.112/e10592/ap_standard_sql003.htm</a>
+</p><p>În continuare sunt listate în forma Backus-Naur cele mai uzuale comenzi SQL. Convenţiile de sintaxă în acest format sunt următoarele:
+</p>
+<ul><li>	&lt;&gt;		reprezintă o variabilă de substituţie</li>
+<li>	|  		reprezintă conjuncţia</li>
+<li>	[…]		reprezintă elemente opţionale</li>
+<li>	{…|…|…}	reprezintă exact un element din listă</li></ul>
+<h3><span class="mw-headline" id="Comenzi_DDL_.28de_definire_a_datelor.29">Comenzi DDL (de definire a datelor)</span></h3>
+<h4><span class="mw-headline" id="Crearea_tabelelor">Crearea tabelelor</span></h4>
+<pre>CREATE [{GLOBAL | LOCAL} TEMPORARY] TABLE
+       &lt;nume_tabel&gt;
+        (&lt;nume_coloană1&gt; {data_type | domain_name} [constrângeri] 
+        [,&lt;nume_coloana2&gt; {data_type | domain_name} [constrângeri]]
+        […]
+        )     
+       [ ON COMMIT { DELETE | PRESERVE } ROWS ]
+</pre>
+<p><br>
+Opţiunea TEMPORARY specifică crearea unui tabel temporar, care îşi păstrează conţinutul doar pe durata unei tranzacţii (până la apariţia comenzii COMMIT) sau pe parcursul unei sesiuni (opţiunea ON COMMIT PRESERVE ROWS).  În Oracle există doar varianta GLOBAL a tabelelor temporare: definiţia tabelului temporar este vizibilă din toate sesiunile de lucru însă accesul la date este privat (datele inserate intr-o sesiune pot fi accesate doar din sesiunea respectivă). 
+</p><p><br>
+</p>
+<h4><span class="mw-headline" id=".C5.9Etergerea_unui_tabel">Ştergerea unui tabel</span></h4>
+<pre>DROP TABLE &lt;nume_tabel&gt;  [RESTRICT | CASCADE]
+</pre>
+<p>CASCADE permite ştergerea unui tabel care e referenţiat de un VIEW sau de chei străine şi şterge view-ul şi restricţia de tip cheie străină.
+</p><p>În Oracle sintaxa pentru ştergerea tabelelor este:
+</p>
+<pre>DROP TABLE &lt;nume_tabel&gt;  [CASCADE CONSTRAINTS] [PURGE]
+</pre>
+<p>În Oracle tabelele şterse sunt reciclate dacă nu este specificată opţiunea PURGE, ele putând fi recuperate cu comanda: 
+</p>
+<pre>FLASHBACK TABLE &lt;nume_tabel&gt;   TO 
+     { { SCN | TIMESTAMP } expr 
+     [ { ENABLE | DISABLE } TRIGGERS ] | 
+     BEFORE DROP [ RENAME TO &lt;nume_nou&gt; ]} 
+</pre>
+<h3><span class="mw-headline" id="Comenzi_DML_.28de_manipulare_a_datelor.29">Comenzi DML (de manipulare a datelor)</span></h3>
+<h4><span class="mw-headline" id="Inserarea_.C3.AEnregistr.C4.83rilor">Inserarea înregistrărilor</span></h4>
+<pre>INSERT INTO &lt;nume_tabel&gt; 
+            [ (lista_coloane) ]
+            VALUES (lista_valori)
+</pre>
+<h4><span class="mw-headline" id="Actualizarea_valorilor">Actualizarea valorilor</span></h4>
+<pre>UPDATE &lt;nume_tabel&gt;
+       SET &lt;nume_coloana1&gt; = valoare1
+           [, &lt;nume_coloana2&gt; = valoare2...]
+       [WHERE conditie]
+</pre>
+<h4><span class="mw-headline" id=".C5.9Etergerea_.C3.AEnregistr.C4.83rilor">Ştergerea înregistrărilor</span></h4>
+<pre> 
+DELETE FROM &lt;nume_tabel&gt; 
+      [WHERE conditie]
+</pre>
+<p><br>
+</p>
+<h4><span class="mw-headline" id="Interogarea_bazei_de_date">Interogarea bazei de date</span></h4>
+<pre>SELECT [DISTINCT | ALL] {* | [expresie_coloana [AS &lt;nume_nou&gt;]] [,...] }
+       FROM &lt;nume_tabel&gt; [alias] [, ...]
+       [WHERE conditie]
+       [GROUP BY lista_coloane] [HAVING conditie]
+       [ORDER BY exp1 [ASC/DESC] [,exp2...]] 
+</pre>
+<h2><span class="mw-headline" id="Tipuri_de_date_.28.C3.AEn_Oracle.29">Tipuri de date (în Oracle)</span></h2>
+<table border="1">
+<tbody><tr>
+<td>Tip
+</td>
+<td>Proprietăţi
+</td></tr>
+<tr>
+<td>CHAR(n)
+</td>
+<td>Şiruri de lungime fixă n (1 caracter e stocat pe 1 octet). Dacă valorile introduse au mai puţine caractere se adaugă blanks (spaţii) la sfarşit&nbsp;; dacă valorile introduse conţin mai multe caractere apare eroare (VALUE_ERROR)
+</td></tr>
+<tr>
+<td>VARCHAR2(n)
+</td>
+<td>Şiruri de lungime variabilă, n este lungimea maximă. Este indicat a fi folosit cand valorile pentru un atribut diferă ca lungime fiindcă se consumă un număr de octeţi egal cu numărul de caractere din şir
+</td></tr>
+<tr>
+<td>NUMBER
+</td>
+<td>Corespunde numerelor în virgulă fixă şi mobilă. Numere în intervalul (-10126,  10126), infinit (pozitiv şi negativ)
+</td></tr>
+<tr>
+<td>NUMBER(n1, n2)
+</td>
+<td>Numere ce conţin în total n1 zecimale semnificative, n2 precizând numărul de cifre de la punctual zecimal până la cea mai puţin semnificativă cifră. n2 poate lua valori negative, caz în care se face rotunjirea pe numărul de poziţii specificate în stânga punctului zecimal. Ex. pentru tipul NUMBER(5,-2), introducerea valorii 12345 generează valoarea 12300 iar pentru 12399 generează 12400
+</td></tr>
+<tr>
+<td>DATE
+</td>
+<td>Reprezintă un moment de timp stocând anul, luna, ziua, orele minutele şi secundele
+</td></tr>
+<tr>
+<td>LOB (large object):<br>BLOB, CLOB, NCLOB, BFILE
+</td>
+<td>Permit stocarea în format binar sau caracter a datelor nestructurate precum text, imagini, videoclipuri…
+</td></tr></tbody></table>
+<p>Pentru compatibilitate cu alte sisteme, Oracle suportă şi tipuri precum: decimal, integer, smallint, real; reprezentarea lor internă este însă definită de formatul tipului number.
+</p><p>O listă completă găsiți la adresa: <a rel="nofollow" class="external free" href="http://download.oracle.com/docs/cd/B19306_01/server.102/b14200/sql_elements001.htm">http://download.oracle.com/docs/cd/B19306_01/server.102/b14200/sql_elements001.htm</a>
+</p><p><b>NULL</b> este o valoare specială care semnifică lipsa informaţiei. Ambele teste NULL=NULL şi NULL&lt;&gt;NULL returnează FALSE. Verificarea (in)egalităţii cu NULL se face utilizând IS [NOT] NULL.
+</p>
+<h2><span class="mw-headline" id="Operatori">Operatori</span></h2>
+<h3><span class="mw-headline" id="Operatori_aritmetici_uzuali">Operatori aritmetici uzuali</span></h3>
+<table border="1">
+<tbody><tr>
+<td>Operator	</td>
+<td>Descriere	</td>
+<td>Exemplu
+</td></tr>
+<tr>
+<td>*	</td>
+<td>înmulţire - pt. tipurile numerice	</td>
+<td>SELECT valoare / 10 FROM note;
+</td></tr>
+<tr>
+<td>/	</td>
+<td>împărţire - pt. tipurile numerice	</td>
+<td>SELECT valoare * 5 FROM note;
+</td></tr>
+</tbody><caption>	</caption>
+<caption>adunare - pt. tipurile numerice şi DATE  	</caption>
+<caption>SELECT valoare + 1 FROM note;
+</caption>
+<tbody><tr>
+<td> -	</td>
+<td>scădere - pt. tipurile numerice şi DATE  	</td>
+<td>SELECT valoare-1FROM note;
+</td></tr></tbody></table>
+<p>Dacă unul dintre operanzi e NULL, rezultatul e NULL
+</p>
+<h3><span class="mw-headline" id="Operatori_pentru_.C5.9Firuri">Operatori pentru şiruri</span></h3>
+<p><b>||</b>  - concatenare	
+</p><p>Ex:  
+<code>SELECT 'Numele studentului este: ' || nume FROM studenti;</code>
+</p><p>Dacă exact unul dintre operanzi e NULL, rezultatul e celălalt operand; dacă ambii operanzi sunt NULL rezultatul e NULL.
+</p>
+<h3><span class="mw-headline" id="Operatori_de_comparare">Operatori de comparare</span></h3>
+<p>- returnează TRUE sau FALSE, sunt aplicabili pentru toate tipurile de date 
+</p>
+<table border="1">
+<tbody><tr>
+<td>Operator	</td>
+<td>Descriere	</td>
+<td>Exemplu
+</td></tr>
+<tr>
+<td>= <br> &gt; <br> &gt;= <br> &lt; <br>  &lt;= <br> &lt;&gt;
+</td>
+<td>Operatori binari, semnificaţia uzuală
+</td>
+<td>SELECT nume AS "Student" FROM studenti WHERE an = 2
+</td></tr>
+<tr>
+<td>ANY/ <br> SOME
+</td>
+<td>Operator aplicat unei liste sau rezultatului unei interogări  în conjuncţie cu unul din operatorii de comparare uzuali de mai sus, cu semnificaţia următoare: operatorul uzual primeşte ca al doilea operand fiecare din valorile din listă; returnează TRUE dacă pt. cel puţin o valoare din listă rezultatul e TRUE, altfel returnează FALSE.
+</td>
+<td>SELECT * FROM studenti WHERE an = SOME (2,3);
+</td></tr>
+<tr>
+<td>ALL
+</td>
+<td>Ca şi ANY/SOME, cu diferenţa rezultatul este TRUE doar dacă operatorul uzual returnează TRUE pentru toate valorile din listă.
+</td>
+<td>SELECT * FROM studenti WHERE an &gt;= ALL (1, 2)
+</td></tr>
+<tr>
+<td>IN
+</td>
+<td>Verifică apartenenţa valorii primului operand la mulţimea specificată de al doilea operand. Este echivalent cu „=ANY”
+</td>
+<td>SELECT * FROM studenti WHERE nume IN ('Adrian', 'Alex');
+</td></tr>
+<tr>
+<td>NOT IN
+</td>
+<td>Returnează FALSE dacă valoarea primului operand nu face parte din lista specificată de al doilea operand. Este echivalent cu „&lt;&gt;ANY”
+</td>
+<td>SELECT * FROM studenti WHERE an NOT IN (1,2);
+</td></tr>
+<tr>
+<td>BETWEEN x AND y
+</td>
+<td>Îl putem considera ca pe un operator ternar: returnează TRUE dacă primul operand satisface simultan condiţiile  &gt;=x şi &lt;=y, unde x şi y reprezentă alţi doi operanzi
+</td>
+<td>SELECT nume, prenume FROM studenti WHERE an BETWEEN 1 AND 3
+</td></tr>
+<tr>
+<td>LIKE
+</td>
+<td>Operator binar, verifică dacă primul operand este în conformitate cu un şablon specificat de al doilea operand. Şablonul este un şir de caractere, ce poate conţine unul din caracterele speciale:
+<dl><dd> <b>%</b>  semnifică orice şir de caractere, chiar şirul vid (de lungime 0)</dd>
+<dd> <b>_</b>  suplineşte un singur caracter</dd></dl>
+<p>Dacă cele două simboluri speciale trebuiesc interpretate ca atare se utilizează caracterul ESCAPE: \% şi \_	
+</p>
+</td>
+<td> SELECT * FROM sudenti WHERE nume LIKE '%andr%';
+</td></tr>
+<tr>
+<td>IS [NOT] NULL
+</td>
+<td>Operator unar. Singurul mod de test pentru null
+</td>
+<td>SELECT * FROM studenti WHERE bursa IS NOT NULL AND bursa &gt; 200;
+</td></tr>
+<tr>
+<td>EXISTS
+</td>
+<td>Operator unar, verifică dacă o sub-interogare returnează măcar o linie
+</td>
+<td>SELECT * FROM studenti WHERE NOT EXISTS (SELECT * FROM note WHERE studenti.nr_matricol = note.nr_matricol);<br> SELECT * FROM studenti WHERE EXISTS(SELECT* FROM note WHERE valoare=10 AND studenti.nr_matricol=note.nr_matricol);
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Operatori_logici">Operatori logici</span></h3>
+<table border="1">
+<tbody><tr>
+<td>Operator	</td>
+<td>Descriere	</td>
+<td>Exemplu
+</td></tr>
+<tr>
+<td>NOT	</td>
+<td>Operator unar reprezentând negaţia	</td>
+<td>SELECT * FROM studenti WHERE NOT (bursa IS NULL);
+</td></tr>
+<tr>
+<td>AND	</td>
+<td>Operator binar reprezentând ŞI-ul logic	</td>
+<td>SELECT * FROM studenti WHERE an='3' AND bursa IS NOT NULL;
+</td></tr>
+<tr>
+<td>OR	</td>
+<td>Operator binar reprezentând SAU-ul (V) logic	</td>
+<td>SELECT * FROM studenti WHERE an='3' OR bursa IS NOT NULL;
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Operatori_pentru_mul.C5.A3imi">Operatori pentru mulţimi</span></h3>
+<p>-operanzii sunt interogări (rezultatele interogărilor – deci tabele/relaţii), semnificaţia şi restricţiile de aplicare sunt cele specificate de algebra relaţională.
+</p>
+<table border="1">
+<tbody><tr>
+<td>Operator	</td>
+<td>Descriere	</td>
+<td>Exemplu
+</td></tr>
+<tr>
+<td>UNION [ALL]	</td>
+<td>Reuniunea specifică mulţimilor. Dacă ALL este specificat duplicatele nu sunt eliminate.	</td>
+<td>SELECT * FROM <br>(SELECT nume FROM studenti WHERE an = '2' <br>UNION <br>SELECT nume FROM studenti WHERE an = '3');
+</td></tr>
+<tr>
+<td>INTERSECT [ALL]	</td>
+<td>Intersecţia specifică mulţimilor, duplicatele sunt eliminate.	</td>
+<td>SELECT * FROM <br>(SELECT nume FROM studenti WHERE an = 2 <br> INTERSECT <br>SELECT nume FROM studenti WHERE bursa IS NOT NULL);
+</td></tr>
+<tr>
+<td>MINUS	</td>
+<td>Înregistrările distincte selectate de prima interogare care nu există în a doua interogare.	</td>
+<td>SELECT * FROM (SELECT nume FROM studenti WHERE an = 3 <br> MINUS <br> SELECT nume FROM studenti WHERE bursa IS NULL);
+</td></tr></tbody></table>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Schema_bazei_de_date_-_studiu_de_caz">Schema bazei de date - studiu de caz</span></h2>
+<p>Fiecare facultate a unei universităţi are nevoie să-şi facă managementul intern al studenţilor pe care îi are. Spre exemplu, un aspect important în cadrul secretariatului este cunoaşterea notelor pe care studenţii le-au luat la diversele materii pe care le-au făcut. Pe baza acestor informaţii, se poate decide dacă studentul va avea sau nu bursă, dacă va primi sau nu cazare în anul ce urmează sau daca va trebui să repete o anumită materie. Deşi aceste informaţii sunt disponibile în format clasic, în cataloage, este mult mai uşor de lucrat cu un număr mare de studenţi atunci când aceştia sunt stocaţi într-o bază de date. 
+</p><p>În afara informaţiilor referitoare la studenţi (nume, prenume, anul în care sunt înmatriculaţi, etc.) ce ar putea forma o tabelă într-o bază de date, şi alte informaţii precum notele sau numele cursurilor la care au participat trebuie să fie stocate. Nu este natural ca aceste informaţii să fie stocate împreună cu informaţiile personale ale studentului (de exemplu din cauză ca participarea la doua cursuri diferite ar presupune introducerea de doua ori - ca şi înregistrari diferite în tabelă - a aceloraşi informaţii privitoare la student) şi din acest motiv sunt necesare tabele suplimentare.
+</p><p>În cadrul laboratorului de baze de date, vom folosi tabele studenti, cursuri, note şi profesori, ce au urmatoarele structuri: 
+</p><p><br>
+Tabela studenti:
+</p>
+<ul><li> nr_matricol - câmp alfanumeric de 6 caractere ce nu poate fi nul;</li>
+<li> nume - câmp alfanumeric, variabil ca dimensiune dar având maxim 10 caractere ce nu poate fi nul;</li>
+<li> prenume - câmp alfanumeric, variabil ca dimensiune dar având maxim 10 caractere;</li>
+<li> an - câmp numeric ce poate reţine numere formate doar dintr-o singură cifră;</li>
+<li> grupa - câmp alfanumeric de 2 caractere;</li>
+<li> bursa - câmp numeric ce poate ţine minte valori reale formate din 4 cifre înainte de virgulă şi două cifre după;</li>
+<li> data_nastere - câmp de tip dată calendaristică.</li></ul>
+<p><br>
+</p><p>Tabela cursuri:
+</p>
+<ul><li> id_curs - câmp alfanumeric de 4 caractere ce nu poate fi nul;</li>
+<li> titlu_curs - câmp alfanumeric, variabil ca dimensiune dar având maxim 10 caractere ce nu poate fi nul;</li>
+<li> an - câmp numeric ce poate reţine numere formate doar dintr-o singură cifră;</li>
+<li> semestru  - câmp numeric ce poate reţine o cifra;</li>
+<li> credite - câmp numeric ce poate reţine numere formate din două cifre.</li></ul>
+<p><br>
+Tabela note:
+</p>
+<ul><li> nr_matricol - câmp alfanumeric de 6 caractere ce nu poate fi nul;</li>
+<li> id_curs - câmp alfanumeric de 4 caractere ce nu poate fi nul;</li>
+<li> valoare - câmp numeric ce poate reţine numere formate din două cifre;</li>
+<li> data_notare - câmp de tip dată calendaristică.</li></ul>
+<p><br>
+Tabela profesori:
+</p>
+<ul><li> id_prof - câmp alfanumeric de 4 caractere ce nu poate fi nul;</li>
+<li> nume - câmp alfanumeric, fix ca dimensiune având 10 caractere ce nu poate fi nul;</li>
+<li> prenume - câmp alfanumeric, fix ca dimensiune având 10 caractere;</li>
+<li> grad_didactic - câmp alfanumeric, variabil ca dimensiune dar având maxim 5 caractere.</li></ul>
+<p><br>
+Tabela didactic
+</p>
+<ul><li> id_prof - câmp alfanumeric de 4 caractere ce nu poate fi nul;</li>
+<li> id_curs - câmp alfanumeric de 4 caractere ce nu poate fi nul.</li></ul>
+<p><br>
+<span style="color:green">Creaţi aceste tabele utilizând contul student (creat laboratorul anterior).</span>
+</p><p><span style="color:green">Inseraţi în baza de date nou creată un student Popescu Ionut, proaspat înmatriculat în anul 2 care a luat nota 10 la materia Logica pentru informatica predata de  Cristian Masalagiu în primul semestru din anul 1.</span>
+</p><p><span style="color:green">Executaţi comanda @&lt;intrebati profesorul&gt; pentru a rula un script de creare (similar cu cel rulat în primul laborator) care are rolul de a crea toate tabelele de mai sus şi de a le popula cu date.</span>:
+</p><p><code>@"<a rel="nofollow" class="external free" href="http://thor.info.uaic.ro/~vcosmin/BD/facultate.sql">http://thor.info.uaic.ro/~vcosmin/BD/facultate.sql</a>"</code>
+</p><p>Pentru a vedea care este structura unei tabele (în cazul în care aţi uitat spre exemplu din cate litere poate fi format numele de familie al unui student), puteti executa comanda SQL*Plus describe:
+</p><p><code>DESCRIBE nume_tabel</code>
+</p>
+<h2><span class="mw-headline" id="Comanda_SELECT_.28si_clauzele_WHERE.2C_ORDER_BY.29">Comanda SELECT (si clauzele WHERE, ORDER BY)</span></h2>
+<h3><span class="mw-headline" id="Selectarea_datelor_dintr-un_tabel">Selectarea datelor dintr-un tabel</span></h3>
+<p>Atunci când se execută o comandă de tip SELECT, pot fi preluate din baza de date un număr de linii (anumite linii), un număr de coloane (anumite coloane) sau o combinaţie între cele două. 
+</p><p>Pentru a selecta toate liniile şi toate coloanele dintr-un tabel, poate fi executată comanda 
+</p><p><code>SELECT * FROM nume_tabel;</code>
+</p><p>Exerciţiu: selectaţi toate liniile şi toate coloanele din tabelul studenti.
+</p><p>Aceasta comanda furnizează, de obicei, mai multe informaţii decât sunt necesare. Pentru a prelua doar anumite coloane, simbolul asterisc va fi inlocuit cu numele coloanelor ce se doresc a fi preluate, despărţite prin virgulă. Un exemplu este preluarea doar a numelor şi prenumelor studenţilor înscrişi la facultate, executând comanda:
+</p><p><code>SELECT nume, prenume FROM studenti;</code>
+</p><p><br>
+</p><p>Atunci când, dintr-un anumit motiv, denumirea coloanei nu este reprezentativă la afișare, aceasta poate fi modificată în timpul exprimării comenzii SELECT prin definirea unui alias. Pentru aceasta se va folosi cuvântul cheie "AS" după numele coloanei ce trebuie redenumită, urmat de numele nou al coloanei. În cazul în care noua denumire este formată din mai multe cuvinte, aceasta trebuie să fie incadrată între simbolurile ghilimele. Spre exemplu, următoarea comandă va redenumi numele coloanei "nume" din tabelul profesori în "Nume Profesor":
+</p><p><code>SELECT nume AS "Nume Profesor" FROM profesori;</code>
+</p><p><span style="color:red">Observaţie:</span> Cuvântul AS este optional, în cazul în care acesta lipseste se va insera doar un spaţiu între numele vechi al coloanei ce trebuie selectat şi noul nume. Dacă numele nou al coloanei este format doar dintr-un singur cuvânt, ghilimelele pot fi omise (în fapt, ghilimelele sunt utilizate atunci când noul nume conţine spaţii, caractere speciale sau se doreşte a fi afişat case-sensitive - predefinit este afişat cu litere mari). Ca şi exemplu, încercaţi să executaţi comanda:
+</p><p><code>SELECT nume profesor FROM profesori;</code>
+</p><p><br>
+</p><p>Daca sunt mai multe înregistrări similare, toate acestea vor fi afişate, de exemplu dacă se doreşte aflarea anilor de studiu în care sunt înscrişi studenţii executați interogarea:
+</p><p><code>SELECT an FROM studenti;</code>
+</p><p>Atunci când avem mai mulţi studenţi înmatriculaţi, acest an de studiu va fi afişat pentru fiecare student în parte. Cum nu ne interesează să fie afişat de mai multe ori anul 1 (doar pentru ca avem mai mulţi studenţi înscrişi în primul an), vom utiliza clauza "DISTINCT" în cadrul comenzii SELECT tocmai pentru a restricţiona preluarea din baza de date doar a datelor unice (duplicatele vor fi eliminate). Executaţi aşadar comanda:
+</p><p><code>SELECT DISTINCT an FROM studenti;</code>
+</p><p>Criteriul DISTINCT poate fi utilizat şi pentru mai multe câmpuri selectate simultan. Spre exemplu, următoarea interogare ne va returna doar combinaţiile &lt;an,grupa&gt; unice în tabel: 
+</p><p><code>SELECT DISTINCT an, grupa FROM studenti;</code>
+</p><p><br>
+<span style="color:red">Observaţie:</span> Deşi comenzile SQL au fost scrise cu litere mari, limbajul SQL nu este unul case-sensitive. Comenzile poti fi aşadar scrise şi cu litere mici. În cadrul laboratoarelor de baze de date (pe acest WIKI) vom scrie totuşi (sau cel puţin vom încerca) cuvintele cheie cu litere mari tocmai pentru ca voi să le puteţi diferenţia de restul obiectelor (nume de tabele, nume de câmpuri) care nu fac parte din limbaj. Singurul loc în care SQL va face totuşi diferenţa între literele mari şi cele mici este în cadrul şirurilor de caractere din diverse câmpuri ale unui tabel. De exemplu, dacă veţi încerca să executaţi comanda <code>SELECT * FROM cursuri WHERE titlu_curs='LOGICA';</code> , probabil nu va funcţiona (decât dacă aveţi în tabelă un curs cu denumirea "LOGICA" - scris cu litere mari).
+</p><p><span style="color:red">Observaţie:</span> O comanda SQL poate fi scrisă pe mai multe rânduri. Dacă o comandă nu a fost terminată (încă) la apăsarea tastei enter, SQL*Plus va aştepta continuarea comenzii pe rândul următor. Comanda va fi considerată completă la întâlnirea simbolului punct şi virgulă.
+</p><p><br>
+În unele cazuri, datele existente în tabele trebuie să fie modificate înainte de afişare. O serie de operatori simpli v-au fost prezentaţi în secţiunile anterioare (spre exemplu suma, produsul etc.). Dacă, spre exemplu, dorim să afişam numele studenţilor împreună cu bursa pe care aceştia la care au fost adăugaţi 10ron (pentru că au primit o sponsorizare suplimentară), comanda ce va afişa sumele finale pe care studenţii le vor primi este:
+</p><p><code>SELECT nume, prenume, bursa + 10 FROM studenti;</code>
+</p><p><span style="color:red">Observaţie:</span> Precedenţa operatorilor aritmetici este cea cunoscută din matematica de gimnaziu: înmulţirea, împărţirea, adunarea, scăderea. Pentru a schimba ordinea de executare a operaţiilor, ca şi în alte limbaje cunoscute, utilizaţi parantezele rotunde.
+</p><p><span style="color:green">Exerciţiu: Afişaţi jumătate din valoarea bursei studenţilor la care a fost adăugat în prealabil o sumă de 100 ron. Ţineţi cont de precedenţa operatorilor.</span>
+</p>
+<h3><span class="mw-headline" id="Valori_NULL">Valori NULL</span></h3>
+<p>Uneori, anumite câmpuri pot fi lăsate fără valoare (de exemplu pentru studenţii care nu au bursă, în loc să trecem valoarea 0, nu va fi trecută nici o valoare - uneori chiar şi valoarea 0 poate avea o semnificaţie interpretabilă: spre exemplu, aceasta ar putea însemna că studentul ia de fapt bursă dar că această bursă nu poate fi acoperită din punct de vedere financiar [insert sad student image here]). Neinserarea unei valori într-un câmp va avea ca efect trecerea în acel câmp a valorii NULL (sau ’’ - şirul vid ce este reprezentat prin două apostroafe). Dacă valoarea unui câmp este nulă şi acest câmp este utilizat într-o expresie aritmetică, rezultatul va fi de asemenea o valoare nulă (se poate observa pentru cazul  studenţilor ce nu aveau bursă.
+</p>
+<h3><span class="mw-headline" id="Concatenarea_.C5.9Firurilor_de_caractere">Concatenarea şirurilor de caractere</span></h3>
+<p>Pentru concatenarea a două şiruri de caractere se va utiliza operatorul || (două bare verticale). Prin intermediul acestuia pot fi concatenate două şiruri de caractere oarecare, un şir de caractere cu un număr, un şir de caractere cu valoarea dintr-o coloană, etc. Rezultatul este o nouă coloană. In cazul tipurilor de date de tip char, în baza de date sunt reţinute şi spaţiile necesare ajungerii la un număr de caractere egal cu dimensiunea câmpului (de exemplu dacă într-un câmp de tip char de 10 caractere s-au introdus doar 3 caractere, automat sunt stocate 7 spaţii pentru a completa cele 10 caractere). In cazul datelor de tip varchar2 nu sunt introduse spaţii suplimentare.  Să vedem câteva exemple:
+</p><p><code>SELECT 'Studentul '||nume||' '||prenume||' este inmatriculat in anul '|| an ||'.' AS info FROM studenti;</code>
+</p><p><span style="color:red">
+Observaţie:</span> Toate şirurile de caractere din SQL sunt scrise între simbolurile apostrof. Singurul loc în care se folosesc ghilimelele, pentru a grupa mai multe caractere, este atunci când dorim să creăm un alias pentru numele unei coloane.
+</p>
+<h3><span class="mw-headline" id="Afi.C5.9Farea_anumitor_r.C3.A2nduri">Afişarea anumitor rânduri</span></h3>
+<p>Deja am filtrat (într-un exemplu anterior) anumite rânduri - duplicatele - utilizând cuvantul cheie DISTINCT. Pentru a restricţiona şi mai mult datele ce vor fi afişate, în cadrul operaţiilor de tip SELECT, se poate utiliza clauza WHERE. 
+</p><p>Clauza WHERE este opţională şi, atunci când va fi utilizată, va fi mereu scrisă după numele tabelului din care se face selecţia şi va fi urmată de o condiţie. Vor fi selectate doar acele rânduri din tabel care satisfac condiţia impusă de clauza WHERE. Spre exemplu, am putea selecta doar studenţii din anul 1 executând comanda: 
+</p><p><code>SELECT nume, prenume FROM studenti WHERE an = 1;</code>
+</p><p>Condiţiile ce sunt utilizate în clauza WHERE sunt de fapt expresii booleene. Oricare dintre operatorii de comparare descrişi în secţiunile anterioare pot fi utilizaţi. Următorul exemplu va afişa toţi studenţii bursieri.
+</p><p><code>SELECT nume, prenume FROM studenti WHERE bursa IS NOT NULL;</code>
+</p><p>Condiţia ce urmează după clauza WHERE poate fi una simplă (ca cele date până acum ca exemplu) sau pot fi compuse din mai multe condiţii simple interconectate cu operatorii logici descrişi în secţiunea anterioară. Spre exemplu, dacă dorm să îi găsim pe acei studenţi din anul 1 care iau bursă, putem executa comanda: 
+</p><p><code>SELECT nume, prenume FROM studenti WHERE bursa IS NOT NULL AND an = 1;</code>
+</p><p><span style="color:red">Observaţie:</span> în evaluarea unei expresii logice compuse, precedenţa operatorilor logici este: NOT, AND, OR.
+</p><p><br>
+</p><p>Atunci când în clauza WHERE se doreşte lucru cu şiruri de caractere, un operator foarte util este operatorul LIKE.  Prin intermediul acestuia putem forma expresii regulate care să ne permită selectarea anumitor informaţii chiar dacă acestea nu sunt cunoscute în întregime. În cadrul acestor expresii regulate, caracterul "%" (la sută) are semnificaţia unui grup de caractere, iar caractereul "_" (underscore) semnifică un singur caracter. Spre exemplu, dacă dorim să selectăm toţi studenţii a căror nume se termină în "escu", putem executa comanda:
+</p><p><code>SELECT nume, prenume FROM studenti WHERE nume LIKE '%escu';</code>
+</p><p><span style="color:red">Observaţie:</span> atunci când doriţi să utilizaţi efectiv caracterul&nbsp;% sau caracterul _, acestea vor fi prefixate (escaped) cu caracterul \ (backslash).
+</p>
+<h3><span class="mw-headline" id="Ordonarea_rezultatelor">Ordonarea rezultatelor</span></h3>
+<p>Pentru a ordona datele selectate, se va utiliza clauza ORDER BY urmată de numele (sau numarul) câmpului după care se doreşte a fi făcută ordonarea (sau de către o funcţie aplicată unui câmp). Optional, după numele câmpului (funcţiei) poate fi adăugat unul dintre cuvintele cheie ASC, DESC pentru a forţa sortarea în mod ascendent sau descendent (predefinit, sortarea se realizează în mod ascendent).
+</p><p>Spre exemplu, dacă dorim să sortăm studenţii în ordinea anilor de studiu, se poate executa următoarea comandă:
+</p><p><code>SELECT nume, prenume, an FROM studenti ORDER BY an ASC;</code>
+</p><p>Atunci când sunt mai mulţi studenţi în acelaşi an, am putea dori să îi ordonăm şi după grupa din care fac parte. După clauza ORDER BY putem introduce oricâte câmpuri împreună cu opţiunea ce indică tipul sortării, despărţite prin virgulă. Spre exemplu:
+</p><p><code>SELECT nume, prenume, an FROM studenti ORDER BY an ASC, grupa DESC;</code>
+</p><p>Putem construi interogări care să conţină ambele clauze învăţate azi: WHERE şi ORDER BY. Prima care va fi scrisă va fi clauza WHERE urmată de ORDER BY. Spre exemplu, pentru a selecta toţi studenţii din anul 1 în ordinea grupelor vom executa comanda:
+</p><p><code>SELECT nume, prenume, grupa FROM studenţi WHERE an=1 ORDER BY grupa ASC;</code>
+</p><p>Deoarece numele de familie al studenţilor este al doilea câmp din tabel, ordonarea lor după acesta poate fi facută prin comanda:
+</p><p><code>SELECT * FROM studenţi ORDER BY 2;</code>
+</p>
+<h2><span class="mw-headline" id="Exerci.C8.9Bii">Exerciții</span></h2>
+<ol><li> Scrieți o interogare pentru a afișa numele, prenumele, anul de studiu si data nașterii pentru toți studenții. Editați în SQL*Plus și executați. Salvați apoi interogarea intr-un fișier numit p1.sql.</li>
+<li> Scrieți și executați o interogare pentru a afișa în mod unic valorile burselor.</li>
+<li> Încărcați fișierul p1.sql în buffer. Dați fiecărei coloane din clauza SELECT un alias. Executați înterogarea.</li>
+<li> Afișați numele concatenat cu prenumele urmat de virgulă și anul de studiu. Ordonați crescător după anul de studiu. Denumiți coloana “Studenți pe ani de studiu”.</li>
+<li> Afișați numele, prenumele și data de naștere a studenților născuți între 1 ianuarie 1995 si 10 iunie 1997. Ordonați descendent după anul de studiu.</li>
+<li> Afișați numele și prenumele precum și anii de studiu pentru toți studenții născuți în 1995.</li>
+<li> Afișați studenții (toate informațiile pentru aceștia) care nu iau bursă. </li>
+<li> Afișați studenții (nume și prenume) care iau bursă și sunt în anii 2 și 3 de studiu. Ordonați alfabetic ascendent după nume și descendent după prenume.</li>
+<li> Afișați studenții care iau bursă, precum și valoarea bursei dacă aceasta ar fi mărită cu 15%.</li>
+<li> Afișați studenții al căror nume începe cu litera P și sunt în anul 1 de studiu.</li>
+<li> Afișați toate informațiile despre studenții care au două apariții ale literei “a” în prenume.</li>
+<li> Afișați toate informațiile despre studenții al căror prenume este “Alexandru”, “Ioana” sau “Marius”.</li>
+<li> Afișați studenții bursieri din semianul A.</li>
+<li> Afişaţi numele şi prenumele profesorilor a căror prenume se termină cu litera "n" (întrebare capcană).</li></ol>
+
+<!-- 
+NewPP limit report
+Real time usage: 0.125 seconds
+Preprocessor visited node count: 182/1000000
+Preprocessor generated node count: 286/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key my_wiki-WIKI_BD_:pcache:idhash:7-0!*!*!!ro!*!* and timestamp 20160216095844 and revision id 224
+ -->
+</div>									<div class="printfooter">
+						Adus de la „<a dir="ltr" href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;oldid=224">http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;oldid=224</a>”					</div>
+													<div id="catlinks" class="catlinks catlinks-allhidden"></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Meniu de navigare</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Unelte personale</h3>
+						<ul>
+							<li id="pt-login"><a href="http://85.122.23.37/BD/index.php?title=Special:Autentificare&amp;returnto=Laboratorul+2&amp;returntoquery=printable%3Dyes" title="Sunteți încurajat să vă autentificați, deși acest lucru nu este obligatoriu. [alt-shift-o]" accesskey="o">Autentificare</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Spații de nume</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="http://85.122.23.37/BD/index.php/Laboratorul_2" title="Vedeți conținutul paginii [alt-shift-c]" accesskey="c">Pagină</a></span></li>
+															<li id="ca-talk" class="new"><span><a href="http://85.122.23.37/BD/index.php?title=Discu%C8%9Bie:Laboratorul_2&amp;action=edit&amp;redlink=1" title="Discuții despre această pagină [alt-shift-t]" accesskey="t">Discuție</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0"><span>Variante</span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Vizualizări</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://85.122.23.37/BD/index.php/Laboratorul_2">Lectură</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;action=edit" title="Această pagină este protejată. Puteți vizualiza doar codul sursă [alt-shift-e]" accesskey="e">Sursă pagină</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;action=history" title="Versiunile anterioare ale paginii și autorii lor. [alt-shift-h]" accesskey="h">Istoric</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>Mai mult</span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;printable=yes#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Căutare</label>
+						</h3>
+
+						<form action="http://85.122.23.37/BD/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Căutare" title="Căutare în BD [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Căutare" name="title"><input type="submit" name="go" value="Salt" title="Deschide pagina cu acest nume, dacă există" id="searchButton" class="searchButton">								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://85.122.23.37/BD/index.php/Pagina_principal%C4%83" title="Pagina principală"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigare</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://85.122.23.37/BD/index.php/Pagina_principal%C4%83" title="Vizitați pagina principală [alt-shift-z]" accesskey="z">Pagina principală</a></li>
+													<li id="n-Laborator-1"><a href="http://85.122.23.37/BD/index.php/Laboratorul_1">Laborator 1</a></li>
+													<li id="n-Laborator-2"><a href="http://85.122.23.37/BD/index.php/Laboratorul_2">Laborator 2</a></li>
+													<li id="n-Laborator-3"><a href="http://85.122.23.37/BD/index.php/Laboratorul_3">Laborator 3</a></li>
+													<li id="n-Laborator-4"><a href="http://85.122.23.37/BD/index.php/Laboratorul_4">Laborator 4</a></li>
+													<li id="n-Laborator-5"><a href="http://85.122.23.37/BD/index.php/Laboratorul_5">Laborator 5</a></li>
+													<li id="n-Laborator-6"><a href="http://85.122.23.37/BD/index.php/Laboratorul_6">Laborator 6</a></li>
+													<li id="n-Laborator-7"><a href="http://85.122.23.37/BD/index.php/Laboratorul_7">Laborator 7</a></li>
+													<li id="n-Laborator-8"><a href="http://85.122.23.37/BD/index.php/Laboratorul_8">Laborator 8</a></li>
+													<li id="n-Laborator-9"><a href="http://85.122.23.37/BD/index.php/Laboratorul_9">Laborator 9</a></li>
+													<li id="n-Laborator-10"><a href="http://85.122.23.37/BD/index.php/Laboratorul_10">Laborator 10</a></li>
+													<li id="n-Laborator-11"><a href="http://85.122.23.37/BD/index.php/Laboratorul_11">Laborator 11</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Unelte</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://85.122.23.37/BD/index.php/Special:Ce_se_leag%C4%83_aici/Laboratorul_2" title="Lista tuturor paginilor wiki care conduc spre această pagină [alt-shift-j]" accesskey="j">Ce trimite aici</a></li>
+													<li id="t-recentchangeslinked"><a href="http://85.122.23.37/BD/index.php/Special:Modific%C4%83ri_corelate/Laboratorul_2" title="Schimbări recente în legătură cu această pagină [alt-shift-k]" accesskey="k">Modificări corelate</a></li>
+													<li id="t-specialpages"><a href="http://85.122.23.37/BD/index.php/Special:Pagini_speciale" title="Lista tuturor paginilor speciale [alt-shift-q]" accesskey="q">Pagini speciale</a></li>
+													<li id="t-permalink"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;oldid=224" title="Legătura permanentă către această versiune a paginii">Legătură permanentă</a></li>
+													<li id="t-info"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_2&amp;action=info" title="Mai multe informații despre această pagină">Informații despre pagină</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Ultima modificare efectuată la 09:13, 15 octombrie 2015.</li>
+											<li id="footer-info-copyright">Conținutul este disponibil sub <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Atribuire</a>, exceptând cazurile în care se specifică altfel.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://85.122.23.37/BD/index.php/BD:Politica_de_confiden%C8%9Bialitate" title="BD:Politica de confidențialitate">Politica de confidențialitate</a></li>
+											<li id="footer-places-about"><a href="http://85.122.23.37/BD/index.php/BD:Despre" title="BD:Despre">Despre BD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://85.122.23.37/BD/index.php/BD:Termeni" title="BD:Termeni">Termeni</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="https://creativecommons.org/licenses/by/3.0/"><img src="./Laboratorul 2 - BD_files/cc-by.png" alt="Creative Commons Atribuire" width="88" height="31"></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="./Laboratorul 2 - BD_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/BD/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /BD/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":343});
+}</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13.3333px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
