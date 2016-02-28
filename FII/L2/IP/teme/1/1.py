@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
 
-import json
 import os
+import pickle
 import sys
 
 
@@ -113,12 +113,12 @@ def show(ents):
 
 def save(ents, fpath):
     with open(fpath, "w") as stream:
-        json.dump(ents, stream)
+        pickle.dump(ents, stream)
 
 
 def load(fpath):
     with open(fpath) as stream:
-        return json.load(stream)
+        return pickle.load(stream)
 
 
 def main(argv):
