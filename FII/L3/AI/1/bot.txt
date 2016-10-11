@@ -1,0 +1,8 @@
+0|0|{}, esti la facultate?
+0|0|{}, cand te vei duce la facultate?
+0|1|Ce ai facut in {} ani?
+0|2|Iti place munca de {}?
+
+1|0|Cum te simti astazi, {}?
+1|1|Ai prieteni cu varsta de {} ani?
+1|2|Ca {}, ce faci mai exact?
