@@ -1,16 +1,17 @@
-Tue Oct 18 05:52:58 2016
+Tue Oct 18 10:33:59 2016
 
 optrand
-Success rate: 90/100
-Average steps: 1040
-Average time: 0.0683222373327
+Success rate: 91/100
+Average steps: 972
+Average time: 0.065285716738
 
 backtrack
-Success rate: 50/100
-Average steps: 6130
-Average time: 0.106739997864
+Success rate: 56/100
+Average steps: 4856
+Average time: 0.108839298998
 
 hillclimb
 Success rate: 72/100
-Average steps: 6165
-Average time: 0.701375014252
+Average steps: 4276
+Average time: 0.546236107747
+

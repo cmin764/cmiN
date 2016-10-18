@@ -37,12 +37,19 @@ def main(argv):
         return 1
     nr = int(argv[1])
     log(time.ctime())
+    log("")
+
+    params = []
+    for _ in range(nr):
+        rods = str(random.randint(*RODS_RANGE))
+        disks = str(random.randint(*DISKS_RANGE))
+        params.append((rods, disks))
+
     for algo in ALGOS:
         deltas = []
         steps_list = []
         for idx in range(nr):
-            rods = str(random.randint(*RODS_RANGE))
-            disks = str(random.randint(*DISKS_RANGE))
+            rods, disks = params[idx]
             print("Running test #{} for {!r} - {} x {}"
                     .format(idx + 1, algo, rods, disks))
             start = time.time()

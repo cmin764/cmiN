@@ -11,8 +11,11 @@ FNAME = "hanoi.txt"
 #FNAME = None
 
 
-def _print(s, fout):
-    fout.write("{}\n".format(" ".join(map(str, s))))
+def _print(s, fout, score=None):
+    data = "{}".format(" ".join(map(str, s)))
+    if score:
+        data += " - {}".format(score)
+    fout.write(data + "\n")
     fout.flush()
 
 
@@ -20,7 +23,7 @@ def _final(s, n):
     return all(i == n for i in s)
 
 
-def _move(s, frm, to, fout, show=True):
+def _move(s, frm, to, fout, show=True, score=None):
     fidx = tidx = 0
     for idx, rod in enumerate(s):
         if rod == frm and not fidx:
@@ -32,7 +35,7 @@ def _move(s, frm, to, fout, show=True):
     if tidx and fidx < tidx or not tidx:
         s[fidx - 1] = to
         if show:
-            _print(s, fout)
+            _print(s, fout, score=score)
         return True
     return False
 
@@ -115,7 +118,7 @@ def _score(s, frm, to, states):
             return -1
         if tuple(s) in states:
             return 0
-        return sum(rod for idx, rod in enumerate(s))
+        return sum(rod for _, rod in enumerate(s))
     finally:
         if state:
             _move(s, to, frm, None, show=False)
@@ -124,7 +127,7 @@ def _score(s, frm, to, states):
 def hillclimb(n, m, fout):
     s = [1] * m
     states = set()
-    _print(s, fout)
+    _print(s, fout, score=m)
     states.add(tuple(s))
     steps = 0
     while not _final(s, n):
@@ -143,7 +146,7 @@ def hillclimb(n, m, fout):
         frm, to, score = scores[0]
         if not score:
             return False
-        _move(s, frm, to, fout)
+        _move(s, frm, to, fout, score=score)
         states.add(tuple(s))
     return _final(s, n)
 
