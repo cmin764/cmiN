@@ -1,0 +1,26 @@
+1.
+x <-t- y -r-> z
+|      |      ^
+t,g    |      |
+|      g      r
+\/     |      |
+p <------------
+
+x create t,g for new obj. p
+y take g for p from x
+y grant r for z to p
+x take r for z from p
+
+
+2.
+y ---g--> x --r--> z
+|         |        |
+t,g       t,g      r
+|         |        |
+\/        |        |
+p <-----------------
+
+y create t,g for new obj. p
+y grant g for p to x
+x grant r for z to p
+y take r for z from p

@@ -4,8 +4,8 @@
 import re
 
 
-_COEF = r"([+-]?\d+)"
-REGEX = r"{coef}x{coef}y{coef}z={coef}".format(coef=_COEF)
+_COEF = r"[+-]?\d*"
+REGEX = r"({coef}x|)({coef}y|)({coef}z|)=({coef})".format(coef=_COEF)
 
 
 def parse(fname):
@@ -19,9 +19,18 @@ def parse(fname):
         match = re.match(REGEX, line)
         if not match:
             return None
-        a, b, c, r = match.groups()
-        mat.append(list(map(float, [a, b, c])))
-        vec.append(float(r))
+        x, y, z, r = match.groups()
+        cfs = [x, y, z]
+        for idx, cf in enumerate(cfs):
+            if not cf:
+                cfs[idx] = cf
+                continue
+            cf = cf.rstrip("xyz")
+            if not cf or not cf[-1].isdigit():
+                cf += "1"
+            cfs[idx] = cf
+        mat.append(list(map(lambda arg: float(arg) if arg else 0.0, cfs)))
+        vec.append(float(r) or 0.0)
     return mat, vec
 
 
@@ -32,7 +41,7 @@ def main(argv):
     
     ret = parse(argv[1])
     if not ret:
-        print("[x] Invalid expression: {}".format(line))
+        print("[x] Invalid expression")
         return 2
 
     res = solve(*ret)
