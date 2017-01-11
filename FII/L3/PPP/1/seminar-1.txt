@@ -1,0 +1,9 @@
+Cel mai mare divizor comun a mai multor numere (definiti o functie cu numar variabil de parametri care sa rezolve acest lucru)
+Scrieti o functie care calculeaza cate vocale sunt intr-un sir de caractere
+Scrieti o functie care returneaza numarul de cuvinte care exista intr-un string. Cuvintele sunt separate de spatii, semne de punctuatie (, ;, ? ! . )
+Scrieti o functie care primeste ca parametri doua siruri de caractere si care returneaza numarul de aparitii ale primului sir de caractere in al doilea.
+Scrieti o functie care verifica daca un sir de caractere contine caractere speciale (\r, \t, \n, \a, \b, \f, \v)
+Scrieti o functie care converteste in sir de caractere scris UpperCamelCase in lowercase_with_underscores.
+Scrieti o functie care primeste un integer char_len si un numar variabil de parametri (siruri de caractere) si verifica daca fiecare doua string-uri vecine respecta urmatoarea regula: al doilea string incepe cu ultimile char_len caractere a primului string (ca la fazan).
+Se da un sir de caractere care reprezinta un polinom (Ex: "3x^3 + 5x^2 - 2x - 5") si un numar (intreg sau float). Sa se evalueze polinomul respectiv pentru valoarea data.
+Scrieti o functie care sa returneze cel mai mare numar prim dintr-un sir de caractere dat ca parametru sau -1 daca sirul de caractere nu contine nici un numar prim. Ex: input: 'ahsfaisd35biaishai23isisvdshcbsi271cidsbfsd97sidsda'; output: 271

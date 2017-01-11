@@ -1,0 +1,22 @@
+Urmatorele laboratoare de la aceasta materie vor merge intr-o directie un pic diferita fata de curs. Ne propunem in acest laborator sa cream doua programe care sa interactioneze cu o baza de date. 
+
+Primul program add_files.py va primi ca parametru o locatie in care se afla fisiere. Pentru fiecare fisier din aceasta locatie se vor adauga:
+
+      In tabelul locatie: id_locatie, locatie ( cale director )
+      In tabelul files: id_file, id_locatie
+      In tabelul file_info: id_file, nume_fisier, size_fisier, creation_time, md5_pe_continut_fisier
+
+Al doilea program query_files.py va interoga tabele cu informatii. Va putea sa afiseze informatii despre fisiere
+    dupa size - lista de fisiere ce au acelasi size
+    dupa nume - lista de fisiere ce au acelasi nume
+    dupa hash - lisat de fisiere ce au acelasi hash
+    dupa creation_time - fisiere create dupa o anumita data.
+   * informatiile returnate pentru un fisier vor fi complete:
+
+id_file, locatie, nume_fisier, size_fisier, creation_time, md5_pe_continut_fisier
+
+Folositi o baza de date sqlite3. Pentru a lucra cu cu sqlite din python ar fi util sa vedeti pagina:
+https://docs.python.org/3.5/library/sqlite3.html
+
+Optional se poate folosi argparse pentru a trata argumentele primite de la linia de comanda de scripturi.
+https://docs.python.org/3/library/argparse.html

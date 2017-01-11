@@ -1,0 +1,29 @@
+
+Sa se implementeze o aplicatie web. Folositi Flask pentru a crea un API si Sqlite pentru persistenta datelor. Aplicatia web va permite utilizatorilor:
+- sa se inregistreze (user/parola - parola va fi salvata intr-o maniera sigura)
+- sa vizualizeze utilizatorii online si top-ul scorurilor
+- sa selecteze un utilizator cu care sa se conecteze pentru a juca un joc/chat-ui
+
+Clienti se pot conecta fie folosind un Command-Line Interface(implementarea cli-ului se va face folosind argparse), fie prin intermediul unei pagini web, fie ambele.
+
+Cateva sugetii:
+- x&0
+- connect 4
+- fazan
+- vapoarele (similar aviane)
+- batae: jucatori vor avea pe rand posibilitatea fie sa se apere, fie sa atace o zona a inamicului: picioare, piept, cap.
+Daca inamicul a aparat zona in care a fost atacat nu i se va scadea din numarul de vieti(3). Daca un utilizator nu a selectat o actiune intr-un interval de timp prestabilit, se va considera ca nu s-a aparat/atacat.
+- un chat (se vor putea trimite si fisiere).
+
+Scorul, username-urile si parolele vor fi stocate in tabele din aceeasi baza de date, impreuna cu istoricul utilizatorilor (cu ce utilizatori a interactionat, in cazul in care implementati chat-ul se pot salva conversatiile, fisierele, link-urile trimise etc).
+
+Toata comunicarea dintre utilizatori se fa face prin intermediul serverului.
+
+Instalare Flask:
+pip install Flask
+
+Documentatie Flask:
+http://flask.pocoo.org/
+
+Tutorial Flask:
+http://flask.pocoo.org/docs/0.12/tutorial/

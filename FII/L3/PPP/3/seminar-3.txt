@@ -1,0 +1,42 @@
+1. Sa se scrie o functie care primeste ca parametri doua liste a si b si returneaza un tuplu de seturi care sa contina: (a intersectat cu b, a reunit cu b, a - b, b - a)
+
+2. Scrieti o functie care primeste ca parametru un sir de caractere si returneaza un dictionar in care cheile sunt caracterele dn componenta sirului de caractere iar valorile sunt reprezentate de numarul de aparitii ale caracterului respectiv in textul dat.
+Exemplu: Pentru sirul "Ana are mere." dat ca parametru functia va returna dictionarul: {'A': 1, ' ': 2, 'n': 1, 'a': 2, 'r': 2, 'e': 3, 'm': 1, '.': 1}.
+
+3. Sa se compare doua dictionare fara a folosi operatorul "==" si sa se returneze un tuplu de liste de diferente astfel: (cheile_comune_dar_cu_valori_diferite, cheile_care_se_gasesc_doar_in_primul_dict, cheile_care_se_gasesc_doar_in_al_doilea_dict). (Atentie, dictionarele trebuiesc parcurse recursiv deoarece la randul lor pot contine alte containere, cum ar fi dictionare, liste, set-uri, etc)
+
+4. Fie functia build_xml_element care primeste urmatorii parametri: tag, content si elemente cheie-valoare date ca parametri cu nume. Sa se construiasca si sa se returneze un string care reprezinta elementul XML aferent. Exemplu: build_xml_element("a", "Hello there", href="http://python.org", _class="my-link", id="someid") => "<a href=\"http://python.org\" _class=\"my-link\" id=\"someid\">Hello there</a>"
+
+5. Fie functia validate_dict care primeste ca parametru un set de tuple care reprezinta reguli de validare pentru un dictionar cu chei de tipul string si valori tot de tipul string si un dictionare. O regula este definita astfel: (cheie, "prefix", "middle", "sufix"). O valoare este considerata valida daca incepe cu "prefix", "middle" se gaseste in interiorul valorii (nu la inceput sau sfarsit) si se sfarsete cu "sufix". Functia va returna True daca dictionarul dat ca parametru respecta toate regulile, False in caz contrar.
+Exemplu: regulile [("key1", "", "inside", ""), ("key2", "start", "middle", "winter")] si dictionarul {"key2": "starting the engine in the middle of the winter", "key1": "come inside, it's too cold outside", "key3": "this is not valid"} => False deoarece desi regulile sunt respectate pentru "key1" si "key2", apare "key3" care nu apare in reguli.
+
+6. Fie un dictionar global
+{
+    "+": lambda a, b: a + b,
+    "*": lambda a, b: a * b,
+    "/": lambda a, b: a / b,
+    "%": lambda a, b: a % b
+}
+ Sa se construiasca o functie apply_operator(operator, a, b) care va aplica peste a si b regula specificata de dictionarul global. Sa se implementeze astfel incat, in cazul adaugarii unui operator nou, sa nu fie necesara modificarea functiei.
+
+7. Fie un dictionar global definit asemanator cu cel de mai sus, cu deosebirea ca functiile date ca valori ale dictionarului poate primi orice combinatie de parametri. Sa se scrie o functie apply_function care primeste ca parametru numele unei operatii si aplica functia corespunzatoare peste argumentele primite. Sa se implementeze astfel incat, in cazul adaugarii unei functii noi, sa nu fie necesara modificarea functiei apply_function.
+
+Un exemplu de dictionar global ar putea fi urmatorul:
+
+{
+    "print_all": lambda *a, **k: print(a, k),
+    "print_args_commas": lambda *a, **k: print(a, k, sep=", "),
+    "print_only_args": lambda *a, **k: print(a),
+    "print_only_kwargs": lambda *a, **k: print(k)
+}
+
+8. Sa se scrie o functie care primeste ca parametru un set si returneaza un tuplu (a, b), a reprezentand numarul de elemente unice din set iar b reprezentand numarul de elemente duplicate din set.
+
+9. Sa se scrie o functie care primeste un numar variabil de seturi si returneaza un dictionar cu urmatoarele operatii dintre toate seturile doua cate doua: reuniune, intersectie, a-b, b-a. Cheia va avea urmatoarea forma: "a op b", unde a si b sunt doua seturi, iar op este operatorul aplicat: |, &, -.
+Ex: {1,2}, {2, 3} =>
+{
+    "{1, 2} | {2, 3}": 3,
+    "{1, 2} & {2, 3}": 1,
+    "{1, 2} - {2, 3}": 1,
+    ...
+}
