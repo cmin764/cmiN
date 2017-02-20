@@ -1,0 +1,528 @@
+{
+    "status": "OK", 
+    "results": [
+        {
+            "geometry": {
+                "location": {
+                    "lat": 44.42739599999999, 
+                    "lng": 26.100658
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.42874498029149, 
+                        "lng": 26.1020069802915
+                    }, 
+                    "southwest": {
+                        "lat": 44.42604701970849, 
+                        "lng": 26.0993090197085
+                    }
+                }, 
+                "location_type": "ROOFTOP"
+            }, 
+            "address_components": [
+                {
+                    "long_name": "14", 
+                    "types": [
+                        "street_number"
+                    ], 
+                    "short_name": "14"
+                }, 
+                {
+                    "long_name": "Bulevardul Unirii", 
+                    "types": [
+                        "route"
+                    ], 
+                    "short_name": "Bulevardul Unirii"
+                }, 
+                {
+                    "long_name": "Sector 4", 
+                    "types": [
+                        "political", 
+                        "sublocality", 
+                        "sublocality_level_1"
+                    ], 
+                    "short_name": "Sector 4"
+                }, 
+                {
+                    "long_name": "Bucure\u0219ti", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Municipiul Bucure\u0219ti", 
+                    "types": [
+                        "administrative_area_level_2", 
+                        "political"
+                    ], 
+                    "short_name": "Municipiul Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Municipiul Bucure\u0219ti", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Municipiul Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }, 
+                {
+                    "long_name": "030167", 
+                    "types": [
+                        "postal_code"
+                    ], 
+                    "short_name": "030167"
+                }
+            ], 
+            "place_id": "ChIJE2IVtRX_sUARSZX2a2cXx3E", 
+            "formatted_address": "Bulevardul Unirii 14, Bucure\u0219ti 030167, Romania", 
+            "types": [
+                "street_address"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 44.4425501, 
+                        "lng": 26.2255748
+                    }, 
+                    "southwest": {
+                        "lat": 44.3937831, 
+                        "lng": 26.0956341
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.4425501, 
+                        "lng": 26.2255748
+                    }, 
+                    "southwest": {
+                        "lat": 44.3937831, 
+                        "lng": 26.0956341
+                    }
+                }, 
+                "location": {
+                    "lat": 44.4229701, 
+                    "lng": 26.1686028
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Sector 3", 
+                    "types": [
+                        "political", 
+                        "sublocality", 
+                        "sublocality_level_1"
+                    ], 
+                    "short_name": "Sector 3"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_2", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJOV7tJ7v-sUAREF4gExHcNmY", 
+            "formatted_address": "Sector 3, Bucharest, Romania", 
+            "types": [
+                "political", 
+                "sublocality", 
+                "sublocality_level_1"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 44.541407, 
+                        "lng": 26.225575
+                    }, 
+                    "southwest": {
+                        "lat": 44.3342445, 
+                        "lng": 25.9637001
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.541407, 
+                        "lng": 26.225575
+                    }, 
+                    "southwest": {
+                        "lat": 44.3342445, 
+                        "lng": 25.9637001
+                    }
+                }, 
+                "location": {
+                    "lat": 44.4267674, 
+                    "lng": 26.1025384
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_2", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJT608vzr5sUARKKacfOMyBqw", 
+            "formatted_address": "Bucharest, Romania", 
+            "types": [
+                "locality", 
+                "political"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 44.542317, 
+                        "lng": 26.227099
+                    }, 
+                    "southwest": {
+                        "lat": 44.33494, 
+                        "lng": 25.966056
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.542317, 
+                        "lng": 26.227099
+                    }, 
+                    "southwest": {
+                        "lat": 44.33494, 
+                        "lng": 25.966056
+                    }
+                }, 
+                "location": {
+                    "lat": 44.43044889999999, 
+                    "lng": 26.0979342
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJw3aJlSb_sUARM24B2-DNqIQ", 
+            "formatted_address": "Bucharest, Romania", 
+            "types": [
+                "administrative_area_level_1", 
+                "political"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 44.542317, 
+                        "lng": 26.227099
+                    }, 
+                    "southwest": {
+                        "lat": 44.33494, 
+                        "lng": 25.966056
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.542317, 
+                        "lng": 26.227099
+                    }, 
+                    "southwest": {
+                        "lat": 44.33494, 
+                        "lng": 25.966056
+                    }
+                }, 
+                "location": {
+                    "lat": 44.43044889999999, 
+                    "lng": 26.0979342
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_2", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Bucharest", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Bucharest"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJMWogyUX_sUARaxMN3QTtdDE", 
+            "formatted_address": "Bucharest, Romania", 
+            "types": [
+                "administrative_area_level_2", 
+                "political"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 44.767888, 
+                        "lng": 26.530672
+                    }, 
+                    "southwest": {
+                        "lat": 44.065428, 
+                        "lng": 25.6528679
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.767888, 
+                        "lng": 26.530672
+                    }, 
+                    "southwest": {
+                        "lat": 44.065428, 
+                        "lng": 25.6528679
+                    }
+                }, 
+                "location": {
+                    "lat": 44.6046153, 
+                    "lng": 26.1123565
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Bucharest Metropolitan Area", 
+                    "types": [
+                        "political"
+                    ], 
+                    "short_name": "Bucharest Metropolitan Area"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJMWogyUX_sUAReDn2Oy0weAI", 
+            "formatted_address": "Bucharest Metropolitan Area, Romania", 
+            "types": [
+                "political"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location_type": "APPROXIMATE", 
+                "bounds": {
+                    "northeast": {
+                        "lat": 48.265274, 
+                        "lng": 29.77839999999999
+                    }, 
+                    "southwest": {
+                        "lat": 43.6186193, 
+                        "lng": 20.2617593
+                    }
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 48.265274, 
+                        "lng": 29.7570806
+                    }, 
+                    "southwest": {
+                        "lat": 43.62329769999999, 
+                        "lng": 20.2617593
+                    }
+                }, 
+                "location": {
+                    "lat": 45.943161, 
+                    "lng": 24.96676
+                }
+            }, 
+            "address_components": [
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJw3aJlSb_sUARlLEEqJJP74Q", 
+            "formatted_address": "Romania", 
+            "types": [
+                "country", 
+                "political"
+            ]
+        }, 
+        {
+            "geometry": {
+                "location": {
+                    "lat": 44.4260258, 
+                    "lng": 26.1014646
+                }, 
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.4273747802915, 
+                        "lng": 26.1028135802915
+                    }, 
+                    "southwest": {
+                        "lat": 44.4246768197085, 
+                        "lng": 26.1001156197085
+                    }
+                }, 
+                "location_type": "APPROXIMATE"
+            }, 
+            "address_components": [
+                {
+                    "long_name": "DN6", 
+                    "types": [
+                        "route"
+                    ], 
+                    "short_name": "DN6"
+                }, 
+                {
+                    "long_name": "Sector 4", 
+                    "types": [
+                        "political", 
+                        "sublocality", 
+                        "sublocality_level_1"
+                    ], 
+                    "short_name": "Sector 4"
+                }, 
+                {
+                    "long_name": "Bucure\u0219ti", 
+                    "types": [
+                        "locality", 
+                        "political"
+                    ], 
+                    "short_name": "Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Municipiul Bucure\u0219ti", 
+                    "types": [
+                        "administrative_area_level_2", 
+                        "political"
+                    ], 
+                    "short_name": "Municipiul Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Municipiul Bucure\u0219ti", 
+                    "types": [
+                        "administrative_area_level_1", 
+                        "political"
+                    ], 
+                    "short_name": "Municipiul Bucure\u0219ti"
+                }, 
+                {
+                    "long_name": "Romania", 
+                    "types": [
+                        "country", 
+                        "political"
+                    ], 
+                    "short_name": "RO"
+                }
+            ], 
+            "place_id": "ChIJsRnfnxb_sUARZ2V2hjwv3yo", 
+            "formatted_address": "DN6, Bucure\u0219ti, Romania", 
+            "types": [
+                "bus_station", 
+                "establishment", 
+                "point_of_interest", 
+                "transit_station"
+            ]
+        }
+    ]
+}

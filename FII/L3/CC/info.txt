@@ -1,0 +1,28 @@
+http://profs.info.uaic.ro/~adria/teach/courses/CloudComputing/
+
+Lenuta Alboaie - [adria [at] info.uaic.ro]
+Catalin Damian - [cdamian [at] tuiasi.ro]
+Catalin Pomarleanu - [catalin.pomarleanu [at] gmail.com]
+
+
+Lecture schedule
+Cloud Computing - Overview
+Cloud Computing - Infrastructures
+Cloud Virtualization
+Windows Azure
+Amazon
+Google App Engine
+Advanced Programming in Cloud 
+Cloud Computing - business aspects
+Private Cloud
+Security Aspects in Cloud
+Practical works schedule
+Web Services
+Web Sockets
+Application development on Cloud
+Windows Azure
+Amazon
+Google Apps
+NoSQL databases (Redis)
+Remark
+       The content of this site may be changed any time without prior notice (consider it work in progress).

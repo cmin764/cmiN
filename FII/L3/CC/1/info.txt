@@ -1,0 +1,10 @@
+Week 1
+Course
+General prezentation (ro) 
+Cloud Computing - General Overview
+Laboratory: Working with Web Services
+Directions & Discussions:
+First part: remember about ...HTTP...REST, SOAP...
+Let's explore some APIs!
+Homework [1]: Create an application that provides results from at least three web services.
+Observation: The third web service must use the results from previous two.
