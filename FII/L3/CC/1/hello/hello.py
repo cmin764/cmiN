@@ -7,57 +7,25 @@ import textwrap
 import sys
 
 import requests
+from cryptography.fernet import Fernet
 
 
 EMAILS_PATH = "hello_emails.txt"
+API_KEYS_PATH = "api_keys.json"
+
+
+def is_ascii(string):
+    return all(ord(char) < 128 for char in string)
 
 
 class Hello(object):
 
-    API_KEYS = {
-        "sendgrid": ("SG.GK11lH6ZRTy8zngPga_EcA."
-                     "BDvomiS7kRHo0j_xt_JWahm81ZNsqcvhqoDt5UFuBXg"),
-        "location": "AIzaSyAodrxR9w1AqmdajcrrRqFTnNXsyE2mwaM",
-        "weather": "db310acfbeeb7a7697f13bb18c43a073"
-    }
-
-    LOCATION_INDEX = 1    # in the returned list of results
-
-    def __init__(self, from_email, to_emails_path):
+    def __init__(self, from_email,
+                 to_emails_path=EMAILS_PATH, api_keys_path=API_KEYS_PATH):
         """Instantiate with the from `email` address."""
         self._from_email = from_email
         self._to_emails = self.load_emails(to_emails_path)
-
-    def get_location(self):
-        # Get coordinates.
-        url = "https://www.googleapis.com/geolocation/v1/geolocate?key={}"
-        url = url.format(self.API_KEYS["location"])
-        response = requests.post(url)
-        response.raise_for_status()
-        result = response.json()["location"]
-        lat, lon = map(lambda key: result[key], ("lat", "lng"))
-
-        # Now reverse geocoding to location/address.
-        url = ("http://maps.googleapis.com/maps/api/geocode/json?"
-               "latlng={},{}&sensor=false").format(lat, lon)
-        response = requests.get(url)
-        response.raise_for_status()
-        result = response.json()
-        address = result["results"][self.LOCATION_INDEX]["formatted_address"]
-        location = address.split(",")[1].strip()
-        return location
-
-    def get_weather(self, location):
-        url = ("http://api.openweathermap.org/data/2.5/"
-               "weather?q={input}&appid={key}").format(
-            input=location,
-            key=self.API_KEYS["weather"]
-        )
-        response = requests.get(url)
-        response.raise_for_status()
-        result = response.json()["weather"][0]
-        weather = "{} - {}".format(result["main"], result["description"])
-        return weather
+        self._api_keys = self.load_api_keys(api_keys_path)
 
     @staticmethod
     def load_emails(path):
@@ -73,10 +41,57 @@ class Hello(object):
                 emails.append(line)
         return emails
 
+    @staticmethod
+    def load_api_keys(path):
+        with open(path) as stream:
+            api_keys = json.load(stream)
+        key = api_keys.pop("key")
+        fernet = Fernet(key.encode())
+        for key, value in list(api_keys.items()):
+            api_keys[key] = fernet.decrypt(value.encode())
+        return api_keys
+
+    def get_location(self):
+        # Get coordinates.
+        url = "https://www.googleapis.com/geolocation/v1/geolocate?key={}"
+        url = url.format(self._api_keys["location"])
+        response = requests.post(url)
+        response.raise_for_status()
+        result = response.json()["location"]
+        lat, lon = map(lambda key: result[key], ("lat", "lng"))
+
+        # Now reverse geocoding to location/address.
+        url = ("http://maps.googleapis.com/maps/api/geocode/json?"
+               "latlng={},{}&sensor=false").format(lat, lon)
+        response = requests.get(url)
+        response.raise_for_status()
+        result = response.json()
+
+        location = None
+        for address_chunks in result["results"]:
+            address = address_chunks["formatted_address"]
+            location = address.split(",")[1].strip()
+            if is_ascii(location):
+                break
+        return location
+
+    def get_weather(self, location):
+        url = ("http://api.openweathermap.org/data/2.5/"
+               "weather?q={input}&appid={key}")
+        url = url.format(
+            input=location,
+            key=self._api_keys["weather"]
+        )
+        response = requests.get(url)
+        response.raise_for_status()
+        result = response.json()["weather"][0]
+        weather = "{} - {}".format(result["main"], result["description"])
+        return weather
+
     def send_mail(self, subject, text):
         url = "https://api.sendgrid.com/v3/mail/send"
         headers = {
-            "Authorization": "Bearer {}".format(self.API_KEYS["sendgrid"]),
+            "Authorization": "Bearer {}".format(self._api_keys["sendgrid"]),
             "Content-Type": "application/json",
         }
         data = {
@@ -146,7 +161,7 @@ def main():
         return 1
 
     try:
-        hello = Hello(sys.argv[1], EMAILS_PATH)
+        hello = Hello(sys.argv[1])
         hello.start()
     except Exception as exc:
         print("Error occurred: {}.".format(exc))
