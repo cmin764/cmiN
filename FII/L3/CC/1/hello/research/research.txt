@@ -1,0 +1,2 @@
+curl --request POST --url https://api.sendgrid.com/v3/mail/send --header 'Authorization: Bearer <KEY>' --header 'Content-Type: application/json' --data '{"personalizations": [{"to": [{"email": "cmin764@gmail.com"}]}],"from": {"email": "cmin@cmin.com"},"subject": "Hello, World!","content": [{"type": "text/plain", "value": "Heya!"}]}'
+curl -X "GET" "https://api.sendgrid.com/v3/templates" -H "Authorization: Bearer <KEY>" -H "Content-Type: application/json"
