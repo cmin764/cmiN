@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://85.122.23.37/BD/index.php?title=Laboratorul_11&printable=yes -->
+<html lang="ro" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Laboratorul 11 - BD</title>
+<meta name="generator" content="MediaWiki 1.25.2">
+<meta name="robots" content="noindex,follow">
+<link rel="shortcut icon" href="http://85.122.23.37/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://85.122.23.37/BD/opensearch_desc.php" title="BD (ro)">
+<link rel="EditURI" type="application/rsd+xml" href="http://85.122.23.37/BD/api.php?action=rsd">
+<link rel="alternate" hreflang="x-default" href="http://85.122.23.37/BD/index.php/Laboratorul_11">
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="BD Abonare Atom" href="http://85.122.23.37/BD/index.php?title=Special:Schimb%C4%83ri_recente&amp;feed=atom">
+<link rel="stylesheet" href="./Laboratorul 11 - BD_files/load.php">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:e1ffd603cbaaa5f1a36e0d13fe843535 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(http://85.122.23.37/BD/resources/src/mediawiki.action/images/green-checkmark.png?2015-08-10T21:21:40Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:566361dca40950cccc5906c4d76454b2 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-css:7:4eedb904ce35ef0c8baac4b7176a0fb5 */</style>
+<script src="./Laboratorul 11 - BD_files/load(1).php"></script><script src="./Laboratorul 11 - BD_files/load(2).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Laboratorul_11","wgTitle":"Laboratorul 11","wgCurRevisionId":510,"wgRevisionId":510,"wgArticleId":19,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"ro","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"],"wgMonthNamesShort":["","ian","feb","mar","apr","mai","iun","iul","aug","sept","oct","nov","dec"],"wgRelevantPageName":"Laboratorul_11","wgRelevantArticleId":19,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"ro"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: my_wiki-WIKI_BD_:resourceloader:filter:minify-js:7:3f6eaa1d9b6729eb983fa77595a6da3e */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script><script src="./Laboratorul 11 - BD_files/load(3).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/BD/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Laboratorul_11 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="ro">Laboratorul 11</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De la BD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Salt la:					<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#mw-head">navigare</a>, 					<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#p-search">căutare</a>
+				</div>
+				<div id="mw-content-text" lang="ro" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Cuprins</h2><span class="toctoggle">&nbsp;[<a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#" id="togglelink">ascunde</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Variabile_de_substitu.C8.9Bie_SQL.2APlus"><span class="tocnumber">1</span> <span class="toctext">Variabile de substituție SQL*Plus</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Comenzi_DML_-_Modificare_date"><span class="tocnumber">2</span> <span class="toctext">Comenzi DML - Modificare date</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Ad.C4.83ugarea_.C3.AEnregistr.C4.83rilor"><span class="tocnumber">2.1</span> <span class="toctext">Adăugarea înregistrărilor</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#SECVENTE"><span class="tocnumber">2.1.1</span> <span class="toctext">SECVENTE</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exercitii"><span class="tocnumber">2.1.2</span> <span class="toctext">Exercitii</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Actualizarea_.C3.AEnregistr.C4.83rilor"><span class="tocnumber">2.2</span> <span class="toctext">Actualizarea înregistrărilor</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exercitii_2"><span class="tocnumber">2.2.1</span> <span class="toctext">Exercitii</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#.C8.98tergerea_.C3.AEnregistr.C4.83rilor"><span class="tocnumber">2.3</span> <span class="toctext">Ștergerea înregistrărilor</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exercitii_3"><span class="tocnumber">2.3.1</span> <span class="toctext">Exercitii</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Comenzi_DDL_-_creare.2Fmodificare_structuri_de_date"><span class="tocnumber">3</span> <span class="toctext">Comenzi DDL - creare/modificare structuri de date</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#CREATE_TABLE_AS"><span class="tocnumber">3.1</span> <span class="toctext">CREATE TABLE AS</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exercitii_4"><span class="tocnumber">3.1.1</span> <span class="toctext">Exercitii</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#ALTER_TABLE"><span class="tocnumber">3.2</span> <span class="toctext">ALTER TABLE</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exercitii_5"><span class="tocnumber">3.2.1</span> <span class="toctext">Exercitii</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Tranzac.C8.9Bii"><span class="tocnumber">4</span> <span class="toctext">Tranzacții</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#Exerci.C8.9Bii"><span class="tocnumber">4.1</span> <span class="toctext">Exerciții</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Variabile_de_substitu.C8.9Bie_SQL.2APlus">Variabile de substituție SQL*Plus</span></h1>
+<p>Variabilele de substituție au rolul de a suplini constante, condiții utilizate în clauza WHERE, nume de campuri utilizate în clauza ORDER BY, nume de tabele sau chiar întregi fraze SELECT.
+</p><p>Variabilele de substituție sunt precedate de simbolul <b>&amp;</b> iar la execuția interogării SQLPlus va solicita de la utilizator valorile necesare.
+</p><p>Exemplu 1:
+</p>
+<pre>SELECT *
+    FROM studenti
+    WHERE an=&amp;an AND nume LIKE '&amp;nume'
+
+</pre>
+<p>Exemplu 2:
+</p>
+<pre>SELECT nume, &amp;camp_afisare
+    FROM studenti
+    WHERE &amp;conditie2
+    ORDER BY &amp;camp_sortare;
+
+</pre>
+<p>Executați interogările de mai sus de mai multe ori inserand diverse valori pentru variabilele de substituție. Verificați rezultatul.
+</p><p>Variabilele de substituție pot fi predefinite și instanțiate, caz în care la execuția interogării nu se mai solicită valoarea:
+</p>
+<pre>DEFINE camp=prenume
+SELECT nume, &amp;camp
+    FROM studenti
+    ORDER BY &amp;camp;
+
+</pre>
+<p>Variabila este stocată pe parcursul sesiunii curente până la eliminarea ei cu comanda UNDEFINE sau până la închiderea sesiunii.
+</p>
+<pre>UNDEFINE camp
+
+</pre>
+<p>Comenzile DEFINE si UNDEFINE sunt specifice utilitarului SQL*Plus și nu limbajului SQL.
+</p>
+<h1><span class="mw-headline" id="Comenzi_DML_-_Modificare_date">Comenzi DML - Modificare date</span></h1>
+<p>Până acum s-au utilizat în cadrul laboratoarelor doar comenzi de interogarea a datelor - adică fraza SELECT - care sunt parte tot din cadrul componentei DML (Data Manipulation Language) a limbajului SQL.
+În această secțiune exemplificăm comenzile de modificare a datelor.
+</p>
+<h2><span class="mw-headline" id="Ad.C4.83ugarea_.C3.AEnregistr.C4.83rilor">Adăugarea înregistrărilor</span></h2>
+<p>Inserarea de noi înregistrări în baza de date se realizează cu ajutorul comenzii INSERT care poate lua două forme:
+</p>
+<table border="1">
+<tbody><tr>
+<td><pre>INSERT INTO nume_tabel [ (lista_coloane) ]
+      VALUES (lista_valori)</pre>
+</td>
+<td> INSERT INTO cursuri VALUES(30, 'Inv. automata', 3, 1, 5);<br>
+<p>INSERT INTO cursuri (ID_curs, titlu_curs) VALUES(31, 'NoSQL');
+</p>
+</td></tr>
+<tr>
+<td><pre>INSERT INTO nume_tabel [ (lista_coloane) ]
+   fraza_select	</pre>
+</td>
+<td>
+<pre>INSERT INTO note 
+SELECT nr_matricol, 30, 10, SYSDATE
+  FROM studenti
+  WHERE an=3;
+</pre>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="SECVENTE">SECVENTE</span></h3>
+<p>De multe ori suntem puși în situația de a crea atribute sintetice care să joace rol de cheie, deci să ia valori unice în cadrul unei tabele. Secvențele sunt obiecte care ne ajută să generăm automat numere întregi unice în momentul inserării înregistrilor.
+</p><p>Sintaxa creării unei secvențe:
+</p>
+<pre>CREATE SEQUENCE nume_secventa
+  [INCREMENT BY n]               -- pasul
+  [START WITH n1]                -- valoarea de start
+  [MAXVALUE n_max | NOMAXVALUE]  -- valoarea de oprire
+  [MINVALUE n_min | NOMINVALUE]  -- valoarea minima (listele pot fi siruri descrescatoare)
+  [CYCLE | NOCYCLE]              -- daca se continua generarea cand se ajunge la min/max
+
+</pre>
+<p>Comanda NEXTVAL generează următorul număr din șir iar CURRVAL obține valoarea curentă. NEXTVAL trebuie executată înainte ca lista să conțină breun număr.
+</p><p>Exemplu:
+</p>
+<pre>CREATE SEQUENCE s1
+  INCREMENT BY 2
+  START WITH 10
+  MAXVALUE 15;
+
+SELECT s1.NEXTVAL FROM DUAL; --executati in mod repetat comanda; cand ridica eroare?
+
+</pre>
+<h3><span class="mw-headline" id="Exercitii">Exercitii</span></h3>
+<p>Cum poate fi utilizată o secvență la inserare?
+Răspundeți creând o secvență care sa vă ajute sa inserați noi cursuri cu id unic, cu intrari consecutive crescătoare cu pasul 1. Inserati 3 cursuri noi cu id-ul generat de secventa.
+</p>
+<h2><span class="mw-headline" id="Actualizarea_.C3.AEnregistr.C4.83rilor">Actualizarea înregistrărilor</span></h2>
+<table border="1">
+<tbody><tr>
+<td><pre>UPDATE nume_tabel [alias]
+  SET nume_coloana1 = valoare1
+     [, nume_coloana2 = valoare2...]
+      [WHERE conditie]</pre>
+</td>
+<td>UPDATE studenti
+<p>SET bursa=bursa*0.15
+WHERE bursa&lt;300;
+</p>
+</td></tr>
+<tr>
+<td><pre>UPDATE nume_tabel [alias]
+  SET (nume_coloana1 [,nume_coloana2]...) = (subinterogare)
+    [WHERE conditie]</pre>
+</td>
+<td>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Exercitii_2">Exercitii</span></h3>
+<ol><li>Actualizati valoarea bursei pentru studentii care au măcar o notă de 10. Acestia vor primi ca bursa 500RON.</li>
+<li>Toti studentii primesc o bursa egala cu 100*media notelor lor. Efectuati modificarile necesare.</li></ol>
+<h2><span class="mw-headline" id=".C8.98tergerea_.C3.AEnregistr.C4.83rilor">Ștergerea înregistrărilor</span></h2>
+<table border="1">
+<tbody><tr>
+<td><pre>DELETE FROM nume_tabel 
+  [WHERE conditie]</pre>
+</td>
+<td>DELETE FROM note WHERE valoare &lt; 5;
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Exercitii_3">Exercitii</span></h3>
+<p>Stergeti toti studentii care nu au nici o nota.
+</p>
+<h1><span class="mw-headline" id="Comenzi_DDL_-_creare.2Fmodificare_structuri_de_date">Comenzi DDL - creare/modificare structuri de date</span></h1>
+<p>Aceste comenzi sunt menite a crea sau a șterge tabele (sau alte tipuri de obiecte), precum și a modifica structura tabelelor (obiectelor) existente. Comenzile necesare fac parte din componenta DDL (Data Definition Language) a limbajului SQL.
+</p>
+<h2><span class="mw-headline" id="CREATE_TABLE_AS">CREATE TABLE AS</span></h2>
+<p>Comenzile de creare a tabelelor au fost pe larg explicate la curs, cu diversele constrângeri care pot fi impuse asupra datelor la momentul creării. Aici tratăm doar comanda CREATE cu subinterogări.
+</p>
+<pre>CREATE TABLE nume_tabel [(col1, col2,...)] [AS] fraza_select;
+
+</pre>
+<p>Comanda este similară cu cea dedicată creării viewului, diferența fiind că la crearea unui tabel, acesta este umplut cu datele returnate de interogare.
+</p>
+<h3><span class="mw-headline" id="Exercitii_4">Exercitii</span></h3>
+<p>Executati comanda ROLLBACK. Creati apoi o tabelă care să stocheze numele, prenumele, bursa si mediile studentilor.
+</p>
+<h2><span class="mw-headline" id="ALTER_TABLE">ALTER TABLE</span></h2>
+<p>Structura tabelelor create deja poate fi modificată, chiar dacă tabelul conține deja date. Modificările pot să vizeze adăugarea de noi coloane, ștergerea unor coloane existente, modificarea definiției unei coloane (tipul și constrângerile impuse), redenumirea unei coloane, redenumirea tabelului, adăugarea sau ștergerea de constângeri (chei candidat, cei primare, chei străine, constrângeri NOT NULL, CHECK).
+</p><p>Găsiți în continuare comenzile necesare: 
+</p>
+<table border="1">
+<tbody><tr>
+<td>ALTER TABLE nume_tabel ADD (col1 definitie_col1 [,col2 definitie_col2....])
+</td>
+<td><pre>ALTER TABLE cursuri ADD (abreviere CHAR(2) NULL, 
+                 descriere VARCHAR(40) DEFAULT 'curs obligatoriu');</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_tabel DROP COLUMN col
+</td>
+<td><pre>ALTER TABLE cursuri DROP COLUMN descriere;</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_tabel MODIFY (col1 definitie_col1 [,col2 definitie_col2....])
+</td>
+<td><pre>ALTER TABLE profesori MODIFY (nume VARCHAR(20), 
+                            prenume VARCHAR(20));</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_tabel RENAME COLUMN col_veche TO col_noua
+</td>
+<td><pre>ALTER TABLE note RENAME COLUMN valoare TO nota;</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_vechi_tabel RENAME TO nume_nou_tabel
+</td>
+<td><pre>ALTER TABLE profesori RENAME TO cadre_didactice;</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_tabel ADD CONSTRAINT nume_constrangere definitie_constrangere;
+</td>
+<td><pre>ALTER TABLE studenti ADD CONSTRAINT 
+     pk_studs PRIMARY KEY (nr_matricol);</pre>
+<pre>ALTER TABLE note ADD CONSTRAINT 
+     fk_studs FOREIGN KEY (nr_matricol) 
+           REFERENCES studenti(nr_matricol) ON DELETE CASCADE;</pre>
+</td></tr>
+<tr>
+<td>ALTER TABLE nume_tabel DROP CONSTRAINT nume_constrangere;
+</td>
+<td><pre>ALTER TABLE note DROP CONSTRAINT fk_studs;</pre>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Exercitii_5">Exercitii</span></h3>
+<p>Executati din nou scriptul de creare de aici: <a rel="nofollow" class="external free" href="http://profs.info.uaic.ro/~vcosmin/BD/facultate.sql">http://profs.info.uaic.ro/~vcosmin/BD/facultate.sql</a><br>
+</p>
+<ol><li>Adăugați constrângerile de tip cheie primară pentru tabelele Studenti, Profesori, Cursuri.</li>
+<li>Adăugați constrângerile referențiale pentru tabelele Note și Didactic. La ștergerea unui profesor din tabela Profesori, în tabela Didactic id-ul profesorului șters va deveni null. La stergerea unui curs din tabela Cursuri, in tabela Didactic va fi stearsă înregistrarea care referențiază cursul șters. Scrieți comenzi de ștergere înregistrări pentru tabelele referențiate și studiați comportamentul.</li>
+<li>Impuneți constrângerea ca un student să nu aibă mai mult de o notă la un curs.</li>
+<li>Impuneți constrângerea ca valoarea notei să fie cuprinsă între 1 și 10.</li></ol>
+<h1><span class="mw-headline" id="Tranzac.C8.9Bii">Tranzacții</span></h1>
+<p>O tranzacție reprezintă un grup de comenzi de modificare de date (DML) care trebuiesc executate împreună, pentru a garanta consistența datelor. Eșuarea oricărei comenzi din cadrul unei tranzacții determină revenirea la starea inițială, dinaintea tranzacției.
+</p><p>O tranzacție începe de la prima comandă DML executată și se încheie la întâlnirea uneia dintre comenzile COMMIT și ROLLBACK, la întâlnirea unei comenzi DDL, la închiderea sesiunii sau la o eroare a sistemului. 
+</p><p>Comanda ROLLBACK încheie tranzacția readucând baza de date la starea de dinaintea începerii tranzacției. O cădere a sistemului rezultă tot într-o comandă de tip ROLLBACK, adică revenirea la starea de dinaintea începerii tranzacției; este modalitatea prin care este protejată integritatea datelor. Restul situațiilor enumerate mai sus care determină încheierea unei tranzacții, fac ca modificările efectate asupra datelor să fie permanente, fără posibilitatea revenirii la o stare anterioară.
+</p><p>Imediat ce o tranzacție s-a încheiat, prima comandă DML lansată marchează nceputul uneia noi.
+</p><p>În cadrul acestui laborator ați executat comanda ROLLBACK înainte de a experimenta cu comanda CREATE TABLE, adică înainte de prima comandă de tip DDL lansată. Rezultatul a fost revenirea bazei de date la starea existentă la începutul sesiunii de lucru. Dacă nu ar fi fost lansată comanda ROLLBACK, modificările efectuate asupra datelor ar fi devenit permanente în momentul executării comenzii DDL (așa cum s-a specificat mai sus, orice comandă DDL încheie tranzacția marcând modificările ca fiind permanente).
+</p>
+Pe parcursul unei tranzacții pot fi adăugați niște marcatori/indicatori cu ajutorul cărora să putem reveni la stări intermediare. Adăugarea unui indicator se realizează cu ajutorul comenzii <pre>SAVEPOINT nume_indicator</pre> iar revenirea la starea bazei de date din acel moment se realizează cu ajutorul comenzii <pre>ROLLBACK TO SAVEPOINT nume_indicator</pre>.
+<p>Orice comandă DDL este considerată a forma o tranzacție.
+</p>
+<h3><span class="mw-headline" id="Exerci.C8.9Bii">Exerciții</span></h3>
+<ol><li> Asigurati-va că începeți o nouă tranzacție.</li>
+<li> Ștergeți toate înregistrările din tabela Profesori.</li>
+<li> Inserați un profesor.</li>
+<li> Marcați starea curentă ca 's1'.</li>
+<li> Schimbați numele profesorului inserat.</li>
+<li> Vizualizați datele.</li>
+<li> Reveniți la starea s1.</li>
+<li> Vizualizați datele.</li>
+<li> Reveniția la starea de dinaintea ștergerii.</li></ol>
+
+<!-- 
+NewPP limit report
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 260/1000000
+Preprocessor generated node count: 508/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key my_wiki-WIKI_BD_:pcache:idhash:19-0!*!*!!ro!*!* and timestamp 20160216100025 and revision id 510
+ -->
+</div>									<div class="printfooter">
+						Adus de la „<a dir="ltr" href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;oldid=510">http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;oldid=510</a>”					</div>
+													<div id="catlinks" class="catlinks catlinks-allhidden"></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Meniu de navigare</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Unelte personale</h3>
+						<ul>
+							<li id="pt-login"><a href="http://85.122.23.37/BD/index.php?title=Special:Autentificare&amp;returnto=Laboratorul+11&amp;returntoquery=printable%3Dyes" title="Sunteți încurajat să vă autentificați, deși acest lucru nu este obligatoriu. [alt-shift-o]" accesskey="o">Autentificare</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Spații de nume</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="http://85.122.23.37/BD/index.php/Laboratorul_11" title="Vedeți conținutul paginii [alt-shift-c]" accesskey="c">Pagină</a></span></li>
+															<li id="ca-talk" class="new"><span><a href="http://85.122.23.37/BD/index.php?title=Discu%C8%9Bie:Laboratorul_11&amp;action=edit&amp;redlink=1" title="Discuții despre această pagină [alt-shift-t]" accesskey="t">Discuție</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0"><span>Variante</span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Vizualizări</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://85.122.23.37/BD/index.php/Laboratorul_11">Lectură</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;action=edit" title="Această pagină este protejată. Puteți vizualiza doar codul sursă [alt-shift-e]" accesskey="e">Sursă pagină</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;action=history" title="Versiunile anterioare ale paginii și autorii lor. [alt-shift-h]" accesskey="h">Istoric</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>Mai mult</span><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;printable=yes#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Căutare</label>
+						</h3>
+
+						<form action="http://85.122.23.37/BD/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Căutare" title="Căutare în BD [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Căutare" name="title"><input type="submit" name="go" value="Salt" title="Deschide pagina cu acest nume, dacă există" id="searchButton" class="searchButton">								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://85.122.23.37/BD/index.php/Pagina_principal%C4%83" title="Pagina principală"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigare</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://85.122.23.37/BD/index.php/Pagina_principal%C4%83" title="Vizitați pagina principală [alt-shift-z]" accesskey="z">Pagina principală</a></li>
+													<li id="n-Laborator-1"><a href="http://85.122.23.37/BD/index.php/Laboratorul_1">Laborator 1</a></li>
+													<li id="n-Laborator-2"><a href="http://85.122.23.37/BD/index.php/Laboratorul_2">Laborator 2</a></li>
+													<li id="n-Laborator-3"><a href="http://85.122.23.37/BD/index.php/Laboratorul_3">Laborator 3</a></li>
+													<li id="n-Laborator-4"><a href="http://85.122.23.37/BD/index.php/Laboratorul_4">Laborator 4</a></li>
+													<li id="n-Laborator-5"><a href="http://85.122.23.37/BD/index.php/Laboratorul_5">Laborator 5</a></li>
+													<li id="n-Laborator-6"><a href="http://85.122.23.37/BD/index.php/Laboratorul_6">Laborator 6</a></li>
+													<li id="n-Laborator-7"><a href="http://85.122.23.37/BD/index.php/Laboratorul_7">Laborator 7</a></li>
+													<li id="n-Laborator-8"><a href="http://85.122.23.37/BD/index.php/Laboratorul_8">Laborator 8</a></li>
+													<li id="n-Laborator-9"><a href="http://85.122.23.37/BD/index.php/Laboratorul_9">Laborator 9</a></li>
+													<li id="n-Laborator-10"><a href="http://85.122.23.37/BD/index.php/Laboratorul_10">Laborator 10</a></li>
+													<li id="n-Laborator-11"><a href="http://85.122.23.37/BD/index.php/Laboratorul_11">Laborator 11</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Unelte</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://85.122.23.37/BD/index.php/Special:Ce_se_leag%C4%83_aici/Laboratorul_11" title="Lista tuturor paginilor wiki care conduc spre această pagină [alt-shift-j]" accesskey="j">Ce trimite aici</a></li>
+													<li id="t-recentchangeslinked"><a href="http://85.122.23.37/BD/index.php/Special:Modific%C4%83ri_corelate/Laboratorul_11" title="Schimbări recente în legătură cu această pagină [alt-shift-k]" accesskey="k">Modificări corelate</a></li>
+													<li id="t-specialpages"><a href="http://85.122.23.37/BD/index.php/Special:Pagini_speciale" title="Lista tuturor paginilor speciale [alt-shift-q]" accesskey="q">Pagini speciale</a></li>
+													<li id="t-permalink"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;oldid=510" title="Legătura permanentă către această versiune a paginii">Legătură permanentă</a></li>
+													<li id="t-info"><a href="http://85.122.23.37/BD/index.php?title=Laboratorul_11&amp;action=info" title="Mai multe informații despre această pagină">Informații despre pagină</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Ultima modificare efectuată la 19:56, 15 decembrie 2015.</li>
+											<li id="footer-info-copyright">Conținutul este disponibil sub <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Atribuire</a>, exceptând cazurile în care se specifică altfel.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://85.122.23.37/BD/index.php/BD:Politica_de_confiden%C8%9Bialitate" title="BD:Politica de confidențialitate">Politica de confidențialitate</a></li>
+											<li id="footer-places-about"><a href="http://85.122.23.37/BD/index.php/BD:Despre" title="BD:Despre">Despre BD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://85.122.23.37/BD/index.php/BD:Termeni" title="BD:Termeni">Termeni</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="https://creativecommons.org/licenses/by/3.0/"><img src="./Laboratorul 11 - BD_files/cc-by.png" alt="Creative Commons Atribuire" width="88" height="31"></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="./Laboratorul 11 - BD_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/BD/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /BD/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":343});
+}</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13.3333px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

@@ -1,0 +1,22 @@
+isPrime(x) {
+  if (x < 2) return false;
+  for (i = 2; i <= x / 2; ++i)
+    if (x % i == 0) return false;
+  return true;
+}
+
+firstNPrimes(n) {
+    /* pune in lista l primele n numere prime */
+    l = emptyList;
+    x = 2;
+    while (l.size() < n) {
+        /* calculam urmatorul numar prim x */
+        if (isPrime(x)) {
+            l.pushBack(x);
+        }
+        ++x;
+    }
+    return l;
+}
+
+a = firstNPrimes(n);

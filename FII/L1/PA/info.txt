@@ -1,0 +1,10 @@
+Bogdan Patrut - C216
+Teste: 2, 3, ... (10 teste / 10' / 2p x test)
+Punctaj: 20 + 10bonus = 30total (>= 10 promovare)
+
+Limbajul K -> Alk
+K: https://github.com/kframework/k/releases/tag/v3.6
+Alk: https://github.com/alk-language/k-semantics
+
+Resurse: https://sites.google.com/site/fiicoursepa/
+Alk online: https://fmse.info.uaic.ro/tools/Alk/

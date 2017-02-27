@@ -1,0 +1,9 @@
+Pagini din curs de interes: 31, 32, 41, 42, 48, 49
+
+I
+a. Descarcat K framework si compilat Alk.
+b. Rulat exemple .alk prin Alk.
+
+II
+a. Algoritm generat numere prime folosind ciurul lui Eratostene.
+-> wolframpalpha.com/SieveofEratosthenes.html

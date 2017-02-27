@@ -1,0 +1,39 @@
+General
+-------
+(exit) - iesire
+(clear) - stergere date
+(load CALE) - incarca fisier
+(reset) - reseteaza agenda
+(run [NR]) - ruleaza in ordinea instructiunilor
+
+(facts) - fapte
+(rules) - reguli
+(assert) - creeaza fapt
+(retract ID) - sterge fapt
+(defrule) - defineste regula
+(deffacts) - defineste fapte
+
+(printout t "MESAJ" crlf) - afiseaza mesaj
+
+
+Reguli
+------
+
+> (defrule NUME
+   CONDITII
+   =>
+   COMENZI
+  )
+
+> (defrule test (minge) =>
+   (assert (balon)))
+> (rules)
+
+
+Rulare
+------
+(clear)
+(load "CALE")
+(reset)
+(run)
+(run NUMAR) - executa un nr. de instructiuni

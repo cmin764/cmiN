@@ -1,4 +1,5 @@
 http://profs.info.uaic.ro/~adria/teach/courses/CloudComputing/
+https://profs.info.uaic.ro/~cloudcomputing/secure/list.php
 
 Lenuta Alboaie - [adria [at] info.uaic.ro]
 Catalin Damian - [cdamian [at] tuiasi.ro]
