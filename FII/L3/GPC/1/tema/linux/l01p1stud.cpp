@@ -41,14 +41,14 @@ void Display1() {
 
 void Display2() {
    glColor3f(1,0.1,0.1); // rosu
-   glBegin(GL_LINES); 
-      glVertex2f(1.0,1.0); 
-      glVertex2f(0.9,0.9); 
-      glVertex2f(0.8,0.8); 
-      glVertex2f(0.7,0.7); 
-      glVertex2f(0.6,0.6); 
-      glVertex2f(0.5,0.5); 
-      glVertex2f(-0.5,-0.5); 
+   glBegin(GL_LINES);
+      glVertex2f(1.0,1.0);
+      glVertex2f(0.9,0.9);
+      glVertex2f(0.8,0.8);
+      glVertex2f(0.7,0.7);
+      glVertex2f(0.6,0.6);
+      glVertex2f(0.5,0.5);
+      glVertex2f(-0.5,-0.5);
       glVertex2f(-1.0,-1.0);
    glEnd();
 }
@@ -56,7 +56,7 @@ void Display2() {
 void Display3() {
    // trasare puncte GL_POINTS : deseneaza n puncte
     glColor3f(1,0.1,0.1); // rosu
-    glBegin(GL_POINTS); 
+    glBegin(GL_POINTS);
 
     // cadran I
     glVertex2f(0.5, 0.5);
@@ -73,7 +73,7 @@ void Display3() {
 void Display4() {
     glColor3f(1,0.1,0.1); // rosu
     // trasare linie poligonala GL_LINE_STRIP : (v0,v1), (v1,v2), (v_{n-2},v_{n-1})
-    glBegin(GL_LINE_STRIP); 
+    glBegin(GL_LINE_STRIP);
 
     glVertex2f(1.0, 1.0);
     glVertex2f(1.0, 0.9);
@@ -90,7 +90,7 @@ void Display4() {
 void Display5() {
    glColor3f(1,0.1,0.1); // rosu
    // trasare linie poligonala inchisa GL_LINE_LOOP : (v0,v1), (v1,v2), (v_{n-1},v0)
-   glBegin(GL_LINE_LOOP); 
+   glBegin(GL_LINE_LOOP);
 
     glVertex2f(1.0, 1.0);
     glVertex2f(1.0, 0.9);
@@ -131,7 +131,7 @@ void Display7() {
    // trasare patrulatere GL_QUADS : (v0,v1,v2,v3), (v4,v5,v6,v7), ...
    glColor3f(1,0.1,0.1); // rosu
     glPolygonMode(GL_FRONT, GL_FILL);
-   glBegin(GL_QUADS); 
+   glBegin(GL_QUADS);
 
     glVertex2f(1.0, 1.0);
     glVertex2f(0.4, 0.8);
@@ -161,7 +161,7 @@ void Display8() {
     glPolygonMode(GL_FRONT, GL_LINE);
    glBegin(GL_POLYGON);
 
-    
+
     glVertex2f(0.25, 0.5);
     glVertex2f(-0.25, 0.5);
 
@@ -293,13 +293,13 @@ void Reshape(int w, int h) {
    //                          GLsizei width, GLsizei height)
    // defineste poarta de afisare : acea suprafata dreptunghiulara
    // din fereastra de afisare folosita pentru vizualizare.
-   // x, y sunt coordonatele pct. din stg. jos iar 
+   // x, y sunt coordonatele pct. din stg. jos iar
    // width si height sunt latimea si inaltimea in pixeli.
    // In cazul de mai jos poarta de afisare si fereastra coincid
    glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 }
 
-/* 
+/*
    Parametrul key indica codul tastei iar x, y pozitia
    cursorului de mouse
 */
@@ -314,7 +314,7 @@ void KeyboardFunc(unsigned char key, int x, int y) {
    glutPostRedisplay();
 }
 
-/* 
+/*
    Codul butonului poate fi :
    GLUT_LEFT_BUTTON, GLUT_MIDDLE_BUTTON, GLUT_RIGHT_BUTTON
    Parametrul state indica starea: "apasat" GLUT_DOWN sau
@@ -324,21 +324,21 @@ void KeyboardFunc(unsigned char key, int x, int y) {
 void MouseFunc(int button, int state, int x, int y) {
    printf("Call MouseFunc : ati %s butonul %s in pozitia %d %d\n",
       (state == GLUT_DOWN) ? "apasat" : "eliberat",
-      (button == GLUT_LEFT_BUTTON) ? 
-      "stang" : 
+      (button == GLUT_LEFT_BUTTON) ?
+      "stang" :
       ((button == GLUT_RIGHT_BUTTON) ? "drept": "mijlociu"),
       x, y);
 }
 
 int main(int argc, char** argv) {
    // Initializarea bibliotecii GLUT. Argumentele argc
-   // si argv sunt argumentele din linia de comanda si nu 
-   // trebuie modificate inainte de apelul functiei 
+   // si argv sunt argumentele din linia de comanda si nu
+   // trebuie modificate inainte de apelul functiei
    // void glutInit(int *argcp, char **argv)
    // Se recomanda ca apelul oricarei functii din biblioteca
    // GLUT sa se faca dupa apelul acestei functii.
    glutInit(&argc, argv);
-   
+
    // Argumentele functiei
    // void glutInitWindowSize (int latime, int latime)
    // reprezinta latimea, respectiv inaltimea ferestrei
@@ -348,7 +348,7 @@ int main(int argc, char** argv) {
    // Argumentele functiei
    // void glutInitWindowPosition (int x, int y)
    // reprezinta coordonatele varfului din stanga sus
-   // al ferestrei, exprimate in pixeli. 
+   // al ferestrei, exprimate in pixeli.
    // Valorile predefinite sunt -1, -1.
    glutInitWindowPosition(100, 100);
 
@@ -373,38 +373,38 @@ int main(int argc, char** argv) {
 
    Init();
 
-   // Functii callback : functii definite in program si 
+   // Functii callback : functii definite in program si
    // inregistrate in sistem prin intermediul unor functii
    // GLUT. Ele sunt apelate de catre sistemul de operare
    // in functie de evenimentul aparut
 
-   // Functia 
+   // Functia
    // void glutReshapeFunc (void (*Reshape)(int width, int height))
    // inregistreaza functia callback Reshape care este apelata
    // oridecate ori fereastra de afisare isi modifica forma.
    glutReshapeFunc(Reshape);
-   
-   // Functia 
+
+   // Functia
    // void glutKeyboardFunc (void (*KeyboardFunc)(unsigned char,int,int))
    // inregistreaza functia callback KeyboardFunc care este apelata
    // la actionarea unei taste.
    glutKeyboardFunc(KeyboardFunc);
-   
-   // Functia 
+
+   // Functia
    // void glutMouseFunc (void (*MouseFunc)(int,int,int,int))
    // inregistreaza functia callback MouseFunc care este apelata
    // la apasarea sau la eliberarea unui buton al mouse-ului.
    glutMouseFunc(MouseFunc);
 
-   // Functia 
+   // Functia
    // void glutDisplayFunc (void (*Display)(void))
    // inregistreaza functia callback Display care este apelata
-   // oridecate ori este necesara desenarea ferestrei: la 
+   // oridecate ori este necesara desenarea ferestrei: la
    // initializare, la modificarea dimensiunilor ferestrei
    // sau la apelul functiei
    // void glutPostRedisplay (void).
    glutDisplayFunc(Display);
-   
+
    // Functia void glutMainLoop() lanseaza bucla de procesare
    // a evenimentelor GLUT. Din bucla se poate iesi doar prin
    // inchiderea ferestrei aplicatiei. Aceasta functie trebuie
