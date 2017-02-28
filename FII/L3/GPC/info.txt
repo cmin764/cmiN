@@ -1,2 +1,6 @@
-http://profs.info.uaic.ro/~ghirvu/gpc-abc/
+eugennc@uaic.ro
+[GPC]_Nume1_Prenume1_AnGrupa_Tema1
+[GPC]_POIEANA_COSMIN_IIIA6_T1
+
+https://profs.info.uaic.ro/~ghirvu/gpc/
 http://profs.info.uaic.ro/~eugennc
