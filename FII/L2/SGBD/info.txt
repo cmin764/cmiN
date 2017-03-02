@@ -3,3 +3,8 @@ robtkristo@yahoo.com
 http://profs.info.uaic.ro/~vcosmin
 http://profs.info.uaic.ro/~vcosmin/regulament_psgbd
 http://profs.info.uaic.ro/~bd/wiki/index.php/Pagina_principal%C4%83
+
+- SQL Developer
+- Oracle XE 12g2
+- executie script sql din init (prin cmd sqlplus)
+- executie .bat

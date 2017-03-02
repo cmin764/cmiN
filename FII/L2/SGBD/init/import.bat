@@ -1,0 +1,1 @@
+imp student/STUDENT file=bd.dmp tables=(answers,chapters,deleted_questions,question_cache,questions,reports,users)
