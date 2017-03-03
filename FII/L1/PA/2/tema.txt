@@ -1,0 +1,2 @@
+- pag. 12 curs
+- algoritm sortare 2 bucle (N^2)

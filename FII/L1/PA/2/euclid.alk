@@ -1,0 +1,50 @@
+cmmdc1(a, b) {
+    r = a % b;
+    while (r != 0) {
+        a = b;
+        b = r;
+        r = a % b;
+    }
+    return b;
+}
+
+
+cmmdc2(a, b) {
+    if (a == 0)
+        return b;
+    if (b == 0)
+    while (a != b) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
+    }
+    return a;
+}
+
+
+max(a, b) {
+    if (a > b)
+        return a;
+    return b;
+}
+
+cmmdc3(a, b) {
+    n = a;
+    if (n > b)
+        n = b;
+    if (n == 0)
+        return max(a, b);
+    while (n > 0) {
+        if (a % n == 0 && b % n == 0)
+            return n;
+        --n;
+    }
+    return n;
+}
+
+
+
+e1 = cmmdc1(a, b);
+e2 = cmmdc2(a, b);
+e3 = cmmdc3(a, b);

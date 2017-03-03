@@ -1,1 +1,2 @@
 http://profs.info.uaic.ro/~iasimin/
+https://msdn.microsoft.com/en-us/library/jj206878(v=vs.113).aspx
