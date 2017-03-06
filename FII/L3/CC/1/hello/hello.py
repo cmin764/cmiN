@@ -68,9 +68,9 @@ class Hello(object):
         result = response.json()
 
         location = None
-        for address_chunks in result["results"]:
+        for address_chunks in result["results"][4:]:
             address = address_chunks["formatted_address"]
-            location = address.split(",")[1].strip()
+            location = address.split(",")[0].strip()
             if is_ascii(location):
                 break
         return location

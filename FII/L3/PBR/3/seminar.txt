@@ -1,0 +1,5 @@
+(STUDENT Ionel IA 10 PBR 9)
+(STUDENT Gigel IA 4)
+
+- (assert (Un fapt (read)))
+- (bind ?x (read))
