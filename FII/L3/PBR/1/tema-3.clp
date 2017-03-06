@@ -1,7 +1,7 @@
 (deffacts condition
     (PNP Y)
-    (RED N)
-    (PIU N)
+    (RED Y)
+    (PIU Y)
 )
 
 
