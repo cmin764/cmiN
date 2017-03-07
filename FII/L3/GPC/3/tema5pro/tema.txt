@@ -1,0 +1,5 @@
+- desenam prin conceptul turtle  (fara gl begin/end)
+
+- Julia:
+z0 = x + iy
+zn+1 = zn^2 + c
