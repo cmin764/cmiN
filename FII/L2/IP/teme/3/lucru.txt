@@ -1,0 +1,6 @@
+Cosmin: diagrame de clase
+Alexandru: fisa cerintelor
+Loredana: diagrame usecase
+
+Ideile folosite pentru scenarii au fost concepute si modificate de toti membrii grupului.
+Team lead: Alxandru

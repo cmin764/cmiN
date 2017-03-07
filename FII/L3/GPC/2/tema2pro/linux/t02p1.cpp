@@ -50,7 +50,7 @@ void Display1() {
 
    // afisarea punctelor propriu-zise precedata de scalare
    glColor3f(1,0.1,0.1); // rosu
-   glBegin(GL_LINE_STRIP); 
+   glBegin(GL_LINE_STRIP);
    for (t = - pi/2 + ratia; t < pi / 2; t += ratia) {
       double x1, y1, x2, y2;
       x1 = (a + b * cos(t)) / xmax;
@@ -62,7 +62,7 @@ void Display1() {
    }
    glEnd();
 
-   glBegin(GL_LINE_STRIP); 
+   glBegin(GL_LINE_STRIP);
    for (t = - pi/2 + ratia; t < pi / 2; t += ratia) {
       double x1, y1, x2, y2;
       x1 = (a + b * cos(t)) / xmax;
@@ -75,8 +75,8 @@ void Display1() {
    glEnd();
 }
 
-// graficul functiei 
-// $f(x) = \bar sin(x) \bar \cdot e^{-sin(x)}, x \in \langle 0, 8 \cdot \pi \rangle$, 
+// graficul functiei
+// $f(x) = \bar sin(x) \bar \cdot e^{-sin(x)}, x \in \langle 0, 8 \cdot \pi \rangle$,
 void Display2() {
    double pi = 4 * atan(1.0);
    double xmax = 8 * pi;
@@ -85,7 +85,7 @@ void Display2() {
 
    // afisarea punctelor propriu-zise precedata de scalare
    glColor3f(1,0.1,0.1); // rosu
-   glBegin(GL_LINE_STRIP); 
+   glBegin(GL_LINE_STRIP);
    for (double x = 0; x < xmax; x += ratia) {
       double x1, y1;
       x1 = x / xmax;
@@ -142,7 +142,7 @@ void MouseFunc(int button, int state, int x, int y) {
 int main(int argc, char** argv) {
 
    glutInit(&argc, argv);
-   
+
    glutInitWindowSize(dim, dim);
 
    glutInitWindowPosition(100, 100);
@@ -154,13 +154,13 @@ int main(int argc, char** argv) {
    Init();
 
    glutReshapeFunc(Reshape);
-   
+
    glutKeyboardFunc(KeyboardFunc);
-   
+
    glutMouseFunc(MouseFunc);
 
    glutDisplayFunc(Display);
-   
+
    glutMainLoop();
 
    return 0;
