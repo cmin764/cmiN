@@ -1,0 +1,19 @@
+swap(out vec, i, j) {
+    tmp = vec[i];
+    vec[i] = vec[j];
+    vec[j] = tmp;
+}
+
+
+sort(out vec, len) {
+    for (i = 0; i < len; ++i) {
+        for (j = i + 1; j < len; ++j) {
+            if (vec[i] > vec[j]) {
+                swap(vec, i, j);
+            }
+        }
+    }
+}
+
+
+sort(vec, len);
