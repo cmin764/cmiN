@@ -1,0 +1,10 @@
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\EntityFramework.dll
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\EntityFramework.xml
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.exe
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.pdb
+C:\Users\cmin7\documents\visual studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.csprojResolveAssemblyReference.cache

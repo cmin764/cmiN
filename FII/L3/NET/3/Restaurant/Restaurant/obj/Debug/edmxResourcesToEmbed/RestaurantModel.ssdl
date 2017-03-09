@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RestaurantModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="RestaurantModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="RestaurantModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="RestaurantModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="RestaurantModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderProduct" EntityType="RestaurantModel.Store.OrderProduct" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CustomerEmployee" Association="RestaurantModel.Store.CustomerEmployee">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Order" Association="RestaurantModel.Store.FK_OrderProduct_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Product" Association="RestaurantModel.Store.FK_OrderProduct_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOrder" Association="RestaurantModel.Store.CustomerOrder">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="EmployeeEmployeeId" Type="int" Nullable="false" />
+    <Property Name="Employee_EmployeeId" Type="int" Nullable="false" />
+    <Property Name="Order_OrderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Kcal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Salary" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="Orders_OrderId" />
+      <PropertyRef Name="Products_ProductId" />
+    </Key>
+    <Property Name="Orders_OrderId" Type="int" Nullable="false" />
+    <Property Name="Products_ProductId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CustomerEmployee">
+    <End Role="Customer" Type="RestaurantModel.Store.Customers" Multiplicity="*" />
+    <End Role="Employee" Type="RestaurantModel.Store.Employees" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Employee_EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerOrder">
+    <End Role="Customer" Type="RestaurantModel.Store.Customers" Multiplicity="*" />
+    <End Role="Order" Type="RestaurantModel.Store.Orders" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Order_OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Order">
+    <End Role="Order" Type="RestaurantModel.Store.Orders" Multiplicity="1" />
+    <End Role="OrderProduct" Type="RestaurantModel.Store.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="Orders_OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Product">
+    <End Role="OrderProduct" Type="RestaurantModel.Store.OrderProduct" Multiplicity="*" />
+    <End Role="Product" Type="RestaurantModel.Store.Products" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="Products_ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

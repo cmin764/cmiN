@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RestaurantModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="RestaurantContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="RestaurantModel.Customer" />
+    <EntitySet Name="Orders" EntityType="RestaurantModel.Order" />
+    <EntitySet Name="Products" EntityType="RestaurantModel.Product" />
+    <EntitySet Name="Employees" EntityType="RestaurantModel.Employee" />
+    <AssociationSet Name="CustomerEmployee" Association="RestaurantModel.CustomerEmployee">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="OrderProduct" Association="RestaurantModel.OrderProduct">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOrder" Association="RestaurantModel.CustomerOrder">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="String" Nullable="true" MaxLength="50" />
+    <NavigationProperty Name="Employee" Relationship="RestaurantModel.CustomerEmployee" FromRole="Customer" ToRole="Employee" />
+    <Property Name="EmployeeEmployeeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="RestaurantModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="String" Nullable="false" MaxLength="50" />
+    <NavigationProperty Name="Products" Relationship="RestaurantModel.OrderProduct" FromRole="Order" ToRole="Product" />
+    <NavigationProperty Name="Customer" Relationship="RestaurantModel.CustomerOrder" FromRole="Order" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Kcal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="RestaurantModel.OrderProduct" FromRole="Product" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" />
+    <Property Name="Salary" Type="Int32" Nullable="true" />
+    <NavigationProperty Name="Customers" Relationship="RestaurantModel.CustomerEmployee" FromRole="Employee" ToRole="Customer" />
+  </EntityType>
+  <Association Name="CustomerEmployee">
+    <End Type="RestaurantModel.Customer" Role="Customer" Multiplicity="*" />
+    <End Type="RestaurantModel.Employee" Role="Employee" Multiplicity="1" />
+  </Association>
+  <Association Name="OrderProduct">
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="*" />
+    <End Type="RestaurantModel.Product" Role="Product" Multiplicity="*" />
+  </Association>
+  <Association Name="CustomerOrder">
+    <End Type="RestaurantModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="1" />
+  </Association>
+</Schema>
