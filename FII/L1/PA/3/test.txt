@@ -1,0 +1,5 @@
+Problema P cu reducere polinomiala la Q.
+
+Teta:
+-> -o- c1, c2, c3 (constante) si n0
+-> T(f(n)) = O(f(n)) |-| o(f(n))
