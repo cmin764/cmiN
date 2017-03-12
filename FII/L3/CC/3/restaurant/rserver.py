@@ -4,6 +4,7 @@
 import BaseHTTPServer
 import json
 import re
+import urlparse
 
 import rdb
 
@@ -48,23 +49,46 @@ class Request(object):
         return "DELETE" == self._method
 
 
+class URIBuilder(object):
+
+    SCHEME = "http"
+
+    def __init__(self, handler):
+        self._handler = handler
+
+    def uri(self, entity_id):
+        address = self._handler.server.server_address
+        path = re.match(r"/\w+", self._handler.path).group() + "/"
+        path = urlparse.urljoin(path, entity_id)
+        uri = urlparse.urlunsplit((
+            self.SCHEME,
+            "{}:{}".format(*address),
+            path,
+            "",
+            ""
+        ))
+        return uri
+
+
 class RESTHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
-    _ROUTES = {}
+    ROUTES = {}
+    DB_PATH = "restaurant.json"
 
     def __init__(self, *args, **kwargs):
-        self.db = rdb.RestaurantDB()
+        self.db = rdb.RestaurantDB(self.DB_PATH)
+        # NOTE(cmiN): do not write anything after this line (blocking).
         BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
 
     @classmethod
     def route(cls, route_path):
         def router(func):
-            cls._ROUTES[route_path] = func
+            cls.ROUTES[route_path] = func
             return func
         return router
 
     def get_payload(self):
-        payload_len = int(self.headers.getheader("Content-length", 0))
+        payload_len = int(self.headers.getheader("Content-Length", 0))
         payload = self.rfile.read(payload_len).strip()
         if not payload:
             return None
@@ -81,9 +105,9 @@ class RESTHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         length = len(payload)
 
         self.send_response(code)
-        self.send_header("Content-type", "application/json")
+        self.send_header("Content-Type", "application/json")
         if result is not None:
-            self.send_header("Content-length", str(length))
+            self.send_header("Content-Length", str(length))
         self.end_headers()
         if result is not None:
             self.wfile.write(payload + "\n")
@@ -104,7 +128,7 @@ class RESTHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.handle_method('DELETE')
 
     def _get_handle_function(self):
-        for regex, func in self._ROUTES.items():
+        for regex, func in self.ROUTES.items():
             match = re.match(r"^{}$".format(regex), self.path)
             if match:
                 return func, match.groups()
@@ -157,9 +181,19 @@ def handle_home(handler, request):
                     "DELETE": "Remove all available products",
                 },
                 "/products/<ID>": {
-                    "GET": "Retrieve specific product's details.",
+                    "GET": "Retrieve specified product's details.",
                     "PUT": "Update current product with provided details.",
                     "DELETE": "Remove the specified product.",
+                },
+                "/employees": {
+                    "POST": "Add new employee with mandatory fields.",
+                    "GET": "Retrieve a list of all available employees.",
+                    "DELETE": "Remove all available employees",
+                },
+                "/employees/<ID>": {
+                    "GET": "Retrieve specified employee's details.",
+                    "PUT": "Update current employee with provided details.",
+                    "DELETE": "Remove the specified employee.",
                 },
             }
         }
@@ -170,6 +204,7 @@ def handle_home(handler, request):
 
 @route(r"/products")
 def handle_products(handler, request):
+    ubuild = URIBuilder(handler)
     if request.POST:
         try:
             data = request.data or {}
@@ -177,11 +212,11 @@ def handle_products(handler, request):
         except rdb.RestaurantDBError as exc:
             raise ResponseError(400, str(exc))
         return {
-            "product": product_id,
+            "product": ubuild.uri(product_id),
         }
     elif request.GET:
         return {
-            "products": handler.db.get_entities("product"),
+            "products": map(ubuild.uri, handler.db.get_entities("product")),
         }
     elif request.DELETE:
         handler.db.drop(name="product")
@@ -191,32 +226,92 @@ def handle_products(handler, request):
 
 
 @route(r"/products/(\d+)")
-def hanle_product(handler, request, product_id):
+def handle_product(handler, request, product_id):
     get_product = lambda: handler.db.get_entity("product", product_id)
+    ubuild = URIBuilder(handler)
     if request.GET:
         product = get_product()
         if product is None:
             raise ResponseError(404, "Not Found")
         return {
-            "product": product
+            "product": product,
         }
     elif request.PUT:
+        entity_id = None
         product = get_product()
         if product:
-            handler.db.remove_entity(product)
+            entity_id = product_id
         try:
             data = request.data or {}
-            product_id = handler.db.add_entity("product", **data)
+            product_id = handler.db.add_entity(
+                "product", entity_id=entity_id, **data)
         except rdb.RestaurantDBError as exc:
             raise ResponseError(400, str(exc))
         return {
-            "product": product_id,
+            "product": ubuild.uri(product_id),
         }
     elif request.DELETE:
         product = get_product()
         if product is None:
             raise ResponseError(404, "Not Found")
         handler.db.remove_entity(product)
+        return None
+    raise ResponseError(405, "Method Not Allowed")
+
+
+@route(r"/employees")
+def handle_employees(handler, request):
+    ubuild = URIBuilder(handler)
+    if request.POST:
+        try:
+            data = request.data or {}
+            employee_id = handler.db.add_entity("employee", **data)
+        except rdb.RestaurantDBError as exc:
+            raise ResponseError(400, str(exc))
+        return {
+            "employee": ubuild.uri(employee_id),
+        }
+    elif request.GET:
+        return {
+            "employees": map(ubuild.uri, handler.db.get_entities("employee")),
+        }
+    elif request.DELETE:
+        handler.db.drop(name="employee")
+        return None
+    # Method not allowed here.
+    raise ResponseError(405, "Method Not Allowed")
+
+
+@route(r"/employees/(\d+)")
+def handle_employee(handler, request, employee_id):
+    get_employee = lambda: handler.db.get_entity("employee", employee_id)
+    ubuild = URIBuilder(handler)
+    if request.GET:
+        employee = get_employee()
+        if employee is None:
+            raise ResponseError(404, "Not Found")
+        return {
+            "employee": employee,
+        }
+    elif request.PUT:
+        entity_id = None
+        employee = get_employee()
+        if employee:
+            entity_id = employee_id
+        try:
+            data = request.data or {}
+            employee_id = handler.db.add_entity(
+                "employee", entity_id=entity_id, **data)
+        except rdb.RestaurantDBError as exc:
+            raise ResponseError(400, str(exc))
+        return {
+            "employee": ubuild.uri(employee_id),
+        }
+    elif request.DELETE:
+        employee = get_employee()
+        if employee is None:
+            raise ResponseError(404, "Not Found")
+        handler.db.remove_entity(employee)
         return None
     raise ResponseError(405, "Method Not Allowed")
 

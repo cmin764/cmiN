@@ -1,0 +1,7 @@
+I. Automatic tests
+    1. Run test_restaurant.py.
+
+II. Manual tests
+    1. Run rdb.py to initialize DB.
+    2. Run rserver.py for starting the server.
+    3. RUn `curl -i -X GET 0:8080` for getting started.

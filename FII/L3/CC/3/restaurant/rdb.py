@@ -48,16 +48,19 @@ class RestaurantDB(object):
                     field, name, entity
                 ))
 
-    def add_entity(self, _name, **kwargs):
+    def add_entity(self, _name, entity_id=None, **kwargs):
         """Add one dict entity of its `name` kind."""
         # Check for the entity type availability and make a copy of it.
         self._check_name(_name)
         entity = kwargs.copy()
         # Now check its fields based on its type name.
         self._check_fields(_name, entity)
-        # All fine, updated the index.
-        index = str(self._indexes[_name])
-        self._indexes[_name] = int(index) + 1
+        # All fine, update the index.
+        if entity_id:
+            index = entity_id
+        else:
+            index = str(self._indexes[_name])
+            self._indexes[_name] = int(index) + 1
         entity["id"] = index
         entity["type"] = _name
         # Finally save it.
@@ -126,11 +129,11 @@ if __name__ == "__main__":
         {
             "name": "Ion",
             "salary": "1000 EUR",
-            "age": "30",
         },
         {
             "name": "Cosmin",
             "salary": "2000 RON",
+            "age": "23"
         }
     )
     rest.add_entities(
@@ -141,8 +144,8 @@ if __name__ == "__main__":
         },
         {
             "name": "Gratar pui",
-            "price": "22 RON",
-            "kcal": "500",
+            "price": "19 RON",
+            "kcal": "400",
         }
     )
     print("Initialized database.")
