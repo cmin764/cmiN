@@ -1,0 +1,23 @@
+- folosit template:
+
+(BIND ?x (+5 ?y))
+(TEST (> ?x ?y))
+
+(EXISTS (student (nume ?x) (note $? PBR $?)))
+(FORALL (...))
+
+(DEFRULE afis_nume
+    (student (nume ?x))
+    =>
+    (PRINTOUT T ?x crlf)
+)
+
+(DEFRULE citire_pbr
+    ?a <- (student (nume ?x) (note $?y))
+    (NOT (student (nume ?x)
+                  (note $? PBR $?)
+         )
+    )
+    =>
+    (MODIFY ?a (note $?y PBR ...))
+)
