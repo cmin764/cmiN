@@ -3,7 +3,7 @@ TEAMNAME=Cosmin Poieana A6
 PREPEND=[GPCL]
 CC=g++
 CFLAGS=-Wall
-LDFLAGS=-lm -lGL -lGLU -lglut
+LDFLAGS=-lm -lGL -lGLU -lglut -std=c++14
 CPPSOURCES= $(wildcard ./*.cpp)
 CPPOBJECTS= $(CPPSOURCES:.cpp=.o)
 CSOURCES= $(wildcard ./src/*.c)

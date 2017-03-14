@@ -4,3 +4,5 @@ eugennc@uaic.ro
 
 https://profs.info.uaic.ro/~ghirvu/gpc/
 http://profs.info.uaic.ro/~eugennc
+
+pass: pentrustudenti

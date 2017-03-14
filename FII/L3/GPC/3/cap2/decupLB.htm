@@ -1,0 +1,331 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./decupLB_files/filelist.xml">
+<title>decupLiangBarski</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Lucian</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2005-11-13T18:44:00Z</o:Created>
+  <o:LastSaved>2005-11-13T18:44:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>364</o:Words>
+  <o:Characters>2078</o:Characters>
+  <o:Company>Acasa</o:Company>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2551</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>2</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 134676480 16 0 131072 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:2.0cm 65.95pt 2.0cm 65.95pt;
+	mso-header-margin:1.0cm;
+	mso-footer-margin:1.0cm;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=RO style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+Algoritmul Liang-Barski de decupare a segmentelor de dreapta<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+dreptunghi de decupare vertical, diagonala avand <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+extrem. (xmin,ymin) si (xmax,ymax)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>double
+xmin, ymin, xmax, ymax;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>bool
+DecupPunct(double x0, double y0) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>return (x0 &gt;= xmin &amp;&amp; x0 &lt;=
+xmax &amp;&amp; y0 &gt;= ymin &amp;&amp; y0 &lt;= ymax);<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+P0(x0,y0) si P1(x1,y1) sunt extremitatile segm. dreapta<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>// La
+sfarsitul algoritmului vizibil este setat pe TRUE daca<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+segmentul initial intersecteaza d.d. si in acest caz valorile<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>// x0,
+y0, x1, y1 sunt coordonatele extremitatilor segmentului decupat<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>// Daca
+segmentul initial nu intersecteaza d.d. atunci vizibil este<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>//
+setat pe FALSE iar valorile x0, y0, x1, y1 nu se schimba<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>void
+DecupLiangBarski(double &amp;x0, double &amp;y0,<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">                      </span>double &amp;x1, double
+&amp;y1,<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">                      </span>bool &amp;vizibil) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>double dx = x1 - x0,<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">         </span>dy = y1 - y0;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>vizibil = false;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>if (dx == 0 &amp;&amp; dy == 0 &amp;&amp;
+DecupPunct(x0, y0)) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>// segment de dreapta degenerat<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>vizibil = true;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>else {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>double t_EI = 0.0,<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">           </span>t_EE = 1.0;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>// true daca este inauntru in raport cu
+muchia stanga<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>if (DecupT(dx, xmin - x0, t_EI, t_EE))<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">      </span>// true daca este inauntru in raport cu
+muchia dreapta<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">      </span>if (DecupT(-dx, x0 - xmax, t_EI, t_EE))<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">        </span>// true daca este inauntru in raport
+cu muchia de jos<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">        </span>if (DecupT(dy, ymin - y0, t_EI, t_EE))<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">          </span>// true daca este inauntru in raport
+cu muchia de sus<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">          </span>if (DecupT(-dy, y0 - ymax, t_EI,
+t_EE)) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>vizibil = true;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>// calculul intersectiei
+corespunzatoare t_EE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>if (t_EE &lt; 1) { <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">              </span>x1 = x0 + t_EE * dx;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">              </span>y1 = y0 + t_EE * dy;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>// calculul intersectiei
+corespunzatoare t_EI<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">           </span><span style="mso-spacerun:
+yes"> </span>if (t_EI &gt; 0) { <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">              </span>x0 = x0 + t_EI * dx;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">              </span>y0 = y0 + t_EI * dy;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">            </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">          </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>bool
+DecupT(double numit, double numar, double &amp;t_EI, double &amp;t_EE) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>double t;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>if (numit &gt; 0) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>//<span style="mso-spacerun:
+yes">                 </span>-&gt;<span style="mso-spacerun: yes">   
+</span>----&gt;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>// produsul scalar Ni<span
+style="mso-spacerun: yes">  </span>. P0 P1 &lt; 0 deci EI<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>t = numar / numit;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>if (t &gt; t_EE) return false;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>else if (t &gt; t_EI) t_EI = t;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>else if (numit &lt; 0) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>//<span style="mso-spacerun:
+yes">                 </span>-&gt;<span style="mso-spacerun: yes">   
+</span>----&gt;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>// produsul scalar Ni<span
+style="mso-spacerun: yes">  </span>. P0 P1 &gt; 0 deci EE<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>t = numar / numit;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>if (t &lt; t_EI) return false;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>else if (t &lt; t_EE) t_EE = t;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>else if (numar &gt; 0) {<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>// segment de dreapta in afara muchiei<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">    </span>return false;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes">  </span>return true;<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'>}<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+- de ce se inmulteste cu 2 (se aduna cu 1 si 2)
+- ce face variabila `d` (dne, dse)
+- intelegerea algoritmului dreapta 3
