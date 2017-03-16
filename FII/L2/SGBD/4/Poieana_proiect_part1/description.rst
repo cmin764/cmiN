@@ -59,7 +59,7 @@ Entitatile descrise in scenariu au condus la concretizarea urmatoarelor tabele:
 **CUSTOMERS** - contine clientii restaurantului, acestia expun campuri ca:
 
 - CustomerId (Integer)
-- Name (String)
+- CustomerName (String)
 - Phone (String)
 - *Address (String)*
 - *Email (String)*
@@ -67,28 +67,28 @@ Entitatile descrise in scenariu au condus la concretizarea urmatoarelor tabele:
 **ORDERS** - comenzile plasate de clienti:
 
 - ProductId (Integer)
-- Date (String)
+- OrderDate (String)
 - TotalPrice (Double)
-- *TotalKcal (Double)*
+- *TotalKcal (Integer)*
 
 **PRODUCTS** - produsele ce pot fi comandate prin intermediul unei comenzi:
 
 - ProductId (Integer)
-- Name (String)
+- ProductName (String)
 - Price (Double)
-- *Kcal (Double)*
+- *Kcal (Integer)*
 
 **EMPLOYEES** - angajatii restaurantului (chelneri) ce vor servi clientii:
 
 - EmployeeId (Integer)
-- Name (String)
+- EmployeeName (String)
 - Salary (Integer)
 - *Age (Integer)*
 
 **MENUS** - meniuri pe post de ansamblu de produse:
 
 - MenuId (Integer)
-- Name (String)
+- MenuName (String)
 - Description (String)
 - Price (Double)
 

@@ -47,7 +47,7 @@ endobj
 endobj
 8 0 obj
 <<
-/Author () /CreationDate (D:20170316213108-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170316213108-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author () /CreationDate (D:20170317004650-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170317004650-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title (Restaurant) /Trapped /False
 >>
 endobj
@@ -89,7 +89,7 @@ endobj
 endobj
 16 0 obj
 <<
-/Length 7677
+/Length 7685
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -347,7 +347,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Name \(String\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (CustomerName \(String\)) Tj T* ET
 Q
 Q
 q
@@ -469,7 +469,7 @@ endstream
 endobj
 17 0 obj
 <<
-/Length 10554
+/Length 10580
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -488,7 +488,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Date \(String\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (OrderDate \(String\)) Tj T* ET
 Q
 Q
 q
@@ -536,7 +536,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (TotalKcal \(Double\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (TotalKcal \(Integer\)) Tj T* ET
 Q
 Q
 q
@@ -596,7 +596,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Name \(String\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (ProductName \(String\)) Tj T* ET
 Q
 Q
 q
@@ -644,7 +644,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (Kcal \(Double\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (Kcal \(Integer\)) Tj T* ET
 Q
 Q
 q
@@ -704,7 +704,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Name \(String\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (EmployeeName \(String\)) Tj T* ET
 Q
 Q
 q
@@ -812,7 +812,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Name \(String\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (MenuName \(String\)) Tj T* ET
 Q
 Q
 q
@@ -1245,14 +1245,14 @@ xref
 0000001812 00000 n 
 0000001935 00000 n 
 0000002001 00000 n 
-0000009730 00000 n 
-0000020337 00000 n 
-0000020387 00000 n 
+0000009738 00000 n 
+0000020371 00000 n 
 0000020421 00000 n 
+0000020455 00000 n 
 trailer
 <<
 /ID 
-[<91e5843ee37552f26269f8cf7bf0dcba><91e5843ee37552f26269f8cf7bf0dcba>]
+[<303d8caa4adbc16b139f7ff23b701c3c><303d8caa4adbc16b139f7ff23b701c3c>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 8 0 R
@@ -1260,5 +1260,5 @@ trailer
 /Size 21
 >>
 startxref
-20455
+20489
 %%EOF
