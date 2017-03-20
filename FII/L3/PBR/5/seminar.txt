@@ -1,0 +1,16 @@
+- Algoritmul de potriviri RETE
+=> https://cis.temple.edu/~giorgio/cis587/readings/rete.html
+Pattern-uri -> Rete -> RETE + Brut
+
+=> http://www.cs.upc.edu/~bejar/ia/material/laboratorio/clips/CLIPS-snippets-eng.pdf
+
+
+(defrule r1
+    (FA ?x 5)
+    (FB $?y ?x)
+)
+
+(defrule r2
+    (FA 1 ?x)
+    (FB ?x $?z)
+)
