@@ -1,0 +1,4 @@
+- http://websocket.org/
+- http://www.infoworld.com/article/2609720/application-development/9-killer-uses-for-websockets.html
+
+- http://www.ibm.com/developerworks/library/wa-reverseajax1/
