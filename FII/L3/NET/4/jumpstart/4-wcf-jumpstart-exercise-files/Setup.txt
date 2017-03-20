@@ -1,0 +1,2 @@
+To build and run the projects for this module, you will need to follow the database setup instructions in module 2.
+Then just open the solution in Visual Studio 2013 and run.

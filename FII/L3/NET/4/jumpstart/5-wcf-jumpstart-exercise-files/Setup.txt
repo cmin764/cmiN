@@ -1,0 +1,3 @@
+To build and run the projects for this module, you will need to follow the database setup instructions in module 2.
+To run the code without modification, you will also need to create a local machine user account named "test" with a password of "test". Or just comment out the two lines of code in the client MainWindowViewModel that set ClientCredentials on the proxy.
+Then just open the solution in Visual Studio 2013 and run.

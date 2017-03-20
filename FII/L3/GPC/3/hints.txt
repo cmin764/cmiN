@@ -1,0 +1,2 @@
+- http://wojanton.ovh.org/ang/fractals/mandelbrotCpp.php
+- https://github.com/jakevoytko/fractals/blob/master/fractal.cpp

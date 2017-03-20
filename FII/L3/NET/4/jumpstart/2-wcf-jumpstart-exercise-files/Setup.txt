@@ -1,0 +1,5 @@
+To build and run the demos in this module and subsequent modules, you need to first create the Zza database.
+To do that, make sure you have SQL Server Developer Editor or better, or SQL Server Express edition with Tools installed on your machine.
+Open the ZzaDatabaseGen.sql file in SQL Management Studio. Create a database named 'Zza' with defaults. Run that script to provision the database.
+If you create the database in a named instance of SQL Server (i.e. SQL Express is named .\SQLEXPRESS by default), you will need to change the connection strings in the demos to reflect that. Find the connectionstrings section in the config file and replace "server=." in the connection string with your server name (i.e. "server=.\SQLEXPRESS").
+Then you should be able to open the solutions in Visual Studio 2013, compile and run.
