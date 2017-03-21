@@ -158,7 +158,7 @@ void Display5() {
 
             ++cnt;
 		}
-        // selectia cadranului I
+        // selectia cadranului II
 		if (x >= -1 && x <= 0 && y <= 1 && y >= 0) {
 			glVertex2f(x, y);
 		}
