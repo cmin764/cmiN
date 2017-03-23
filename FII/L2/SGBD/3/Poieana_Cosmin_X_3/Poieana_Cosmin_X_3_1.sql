@@ -169,7 +169,7 @@ DECLARE
         SELECT * FROM Users ORDER BY id;
     
     contor NUMBER := 0;
-    contor_id NUMBER := 1;
+    contor_id NUMBER := 0;
     
     nume_intreg Users.name%TYPE;
     prenume Users.name%TYPE;
