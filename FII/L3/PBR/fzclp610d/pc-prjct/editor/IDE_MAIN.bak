@@ -1,0 +1,769 @@
+	/*******************************************************/
+   /*      "C" Language Integrated Production System      */
+	/*                                                     */
+	/*                  A Product Of The                   */       
+	/*             Software Technology Branch              */
+   /*             NASA - Johnson Space Center             */                  
+   /*                                                     */
+	/*               CLIPS Version 6.00  01/01/93          */
+   /*              IDE Text Editor 1.00  01/01/93         */
+	/*                                                     */
+   /*                    MAIN MODULE                      */
+   /*******************************************************/
+
+/**************************************************************/
+/* Purpose: For Starting, Maintaining and Stopping a Dymanic  */
+/*    Data Exchange (DDE) conversation with a CLIPS Server.   */
+/*                                                            */
+/* Principal Programmer(s):                                   */
+/*      Christopher J. Ortiz                                  */
+/*                                                            */
+/* Contributing Programmer(s):                                */
+/*                                                            */
+/* Revision History:                                          */
+/**************************************************************/
+
+/*-------------------------------+
+| Windows & System Include Files |
++-------------------------------*/
+#include <windows.h>
+#include <commdlg.h>
+#include <io.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h> // GDR
+#include <sys\stat.h>
+
+/*---------------------+
+| Editor Include Files |
++---------------------*/
+
+#include "setup.h"
+#include "ide_ids.h"
+#include "ide_main.h" // GDR
+#include "ide_misc.h"
+#include "ide_dde.h"
+#include "ide_bal.h"
+#include "ide_srch.h"
+
+/*-----------------+
+| Global Variables |
++-----------------*/
+
+HFONT hFont;          /* Handle to the font */
+HACCEL hAccTable;     /* handle to accelerator table */
+HWND hwnd;            /* handle to main window */
+HWND hEditWnd;        /* handle to edit window */
+HINSTANCE hInst;
+HICON hHourGlass;    /* handle to hourglass cursor      */
+OPENFILENAME ofn;    
+int Log = 0;
+char szFileName[MAXFILENAME];
+char szFileTitle[MAXFILENAME];
+
+HANDLE hEditBuffer;    /* handle to editing buffer */
+HFILE hFile;             /* file handle */
+OFSTRUCT OfStruct;     /* information from OpenFile() */
+BOOL bChanges = FALSE; /* TRUE if the file is changed */
+
+char szTemp[128];      /* Temp Buffer */
+
+/*----------------+
+| Local Functions |
++----------------*/
+
+DoFileMenu (HWND hWnd, WPARAM wParam );
+DoEditMenu (HWND hWnd, WPARAM wParam, LPARAM lParam );
+
+/******************************************************************
+* WinMain : Calls initialization function & processes the
+*   message loop
+******************************************************************/
+
+#if IBM_TBC
+#pragma argsused
+#endif
+int PASCAL WinMain (
+	HINSTANCE hInstance,
+   HINSTANCE hPrevInstance,
+	LPSTR  lpCmdLine,
+   int    nCmdShow )
+
+{  extern HWND hwnd;
+	MSG msg;
+
+   if (!hPrevInstance)
+      if (!InitApplication(hInstance))
+	 return (FALSE);
+
+	if (!InitInstance(hInstance, nCmdShow))
+      return (FALSE);
+
+   StartUpDDE( hwnd );
+
+	while (GetMessage(&msg, NULL, 0, 0))
+	{  if (!TranslateAccelerator(hwnd, hAccTable, &msg))
+		{
+		 TranslateMessage(&msg);
+		 DispatchMessage(&msg);
+		}
+	}
+	ShutDownDDE ( );
+   return (msg.wParam);
+}
+
+/******************************************************************
+* InitApplication :  Initializes window data and registers
+*   the window class    
+******************************************************************/
+
+BOOL InitApplication( HANDLE hInstance )
+
+{  WNDCLASS  wc;
+
+	wc.style = 0;
+	wc.lpfnWndProc = MainWndProc;
+	wc.cbClsExtra = 0;
+	wc.cbWndExtra = 0;
+	wc.hInstance = (HINSTANCE) hInstance;
+	wc.hIcon = LoadIcon((HINSTANCE) hInstance, "Clips_Text");
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wc.hbrBackground = (HBRUSH) (COLOR_WINDOW+1);
+	wc.lpszMenuName =  "ClipsEditMenu";
+	wc.lpszClassName = "ClipsEditWClass";
+
+	return (RegisterClass(&wc));
+}
+
+
+/******************************************************************
+* InitInstance :  Saves instance handle and creates the main window
+******************************************************************/
+
+BOOL InitInstance (
+	HANDLE hInstance,
+   int nCmdShow )
+
+{  extern HWND hEditWnd, hwnd;
+   RECT Rect;
+
+   hInst = (HINSTANCE) hInstance;
+
+   hAccTable = LoadAccelerators(hInst, "ClipsAcc");
+	hwnd = CreateWindow
+   (  "ClipsEditWClass",
+      "Edit File - (untitled)",
+      WS_OVERLAPPEDWINDOW,
+      100, 100, CW_USEDEFAULT, CW_USEDEFAULT,
+      (HWND) NULL, (HMENU) NULL, (HINSTANCE) hInstance, NULL
+   );
+
+   if (!hwnd)
+      return (FALSE);
+
+	GetClientRect(hwnd, (LPRECT) &Rect);
+
+   /*----------------------------+
+   |Create a child editor window |
+   +----------------------------*/
+   hEditWnd = CreateWindow
+   (  "Edit", "",
+      ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL |
+      ES_AUTOHSCROLL | ES_WANTRETURN | WS_CHILD |
+      WS_VISIBLE  | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,
+      0, 0, (Rect.right-Rect.left), (Rect.bottom-Rect.top),
+		hwnd, (HMENU) IDC_EDIT, hInst, NULL
+	);
+
+   if (!hEditWnd)
+   {  DestroyWindow(hwnd);
+		return (FALSE);
+	}
+
+   /*-----------------------------------------------------+
+   | Get an hourglass cursor to use during file transfers |
+   +-----------------------------------------------------*/
+   {  
+      hHourGlass = LoadCursor(NULL, IDC_WAIT);
+   }
+    
+   /*---------------------------------------------------+
+	| fill in non-variant fields of OPENFILENAME struct. |
+	+---------------------------------------------------*/
+   {  extern char szFileName[];
+      extern char szFileTitle[];
+      extern OPENFILENAME ofn;
+		ofn.lStructSize       = sizeof(OPENFILENAME);
+		ofn.hwndOwner       = hwnd;
+		ofn.lpstrFilter     = "CLIPS Files (*.CLP)\0*.CLP\0Batch Files (*.BAT)\0*.BAT\0All Files (*.*)\0*.*\0";
+      ofn.lpstrCustomFilter = NULL;
+      ofn.nMaxCustFilter          = 0;
+      ofn.nFilterIndex    = 1;
+      ofn.lpstrFile         = szFileName;
+      ofn.nMaxFile        = MAXFILENAME;
+      ofn.lpstrInitialDir   = NULL;
+      ofn.lpstrFileTitle    = szFileTitle;
+      ofn.nMaxFileTitle     = MAXFILENAME;
+      ofn.lpstrTitle        = NULL;
+		ofn.lpstrDefExt       = "CLP";
+      ofn.Flags             = 0;
+   }
+
+   /*-----------------------------------------------+
+   | fill in non-variant fields of PRINTDLG struct. |
+   +-----------------------------------------------*/
+	{  extern PRINTDLG pd;
+      pd.lStructSize    = sizeof(PRINTDLG);
+      pd.hwndOwner      = hwnd;
+      pd.hDevMode       = NULL;
+      pd.hDevNames      = NULL;
+      pd.Flags          = PD_RETURNDC | PD_NOSELECTION | PD_NOPAGENUMS;
+      pd.nCopies        = 1;
+   }
+
+   /*-------------------------+
+	| Set Font to a Fixed Font |
+   +-------------------------*/
+   {  extern HFONT hFont;
+		hFont = (HFONT) GetStockObject(SYSTEM_FIXED_FONT);
+		SendMessage(hEditWnd, WM_SETFONT,
+			    (WPARAM) GetStockObject(SYSTEM_FIXED_FONT), 0L);
+	}
+
+	ShowWindow(hwnd, nCmdShow);
+	UpdateWindow(hwnd);
+
+   /*-----------------------+
+   | Setup for Find Replace |
+   +-----------------------*/
+   {  extern FINDREPLACE fr;
+      extern char SearchFor[];
+      extern char ReplaceWith[];
+		extern UINT uFindReplaceMsg;
+      uFindReplaceMsg = RegisterWindowMessage(FINDMSGSTRING);
+
+      memset ( &SearchFor, '\0', 255 );
+      memset ( &ReplaceWith, '\0', 255 );
+      memset ( &fr, 0, sizeof ( FINDREPLACE ) );
+
+		fr.lStructSize = sizeof ( FINDREPLACE );
+      fr.hwndOwner = hwnd;
+      fr.lpstrFindWhat = (LPSTR) &SearchFor;
+      fr.lpstrReplaceWith = (LPSTR) &ReplaceWith;
+      fr.wFindWhatLen = 255;
+      fr.wReplaceWithLen = 255;
+      fr.Flags = FR_HIDEUPDOWN | FR_HIDEWHOLEWORD ;
+   }
+
+	return (TRUE);
+}
+
+/******************************************************************
+* MainWndProc :  Processes all Messages for Editor Application.
+******************************************************************/
+
+long FAR PASCAL MainWndProc (
+	HWND hWnd,
+	UINT message,
+	WPARAM wParam,
+	LPARAM lParam )
+
+{  extern UINT uFindReplaceMsg;
+	extern HWND hEditWnd;   /* handle to edit window */
+   short cancel;
+
+	/*-------------------------------------+
+	| Process the Find and Replace Message |
+	+-------------------------------------*/
+
+	if ( message == uFindReplaceMsg )
+	  return StartSearch (hWnd, wParam, lParam );
+
+	switch (message)
+	{  case WM_COMMAND:
+		{
+		 wParam = LOWORD(wParam); // GDR
+		 switch (wParam)
+			{  case 0x00DA:
+			 SendMessage (hEditWnd,WM_CHAR,VK_BACK,0L);
+			 break;
+
+		 case 0x00E0:
+			 SendMessage (hEditWnd,WM_CHAR,VK_RETURN,0L);
+					break;
+
+		 /*-------------------+
+		 | FILE menu commands |
+		 +-------------------*/
+
+		 case IDM_FILE_NEW:
+	    case IDM_FILE_OPEN:
+	    case IDM_FILE_REVERT:
+		 case IDM_FILE_SAVE:
+	    case IDM_FILE_SAVEAS:
+	    case IDM_FILE_PRINT:
+	    case IDM_FILE_SETUP:
+	    case IDM_FILE_CLOSE:
+	       return DoFileMenu ( hWnd, wParam );
+
+	    /*-------------------+
+	    | EDIT menu commands |
+	    +-------------------*/
+
+		 case IDM_EDIT_UNDO:
+		 case IDM_EDIT_CLEAR:
+		 case IDM_EDIT_CUT:
+		 case IDM_EDIT_COPY:
+		 case IDM_EDIT_PASTE:
+		 case IDM_EDIT_BALANCE:
+		 case IDM_EDIT_FONT:
+	    case IDC_EDIT:
+	       return DoEditMenu (hWnd, wParam, lParam );
+
+	    /*---------------------+
+	    | BUFFER menu commands |
+	    +---------------------*/
+
+	    case IDM_BUFFER_FIND:
+	    {  SetUpSearch ( hWnd, 0 );
+	       break;
+	    }
+
+	    case IDM_BUFFER_REPLACE:
+	    {  SetUpSearch ( hWnd, 1 );
+					break;
+	    }
+
+	    case IDM_BUFFER_BATCH:
+	    case IDM_HELP_COMPLETE:
+	    case IDM_EDIT_COMPLETE:
+	    case IDM_BUFFER_LOAD:
+	    case IDM_BUFFER_LBUF:
+	       return MessageDDE( wParam );
+
+
+	    case IDM_HELP_CLIPS:
+				{
+				 WinHelp ( hWnd, "CLIPS6.HLP", HELP_INDEX, 0L );
+					break;
+	    }
+		 /*-------------------+
+	    | ABOUT menu command |
+	    +-------------------*/
+	    case IDM_ABOUT:
+	    {  
+	       /* FARPROC lpProcAbout; */
+			// BOOL FAR PASCAL (*lpProcAbout)(HWND,UINT,WPARAM,LPARAM);
+					DLGPROC lpProcAbout = (DLGPROC) MakeProcInstance(About, hInst) ;
+
+					//lpProcAbout = About;
+					DialogBox(hInst, "AboutBox", hWnd, lpProcAbout);
+
+					FreeProcInstance ((FARPROC) lpProcAbout);
+					break;
+				}
+	 }
+	 break;
+		}
+
+		case WM_INITMENUPOPUP:
+		{
+			extern HCONV hConv;
+			DWORD sel   = SendMessage(hEditWnd,EM_GETSEL,0,0L);
+			int  len   = HIWORD(sel) - LOWORD(sel);
+			UINT  Flags = MF_BYCOMMAND|MF_GRAYED;
+			HMENU hMenu = GetMenu(hWnd);
+
+			if ( (len > 0) && (hConv != NULL) )
+				Flags = MF_BYCOMMAND|MF_ENABLED;
+
+			EnableMenuItem(hMenu, IDM_BUFFER_LOAD, Flags);
+			EnableMenuItem(hMenu, IDM_BUFFER_BATCH,Flags);
+			break;
+      }
+
+      case WM_SETFOCUS:
+	 SetFocus (hEditWnd);
+	 break;
+
+      case WM_SIZE:
+	 MoveWindow(hEditWnd, 0, 0, LOWORD(lParam), HIWORD(lParam), TRUE);
+	 break;
+
+      case WM_QUERYENDSESSION:
+	 return (QuerySaveFile(hWnd,&cancel));
+
+      case WM_CLOSE:
+      {  extern HFONT hFont;
+	 if (!QuerySaveFile(hWnd,&cancel))
+	    return (FALSE);
+	 DestroyWindow(hWnd);
+	 DeleteObject ( hFont );
+	 return(TRUE);
+      }
+
+      case WM_DESTROY:
+      {  FreeDDE ( );
+	 PostQuitMessage(0);
+	 break;
+      }
+
+      case WM_INITMENU:
+	 if ( wParam == (WPARAM) GetMenu(hWnd))
+	 {  if (OpenClipboard(hWnd))
+		 {  if (IsClipboardFormatAvailable(CF_TEXT) ||
+				 IsClipboardFormatAvailable(CF_OEMTEXT))
+				 EnableMenuItem((HMENU) wParam,IDM_EDIT_PASTE,MF_ENABLED);
+			 else
+				 EnableMenuItem((HMENU) wParam,IDM_EDIT_PASTE,MF_GRAYED);
+			 CloseClipboard ();
+	       return (TRUE);
+	    }
+	    else
+	       return (FALSE);
+	 }
+	 return (TRUE);
+
+      default:
+	 return (DefWindowProc(hWnd, message, wParam, lParam));
+   }
+   return (FALSE);
+}
+
+/******************************************************************
+* DoFileMenu :  Processes all Messages for File Menu Item
+******************************************************************/
+
+BOOL DoFileMenu (HWND hWnd, WPARAM wParam )
+  {
+   long text_length;
+   short cancel;
+
+   if (! bChanges)
+     {
+      bChanges = SendMessage(hEditWnd,EM_GETMODIFY,(WPARAM) 0, (LPARAM) 0);
+     }
+
+   /* bChanges = TRUE;  */
+
+	switch (wParam)
+	{
+    case IDM_FILE_NEW:
+		{
+       extern BOOL bChanges;
+       extern char szFileName[];
+
+		 /*-----------------------------------+
+	    | If current file has been modified, |
+	    | query user about saving it.        |
+	    +-----------------------------------*/
+
+	    if (!QuerySaveFile(hWnd,&cancel))
+	      { return (FALSE); }
+
+	    /*-----------------------------------------------+
+	    | bChanges is set to FALSE to indicate there     |
+	    | have been no changes since the last file save. |
+	    +-----------------------------------------------*/
+
+       bChanges = FALSE;
+       szFileName[0] = 0;
+
+	    /*-----------------------+
+	    | Update the edit buffer |
+	    +-----------------------*/
+
+		 SetNewBuffer(hWnd, // NULL,
+                    "Edit File - (untitled)");
+       EnableMenuItem ( GetMenu(hWnd), IDM_FILE_REVERT,
+                        MF_BYCOMMAND | MF_GRAYED);
+       break;
+		}
+
+    case IDM_FILE_OPEN:
+		{
+       extern OPENFILENAME ofn;
+
+	    if (!QuerySaveFile(hWnd,&cancel))
+         { return (FALSE); }
+
+	    /*-------------------------+
+	    | Use standard open dialog |
+	    +-------------------------*/
+
+	    if (!GetOpenFileName ((LPOPENFILENAME)&ofn))
+         { return FALSE; }
+
+	    EnableMenuItem ( GetMenu(hWnd), IDM_FILE_REVERT,
+			             	MF_BYCOMMAND | MF_ENABLED);
+
+       /*-------------------------------------------+
+	    | Fall Through to Revert to Open & Read File |
+       +-------------------------------------------*/
+		}
+
+    case IDM_FILE_REVERT:
+      {
+       extern int hFile;
+    	 extern char szFileTitle[];
+	    extern char szFileName[];
+
+       // struct stat FileStatus; // GDR
+       extern HANDLE hEditBuffer;
+       char *pEditBuffer;
+	    HICON hSaveCursor;
+       UINT IOStatus;
+
+		 /*------------------+
+		 | Revert Safety Net |
+		 +------------------*/
+
+	    if ( wParam == IDM_FILE_REVERT )
+	      {
+          if (MessageBox (hWnd,"Revert to Last Saved Document ?","Warning",
+	                       MB_YESNO | MB_ICONHAND) == IDNO )
+            { return 0; }
+			}
+
+	    /*---------------------------------+
+    	 | Open the file and get its handle |
+	    +---------------------------------*/
+
+	    hFile = OpenFile ((LPSTR)szFileName,
+                         (LPOFSTRUCT)&OfStruct, OF_READ);
+       if (! hFile)
+         { return (FALSE); }
+
+	    /*-------------------------------------------------+
+	    | Allocate edit buffer to the size of the file + 1 |
+	    +-------------------------------------------------*/
+
+	    text_length = _llseek(hFile,0,2); // GDR
+	    _llseek(hFile,0,0); // GDR
+
+	    /*
+	    if (fstat(hFile, &FileStatus))
+	      {  MessageBox(hWnd, "File not found !",
+				       	"FILE READ ERROR", MB_OK | MB_ICONEXCLAMATION);
+				close(hFile);
+				return (NULL);
+			}
+	   */
+
+	    // if (FileStatus.st_size > 65534)
+	    if (text_length > 65534L) // GDR
+	      {
+          MessageBox(hWnd, "Can't load files larger than 65,534 bytes long !",
+					"FILE READ ERROR", MB_OK | MB_ICONEXCLAMATION);
+			 _lclose(hFile);
+			return (FALSE);
+        }
+
+      //  hEditBuffer = LocalAlloc(LMEM_MOVEABLE | LMEM_ZEROINIT,
+	   // (WORD)FileStatus.st_size+1);
+	   pEditBuffer = (char *) malloc(text_length+1);
+
+	   // if (!hEditBuffer)
+	   if (pEditBuffer == NULL)
+	     {
+         MessageBox(hWnd, "Not enough memory.",
+		      			NULL, MB_OK | MB_ICONEXCLAMATION);
+         _lclose(hFile);
+	      return (FALSE);
+        }
+
+      hSaveCursor = SetCursor(hHourGlass);
+      // pEditBuffer = LocalLock(hEditBuffer);
+
+  	   // IOStatus = read(hFile, pEditBuffer, (WORD)FileStatus.st_size);
+	   IOStatus = _lread(hFile, pEditBuffer, text_length);
+      pEditBuffer[text_length] = '\0';
+      // close(hFile);
+      _lclose(hFile); // GDR
+
+	   /*----------------------------------+
+	   | # bytes read must equal file size |
+	   +----------------------------------*/
+
+	 	if (IOStatus != text_length)
+	     {
+         sprintf(szTemp, "Error reading %s tl %ld IO %d.",
+	      szFileName, text_length, IOStatus);
+         SetCursor(hSaveCursor);      /* Remove the hourglass */
+		  	MessageBox(hWnd, szTemp, NULL, MB_OK | MB_ICONEXCLAMATION);
+		  }
+      else
+		  {
+         SendMessage(hEditWnd,WM_SETTEXT,0,(LPARAM) pEditBuffer);
+		  }
+      //LocalUnlock(hEditBuffer);
+
+	   free(pEditBuffer);
+
+	   /*-------------------------------------+
+	   | Set up a new buffer and window title |
+	   +-------------------------------------*/
+
+	   sprintf(szTemp, "Edit File - (%s)", szFileTitle);
+	   SetNewBuffer(hWnd, // hEditBuffer,
+                   (LPSTR)&szTemp);
+      SetCursor(hSaveCursor);
+      break;
+     }
+
+   case IDM_FILE_SAVE:
+	  {
+	   /*------------------------------------------------+
+      | If there is no filename, use the saveas command |
+	   | to get one.  Otherwise, save the file using the |
+	   | current filename.                               |
+      +------------------------------------------------*/
+
+	   extern char szFileName[];
+
+	   if (szFileName[0])
+	     {
+         extern BOOL bChanges;
+		   if (bChanges)
+			  {
+            SaveFile(hWnd);
+           }
+		   break;
+	     }
+
+	   /*-------------------------------------+
+	   | else fall thru for Saveas processing |
+	   +-------------------------------------*/
+     }
+
+   case IDM_FILE_SAVEAS:
+     {
+      extern OPENFILENAME ofn;
+	   extern char szFileTitle[];
+	   char szWindowTitle[80];
+
+	   /*-------------------------+
+	   | Use standard save dialog |
+	   +-------------------------*/
+
+	   if (!GetSaveFileName ((LPOPENFILENAME)&ofn))
+        { return FALSE; }
+
+	   /*------------------------------------------+
+	   | Change window title to include file title |
+	   +------------------------------------------*/
+
+	   lstrcpy(szWindowTitle, "CLIPS 6.0 Editor");
+		        lstrcat(szWindowTitle, " - ");
+	   lstrcat(szWindowTitle, szFileTitle);
+      SetWindowText(hWnd, szWindowTitle);
+      SaveFile(hWnd);
+	   break;
+     }
+
+    case IDM_FILE_PRINT:
+	   return ( PrintFile (hWnd));
+
+    case IDM_FILE_SETUP:
+      {
+       extern PRINTDLG pd;
+		 DWORD FlagSave;
+
+	    FlagSave = pd.Flags;
+       pd.Flags |= PD_PRINTSETUP;    /* Set option */
+       PrintDlg((LPPRINTDLG)&pd);
+       pd.Flags = FlagSave;          /* Remove option */
+       break;
+      }
+
+    case IDM_FILE_CLOSE:
+      {
+       if (QuerySaveFile(hWnd,&cancel))
+			{
+          if (cancel)
+            { return(TRUE); }
+          WinHelp ( hWnd, "CLIPS6.HLP", HELP_QUIT, 0L );
+         }
+
+       if (cancel) return(TRUE); 
+                         
+	    DestroyWindow(hWnd);
+       break;
+      }
+     }
+   return TRUE;
+  }
+
+/******************************************************************
+* DoEditMenu :  Processes all Messages for Edit Menu Item
+******************************************************************/
+
+DoEditMenu (HWND hWnd, WPARAM wParam, LPARAM lParam )
+
+{  extern HWND hEditWnd;
+
+	switch (wParam)
+   {  case IDM_EDIT_UNDO:
+	 if(SendMessage(hEditWnd, EM_CANUNDO, 0, 0L))
+	    SendMessage(hEditWnd, EM_UNDO,0,0l);
+	 break;
+
+      case IDM_EDIT_CLEAR:
+	 SendMessage(hEditWnd, WM_CLEAR, 0, 0L);
+	 break;
+
+		case IDM_EDIT_CUT:
+	 SendMessage(hEditWnd, WM_CUT, 0, 0L);
+	 break;
+
+      case IDM_EDIT_COPY:
+	 SendMessage(hEditWnd, WM_COPY, 0, 0L);
+	 break;
+
+      case IDM_EDIT_PASTE:
+	 SendMessage(hEditWnd, WM_PASTE, 0, 0L);
+	 break;
+
+      case IDM_EDIT_BALANCE:
+	 Balance(hEditWnd);
+	 break;
+      
+      case IDM_EDIT_FONT:
+		{  extern HWND hwnd;
+	 LOGFONT lf;
+	 CHOOSEFONT cf;
+
+	 memset ( &cf, 0, sizeof ( CHOOSEFONT) );
+
+	 cf.lStructSize = sizeof ( CHOOSEFONT );
+	 cf.hwndOwner = hwnd;
+	 cf.lpLogFont = &lf;
+	 cf.Flags = CF_BOTH;
+	 cf.rgbColors = RGB(0,255,255);
+	 cf.nFontType = SCREEN_FONTTYPE;
+
+	 if (ChooseFont (&cf ))
+	 {  extern HFONT hFont;
+	    DeleteObject ( hFont );
+	    hFont = CreateFontIndirect (cf.lpLogFont);
+		 SendMessage (hEditWnd, WM_SETFONT, (WORD)hFont,(LONG)TRUE);
+	 }
+	 break;
+      }
+
+      case IDC_EDIT:
+      {  if (HIWORD (lParam) == EN_CHANGE)
+	 {  extern BOOL bChanges;
+	    EnableMenuItem(GetMenu(hWnd), IDM_EDIT_UNDO, MF_ENABLED);
+	    bChanges = TRUE;
+	 }
+	 if (HIWORD (lParam) == EN_ERRSPACE)
+	 {  MessageBox ( GetFocus (), "Out of memory.",
+					"PrntFile Sample Application",
+					MB_ICONHAND | MB_OK);
+			}
+	 break;
+		}
+	}
+	return ( TRUE );
+}

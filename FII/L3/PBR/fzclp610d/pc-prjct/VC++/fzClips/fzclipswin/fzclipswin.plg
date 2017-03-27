@@ -1,0 +1,735 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: fzclipswin - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\rorchard\LOCALS~1\Temp\RSP1EC7.tmp" with contents
+[
+/nologo /ML /W3 /Gm /GX /ZI /I "..\..\..\..\source" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fo"Release/" /Fd"Release/" /FD /GZ /c 
+"F:\fzclp610d\source\agenda.c"
+"F:\fzclp610d\source\analysis.c"
+"F:\fzclp610d\source\argacces.c"
+"F:\fzclp610d\source\bload.c"
+"F:\fzclp610d\source\bmathfun.c"
+"F:\fzclp610d\source\bsave.c"
+"F:\fzclp610d\source\cfdef.c"
+"F:\fzclp610d\source\classcom.c"
+"F:\fzclp610d\source\classexm.c"
+"F:\fzclp610d\source\classfun.c"
+"F:\fzclp610d\source\classinf.c"
+"F:\fzclp610d\source\classini.c"
+"F:\fzclp610d\source\classpsr.c"
+"F:\fzclp610d\pc-prjct\intrface\clipsdde.c"
+"F:\fzclp610d\source\clsltpsr.c"
+"F:\fzclp610d\source\commline.c"
+"F:\fzclp610d\source\conscomp.c"
+"F:\fzclp610d\source\constrct.c"
+"F:\fzclp610d\source\constrnt.c"
+"F:\fzclp610d\source\crstrtgy.c"
+"F:\fzclp610d\source\cstrcbin.c"
+"F:\fzclp610d\source\cstrccom.c"
+"F:\fzclp610d\source\cstrcpsr.c"
+"F:\fzclp610d\source\cstrnbin.c"
+"F:\fzclp610d\source\cstrnchk.c"
+"F:\fzclp610d\source\cstrncmp.c"
+"F:\fzclp610d\source\cstrnops.c"
+"F:\fzclp610d\source\cstrnpsr.c"
+"F:\fzclp610d\source\cstrnutl.c"
+"F:\fzclp610d\source\default.c"
+"F:\fzclp610d\source\defins.c"
+"F:\fzclp610d\source\developr.c"
+"F:\fzclp610d\source\dffctbin.c"
+"F:\fzclp610d\source\dffctbsc.c"
+"F:\fzclp610d\source\dffctcmp.c"
+"F:\fzclp610d\source\dffctdef.c"
+"F:\fzclp610d\source\dffctpsr.c"
+"F:\fzclp610d\source\dffnxbin.c"
+"F:\fzclp610d\source\dffnxcmp.c"
+"F:\fzclp610d\source\dffnxexe.c"
+"F:\fzclp610d\source\dffnxfun.c"
+"F:\fzclp610d\source\dffnxpsr.c"
+"F:\fzclp610d\source\dfinsbin.c"
+"F:\fzclp610d\source\dfinscmp.c"
+"F:\fzclp610d\pc-prjct\intrface\diag_win.c"
+"F:\fzclp610d\pc-prjct\intrface\dialog1.c"
+"F:\fzclp610d\pc-prjct\intrface\dialog2.c"
+"F:\fzclp610d\source\drive.c"
+"F:\fzclp610d\source\emathfun.c"
+"F:\fzclp610d\source\engine.c"
+"F:\fzclp610d\source\evaluatn.c"
+"F:\fzclp610d\source\expressn.c"
+"F:\fzclp610d\source\exprnbin.c"
+"F:\fzclp610d\source\exprnops.c"
+"F:\fzclp610d\source\exprnpsr.c"
+"F:\fzclp610d\source\extnfunc.c"
+"F:\fzclp610d\source\factbin.c"
+"F:\fzclp610d\source\factbld.c"
+"F:\fzclp610d\source\factcmp.c"
+"F:\fzclp610d\source\factcom.c"
+"F:\fzclp610d\source\factfun.c"
+"F:\fzclp610d\source\factgen.c"
+"F:\fzclp610d\source\facthsh.c"
+"F:\fzclp610d\source\factlhs.c"
+"F:\fzclp610d\source\factmch.c"
+"F:\fzclp610d\source\factmngr.c"
+"F:\fzclp610d\source\factprt.c"
+"F:\fzclp610d\source\factrete.c"
+"F:\fzclp610d\source\factrhs.c"
+"F:\fzclp610d\source\filecom.c"
+"F:\fzclp610d\source\filertr.c"
+"F:\fzclp610d\source\fuzzycom.c"
+"F:\fzclp610d\source\fuzzydef.c"
+"F:\fzclp610d\source\fuzzylhs.c"
+"F:\fzclp610d\source\fuzzymod.c"
+"F:\fzclp610d\source\fuzzypsr.c"
+"F:\fzclp610d\source\fuzzyrhs.c"
+"F:\fzclp610d\source\fuzzyutl.c"
+"F:\fzclp610d\source\generate.c"
+"F:\fzclp610d\source\genrcbin.c"
+"F:\fzclp610d\source\genrccmp.c"
+"F:\fzclp610d\source\genrccom.c"
+"F:\fzclp610d\source\genrcexe.c"
+"F:\fzclp610d\source\genrcfun.c"
+"F:\fzclp610d\source\genrcpsr.c"
+"F:\fzclp610d\source\globlbin.c"
+"F:\fzclp610d\source\globlbsc.c"
+"F:\fzclp610d\source\globlcmp.c"
+"F:\fzclp610d\source\globlcom.c"
+"F:\fzclp610d\source\globldef.c"
+"F:\fzclp610d\source\globlpsr.c"
+"F:\fzclp610d\source\immthpsr.c"
+"F:\fzclp610d\source\incrrset.c"
+"F:\fzclp610d\source\inherpsr.c"
+"F:\fzclp610d\source\inscom.c"
+"F:\fzclp610d\source\insfile.c"
+"F:\fzclp610d\source\insfun.c"
+"F:\fzclp610d\source\insmngr.c"
+"F:\fzclp610d\source\insmoddp.c"
+"F:\fzclp610d\source\insmult.c"
+"F:\fzclp610d\source\inspsr.c"
+"F:\fzclp610d\source\insquery.c"
+"F:\fzclp610d\source\insqypsr.c"
+"F:\fzclp610d\source\iofun.c"
+"F:\fzclp610d\source\lgcldpnd.c"
+"F:\fzclp610d\source\memalloc.c"
+"F:\fzclp610d\pc-prjct\intrface\menu.c"
+"F:\fzclp610d\pc-prjct\intrface\menucmds.c"
+"F:\fzclp610d\source\miscfun.c"
+"F:\fzclp610d\source\modulbin.c"
+"F:\fzclp610d\source\modulbsc.c"
+"F:\fzclp610d\source\modulcmp.c"
+"F:\fzclp610d\source\moduldef.c"
+"F:\fzclp610d\source\modulpsr.c"
+"F:\fzclp610d\source\modulutl.c"
+"F:\fzclp610d\source\msgcom.c"
+"F:\fzclp610d\source\msgfun.c"
+"F:\fzclp610d\source\msgpass.c"
+"F:\fzclp610d\source\msgpsr.c"
+"F:\fzclp610d\source\multifld.c"
+"F:\fzclp610d\source\multifun.c"
+"F:\fzclp610d\source\objbin.c"
+"F:\fzclp610d\source\objcmp.c"
+"F:\fzclp610d\source\objrtbin.c"
+"F:\fzclp610d\source\objrtbld.c"
+"F:\fzclp610d\source\objrtcmp.c"
+"F:\fzclp610d\source\objrtfnx.c"
+"F:\fzclp610d\source\objrtgen.c"
+"F:\fzclp610d\source\objrtmch.c"
+"F:\fzclp610d\source\parsefun.c"
+"F:\fzclp610d\source\pattern.c"
+"F:\fzclp610d\source\pprint.c"
+"F:\fzclp610d\source\prccode.c"
+"F:\fzclp610d\source\prcdrfun.c"
+"F:\fzclp610d\source\prcdrpsr.c"
+"F:\fzclp610d\source\prdctfun.c"
+"F:\fzclp610d\source\prntutil.c"
+"F:\fzclp610d\source\proflfun.c"
+"F:\fzclp610d\source\reorder.c"
+"F:\fzclp610d\source\reteutil.c"
+"F:\fzclp610d\source\retract.c"
+"F:\fzclp610d\source\router.c"
+"F:\fzclp610d\source\rulebin.c"
+"F:\fzclp610d\source\rulebld.c"
+"F:\fzclp610d\source\rulebsc.c"
+"F:\fzclp610d\source\rulecmp.c"
+"F:\fzclp610d\source\rulecom.c"
+"F:\fzclp610d\source\rulecstr.c"
+"F:\fzclp610d\source\ruledef.c"
+"F:\fzclp610d\source\ruledlt.c"
+"F:\fzclp610d\source\rulelhs.c"
+"F:\fzclp610d\source\rulepsr.c"
+"F:\fzclp610d\source\scanner.c"
+"F:\fzclp610d\source\sortfun.c"
+"F:\fzclp610d\pc-prjct\intrface\status.c"
+"F:\fzclp610d\source\strngfun.c"
+"F:\fzclp610d\source\strngrtr.c"
+"F:\fzclp610d\source\symblbin.c"
+"F:\fzclp610d\source\symblcmp.c"
+"F:\fzclp610d\source\symbol.c"
+"F:\fzclp610d\source\sysdep.c"
+"F:\fzclp610d\source\textpro.c"
+"F:\fzclp610d\source\tmpltbin.c"
+"F:\fzclp610d\source\tmpltbsc.c"
+"F:\fzclp610d\source\tmpltcmp.c"
+"F:\fzclp610d\source\tmpltdef.c"
+"F:\fzclp610d\source\tmpltfun.c"
+"F:\fzclp610d\source\tmpltlhs.c"
+"F:\fzclp610d\source\tmpltpsr.c"
+"F:\fzclp610d\source\tmpltrhs.c"
+"F:\fzclp610d\source\tmpltutl.c"
+"F:\fzclp610d\source\utility.c"
+"F:\fzclp610d\source\watch.c"
+"F:\fzclp610d\pc-prjct\intrface\winmain.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\rorchard\LOCALS~1\Temp\RSP1EC7.tmp" 
+Creating temporary file "C:\DOCUME~1\rorchard\LOCALS~1\Temp\RSP1EC8.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Release/fzclipswin.pdb" /machine:I386 /out:"Release/fzclipswin.exe" /pdbtype:sept 
+".\Release\agenda.obj"
+".\Release\analysis.obj"
+".\Release\argacces.obj"
+".\Release\bload.obj"
+".\Release\bmathfun.obj"
+".\Release\bsave.obj"
+".\Release\cfdef.obj"
+".\Release\classcom.obj"
+".\Release\classexm.obj"
+".\Release\classfun.obj"
+".\Release\classinf.obj"
+".\Release\classini.obj"
+".\Release\classpsr.obj"
+".\Release\clipsdde.obj"
+".\Release\clsltpsr.obj"
+".\Release\commline.obj"
+".\Release\conscomp.obj"
+".\Release\constrct.obj"
+".\Release\constrnt.obj"
+".\Release\crstrtgy.obj"
+".\Release\cstrcbin.obj"
+".\Release\cstrccom.obj"
+".\Release\cstrcpsr.obj"
+".\Release\cstrnbin.obj"
+".\Release\cstrnchk.obj"
+".\Release\cstrncmp.obj"
+".\Release\cstrnops.obj"
+".\Release\cstrnpsr.obj"
+".\Release\cstrnutl.obj"
+".\Release\default.obj"
+".\Release\defins.obj"
+".\Release\developr.obj"
+".\Release\dffctbin.obj"
+".\Release\dffctbsc.obj"
+".\Release\dffctcmp.obj"
+".\Release\dffctdef.obj"
+".\Release\dffctpsr.obj"
+".\Release\dffnxbin.obj"
+".\Release\dffnxcmp.obj"
+".\Release\dffnxexe.obj"
+".\Release\dffnxfun.obj"
+".\Release\dffnxpsr.obj"
+".\Release\dfinsbin.obj"
+".\Release\dfinscmp.obj"
+".\Release\diag_win.obj"
+".\Release\dialog1.obj"
+".\Release\dialog2.obj"
+".\Release\drive.obj"
+".\Release\edbasic.obj"
+".\Release\edmain.obj"
+".\Release\edmisc.obj"
+".\Release\edstruct.obj"
+".\Release\edterm.obj"
+".\Release\emathfun.obj"
+".\Release\engine.obj"
+".\Release\evaluatn.obj"
+".\Release\expressn.obj"
+".\Release\exprnbin.obj"
+".\Release\exprnops.obj"
+".\Release\exprnpsr.obj"
+".\Release\extnfunc.obj"
+".\Release\factbin.obj"
+".\Release\factbld.obj"
+".\Release\factcmp.obj"
+".\Release\factcom.obj"
+".\Release\factfun.obj"
+".\Release\factgen.obj"
+".\Release\facthsh.obj"
+".\Release\factlhs.obj"
+".\Release\factmch.obj"
+".\Release\factmngr.obj"
+".\Release\factprt.obj"
+".\Release\factrete.obj"
+".\Release\factrhs.obj"
+".\Release\filecom.obj"
+".\Release\filertr.obj"
+".\Release\fuzzycom.obj"
+".\Release\fuzzydef.obj"
+".\Release\fuzzylhs.obj"
+".\Release\fuzzymod.obj"
+".\Release\fuzzypsr.obj"
+".\Release\fuzzyrhs.obj"
+".\Release\fuzzyutl.obj"
+".\Release\generate.obj"
+".\Release\genrcbin.obj"
+".\Release\genrccmp.obj"
+".\Release\genrccom.obj"
+".\Release\genrcexe.obj"
+".\Release\genrcfun.obj"
+".\Release\genrcpsr.obj"
+".\Release\globlbin.obj"
+".\Release\globlbsc.obj"
+".\Release\globlcmp.obj"
+".\Release\globlcom.obj"
+".\Release\globldef.obj"
+".\Release\globlpsr.obj"
+".\Release\immthpsr.obj"
+".\Release\incrrset.obj"
+".\Release\inherpsr.obj"
+".\Release\inscom.obj"
+".\Release\insfile.obj"
+".\Release\insfun.obj"
+".\Release\insmngr.obj"
+".\Release\insmoddp.obj"
+".\Release\insmult.obj"
+".\Release\inspsr.obj"
+".\Release\insquery.obj"
+".\Release\insqypsr.obj"
+".\Release\iofun.obj"
+".\Release\lgcldpnd.obj"
+".\Release\memalloc.obj"
+".\Release\menu.obj"
+".\Release\menucmds.obj"
+".\Release\miscfun.obj"
+".\Release\modulbin.obj"
+".\Release\modulbsc.obj"
+".\Release\modulcmp.obj"
+".\Release\moduldef.obj"
+".\Release\modulpsr.obj"
+".\Release\modulutl.obj"
+".\Release\msgcom.obj"
+".\Release\msgfun.obj"
+".\Release\msgpass.obj"
+".\Release\msgpsr.obj"
+".\Release\multifld.obj"
+".\Release\multifun.obj"
+".\Release\objbin.obj"
+".\Release\objcmp.obj"
+".\Release\objrtbin.obj"
+".\Release\objrtbld.obj"
+".\Release\objrtcmp.obj"
+".\Release\objrtfnx.obj"
+".\Release\objrtgen.obj"
+".\Release\objrtmch.obj"
+".\Release\parsefun.obj"
+".\Release\pattern.obj"
+".\Release\pprint.obj"
+".\Release\prccode.obj"
+".\Release\prcdrfun.obj"
+".\Release\prcdrpsr.obj"
+".\Release\prdctfun.obj"
+".\Release\prntutil.obj"
+".\Release\proflfun.obj"
+".\Release\reorder.obj"
+".\Release\reteutil.obj"
+".\Release\retract.obj"
+".\Release\router.obj"
+".\Release\rulebin.obj"
+".\Release\rulebld.obj"
+".\Release\rulebsc.obj"
+".\Release\rulecmp.obj"
+".\Release\rulecom.obj"
+".\Release\rulecstr.obj"
+".\Release\ruledef.obj"
+".\Release\ruledlt.obj"
+".\Release\rulelhs.obj"
+".\Release\rulepsr.obj"
+".\Release\scanner.obj"
+".\Release\sortfun.obj"
+".\Release\status.obj"
+".\Release\strngfun.obj"
+".\Release\strngrtr.obj"
+".\Release\symblbin.obj"
+".\Release\symblcmp.obj"
+".\Release\symbol.obj"
+".\Release\sysdep.obj"
+".\Release\system.obj"
+".\Release\textpro.obj"
+".\Release\tmpltbin.obj"
+".\Release\tmpltbsc.obj"
+".\Release\tmpltcmp.obj"
+".\Release\tmpltdef.obj"
+".\Release\tmpltfun.obj"
+".\Release\tmpltlhs.obj"
+".\Release\tmpltpsr.obj"
+".\Release\tmpltrhs.obj"
+".\Release\tmpltutl.obj"
+".\Release\userdata.obj"
+".\Release\utility.obj"
+".\Release\watch.obj"
+".\Release\winmain.obj"
+".\Release\CLIPSWIN.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\rorchard\LOCALS~1\Temp\RSP1EC8.tmp"
+<h3>Output Window</h3>
+Compiling...
+agenda.c
+analysis.c
+argacces.c
+bload.c
+bmathfun.c
+bsave.c
+cfdef.c
+f:\fzclp610d\source\cfdef.c(465) : warning C4018: '<' : signed/unsigned mismatch
+classcom.c
+classexm.c
+f:\fzclp610d\source\classexm.c(222) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classexm.c(251) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classexm.c(911) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classexm.c(997) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classexm.c(1120) : warning C4018: '<' : signed/unsigned mismatch
+classfun.c
+f:\fzclp610d\source\classfun.c(232) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(565) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(692) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(703) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(726) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(787) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classfun.c(799) : warning C4018: '<' : signed/unsigned mismatch
+classinf.c
+f:\fzclp610d\source\classinf.c(401) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classinf.c(409) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classinf.c(476) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classinf.c(685) : warning C4018: '<' : signed/unsigned mismatch
+classini.c
+classpsr.c
+f:\fzclp610d\source\classpsr.c(718) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classpsr.c(722) : warning C4018: '<=' : signed/unsigned mismatch
+f:\fzclp610d\source\classpsr.c(724) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\classpsr.c(812) : warning C4018: '<' : signed/unsigned mismatch
+clipsdde.c
+clsltpsr.c
+commline.c
+conscomp.c
+constrct.c
+constrnt.c
+crstrtgy.c
+Generating Code...
+Compiling...
+cstrcbin.c
+cstrccom.c
+cstrcpsr.c
+cstrnbin.c
+cstrnchk.c
+cstrncmp.c
+f:\fzclp610d\source\cstrncmp.c(90) : warning C4244: '=' : conversion from 'unsigned long ' to 'unsigned short ', possible loss of data
+cstrnops.c
+cstrnpsr.c
+cstrnutl.c
+default.c
+defins.c
+developr.c
+dffctbin.c
+dffctbsc.c
+dffctcmp.c
+dffctdef.c
+dffctpsr.c
+dffnxbin.c
+dffnxcmp.c
+dffnxexe.c
+Generating Code...
+Compiling...
+dffnxfun.c
+dffnxpsr.c
+dfinsbin.c
+dfinscmp.c
+diag_win.c
+f:\fzclp610d\pc-prjct\intrface\diag_win.c(608) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\diag_win.c(753) : warning C4018: '<' : signed/unsigned mismatch
+dialog1.c
+f:\fzclp610d\pc-prjct\intrface\dialog1.c(348) : warning C4018: '<' : signed/unsigned mismatch
+dialog2.c
+drive.c
+emathfun.c
+engine.c
+evaluatn.c
+expressn.c
+exprnbin.c
+f:\fzclp610d\source\exprnbin.c(283) : warning C4018: '<' : signed/unsigned mismatch
+exprnops.c
+exprnpsr.c
+extnfunc.c
+factbin.c
+factbld.c
+f:\fzclp610d\source\factbld.c(357) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factbld.c(358) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factbld.c(359) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factbld.c(366) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factbld.c(368) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factbld.c(369) : warning C4018: '==' : signed/unsigned mismatch
+factcmp.c
+factcom.c
+Generating Code...
+Compiling...
+factfun.c
+factgen.c
+facthsh.c
+factlhs.c
+factmch.c
+f:\fzclp610d\source\factmch.c(128) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factmch.c(158) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\factmch.c(164) : warning C4018: '!=' : signed/unsigned mismatch
+f:\fzclp610d\source\factmch.c(219) : warning C4018: '==' : signed/unsigned mismatch
+factmngr.c
+factprt.c
+factrete.c
+f:\fzclp610d\source\factrete.c(706) : warning C4018: '!=' : signed/unsigned mismatch
+factrhs.c
+filecom.c
+filertr.c
+fuzzycom.c
+fuzzydef.c
+fuzzylhs.c
+fuzzymod.c
+f:\fzclp610d\source\fuzzymod.c(171) : warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'void (__cdecl *)(void )'
+f:\fzclp610d\source\fuzzymod.c(685) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\source\fuzzymod.c(713) : warning C4244: '=' : conversion from 'double ' to 'int ', possible loss of data
+fuzzypsr.c
+fuzzyrhs.c
+fuzzyutl.c
+f:\fzclp610d\source\fuzzyutl.c(2299) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\fuzzyutl.c(2322) : warning C4018: '<' : signed/unsigned mismatch
+generate.c
+genrcbin.c
+f:\fzclp610d\source\genrcbin.c(274) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcbin.c(351) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcbin.c(564) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcbin.c(608) : warning C4018: '<' : signed/unsigned mismatch
+Generating Code...
+Compiling...
+genrccmp.c
+f:\fzclp610d\source\genrccmp.c(315) : warning C4018: '<' : signed/unsigned mismatch
+genrccom.c
+f:\fzclp610d\source\genrccom.c(368) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\genrccom.c(1031) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrccom.c(1154) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrccom.c(1368) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrccom.c(1400) : warning C4018: '<' : signed/unsigned mismatch
+genrcexe.c
+f:\fzclp610d\source\genrcexe.c(303) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcexe.c(337) : warning C4018: '==' : signed/unsigned mismatch
+genrcfun.c
+f:\fzclp610d\source\genrcfun.c(218) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(230) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(269) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(365) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(563) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(570) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcfun.c(750) : warning C4018: '<' : signed/unsigned mismatch
+genrcpsr.c
+f:\fzclp610d\source\genrcpsr.c(482) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcpsr.c(519) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcpsr.c(587) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcpsr.c(1307) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcpsr.c(1457) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\genrcpsr.c(1457) : warning C4018: '<' : signed/unsigned mismatch
+globlbin.c
+globlbsc.c
+globlcmp.c
+globlcom.c
+globldef.c
+globlpsr.c
+immthpsr.c
+incrrset.c
+inherpsr.c
+inscom.c
+f:\fzclp610d\source\inscom.c(1340) : warning C4018: '<' : signed/unsigned mismatch
+insfile.c
+f:\fzclp610d\source\insfile.c(963) : warning C4018: '<=' : signed/unsigned mismatch
+f:\fzclp610d\source\insfile.c(1087) : warning C4018: '<=' : signed/unsigned mismatch
+f:\fzclp610d\source\insfile.c(1479) : warning C4018: '<=' : signed/unsigned mismatch
+insfun.c
+f:\fzclp610d\source\insfun.c(491) : warning C4018: '>' : signed/unsigned mismatch
+f:\fzclp610d\source\insfun.c(1267) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\insfun.c(1312) : warning C4018: '<' : signed/unsigned mismatch
+insmngr.c
+f:\fzclp610d\source\insmngr.c(1013) : warning C4018: '<' : signed/unsigned mismatch
+insmoddp.c
+f:\fzclp610d\source\insmoddp.c(947) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\insmoddp.c(989) : warning C4018: '<' : signed/unsigned mismatch
+insmult.c
+Generating Code...
+Compiling...
+inspsr.c
+insquery.c
+insqypsr.c
+f:\fzclp610d\source\insqypsr.c(604) : warning C4018: '!=' : signed/unsigned mismatch
+iofun.c
+lgcldpnd.c
+memalloc.c
+f:\fzclp610d\source\memalloc.c(241) : warning C4018: '<' : signed/unsigned mismatch
+menu.c
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\menu.c(404) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\menu.c(407) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\menu.c(410) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\menu.c(413) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\menu.c(416) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\pc-prjct\intrface\menu.c(667) : warning C4018: '<' : signed/unsigned mismatch
+menucmds.c
+miscfun.c
+modulbin.c
+modulbsc.c
+modulcmp.c
+moduldef.c
+modulpsr.c
+modulutl.c
+msgcom.c
+f:\fzclp610d\source\msgcom.c(729) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgcom.c(1035) : warning C4018: '==' : signed/unsigned mismatch
+msgfun.c
+f:\fzclp610d\source\msgfun.c(290) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(422) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(434) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(435) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(482) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(520) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(533) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(687) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\msgfun.c(724) : warning C4018: '<' : signed/unsigned mismatch
+msgpass.c
+msgpsr.c
+multifld.c
+Generating Code...
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(295) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(315) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(335) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(355) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\menu.c(375) : warning C4761: integral size mismatch in argument; conversion supplied
+Compiling...
+multifun.c
+objbin.c
+objcmp.c
+objrtbin.c
+objrtbld.c
+f:\fzclp610d\source\objrtbld.c(806) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\objrtbld.c(818) : warning C4018: '==' : signed/unsigned mismatch
+objrtcmp.c
+objrtfnx.c
+f:\fzclp610d\source\objrtfnx.c(552) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\objrtfnx.c(554) : warning C4018: '>' : signed/unsigned mismatch
+f:\fzclp610d\source\objrtfnx.c(649) : warning C4018: '!=' : signed/unsigned mismatch
+f:\fzclp610d\source\objrtfnx.c(819) : warning C4018: '!=' : signed/unsigned mismatch
+f:\fzclp610d\source\objrtfnx.c(920) : warning C4018: '==' : signed/unsigned mismatch
+objrtgen.c
+objrtmch.c
+parsefun.c
+pattern.c
+pprint.c
+prccode.c
+prcdrfun.c
+prcdrpsr.c
+prdctfun.c
+prntutil.c
+proflfun.c
+reorder.c
+reteutil.c
+Generating Code...
+Compiling...
+retract.c
+f:\fzclp610d\source\retract.c(523) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\retract.c(565) : warning C4018: '==' : signed/unsigned mismatch
+f:\fzclp610d\source\retract.c(919) : warning C4018: '<' : signed/unsigned mismatch
+router.c
+rulebin.c
+f:\fzclp610d\source\rulebin.c(219) : warning C4018: '<' : signed/unsigned mismatch
+f:\fzclp610d\source\rulebin.c(410) : warning C4018: '<' : signed/unsigned mismatch
+rulebld.c
+f:\fzclp610d\source\rulebld.c(403) : warning C4018: '!=' : signed/unsigned mismatch
+f:\fzclp610d\source\rulebld.c(410) : warning C4018: '!=' : signed/unsigned mismatch
+rulebsc.c
+rulecmp.c
+rulecom.c
+rulecstr.c
+ruledef.c
+ruledlt.c
+rulelhs.c
+rulepsr.c
+f:\fzclp610d\source\rulepsr.c(613) : warning C4018: '!=' : signed/unsigned mismatch
+f:\fzclp610d\source\rulepsr.c(616) : warning C4013: 'exit' undefined; assuming extern returning int
+f:\fzclp610d\source\rulepsr.c(746) : warning C4018: '==' : signed/unsigned mismatch
+scanner.c
+sortfun.c
+status.c
+strngfun.c
+strngrtr.c
+symblbin.c
+f:\fzclp610d\source\symblbin.c(434) : warning C4244: '=' : conversion from 'unsigned short ' to 'char ', possible loss of data
+f:\fzclp610d\source\symblbin.c(740) : warning C4101: 'namebucket' : unreferenced local variable
+symblcmp.c
+symbol.c
+Generating Code...
+Compiling...
+sysdep.c
+textpro.c
+tmpltbin.c
+tmpltbsc.c
+tmpltcmp.c
+tmpltdef.c
+tmpltfun.c
+tmpltlhs.c
+tmpltpsr.c
+tmpltrhs.c
+tmpltutl.c
+f:\fzclp610d\source\tmpltutl.c(395) : warning C4018: '<' : signed/unsigned mismatch
+utility.c
+watch.c
+winmain.c
+f:\fzclp610d\pc-prjct\intrface\winmain.c(166) : warning C4113: 'int (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(void )'
+f:\fzclp610d\pc-prjct\intrface\winmain.c(290) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+f:\fzclp610d\pc-prjct\intrface\winmain.c(290) : warning C4244: 'function' : conversion from 'double ' to 'int ', possible loss of data
+Generating Code...
+f:\fzclp610d\pc-prjct\intrface\winmain.c(290) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\winmain.c(290) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\winmain.c(693) : warning C4761: integral size mismatch in argument; conversion supplied
+f:\fzclp610d\pc-prjct\intrface\winmain.c(701) : warning C4761: integral size mismatch in argument; conversion supplied
+Linking...
+
+
+
+<h3>Results</h3>
+fzclipswin.exe - 0 error(s), 159 warning(s)
+</pre>
+</body>
+</html>

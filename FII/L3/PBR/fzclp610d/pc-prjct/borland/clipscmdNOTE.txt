@@ -1,0 +1,23 @@
+To create the commandline version I had to do a few things:
+
+1. removed all of the edxxxx.c files from the build
+
+2. in setup.h set windows_interface to 0
+              set emacs_editor to 0
+
+3. modified sysdep.c to removed various references to
+		setvect
+		getvect
+		interrupt (this appears to be a keyword)
+		biostime
+
+4. In the Borland project I set the Target Model to Console rather than GUI!
+   (to access this right click on the clipscmd[.exe] in the project window
+    and select Target Expert...
+
+
+   with IBM_TBC flag set (Borland compiler).
+   These things only appear to be useable in a 16-bit environment.
+   Should probably look for a way to add them back in but they are not crucial.
+
+
