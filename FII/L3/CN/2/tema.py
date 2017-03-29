@@ -52,7 +52,7 @@ def descomp(matrix, diag, size):
 
 def determinant(matrix, diag, size):
     # Obtine copie pentru a crea matricea L si D.
-    dmat = numpy.full((size, size), 0)
+    dmat = numpy.full((size, size), 0, dtype=float)
     numpy.fill_diagonal(dmat, diag)
     lmat = matrix.copy()
     for idx in range(size):
@@ -74,22 +74,22 @@ def determinant(matrix, diag, size):
 
 def cholsol(matrix, diag, size, bvec):
     # Calculam solutia z.
-    zvec = numpy.full(size, 0)
+    zvec = numpy.zeros(size)
     for i in range(size):
         total = 0
         for j in range(0, i):
-            total += matrix[i, j] * zvec[j]
+            total += float(matrix[i, j]) * zvec[j]
         zvec[i] = bvec[i] - total
     # Acum solutia y.
-    yvec = numpy.full(size, 0)
+    yvec = numpy.zeros(size)
     for i in range(size):
         yvec[i] = zvec[i] / diag[i]
     # Si in final, solutia x.
-    xvec = numpy.full(size, 0)
+    xvec = numpy.zeros(size)
     for i in range(size - 1, -1, -1):
         total = 0
         for j in range(i + 1, size):
-            total += matrix[j, i] * xvec[j]
+            total += float(matrix[j, i]) * xvec[j]
         xvec[i] = yvec[i] - total
     return xvec
 
@@ -125,7 +125,7 @@ def main(argv):
 
     # Facem descompunerea.
     size = len(matrix)
-    diag = numpy.full(size, 1)
+    diag = numpy.full(size, 1, dtype=float)
     descomp(matrix, diag, size)
     print("A:\n{}".format(matrix))
     print("D:\n{}".format(diag))
@@ -138,7 +138,7 @@ def main(argv):
         return
 
     # Gasim solutia.
-    bvec = numpy.full(size, 2)
+    bvec = numpy.full(size, 2, dtype=float)
     xchol = cholsol(matrix, diag, size, bvec)
     print("xChol: {}".format(xchol))
 
