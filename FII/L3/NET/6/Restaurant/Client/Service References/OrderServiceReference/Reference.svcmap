@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="479dcb2f-f38a-44cc-a17d-1f393c77ba16" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4321/OrderService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="34ddee06-a1b7-47ac-aa47-842dace3ba7a" SourceId="1" SourceUrl="http://localhost:4321/OrderService?xsd=xsd0" />
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="797b419f-a6af-4e8b-b2b3-444efee36693" SourceId="1" SourceUrl="http://localhost:4321/OrderService?wsdl" />
+    <MetadataFile FileName="OrderService.disco" MetadataType="Disco" ID="606733b3-6af2-47eb-902b-54a966cefc63" SourceId="1" SourceUrl="http://localhost:4321/OrderService?disco" />
+    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="54d19dc7-1042-449b-b1f6-c4329904b588" SourceId="1" SourceUrl="http://localhost:4321/OrderService?xsd=xsd1" />
+    <MetadataFile FileName="OrderService2.xsd" MetadataType="Schema" ID="439c979d-679e-4d33-ab99-2420c7ce55b2" SourceId="1" SourceUrl="http://localhost:4321/OrderService?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

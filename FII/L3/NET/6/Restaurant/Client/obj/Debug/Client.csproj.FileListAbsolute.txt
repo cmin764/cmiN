@@ -1,0 +1,19 @@
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.exe.config
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.exe
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.exe
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\Client.exe.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\obj\Debug\Client.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\obj\Debug\Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\Client.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.xml

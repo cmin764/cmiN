@@ -1,0 +1,23 @@
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\Restaurant.mdf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\Restaurant_log.ldf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\obj\Debug\Restaurant.Data.csprojResolveAssemblyReference.cache
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\obj\Debug\Restaurant.Data.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.dll.config
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Data\obj\Debug\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\Restaurant.mdf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\Restaurant_log.ldf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.dll.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\Restaurant.Data.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\obj\Debug\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Data\obj\Debug\Restaurant.Data.pdb

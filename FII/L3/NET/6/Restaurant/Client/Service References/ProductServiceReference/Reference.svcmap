@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="842d7185-97e8-4d0f-bb09-6799f50aae03" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4321/ProductService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductService.xsd" MetadataType="Schema" ID="c2d71965-649a-4458-b8df-4282010bb702" SourceId="1" SourceUrl="http://localhost:4321/ProductService?xsd=xsd1" />
+    <MetadataFile FileName="ProductService.disco" MetadataType="Disco" ID="7a7b708a-18bb-4eae-9ae6-dc75d4bdcee1" SourceId="1" SourceUrl="http://localhost:4321/ProductService?disco" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="236208f4-4949-4a3b-9e24-57707772f26b" SourceId="1" SourceUrl="http://localhost:4321/ProductService?xsd=xsd0" />
+    <MetadataFile FileName="ProductService2.xsd" MetadataType="Schema" ID="20be22e1-20da-4f2b-9574-5aa37fdc9509" SourceId="1" SourceUrl="http://localhost:4321/ProductService?xsd=xsd2" />
+    <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="1a4388f3-29d6-4ef1-b0e2-7b86840f654b" SourceId="1" SourceUrl="http://localhost:4321/ProductService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

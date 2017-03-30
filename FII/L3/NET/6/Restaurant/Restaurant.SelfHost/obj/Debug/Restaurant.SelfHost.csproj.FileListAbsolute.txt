@@ -1,0 +1,34 @@
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.exe
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Services.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Data.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.exe.config
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\ApplicationInsights.config
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.mdf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant_log.ldf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Services.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Data.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.csprojResolveAssemblyReference.cache
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.exe
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\ApplicationInsights.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.mdf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant_log.ldf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.exe.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.SelfHost.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Services.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Services.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\bin\Debug\Restaurant.Data.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.csprojResolveAssemblyReference.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.SelfHost\obj\Debug\Restaurant.SelfHost.pdb
