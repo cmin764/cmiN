@@ -1,0 +1,163 @@
+CREATE OR REPLACE PACKAGE pkg_relevanta AS
+    TYPE Puturos IS TABLE OF NUMBER INDEX BY PLS_INTEGER;
+    puturosi Puturos;
+    
+    FUNCTION
+        este_puturos(my_user_id Users.id%TYPE)
+    RETURN NUMBER;
+    
+    FUNCTION
+        este_puturos_cache(my_user_id Users.id%TYPE)
+    RETURN NUMBER;
+    
+    FUNCTION
+        relevanta(my_question_id Questions.id%TYPE)
+    RETURN NUMBER;
+    
+    PROCEDURE afiseaza_intrebari;
+END pkg_relevanta;
+
+/
+
+CREATE OR REPLACE PACKAGE BODY pkg_relevanta AS
+
+    -- Intoarce 0 daca studentul este puturos.
+    FUNCTION este_puturos(my_user_id Users.id%TYPE)
+    RETURN NUMBER AS
+        total_intrebari NUMBER := 0;
+        nr_raspuns NUMBER := 0;
+    BEGIN
+        SELECT COUNT(1) INTO total_intrebari FROM Answers
+        WHERE Answers.user_id = my_user_id;
+        SELECT COUNT(1) INTO nr_raspuns FROM Answers
+        WHERE Answers.user_id = my_user_id AND
+        Answers.solved = 1;
+        IF (total_intrebari = 0) THEN
+            RETURN 0;
+        END IF;
+    --    DBMS_OUTPUT.PUT_LINE(nr_raspuns || ' ' || total_intrebari);
+        IF (nr_raspuns / total_intrebari < 0.5) THEN
+            RETURN 0;    -- a raspuns prea putin
+        END IF;
+        RETURN 1;    -- studentul este harnicut
+    END;
+    
+    FUNCTION este_puturos_cache(my_user_id Users.id%TYPE)
+    RETURN NUMBER AS
+    BEGIN
+        RETURN pkg_relevanta.puturosi(CAST(my_user_id AS PLS_INTEGER));
+    END;
+    
+    FUNCTION relevanta(my_question_id Questions.id%TYPE)
+    RETURN NUMBER AS
+        nr_intrebata NUMBER := 0;
+        intrebare Questions.question%TYPE;
+        
+        nr_corect NUMBER := 0;
+        nr_total NUMBER := 0;
+        ratio NUMBER;
+    BEGIN
+        SELECT Questions.question INTO intrebare FROM Questions
+        WHERE Questions.id = my_question_id;
+    --    DBMS_OUTPUT.PUT_LINE('Intrebare: ' || intrebare);
+        SELECT COUNT(1) INTO nr_intrebata FROM Questions
+        WHERE Questions.question LIKE intrebare;
+--        DBMS_OUTPUT.PUT_LINE('Intrebare: ' || intrebare);
+--        DBMS_OUTPUT.PUT_LINE('Intrebata: ' || nr_intrebata);
+        
+        IF (nr_intrebata < 20) THEN
+            RETURN 0;
+        END IF;
+        
+        SELECT COUNT(1) INTO nr_total FROM Answers
+        WHERE Answers.question_id IN (
+            SELECT Questions.id FROM Questions
+            WHERE Questions.question LIKE intrebare
+        );
+        
+        SELECT COUNT(1) INTO nr_corect FROM Answers
+        WHERE Answers.question_id IN (
+            SELECT Questions.id FROM Questions
+            WHERE Questions.question LIKE intrebare
+        ) AND Answers.solved = 1 AND
+        este_puturos_cache(Answers.user_id) <> 0;
+        
+        ratio := nr_corect / nr_total;
+--        DBMS_OUTPUT.PUT_LINE('Ratio: ' || ratio);
+
+        IF (ratio < 0.3 OR ratio > 0.9) THEN
+            RETURN 0;
+        END IF;
+        
+        RETURN nr_total;
+    END;
+
+    PROCEDURE afiseaza_intrebari AS
+        CURSOR curs IS
+        SELECT id, user_id FROM Questions
+        WHERE id >= 120 AND id <= 140;
+        
+        question_id Questions.id%TYPE;
+        relev NUMBER;
+        max_relev NUMBER := -1;
+        user_id Questions.user_id%TYPE;
+        max_user_id Questions.user_id%TYPE := 0;
+        
+        nume Users.username%TYPE;
+        is_admin NUMBER;
+    BEGIN
+        OPEN curs;
+        LOOP
+            FETCH curs INTO question_id, user_id;
+            EXIT WHEN curs%NOTFOUND;
+            
+            DBMS_OUTPUT.PUT_LINE('ID: ' || question_id);
+            relev := pkg_relevanta.relevanta(question_id);
+            DBMS_OUTPUT.PUT_LINE('Relevanta: ' || relev);
+            IF (relev > max_relev) THEN
+                SELECT COUNT(1) INTO is_admin FROM Users
+                WHERE Users.id = user_id AND
+                Users.user_role LIKE 'admin' AND
+                ROWNUM=1;
+                IF (is_admin = 0) THEN
+                    max_user_id := user_id;
+                    max_relev := relev;
+                END IF;
+            END IF;
+            
+            SELECT username INTO nume FROM Users
+            WHERE Users.id = max_user_id AND
+            ROWNUM=1;
+            DBMS_OUTPUT.PUT_LINE('Nume utilizator: ' || nume || ' (' ||
+                max_user_id || ')');
+            DBMS_OUTPUT.PUT_LINE('');
+            
+        END LOOP;
+        CLOSE curs;
+        
+    END;
+END pkg_relevanta;
+
+/
+
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    CURSOR lista_users IS
+        SELECT id FROM Users ORDER BY id;
+    
+    user_id Users.id%TYPE;
+BEGIN
+    OPEN lista_users;
+    LOOP
+        FETCH lista_users INTO user_id;
+        EXIT WHEN lista_users%NOTFOUND;
+        
+        pkg_relevanta.puturosi(user_id) := este_puturos(user_id);
+    END LOOP;
+    CLOSE lista_users;
+    
+    pkg_relevanta.afiseaza_intrebari();
+    DBMS_OUTPUT.PUT_LINE('End');
+END;
