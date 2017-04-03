@@ -52,11 +52,14 @@ class Matrix(object):
         value = self._raw.setdefault(lin, {}).setdefault(col, 0) + val
         self._raw[lin][col] = value
 
-    def finish(self):
+    def finish(self, check_lengths=False):
         zeros = 0
         for lin in sorted(self._raw):
             addzero = True
             cols = self._raw[lin]
+            cols_len = len(cols)
+            if check_lengths and cols_len > 10:
+                logging.warn("%d elemente pe linie", cols_len)
             for col, val in cols.items():
                 if lin == col:
                     # Fill diagonal.
@@ -159,7 +162,6 @@ def mat_sum(a, b):
 def mat_mul(a, b):
     """Multiply A with B^t."""
     assert a.dim == b.dim
-    mul = lambda values: reduce(operator.mul, values, 1)
     r = Matrix(a.dim)
     # Cache-uim liniile transpuse (coloanele) matricii B.
     blines = {}
@@ -182,6 +184,23 @@ def mat_mul(a, b):
     return r
 
 
+def mat_vec_mul(a, b):
+    assert a.dim == len(b)
+    r = [0] * a.dim
+    # Incepem inmultirea folosind doar linii chele.
+    for alin in range(a.dim):
+        aline = a.get_line(alin, sparse=True)
+        bline = b
+        rline = []
+        for col, val in aline.items():
+            _val = bline[col]
+            if _val:
+                rline.append(val * _val)
+        value = sum(rline)
+        r[alin] = value
+    return r
+
+
 def mat_equal(a, b):
     assert a.dim == b.dim
     for lin in range(a.dim):
@@ -192,7 +211,7 @@ def mat_equal(a, b):
     return True
 
 
-def read_vecmat(path, name="unknown", trans=False):
+def read_vecmat(path, name="unknown", trans=False, check_lengths=False):
     # Citim vectorul.
     info = reader(path)
     dim = int(next(info))
@@ -211,7 +230,7 @@ def read_vecmat(path, name="unknown", trans=False):
             lin, col = col, lin
         mat.put(val, lin, col)
     logging.debug("%s matrix entries: %d", name, count)
-    mat.finish()
+    mat.finish(check_lengths=check_lengths)
     logging.debug("%s matrix: %r %s", name, mat, mat)
     return vec, mat
 
@@ -220,8 +239,8 @@ def main():
     logging.basicConfig(level=LOG_LEVEL)
 
     # Citim datele de intrare.
-    avec, amat = read_vecmat(FILE_A, name="A")
-    bvec, bmat = read_vecmat(FILE_B, name="B")
+    avec, amat = read_vecmat(FILE_A, name="A", check_lengths=True)
+    bvec, bmat = read_vecmat(FILE_B, name="B", check_lengths=True)
     _, tbmat = read_vecmat(FILE_B, name="TB", trans=True)    # B transpus
     # Si cele de iesire.
     pvec, pmat = read_vecmat(FILE_APB, name="P")
@@ -238,13 +257,13 @@ def main():
     assert bmat[1625, 750] == 0
     assert bmat[1625, 749] == 0
 
-    # Adunam efectiv vectorii.
-    rvec = vec_sum(avec, bvec)
-    logging.info("R vector length: %d", len(rvec))
-    logging.info("R vector[0]: %f", rvec[0])
-    logging.info("R vector[-1]: %f", rvec[-1])
-    # Si facem verificarea.
-    assert pvec == rvec
+    # # Adunam efectiv vectorii.
+    # rvec = vec_sum(avec, bvec)
+    # logging.info("R vector length: %d", len(rvec))
+    # logging.info("R vector[0]: %f", rvec[0])
+    # logging.info("R vector[-1]: %f", rvec[-1])
+    # # Si facem verificarea.
+    # assert pvec == rvec
 
     # Adunam matricile.
     rmat = mat_sum(amat, bmat)
@@ -257,6 +276,12 @@ def main():
     logging.info("R ori matrix: %r %s", rmat, rmat)
     # Si le verificam continutul.
     assert mat_equal(omat, rmat)
+
+    # Inmultirea matricii cu un vector.
+    xvec = list(map(float, range(amat.dim, 0, -1)))
+    rvec = mat_vec_mul(amat, xvec)
+    logging.info("R ori vector[0]: %f", rvec[0])
+    assert avec == rvec
 
 
 if __name__ == "__main__":
