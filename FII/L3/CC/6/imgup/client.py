@@ -3,6 +3,7 @@
 
 import asyncio
 import base64
+import json
 import os
 import sys
 
@@ -14,25 +15,34 @@ def prepare_image(imgpath):
         raise Exception("invalid image path {!r}".format(imgpath))
     with open(imgpath, "rb") as stream:
         content = stream.read()
-    return base64.b64encode(content)
+    return base64.b64encode(content).decode()
 
 
-async def imgup(imgpath):
+def prepare_request(action, imgpath):
+    req = {"action": action}
+    if action == "upload":
+        req["data"] = prepare_image(imgpath)
+    return req
+
+
+async def imgup(cid, action, imgpath=None):
     async with websockets.connect('ws://localhost:8765') as websocket:
 
-        content = prepare_image(imgpath)
-        await websocket.send(content)
+        content = prepare_request(action, imgpath)
+        content["cid"] = cid
+        await websocket.send(json.dumps(content))
 
-        url = await websocket.recv()
-        print("Url: {}".format(url))
+        resp = await websocket.recv()
+        resp = json.loads(resp)
+        print("Response: {}".format(resp))
 
 
 def main(argv):
-    if len(argv) != 2:
-        print("Usage: {} FILE".format(argv[0]))
+    if len(argv) not in (3, 4):
+        print("Usage: {} CLIENT ACTION [FILE]".format(argv[0]))
         return
 
-    asyncio.get_event_loop().run_until_complete(imgup(argv[1]))
+    asyncio.get_event_loop().run_until_complete(imgup(*argv[1:]))
 
 
 if __name__ == "__main__":
