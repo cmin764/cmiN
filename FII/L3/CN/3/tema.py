@@ -2,8 +2,6 @@
 
 
 import logging
-import operator
-from functools import reduce
 
 
 EPS = 10 ** -10
