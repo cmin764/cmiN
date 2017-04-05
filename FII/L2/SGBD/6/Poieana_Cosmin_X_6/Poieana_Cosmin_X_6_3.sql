@@ -12,13 +12,6 @@ END pkg_relev;
 
 /
 
-CREATE OR REPLACE PROCEDURE afiseaza(nr pkg_relev.student_t) AS
-   my_name varchar2(20):='Gigel';
-BEGIN
-   DBMS_OUTPUT.PUT_LINE('Ma cheama ' || my_name);
-END afiseaza;
-
-/
 
 CREATE OR REPLACE PROCEDURE show_relev_for(my_user_id Users.id%TYPE) AS
     CURSOR curs IS SELECT Questions.id FROM Questions
