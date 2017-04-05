@@ -19,6 +19,7 @@ CREATE OR REPLACE PACKAGE pkg_mat AS
         n1 NUMBER, n2 NUMBER, m2 NUMBER);
     PROCEDURE set_max_nr_len(nr_in NUMBER);
     PROCEDURE show_elem(elem NUMBER);
+    PROCEDURE init_max_nr_len(mat Matrix, nr_lin NUMBER, nr_col NUMBER);
 END pkg_mat;
 
 /
@@ -47,6 +48,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_mat AS
     PROCEDURE show_mat(mat Matrix, nr_lin NUMBER, nr_col NUMBER) AS
         elem NUMBER;
     BEGIN
+        init_max_nr_len(mat, nr_lin, nr_col);
         FOR idx_lin IN 0..nr_lin - 1 LOOP
             FOR idx_col IN 0..nr_col - 1 LOOP
                 elem := mat(idx_lin)(idx_col);
@@ -73,6 +75,18 @@ CREATE OR REPLACE PACKAGE BODY pkg_mat AS
         END IF;
     END;
     
+    PROCEDURE init_max_nr_len(mat Matrix, nr_lin NUMBER, nr_col NUMBER) AS
+        elem NUMBER;
+    BEGIN
+        pkg_mat.max_nr_len := 0;
+        FOR idx_lin IN 0..nr_lin - 1 LOOP
+            FOR idx_col IN 0..nr_col - 1 LOOP
+                elem := mat(idx_lin)(idx_col);
+                set_max_nr_len(elem);
+            END LOOP;
+        END LOOP;
+    END;
+    
     PROCEDURE mul_mat(mat1 Matrix, mat2 Matrix, mat3 IN OUT Matrix,
                       n1 NUMBER, n2 NUMBER, m2 NUMBER) AS
         total NUMBER;
@@ -87,7 +101,6 @@ CREATE OR REPLACE PACKAGE BODY pkg_mat AS
                               mat2(idx_lin2)(idx_col2));
                 END LOOP;
                 vec(idx_col2) := total;
-                set_max_nr_len(total);
             END LOOP;
             mat3(idx_lin1) := vec;
         END LOOP;

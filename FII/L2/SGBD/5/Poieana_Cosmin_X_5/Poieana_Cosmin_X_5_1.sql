@@ -59,14 +59,15 @@ CREATE OR REPLACE PACKAGE BODY pkg_relevanta AS
         FROM Questions
         WHERE Questions.id = my_question_id;
     --    DBMS_OUTPUT.PUT_LINE('Intrebare: ' || intrebare);
-        SELECT COUNT(1) INTO nr_intrebata FROM Questions
+        SELECT COUNT(*) INTO nr_intrebata FROM Questions
         WHERE Questions.question LIKE intrebare;
+
 --        DBMS_OUTPUT.PUT_LINE('Intrebare: ' || intrebare);
 --        DBMS_OUTPUT.PUT_LINE('Intrebata: ' || nr_intrebata);
-        
-        IF (nr_intrebata < 20) THEN
-            RETURN 0;
-        END IF;
+--        
+--        IF (nr_intrebata < 20) THEN
+--            RETURN 0;
+--        END IF;
         
         SELECT COUNT(1) INTO nr_total FROM Answers
         WHERE Answers.question_id IN (
