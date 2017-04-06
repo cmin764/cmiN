@@ -2,6 +2,7 @@ GRANT CREATE TYPE TO STUDENT; -- aceasta linie se executa din "SYS as SYSDBA"
 
 CREATE OR REPLACE PACKAGE pkg_relev AS
     TYPE student_t IS TABLE OF VARCHAR2(10) INDEX BY VARCHAR2(10);
+    TYPE stud_list IS TABLE OF student_t INDEX BY PLS_INTEGER;
 END pkg_relev;
 
 /
@@ -70,13 +71,21 @@ SET SERVEROUTPUT ON;
 
 DECLARE
     stud pkg_relev.student_t;
+    studs pkg_relev.stud_list;
     
     nr NUMBER;
 BEGIN
+    -- hardcodam studenti in lista
     stud('nume') := 'Damian';
     stud('prenume') := 'Bogdan';
+    studs(0) := stud;
+    stud('nume') := 'Chirila';
+    stud('prenume') := 'Loredana';
+    studs(1) := stud;
     
-    show_relev(stud);
+    FOR idx IN studs.first..studs.last LOOP
+        show_relev(studs(idx));
+    END LOOP;
     
     DBMS_OUTPUT.PUT_LINE('End.');
 END;

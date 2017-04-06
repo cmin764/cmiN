@@ -48,6 +48,7 @@ DECLARE
     
     nume VARCHAR2(10);
     prenume lista_prenume;
+    contor NUMBER := 0;
 BEGIN
     OPEN curs;
     LOOP
@@ -56,6 +57,7 @@ BEGIN
         
         filtreaza(prenume);
         IF prenume.count > 0 THEN
+            contor := contor + 1;
             DBMS_OUTPUT.PUT(nume || ': ');
                 FOR idx IN prenume.first..prenume.last LOOP
                     DBMS_OUTPUT.PUT(prenume(idx) || ' ');    
@@ -64,5 +66,6 @@ BEGIN
         END IF;
     END LOOP;
     CLOSE curs;
+    DBMS_OUTPUT.PUT_LINE('Numar persoane: ' || contor);
     DBMS_OUTPUT.PUT_LINE('End.');
 END;
