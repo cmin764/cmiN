@@ -83,7 +83,12 @@ def main():
     for vec, mat in pairs:
         ret = gauss(vec, mat)
         if ret:
-            logging.info("Convergenta: {}".format(ret[-1]))
+            logging.info("Convergenta: %f", ret[-1])
+            res = sparse.mat_vec_mul(mat, ret)
+            verif = [(res[idx], vec[idx]) for idx in range(mat.dim)]
+            norm = get_norm(verif)
+            #logging.debug("Norma: %f", norm)
+            assert sparse.is_zero(norm)
         else:
             logging.warn("Divergenta.")
         idx += 1

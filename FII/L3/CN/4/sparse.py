@@ -4,7 +4,7 @@
 import logging
 
 
-EPS = 10 ** -10
+EPS = 10 ** -8
 LOG_LEVEL = logging.DEBUG
 SIMPLE = False
 S = ""
