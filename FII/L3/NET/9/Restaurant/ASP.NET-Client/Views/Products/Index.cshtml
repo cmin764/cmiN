@@ -1,0 +1,86 @@
+﻿@model PagedList.IPagedList<ASP.NET_Client.Models.ViewModels.ProductGridItem>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Produse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Produse noastre</h2>
+<h3></h3>
+
+<div>
+        <form action="/Products/Search" method="post">
+            <p>
+                <text>Cauta dupa nume:  </text>
+                <input type="text" name="productName" />
+                <input type="submit" value="Cauta" class="btn-success" />
+            </p>
+        </form>
+        <a>
+
+        </a>
+        <form action="/Products/PriceLimit" method="post">
+            <p>
+                <text>Filtreaza pret maxim:  </text>
+                <input type="number" name="price">
+                <input type="submit" value="Filtreaza" class="btn-success" />
+            </p>
+        </form>
+
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nume", "Index", new { sortOrder = ViewBag.NameSortParm })
+           </th>
+        <th>
+            @Html.ActionLink("Pret", "Index", new { sortOrder = ViewBag.PriceSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Kcal", "Index", new { sortOrder = ViewBag.KcalSortParm })
+        </th>
+        <th>
+            Descriere
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kcal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @{
+                    if (Session["LoggedUserId"] != null)
+                    {
+                         @Html.ActionLink("Adauga la comanda", "AddToOrder", item)
+                    }
+                    else
+                    {
+                         @Html.ActionLink("Adauga la comanda", "Register","Account")
+                    }
+                 }
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort }))

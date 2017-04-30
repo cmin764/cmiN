@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ASP.NET_Client.Models.ViewModels.FullOrderModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr/>
+<h2>Comenzile plasate de dvs.</h2>
+<hr/>
+<table class="table">
+    <tr>
+        <th>
+            ID Comanda
+        </th>
+        <th>
+            Data Comanda
+        </th>
+        <th>
+            Data Livrare
+        </th>
+        <th>
+            Pret Total
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Detalii", "Details", new { id = item.OrderId }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Anuleaza comanda", "Delete", item, new { @class = "btn btn-danger" })
+
+        </td>
+    </tr>
+}
+
+</table>

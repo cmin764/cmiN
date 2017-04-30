@@ -1,0 +1,10 @@
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.dll.config
+C:\Users\irina\Documents\Rest\Restaurant\Client\bin\Debug\Client.dll
+C:\Users\irina\Documents\Rest\Restaurant\Client\obj\Debug\Client.dll

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style ="background-image:url('/Content/diet_n_nutrition.jpg');" class="jumbotron">
+    <h1>La .NET</h1>
+    
+    <p>@Html.ActionLink("Comanda aici!", "Index", "Products", null, new { @class="btn btn-primary btn-lg" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Produse desavarsite</h2>
+        <p>
+            Restaurantul La .NET ofera cele mai gustoase preparate din oras de bucatari experimentati, realizate exclusiv din produse organice, crescute de furnizori locali sau europeni avizati.
+        </p>
+        <p>@Html.ActionLink("Vezi produse", "Index", "Products",null,new { @class="btn btn-primary" })</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Clienti multumiti</h2>
+        <p> Avand mereu grija ca toate comenzile sa fie onorate si toate preparatele cu atentie realizate, clientii nostri au fost intodeauna multumiti de serviciile noastre si ne-au devenit treptat preteni. Intra si tu in familia La .NET si comanda acum. </p>
+
+        <p>@Html.ActionLink("Comanda si tu", "Register", "Account", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    
+</div>

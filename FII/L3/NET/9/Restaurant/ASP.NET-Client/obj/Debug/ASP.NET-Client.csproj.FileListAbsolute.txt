@@ -1,0 +1,176 @@
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\ApplicationInsights.config
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\csc.exe
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\vbc.exe
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\VBCSCompiler.exe
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.dll.config
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Antlr3.Runtime.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Web.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.ApplicationInsights.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Newtonsoft.Json.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Owin.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Helpers.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Mvc.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Optimization.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Razor.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Deployment.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Razor.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\WebGrease.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Web.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.ApplicationInsights.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Helpers.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Mvc.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Optimization.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.Razor.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Deployment.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Razor.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Antlr3.Runtime.pdb
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Newtonsoft.Json.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET_Client.Properties.Resources.resources
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.csproj.GenerateResource.Cache
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\PagedList.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\PagedList.Mvc.dll
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\PagedList.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\bin\PagedList.Mvc.xml
+C:\Users\irina\Documents\Rest\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.csprojResolveAssemblyReference.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\ApplicationInsights.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\csc.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\vbc.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\VBCSCompiler.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.dll.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\ASP.NET-Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Antlr3.Runtime.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\EntityFramework.SqlServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Web.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.ApplicationInsights.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Newtonsoft.Json.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Owin.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\PagedList.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\PagedList.Mvc.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Helpers.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Mvc.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Optimization.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Razor.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Razor.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\WebGrease.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.Web.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.ApplicationInsights.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\PagedList.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\PagedList.Mvc.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Helpers.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Mvc.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Optimization.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.Razor.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\System.Web.WebPages.Razor.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Antlr3.Runtime.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Newtonsoft.Json.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\EntityFramework.SqlServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.csprojResolveAssemblyReference.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET_Client.Properties.Resources.resources
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.csproj.GenerateResource.Cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\ASP.NET-Client\obj\Debug\ASP.NET-Client.pdb

@@ -1,0 +1,54 @@
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\ApplicationInsights.config
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.mdf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant_log.ldf
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.Services.dll.config
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.Services.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.Services.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\EntityFramework.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\EntityFramework.SqlServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.Web.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.ApplicationInsights.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.Data.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\EntityFramework.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\EntityFramework.SqlServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.Web.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Microsoft.ApplicationInsights.xml
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.csprojResolveAssemblyReference.cache
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.dll
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.pdb
+C:\Users\irina\Documents\Rest\Restaurant\Restaurant.Services\bin\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\ApplicationInsights.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.mdf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant_log.ldf
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.Services.dll.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.Services.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.Services.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\EntityFramework.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\EntityFramework.SqlServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.Web.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.ApplicationInsights.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.Data.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Restaurant.Data.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\EntityFramework.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\EntityFramework.SqlServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.Web.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\bin\Microsoft.ApplicationInsights.xml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.csprojResolveAssemblyReference.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.dll
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant.Services\obj\Debug\Restaurant.Services.pdb
