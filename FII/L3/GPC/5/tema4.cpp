@@ -17,17 +17,10 @@ using namespace std;
 #define EPS 0.00000001
 #define DEG2RAD PI/180.0
 
+#define min(a, b) (a < b ? a : b)
+#define max(a, b) (a > b ? a : b)
+
 unsigned char prevKey;
-
-float max(float a, float b)
-{
-	return a > b ? a : b;
-}
-
-float min(float a, float b)
-{
-	return a < b ? a : b;
-}
 
 
 class Pixel {
@@ -535,7 +528,7 @@ void Reshape(int w, int h)
 void KeyboardFunc(unsigned char key, int x, int y)
 {
 	prevKey = key;
-	if (key == 27) // escape
+	if (key == 27)
 		exit(0);
 	glutPostRedisplay();
 }

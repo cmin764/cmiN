@@ -11,7 +11,7 @@ using namespace std;
 #define dim 600
 
 #define min(a, b) (a < b ? a : b)
-#define max(a, b) (a < b ? a : b)
+#define max(a, b) (a > b ? a : b)
 
 #define PI 4 * atan(1.0)
 
@@ -34,19 +34,19 @@ public:
 class Grid {
 public:
 	Grid(int, int);
-	void put_pixel(const Pixel&);
-	void put_pixel(const int&, const int&);
-	void put_pixel_stroke(const int&, const int&);
+	void write_pixel(const Pixel&);
+	void write_pixel(const int&, const int&);
+	void write_pixel_border(const int&, const int&);
 	void show_seg3(const Pixel &p1, const Pixel &p2, bool);
 
 private:
 	int lines;
 	int columns;
 
-	float begin;
-	float end_my_x;
-	float end_my_y;
-	float length;
+	float start;
+	float endX;
+	float endY;
+	float len;
 	float radius;
 
 };
@@ -58,12 +58,12 @@ Grid::Grid(int l, int c)
 	columns = --c;
 
 	int max_dim = max(c, l);
-	length = 2.0 / (max_dim + 2);
-	radius = length / 5;
+	len = 2.0 / (max_dim + 2);
+	radius = len / 5;
 
-	begin = -1 + length;
-	end_my_x = -1 + (c + 1)*length;
-	end_my_y = -1 + (l + 1)*length;
+	start = -1 + len;
+	endX = -1 + (c + 1)*len;
+	endY = -1 + (l + 1)*len;
 
 	if (l < 1 || c < 1)
 		return;
@@ -72,31 +72,31 @@ Grid::Grid(int l, int c)
 
 	for (int i = 0; i <= l; ++i)
 	{
-		float x = begin + length * i;
+		float x = start + len * i;
 
 		glBegin(GL_LINES);
-		glVertex2f(begin, x);
-		glVertex2f(end_my_x, x);
+		glVertex2f(start, x);
+		glVertex2f(endX, x);
 		glEnd();
 	}
 
 	for (int i = 0; i <= c; ++i)
 	{
-		float y = begin + i * length;
+		float y = start + i * len;
 
 		glBegin(GL_LINES);
-		glVertex2f(y, begin);
-		glVertex2f(y, end_my_y);
+		glVertex2f(y, start);
+		glVertex2f(y, endY);
 		glEnd();
 	}
 }
 
-void Grid::put_pixel(const int &xx, const int &yy)
+void Grid::write_pixel(const int &xx, const int &yy)
 {
-	float y = begin + length * yy;
-	float x = begin + length * xx;
+	float y = start + len * yy;
+	float x = start + len * xx;
 
-	if (x > end_my_x || y > end_my_y || x < begin || y < begin)
+	if (x > endX || y > endY || x < start || y < start)
 		return;
 
 	glColor3f(0.5, 0.5, 0.5); // gri
@@ -108,12 +108,12 @@ void Grid::put_pixel(const int &xx, const int &yy)
 }
 
 
-void Grid::put_pixel(const Pixel &a)
+void Grid::write_pixel(const Pixel &a)
 {
-	float y = begin + length * a.y;
-	float x = begin + length * a.x;
+	float y = start + len * a.y;
+	float x = start + len * a.x;
 
-	if (x > end_my_x || y > end_my_y || x < begin || y < begin)
+	if (x > endX || y > endY || x < start || y < start)
 		return;
 
 	glColor3f(0.5, 0.5, 0.5); // gri
@@ -124,20 +124,20 @@ void Grid::put_pixel(const Pixel &a)
 	glEnd();
 
 }
-void Grid::put_pixel_stroke(const int& x, const int& y)
+void Grid::write_pixel_border(const int& x, const int& y)
 {
-	put_pixel(x, y);
-	put_pixel(x, y+1);
-	put_pixel(x+1, y-1);
-	put_pixel(x+1, y);
-	put_pixel(x+1, y+1);
-	put_pixel(x-1, y-1);
-	put_pixel(x-1, y);
-	put_pixel(x-1, y+1);
-	put_pixel(x, y-1);
+	write_pixel(x, y);
+	write_pixel(x, y+1);
+	write_pixel(x+1, y-1);
+	write_pixel(x+1, y);
+	write_pixel(x+1, y+1);
+	write_pixel(x-1, y-1);
+	write_pixel(x-1, y);
+	write_pixel(x-1, y+1);
+	write_pixel(x, y-1);
 }
 
-void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool stroke=false)
+void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool border=false)
 {
 	int x1 = p1.x, y1 = p1.y, x2 = p2.x, y2 = p2.y;
 
@@ -151,8 +151,8 @@ void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool stroke=false)
 	glColor3f(1, 0, 0); // red
 
 	glBegin(GL_LINES);
-	glVertex2f(begin + x1 * length, begin + y1 * length);
-	glVertex2f(begin + x2 * length, begin + y2 * length);
+	glVertex2f(start + x1 * len, start + y1 * len);
+	glVertex2f(start + x2 * len, start + y2 * len);
 	glEnd();
 
 
@@ -165,7 +165,7 @@ void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool stroke=false)
 
 	int x = x1, y = y1;
 
-	put_pixel(x, y);
+	write_pixel(x, y);
 
 	if (y2 > y1) {
 		while (x < x2) {
@@ -179,10 +179,10 @@ void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool stroke=false)
 				++x;
 				++y;
 			}
-			if (!stroke)
-				put_pixel(x, y);
+			if (!border)
+				write_pixel(x, y);
 			else
-				put_pixel_stroke(x, y);
+				write_pixel_border(x, y);
 		}
 	} else {
 		x = x1, y = y1;
@@ -201,10 +201,10 @@ void Grid::show_seg3(const Pixel &p1, const Pixel &p2, bool stroke=false)
 				--y;
 			}
 
-			if (!stroke)
-				put_pixel(x, y);
+			if (!border)
+				write_pixel(x, y);
 			else
-				put_pixel_stroke(x, y);
+				write_pixel_border(x, y);
 		}
 	}
 }
@@ -242,7 +242,7 @@ void Reshape(int w, int h)
 void KeyboardFunc(unsigned char key, int x, int y)
 {
 	prevKey = key;
-	if (key == 27)    // Esc
+	if (key == 27)
 		exit(0);
 	glutPostRedisplay();
 }
