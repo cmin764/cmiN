@@ -1,0 +1,12 @@
+Proiect PBR 2017
+
+
+Implementarea unui sistem ce permite inteogarea unei resurse ce contine relatii semaantice marcat epe textul romanului "Quo Vadis".
+
+    Informatii suplimentare
+    Fisierul in care sunt marcate relatiile semantice.
+    Etapa 1: Transformarea relatiilor in fapte CLIPS.
+    Etapa 2: Scrierea interogarilor sub forma unor reguli CLIPS. Pentru detalii suplimentare consultati cursurile dl. Cristea.
+
+
+Predarea se face la laborator, cu trimiterea pe e-mail a solutiei implementate. La sfarsitul semestrului echipele vor face o prezentarea scurta (15 minute) in fata colegilor. 
