@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPF_Client.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Client.Windows"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="600" Width="460
+        " FontFamily="Microsoft Sans Serif" FontSize="24" Background="White">
+    <Grid Margin="0,0,3,-0.4" Opacity="5">
+        <Grid.Background>
+            <ImageBrush ImageSource="/WPF-Client;component/Resources/Food6.jpg" Stretch="UniformToFill" Opacity="0.85"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Login" Content="Logare" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Margin="145,513,145.6,23.2" Height="35" BorderBrush="Black" BorderThickness="1" FontFamily="Microsoft YaHei UI" FontSize="18" Click="Login_Click" UseLayoutRounding="True" RenderTransformOrigin="0.512,0.137" Foreground="#FF86043C">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDFDFDF" Opacity="0.9"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="passBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="207" Margin="169,380,74.6,159.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="79,394,297.6,159.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="74" Text="Parola:" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="Register" Content="Inregistrare" HorizontalAlignment="Center" VerticalAlignment="Center" Width="164" Margin="145,471,141.6,63.2" Height="37" BorderBrush="Black" BorderThickness="1" FontFamily="Microsoft YaHei UI" FontSize="18" Click="Register_Click" UseLayoutRounding="True" Foreground="#FF86043C">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDFDFDF" Opacity="0.9"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="passConfirmedBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="171" Margin="205,418,74.6,123.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="79,431,262.6,122.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="109" Text="Confirmare:" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="addressBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="207" Margin="169,343,74.6,196.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="79,357,295.6,196.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="76" Text="Adresa:" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="207" Margin="169,306,74.6,233.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="79,320,300.6,233.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="71" Text="Email:" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="phoneBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="207" Margin="169,269,74.6,270.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="77,283,295.6,270.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="78" Text="Telefon:" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="nameBox" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="207" Margin="169,232,74.6,307.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFAE1E1" Opacity="0.9"/>
+        <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="79,246,299.6,307.2" FontFamily="Microsoft JhengHei UI" FontSize="16" TextAlignment="Center" Width="72" Text="Nume:" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="La .NET" VerticalAlignment="Center" Margin="96,146,0,337.2" Height="88" Width="280" FontSize="60" FontFamily="Microsoft YaHei UI" Foreground="White" TextAlignment="Center"/>
+        <Image x:Name="Logo" Source="/WPF-Client;component/Resources/Logo.jpg" Margin="110,10,99.6,430.2" HorizontalAlignment="Center" Width="241" VerticalAlignment="Center"/>
+
+    </Grid>
+</Window>

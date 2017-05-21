@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_Client.Windows.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Client.Windows"
+        mc:Ignorable="d"
+        Title="Meniu principal" Height="600" Width="460" FontFamily="Microsoft Sans Serif" FontSize="24" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="354*"/>
+            <RowDefinition Height="217*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/WPF-Client;component/Resources/Food8.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button x:Name="About" Content="Despre noi" HorizontalAlignment="Center" VerticalAlignment="Top" Width="170" Margin="142,76.4,141.6,0" FontSize="18" Height="40" Foreground="#FF6C0C0C" FontFamily="Microsoft YaHei UI" BorderBrush="White" UseLayoutRounding="True" Grid.Row="1" Click="button_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.85"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Orders" Content="Comenzile dvs." HorizontalAlignment="Center" VerticalAlignment="Top" Width="170" Margin="142,19.4,141.6,0" FontSize="18" Height="40" Foreground="#FF6C0C0C" FontFamily="Microsoft YaHei UI" BorderBrush="White" UseLayoutRounding="True" Grid.Row="1" Click="Orders_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.85"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Products" Content="Produsele noastre" HorizontalAlignment="Center" VerticalAlignment="Top" Width="170" Margin="142,317,141.6,0" FontSize="18" Height="38" Foreground="#FF6C0C0C" FontFamily="Microsoft YaHei UI" BorderBrush="White" UseLayoutRounding="True" Click="Products_Click" Grid.RowSpan="2">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.85"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="Logo" Source="/WPF-Client;component/Resources/Logo.jpg" Margin="106,119,106.6,102.6" HorizontalAlignment="Center" Width="241" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="La .NET" VerticalAlignment="Center" Margin="86,26,0,239.6" Height="88" Width="280" FontSize="60" FontFamily="Microsoft YaHei UI" Foreground="White" TextAlignment="Center"/>
+        <Button x:Name="Exit" Content="Iesire" HorizontalAlignment="Center" VerticalAlignment="Top" Width="170" Margin="142,134.4,141.6,0" FontSize="18" Height="40" Foreground="#FF6C0C0C" FontFamily="Microsoft YaHei UI" BorderBrush="White" UseLayoutRounding="True" Grid.Row="1" Click="Exit_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.85"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPF_Client.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Client.Windows"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="600" Width="460" FontFamily="Microsoft Sans Serif" FontSize="24" Background="White">
+    <Grid Margin="0,0,3,-0.4" Opacity="0.95">
+        <Grid.Background>
+            <ImageBrush ImageSource="/WPF-Client;component/Resources/Food2.jpg" Opacity="0.95" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Logo" Source="../Resources/Logo.jpg" Margin="105,30,104.6,410.2" HorizontalAlignment="Center" Width="241" VerticalAlignment="Center"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="315,74,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <Button x:Name="Login" Content="Logare" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Margin="0,453,0,75.2" Height="40" Background="#FFD9D9D9" BorderBrush="Black" BorderThickness="1" FontFamily="Microsoft YaHei UI" FontSize="18" Click="Login_Click" UseLayoutRounding="True" Foreground="#FFA30046"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Center" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Width="257" Margin="105,327,88.6,208.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" Background="#FFFFD5D5" Opacity="0.85"/>
+        <TextBox x:Name="passBox" HorizontalAlignment="Center" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Width="257" Margin="105,399,88.6,136.2" FontFamily="Microsoft JhengHei Light" FontSize="14" TextAlignment="Center" FontStyle="Italic" BorderBrush="Black" BorderThickness="2" CaretBrush="Black" VerticalContentAlignment="Center" UseLayoutRounding="True" TextOptions.TextHintingMode="Fixed" Background="#FFFFD5D5" Opacity="0.85"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="82,295,61.6,253.2" FontFamily="Microsoft New Tai Lue" FontSize="18" TextAlignment="Center" Width="307" RenderTransformOrigin="0.502,0.504" Text="Adresa de email:" FontWeight="Bold" Foreground="White"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="168,365,168,170.4" FontFamily="Microsoft New Tai Lue" FontSize="18" TextAlignment="Center" Width="241" Text="Parola" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="Register" Content="Inregistrare" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Margin="0,503,0,25.2" Height="40" Background="#FFD9D9D9" BorderBrush="Black" BorderThickness="1" FontFamily="Microsoft YaHei UI" FontSize="18" Click="Register_Click" UseLayoutRounding="True" Foreground="#FFA30046"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="La .NET" VerticalAlignment="Center" Margin="82,202,0,281.2" Height="88" Width="280" FontSize="60" FontFamily="Microsoft YaHei UI" Foreground="White" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

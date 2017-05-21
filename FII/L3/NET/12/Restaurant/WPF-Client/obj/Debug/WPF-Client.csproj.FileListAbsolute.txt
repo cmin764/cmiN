@@ -1,0 +1,59 @@
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\bin\Debug\WPF-Client.exe.config
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\bin\Debug\WPF-Client.exe
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\bin\Debug\WPF-Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\App.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client_MarkupCompile.cache
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client_MarkupCompile.lref
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client.g.resources
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF_Client.Properties.Resources.resources
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client.csproj.GenerateResource.Cache
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client.exe
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\WPF-Client.pdb
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\RegisterWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\LoginWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\RegisterWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\MainWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\MainWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\MainMenu.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\MainMenu.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\AboutWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\OrdersWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\ProductsWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\AboutWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\OrdersWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\ProductsWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\OrderViewWindow.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\OrderViewWindow.baml
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\PlaceOrderView.g.cs
+C:\Users\irina\Documents\Rest\Restaurant\WPF-Client\obj\Debug\Windows\PlaceOrderView.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\bin\Debug\WPF-Client.exe.config
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\bin\Debug\WPF-Client.exe
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\bin\Debug\WPF-Client.pdb
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client.csprojResolveAssemblyReference.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\AboutWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\MainWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\MainMenu.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\OrdersWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\OrderViewWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\PlaceOrderView.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\ProductsWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\RegisterWindow.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\App.g.cs
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client_MarkupCompile.cache
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client_MarkupCompile.lref
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\AboutWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\LoginWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\MainWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\MainMenu.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\OrdersWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\OrderViewWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\PlaceOrderView.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\ProductsWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\Windows\RegisterWindow.baml
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client.g.resources
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF_Client.Properties.Resources.resources
+C:\Users\cmin7\Documents\Visual Studio 2015\Projects\Restaurant\WPF-Client\obj\Debug\WPF-Client.csproj.GenerateResource.Cache

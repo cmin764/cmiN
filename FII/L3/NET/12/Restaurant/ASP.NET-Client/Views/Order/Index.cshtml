@@ -1,0 +1,72 @@
+﻿@model List<ASP.NET_Client.Models.ViewModels.OrderGridItem>
+
+@{
+    ViewBag.Title = "Comanda dvs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3></h3>
+
+<table class="table">
+    <tr>
+        <th>
+            Nume
+        </th>
+        <th>
+            Pret
+        </th>
+        <th>
+            Kcal
+        </th>
+        <th>
+            Cantitate
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kcal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Mareste cantitate", "IncreaseQuantity",item) | @Html.ActionLink("Micsoreaza cantitate", "DescreaseQuantity",item) | @Html.ActionLink("Sterge", "Delete", item )
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @{  decimal totalPrice = 0;
+        decimal totalKcal = 0;
+        foreach (var item in Model)
+        {
+            totalPrice += item.Price * item.Quantity;
+            totalKcal += item.Kcal * item.Quantity;
+        }
+        <text>Total pret: @totalPrice</text>
+        <br />
+        <text>Total pret: @totalKcal</text>
+     }
+
+    <br/>
+    <text> Livrare la data: @DateTime.Today.AddDays(3)</text>
+    <form action="/Order/PlaceOrder" method="post">
+        <br />
+        <p>
+            <input type="submit" value="Plaseaza comanda" />
+        </p>
+    </form>
+</div>

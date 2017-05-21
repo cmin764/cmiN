@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPF_Client.Windows.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Client.Windows"
+        mc:Ignorable="d"
+        Title="AboutWindow" Height="600" Width="460" FontFamily="Microsoft Sans Serif" FontSize="24" Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/WPF-Client;component/Resources/La_NET.jpg"/>
+        </Grid.Background>
+        <Image x:Name="Logo" Source="/WPF-Client;component/Resources/Logo.jpg" Margin="162,88,154.6,350.4" HorizontalAlignment="Center" Width="137" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Center" TextWrapping="Wrap" Text="La .NET" VerticalAlignment="Center" Margin="0,0,0,482.4" Height="88" Width="280" FontSize="60" FontFamily="Microsoft YaHei UI" Foreground="#FF830657" TextAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="56,240,0,0" Height="252" Width="354" FontFamily="Microsoft JhengHei UI" Foreground="#FF830657" FontSize="16" TextAlignment="Center">
+            <TextBlock.Background>
+                <SolidColorBrush Color="#FFFFD6D6" Opacity="0.7"/>
+            </TextBlock.Background><Span><Run Text="Absolut toate ingredientele folosite la prepararea mancarurilor sunt 100% certificate bio si provin de la magazinul nostru - La .NET. Aici, ne aprovizionam saptamanal, dupa ce testam si selectam cele mai bune si mai proaspete produse, de la cei mai seriosi furnizori locali si europeni."/></Span><LineBreak/><LineBreak/><Span><Run Text="Deci, daca te-ai indragostit iremediabil de preparatele noastre, poti sa mergi alaturi, la magazin, sa-ti faci cumparaturile si sa le gatesti acasa :)"/></Span><LineBreak/><Run Background="#FFFFD3D3" Text=""/></TextBlock>
+        <Button x:Name="button1" Content="Inapoi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="157" Margin="162,521,0,0" Height="39" FontFamily="Microsoft JhengHei UI" FontSize="16" Background="#FFFFF2F2" Opacity="0.9" Foreground="#FF200117" UseLayoutRounding="True" Click="button1_Click"/>
+
+    </Grid>
+</Window>

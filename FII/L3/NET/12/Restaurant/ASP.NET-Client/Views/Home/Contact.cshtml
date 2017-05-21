@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="border row">
+    <div class="border col-sm-6">
+
+        <address>
+            Str. General Henri Mathias<br />
+            Bertholert, 16, Iasi 700259<br/>
+            <a>Telefon:</a>
+            425.555.0100
+        </address>
+
+        <address>
+            <strong>Suport:</strong>   <a href="mailto:la.net@example.com">restaurant@gmail.com</a><br />
+        </address>
+        
+        <text> @ViewBag.Message <text/>
+        <form method="post">
+            <textarea name="message"></textarea><br/>
+            <input type="submit" value="Trmite"/>
+        </form>
+    </div>
+    <div class="border col-sm-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d348.95645072308673!2d27.574523489193428!3d47.1739372665084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x193e4b6864504e2c!2sFaculty+of+Computer+Science!5e0!3m2!1sen!2sro!4v1492364382782" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
