@@ -1,0 +1,9 @@
+1. Sa se converteasca din RGB(0, 1, 1) in HSV(x, y, z)
+2. Care e dimensiunea minima a unei zone pentru un ecran rastru cu 1024×800 pixeli care retine 20b/pixel?
+3. Modificati un algoritm de calcul a unei linii pentru panta > 1 si x0 < x1, y0 < y1
+4. Desenati in C++ 6 triunghiuri echilaterale concentrice (figura in forma de stea)
+5. Sa se deseneze matricele de intensitate pentur o matrice 3×3 data. e ok aleasa matricea? (v. curs)
+6. Sa se orienteze un cub [0, 1][0, 1][0, 1] in jurul segmentului (0, 0, 0)(0, 0.5, 1) sau asa ceva
+7. Sa se reprezinte in {quad trees, forma liniara} niste matrice, reuniunea, diferenta, intersectia
+8. Sa se ruleze algoritmul de clipping Cohen-Sutherland pe o instanta care are o extremitate in 1000 (v. curs)
+9. Identificati diferite tipuri de perspective pentru un obiect, precum si niste exercitii simple cu fete cub
