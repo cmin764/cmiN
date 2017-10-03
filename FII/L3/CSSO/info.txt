@@ -1,0 +1,5 @@
+- dmorosanu@bitdefender.com [CSSO]
+- https://profs.info.uaic.ro/~rbenchea/csso.html
+- https://profs.info.uaic.ro/~vidrascu/CSSO/ (csso2017:windows)
+- fara prezenta; temele de la inceput pt. strans puncte
+- 3bnecenzurat model examen (paginare, ntfs, windows api, event, fisiere)
