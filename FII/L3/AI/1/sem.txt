@@ -1,0 +1,3 @@
+- aiml: http://www.alicebot.org/aiml.html
+- q & a: http://www-formal.stanford.edu/jmc/whatisai/node1.html
+- lectures: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/lecture-videos/

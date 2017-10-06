@@ -1,0 +1,6 @@
+* Adaugare de utilizator noi sau folosire existenti (fara intrebare legata de ocupatie/varsta).
+* 5 var de a afla numele/varsta/ocupatia + extractie automata din intrebari.
+* Alegere interlocutor la inceput programului si identificarea exacta a unuia existent.
+* Mesaj de salut si initializare conversatie.
+* Template-uri de intrebari random in functie de varsta (3 categorii x 5 intrebari) si ocupatie.
+* Oprire la Ctrl+C.
