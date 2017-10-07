@@ -1,3 +1,6 @@
 http://profs.info.uaic.ro/~olgai/si_fall2016.php
 http://profs.info.uaic.ro/~fltiplea/
-pass: fltis2013
+pass: fltis2013/fltis2017
+
+- ubuntu >15
+- virtualbox + guest addition tools
