@@ -1,3 +1,5 @@
 - http://profs.info.uaic.ro/~ciortuz/teaching.html
 - http://students.info.uaic.ro/~sebastian.ciobanu/
-- oriana.oniciuc@gmail.com
+
+* oriana.oniciuc@gmail.com
+* sebastian.ciobanu@info.uaic.ro / aciobanusebi@gmail.com
