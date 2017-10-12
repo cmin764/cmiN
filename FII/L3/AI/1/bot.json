@@ -1,0 +1,102 @@
+{
+    "annoy": [
+        "Hai ca esti enervant.", 
+        "M-ai plictisit.", 
+        "La revedere!"
+    ], 
+    "welcome": [
+        "Salut {}, bine ai venit in primul meu chatbot la AI.", 
+        "Buna {}, daca nu-ti place, apasa Ctrl+C.", 
+        "Salutare {}!", 
+        "Sper sa te distrezi cu acest bot, {}.", 
+        "Ar trebui sa fii multumit de tema la AI, {}."
+    ], 
+    "users": [
+        {
+            "age": 23, 
+            "name": "Cosmin Poieana", 
+            "occupation": "Developer"
+        },
+        {
+            "age": 70, 
+            "name": "Cosmin Poieana", 
+            "occupation": "Developer"
+        },
+        {
+            "age": 105, 
+            "name": "Cosmin Poieana", 
+            "occupation": "Freelancer"
+        }
+    ], 
+    "questions": {
+        "conversation": {
+            "age": {
+                "10": [
+                    "Cum e viata la gradinita?", 
+                    "Poate ai gresit varsta, totusi esti copil?", 
+                    "Salut micutule.", 
+                    "Nu mai sta la calculator, du-te si joaca-te afara.", 
+                    "Iti place DotA?", 
+                    "Stii sa citesti (de scris n-are rost)?"
+                ], 
+                "80": [
+                    "Cum e viata la pensie?", 
+                    "Ai proteza?", 
+                    "Is bune prunele?", 
+                    "Esti mai putin tanar, nu batran.", 
+                    "Regreti ca nu ai fost bugetar?"
+                ], 
+                "null": [
+                    "Odihna placuta.", 
+                    "Sa te odihnesti in pace.", 
+                    "Iti place viata?", 
+                    "Vrei sa prinzi 100 de ani?", 
+                    "Tine-o tot asa!"
+                ], 
+                "30": [
+                    "Cum e viata la munca?", 
+                    "Inca student?", 
+                    "In cati ani ai terminat facultatea?", 
+                    "Unde lucrezi?", 
+                    "Daca esti somer(a), e ok."
+                ]
+            }, 
+            "occupation": {
+                "null": [
+                    "Nu stiu ce sa te intreb in legatura cu ocupatia ta.", 
+                    "Succes in viata!"
+                ], 
+                "developer": [
+                    "Scrii cod din pasiune sau pentru bani?", 
+                    "Cati ani de experienta ai?", 
+                    "Nu vrei sa te reprofilezi?", 
+                    "Faci outsourcing?"
+                ]
+            }
+        }, 
+        "init": {
+            "age": [
+                "Si ce varsta ai?", 
+                "Cati ani ai?", 
+                "Varsta ta este?", 
+                "Cati ani ai implinit?", 
+                "Cate primaveri au trecut de cand traiesti?"
+            ], 
+            "name": [
+                "Salut! Cum te numesti?", 
+                "Buna, ce nume ai?", 
+                "Cum te cheama?", 
+                "Si lumea iti spune?", 
+                "Cum te striga (mamaliga)?", 
+                "Ai vreun nume?"
+            ], 
+            "occupation": [
+                "Dar ocupatia?", 
+                "Ce faci in timpul liber?", 
+                "Din ce castigi bani?", 
+                "Ce meserie ai?", 
+                "Ce-ti aduce cozonacul pe masa?"
+            ]
+        }
+    }
+}
