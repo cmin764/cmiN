@@ -16,16 +16,26 @@
             "age": 23, 
             "name": "Cosmin Poieana", 
             "occupation": "Developer"
-        },
+        }, 
         {
             "age": 70, 
             "name": "Cosmin Poieana", 
             "occupation": "Developer"
-        },
+        }, 
         {
             "age": 105, 
             "name": "Cosmin Poieana", 
             "occupation": "Freelancer"
+        }, 
+        {
+            "age": 23, 
+            "name": "Cosmin Poieana", 
+            "occupation": "Freelancer"
+        }, 
+        {
+            "age": 105, 
+            "name": "Cosmin Poieana", 
+            "occupation": "Developer"
         }
     ], 
     "questions": {
