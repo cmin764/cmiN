@@ -1,0 +1,5 @@
+- implementare turnuri:
+    * stare initiala, [intermediara], finala
+    * strategie (random, hillclimb, backtrack, a* etc.)
+    * manipulare stare de blocaj, tranzitii valide
+- sa suporte o stare particulara initiala
