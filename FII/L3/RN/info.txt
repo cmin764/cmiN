@@ -1,4 +1,6 @@
-http://profs.info.uaic.ro/~rbenchea/rn.html
-http://students.info.uaic.ro/~andrei.timcu/rn/
+- http://profs.info.uaic.ro/~rbenchea/rn.html
+- http://students.info.uaic.ro/~andrei.timcu/
 
 * Prezentat temele din doua in doua saptamani; prezenta optionala.
+* ttimcu@bitdefender.com
+* dmarculet@bitdefender.com

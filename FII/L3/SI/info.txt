@@ -1,6 +1,12 @@
-http://profs.info.uaic.ro/~olgai/si_fall2016.php
-http://profs.info.uaic.ro/~fltiplea/
-pass: fltis2013/fltis2017
+- http://profs.info.uaic.ro/~olgai/si_fall2016.php
+- http://profs.info.uaic.ro/~fltiplea/
+- pass: fltis2013/fltis2017
 
-- ubuntu >15
-- virtualbox + guest addition tools
+* ~eonica
+
+- http://www.cis.syr.edu/~wedu/seed/Labs_12.04/System/Capability_Exploration/
+- https://www.cs.purdue.edu/homes/clifton/cs526/
+
+
++ ubuntu >15
++ virtualbox + guest addition tools
