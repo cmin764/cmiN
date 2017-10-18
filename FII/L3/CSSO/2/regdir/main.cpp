@@ -114,6 +114,7 @@ void explore(char* path)
         }
     } while(FindNextFile(find_handle, &data));
 
+    RegCloseKey(key_handle);
     FindClose(find_handle);
 }
 
