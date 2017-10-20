@@ -2,4 +2,10 @@
     * stare initiala, [intermediara], finala
     * strategie (random, hillclimb, backtrack, a* etc.)
     * manipulare stare de blocaj, tranzitii valide
-- sa suporte o stare particulara initiala
+- sa suporte o stare particulara initiala si finala
+- 1pt pentru acceptarea custom a unui nr. de instante
+- 1pt pentru stare finala particulara si initiala
+- 1pt validare stari / tranzitii
+- 4x1pt pt. fiecare strategie
+- stats: nr. total de stari tranzitate, timp mediu
+- fara backtrack recursiv
