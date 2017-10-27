@@ -7,7 +7,7 @@ import sys
 from queue import PriorityQueue
 
 
-STACK = 1 << 17
+STACK = 1 << 13
 
 FNAME = "hanoi.txt"
 #FNAME = None
@@ -226,7 +226,7 @@ def equal_states(state1,state2):
     return 0
 
 
-def a_star_main(start, goal, nr_rods):
+def a_star_main(start,goal,nr_rods):
     # open_set = PriorityQueue()
     #set of nodes already evaluated
     closed_set = []
@@ -241,7 +241,7 @@ def a_star_main(start, goal, nr_rods):
         if equal_states(current_state[1],goal_tuple[1]) ==0:
             return closed_set
             # return open_set
-        closed_set.append(current_state[1][1])
+
         list_neighbours = generate_neighbours(current_state[1][1],nr_rods)
         secondary_set = PriorityQueue()
         for neighbour in list_neighbours:
@@ -253,12 +253,15 @@ def a_star_main(start, goal, nr_rods):
             else:
                 secondary_set.put((n_h,[n_g,neighbour,current_state[1][1]]))
         current_state = secondary_set.get()
+        closed_set.append(current_state[1][1])
         # print(" --am ales vecinul :",current_state," avand closed set :",closed_set,"\n")
     closed_set.append(current_state[1][1])
     return closed_set
 
 
 def astar(n, m, fout, init=None, final=None):
+    if m > n:
+        n = m
     init = init or [1] * m
     final = final or [n] * m
     states = a_star_main(init, final, n)
