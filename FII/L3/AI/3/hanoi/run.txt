@@ -1,0 +1,85 @@
+Thu Oct 26 21:36:39 2017
+
+optrand
+Success rate: 10/10
+Average steps: 407
+Average time: 0.0327960014343
+
+Fri Oct 27 09:25:25 2017
+
+optrand
+Success rate: 9/10
+Average steps: 1325
+Average time: 0.0621310340034
+
+backtrack
+Success rate: 6/10
+Average steps: 47036
+Average time: 1.17891951402
+
+hillclimb
+Success rate: 8/10
+Average steps: 13890
+Average time: 1.69600501657
+
+Fri Oct 27 09:40:41 2017
+
+optrand
+Success rate: 10/10
+Average steps: 742
+Average time: 0.0444191217422
+
+backtrack
+Success rate: 3/10
+Average steps: 47796
+Average time: 1.16475955645
+
+hillclimb
+Success rate: 7/10
+Average steps: 2392
+Average time: 0.26252927099
+
+Fri Oct 27 09:43:49 2017
+
+optrand
+Success rate: 10/10
+Average steps: 3993
+Average time: 0.143910598755
+
+backtrack
+Success rate: 6/10
+Average steps: 1643
+Average time: 0.0695936282476
+
+hillclimb
+Success rate: 9/10
+Average steps: 21709
+Average time: 2.37641297446
+
+astar
+Success rate: 10/10
+Average steps: 13
+Average time: 0.0233938932419
+
+Fri Oct 27 09:52:06 2017
+
+optrand
+Success rate: 10/10
+Average steps: 1084
+Average time: 0.0599642515182
+
+backtrack
+Success rate: 5/10
+Average steps: 24577
+Average time: 0.65505399704
+
+hillclimb
+Success rate: 9/10
+Average steps: 14950
+Average time: 1.67604147063
+
+astar
+Success rate: 10/10
+Average steps: 13
+Average time: 0.0258723020554
+
