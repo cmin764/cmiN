@@ -97,3 +97,52 @@ Success rate: 47/100
 Average steps: 1579
 Average time: 0.0719735520951
 
+hillclimb
+Success rate: 69/100
+Average steps: 4681
+Average time: 0.576002366301
+
+astar
+Success rate: 100/100
+Average steps: 13
+Average time: 0.0280167222023
+
+Fri Oct 27 11:18:26 2017
+
+optrand
+Success rate: 89/100
+Average steps: 1471
+Average time: 0.0735115335229
+
+backtrack
+Success rate: 37/100
+Average steps: 1189
+Average time: 0.0640515701191
+
+hillclimb
+Success rate: 69/100
+Average steps: 6357
+Average time: 0.798033144163
+
+Fri Oct 27 11:28:35 2017
+
+optrand
+Success rate: 89/100
+Average steps: 746
+Average time: 0.0500942294517
+
+backtrack
+Success rate: 42/100
+Average steps: 1398
+Average time: 0.0664365178063
+
+hillclimb
+Success rate: 76/100
+Average steps: 6216
+Average time: 0.655910077848
+
+astar
+Success rate: 59/100
+Average steps: 772
+Average time: 0.795045181856
+

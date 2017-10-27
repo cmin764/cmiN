@@ -226,7 +226,7 @@ def equal_states(state1,state2):
     return 0
 
 
-def a_star_main(start,goal,nr_rods):
+def a_star_main(start,goal,nr_rods, fout=None):
     # open_set = PriorityQueue()
     #set of nodes already evaluated
     closed_set = []
@@ -253,9 +253,16 @@ def a_star_main(start,goal,nr_rods):
             else:
                 secondary_set.put((n_h,[n_g,neighbour,current_state[1][1]]))
         current_state = secondary_set.get()
-        closed_set.append(current_state[1][1])
+        state = current_state[1][1]
+        closed_set.append(state)
+        _print(state, fout)
         # print(" --am ales vecinul :",current_state," avand closed set :",closed_set,"\n")
-    closed_set.append(current_state[1][1])
+        if current_state[1][0] > STACK:
+            return None
+
+    state = current_state[1][1]
+    closed_set.append(state)
+    _print(state, fout)
     return closed_set
 
 
@@ -264,9 +271,9 @@ def astar(n, m, fout, init=None, final=None):
         n = m
     init = init or [1] * m
     final = final or [n] * m
-    states = a_star_main(init, final, n)
-    for state in states:
-        _print(state, fout)
+    states = a_star_main(init, final, n, fout=fout)
+    if not states:
+        return False
     return True
 
 

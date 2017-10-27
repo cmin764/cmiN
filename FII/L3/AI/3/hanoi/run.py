@@ -50,8 +50,6 @@ def main(argv):
         steps_list = []
         for idx in range(nr):
             rods, disks = params[idx]
-            if algo == "astar":
-                rods, disks = "3", "3"
             print("Running test #{} for {!r} - {} x {}"
                     .format(idx + 1, algo, rods, disks))
             start = time.time()
