@@ -1,0 +1,9 @@
+- min max
+- 2 functii scor (atac, defensiva)
+- componenta de random
+
+1. repr. stari
+2. identificari stari speciale
+3. strategie min-max
+4. tranzitii
+*. structura arborescenta

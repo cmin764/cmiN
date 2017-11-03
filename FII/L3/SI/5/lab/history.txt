@@ -1,0 +1,20 @@
+vim makefile
+
+all:
+    gcc -Wall -std=c11 -o cap cap.c -lcap
+
+make
+
+sudo -H setcap cap_setuid,cap_setgid+ep cap
+
+./cap
+cd /
+mkdir x
+rmdir x
+# merge ca root
+
+filecap $(pwd)/cap
+# trebuie path absolut, nu merge cu relativ
+
+filecap -a
+# merge si asta
