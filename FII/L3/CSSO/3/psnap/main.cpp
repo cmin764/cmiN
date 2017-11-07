@@ -12,20 +12,28 @@
 #define BUFF 64
 #define MAX_SIZE 1 << 13
 #define FNAME "psnap.txt"
+#define INDENT 4
 
 
 using namespace std;
 
 
-struct ProcMap {
-    int pid;
+struct ProcNode {
+    unsigned int pid, ppid;
     string name;
-    vector<ProcMap> sons;
+    bool exists;
+    vector<ProcNode *> sons;
 
-    ProcMap() : pid(-1), name("") {}
+    ProcNode(unsigned int pid = -1, unsigned int ppid = -1, string name = "", bool exists = false) :
+        pid(pid), ppid(ppid), name(name), exists(exists) {}
 };
 
+// pid -> ppid, name
 typedef map<unsigned int, pair<unsigned int, string> > procs_t;
+// pid -> ppid, address
+typedef map<unsigned int, ProcNode *> link_t;
+// lista de arbori (paduri)
+typedef vector<pair<int, ProcNode *> > nodes_t;
 
 
 int exec_snap()
@@ -83,9 +91,9 @@ int exec_snap()
 }
 
 
-ProcMap get_ptree()
+nodes_t get_ptree()
 {
-    ProcMap ptree;
+    nodes_t roots;
     procs_t procs;
 
     HANDLE hfile = OpenFileMapping(FILE_MAP_WRITE, FALSE, FNAME);
@@ -93,38 +101,140 @@ ProcMap get_ptree()
     if (!file_addr) {
         cerr << "Couldn't map file: " << GetLastError() << endl;
         CloseHandle(hfile);
-        return ptree;
+        return roots;
     }
     /* Citeste toate liniile din fisierul de comunicare si salveaza procesele
      intr-o structura. */
     //cout << file_addr << endl;
     istringstream sio(file_addr);
+    unsigned int pid, ppid;
+    string name;
+
     while (sio.good()) {
-        unsigned int pid, ppid;
-        string name;
-        sio >> pid >> ppid >> name;
+        char buffer[BUFF];
+        sio.getline(buffer, BUFF);
         if (sio.eof() || sio.fail()) break;
+        char name_str[BUFF];
+        sscanf(buffer, "%u %u %[^\t\n]s", &pid, &ppid, name_str);
+        name.assign(name_str);
         procs[pid] = make_pair(ppid, name);
     }
     UnmapViewOfFile(file_addr);
     CloseHandle(hfile);
 
-    for (auto it = procs.cbegin(); it != procs.cend(); ++it)
-        cout << it->first << " " << "(" << it->second.first << ", "
-             << it->second.second << ") " << endl;
+    link_t links;
+    link_t::iterator link_it;
+    for (auto it = procs.cbegin(); it != procs.cend(); ++it) {
+        pid = it->first;
+        ppid = it->second.first;
+        name = it->second.second;
+        //cout << pid << " " << "(" << ppid << ", " << name << ") " << endl;
 
-    ptree.pid = 0;
-    return ptree;
+        // Cautam nodul aferent procesului curent, daca nu exista, il cream.
+        link_it = links.find(pid);
+        ProcNode *son, *parent;
+        if (link_it == links.end()) {
+            // Cream nod nou, inexistent momentan aferent procesului curent.
+            son = new ProcNode(pid, ppid, name, true);
+            links[pid] = son;
+        } else son = link_it->second;
+        // Marcam nodul ca existent (in caz de a fost adaugat in trecut pe post de tata)
+        son->ppid = ppid;
+        son->name = name;
+        son->exists = true;    // procesul chiar exista
+
+        // Acum cautam tatal si daca exista, incercam sa-i facem un nod virtual,
+        // ce poate deveni real de-a lungul parcurgerii.
+        link_it = links.find(ppid);
+        if (link_it == links.end()) {
+            // Cream nod parinte nou, ca nu exista, insa e marcat ca fiind virtual.
+            parent = new ProcNode(ppid);
+            // Nu stim ce parinte sau nume are si e non-existent (momentan).
+            links[ppid] = parent;
+        } else parent = link_it->second;
+        // Acum ca avem tatal corespunzator, ii adaugam fiul `pid`.
+        parent->sons.push_back(son);
+    }
+
+    /* Acum, alegem fiecare nod radacina ce este de asemenea si existent.
+    Daca are parinte inexistent, il consideram radacina unui intreg arbore
+    si nicidecum subarbore. */
+    int index = 1;
+    for (auto& elem : links) {
+        ProcNode *node = elem.second;
+        if (!node->exists) continue;
+        link_it = links.find(node->ppid);
+        if (link_it == links.end() || !link_it->second->exists) {
+            roots.push_back(make_pair(index++, node));
+        }
+    }
+    return roots;
+}
+
+
+void show_tree(ProcNode *node, int level)
+{
+    for (int cnt = level * INDENT; cnt > 0; --cnt)
+        cout << " ";
+    cout << node->name << " " << node->pid << endl;
+    for (auto &son : node->sons)
+        show_tree(son, level + 1);
+}
+
+
+void close_tree(ProcNode *node)
+{
+    // Inchidem nodul proces dupa ce ne asiguram ca am inchis toti copii.
+    for (auto &son : node->sons)
+        close_tree(son);
+
+    // Inchidem efectiv procesul.
+    unsigned int pid = node->pid;
+    cout << "Inchidem: " << pid;
+
+    HANDLE hproc = OpenProcess(PROCESS_TERMINATE, FALSE, pid);
+    if (TerminateProcess(hproc, 0)) {
+        cout << " OK";
+    } else {
+        cout << " FAIL";
+    }
+    cout << endl;
+    CloseHandle(hproc);
 }
 
 
 int exec_tree()
 {
-    ProcMap ptree = get_ptree();
-    if (ptree.pid == -1) {
+    // Obtine arborele de procese.
+    nodes_t roots = get_ptree();
+    if (!roots.size()) {
         cerr << "Something went wrong while getting process tree." << endl;
         return 3;
     }
+
+    // Afiseaza arborii de procese si intreaba utilizatorul ce vrea sa inchida.
+    int ask = 0;
+    do {
+        for (auto &root : roots) {
+            int level = 0;
+            cout << "[" << root.first << "]" << endl;
+            show_tree(root.second, level);
+            cout << endl;
+        }
+        cout << "Close tree (0 - exit): ";
+        cin >> ask;
+        cin.get();
+        if (ask < 0 || ask > roots.size()) {
+            cerr << "Invalid option." << endl;
+            continue;
+        }
+        if (ask) {
+            close_tree(roots[ask - 1].second);
+            cout << "Press enter to continue..." << endl;
+            cin.get();
+        }
+    } while (ask);
+
     return 0;
 }
 
