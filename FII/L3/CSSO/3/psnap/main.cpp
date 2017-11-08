@@ -183,6 +183,26 @@ void show_tree(ProcNode *node, int level)
 }
 
 
+void enable_debug_priv()
+{
+    HANDLE hToken;
+    LUID luid;
+    TOKEN_PRIVILEGES tkp;
+
+    OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken);
+
+    LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &luid);
+
+    tkp.PrivilegeCount = 1;
+    tkp.Privileges[0].Luid = luid;
+    tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+    AdjustTokenPrivileges(hToken, false, &tkp, sizeof(tkp), NULL, NULL);
+
+    CloseHandle(hToken);
+}
+
+
 void close_tree(ProcNode *node)
 {
     // Inchidem nodul proces dupa ce ne asiguram ca am inchis toti copii.
@@ -240,6 +260,7 @@ int exec_tree()
             continue;
         }
         if (ask) {
+            enable_debug_priv();
             close_tree(roots[ask - 1].second);
             cout << "Press enter to continue..." << endl;
             cin.get();
