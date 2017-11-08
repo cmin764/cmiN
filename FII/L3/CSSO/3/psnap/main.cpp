@@ -43,7 +43,7 @@ int exec_snap()
     */
     // Facem snapshot.
     HANDLE hsnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if(hsnap == INVALID_HANDLE_VALUE) {
+    if (hsnap == INVALID_HANDLE_VALUE) {
         cerr << "Snapshot failed: " << GetLastError() << endl;
         return 2;
     }
@@ -51,7 +51,7 @@ int exec_snap()
     PROCESSENTRY32 pe32;
     pe32.dwSize = sizeof(PROCESSENTRY32);
     // Obtinem informatii despre primul proces listat.
-    if(!Process32First(hsnap, &pe32)) {
+    if (!Process32First(hsnap, &pe32)) {
         cerr << "Process first enum failed: " << GetLastError() << endl;
         CloseHandle(hsnap);
         return 2;
@@ -103,6 +103,7 @@ nodes_t get_ptree()
         CloseHandle(hfile);
         return roots;
     }
+
     /* Citeste toate liniile din fisierul de comunicare si salveaza procesele
      intr-o structura. */
     //cout << file_addr << endl;
@@ -190,7 +191,7 @@ void close_tree(ProcNode *node)
 
     // Inchidem efectiv procesul.
     unsigned int pid = node->pid;
-    cout << "Inchidem: " << pid;
+    cout << "Closing: " << pid;
 
     HANDLE hproc = OpenProcess(PROCESS_TERMINATE, FALSE, pid);
     if (TerminateProcess(hproc, 0)) {
@@ -200,6 +201,16 @@ void close_tree(ProcNode *node)
     }
     cout << endl;
     CloseHandle(hproc);
+}
+
+
+void free_tree(ProcNode *node)
+{
+    for (auto &son : node->sons)
+        free_tree(son);
+
+    node->sons.clear();
+    delete node;
 }
 
 
@@ -234,6 +245,11 @@ int exec_tree()
             cin.get();
         }
     } while (ask);
+
+    // Eliberam memoria.
+    for (auto &root : roots) {
+        free_tree(root.second);
+    }
 
     return 0;
 }
