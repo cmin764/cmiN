@@ -208,7 +208,7 @@ class Game(object):
         while True:
             ask = raw_input("[?] Enter source and destination: ")
             if re.match(r"\w{2} \w{2}", ask):
-                src, dest = map(lambda arg: tuple(list(arg)),
+                src, dest = map(lambda arg: list(arg),
                                 ask.strip().split())
                 statuses = []
                 for ent in (src, dest):
@@ -217,9 +217,12 @@ class Game(object):
                               a.isalpha() and b.isdigit())
                     statuses.append(status)
                 if all(statuses):
+                    for ent in (src, dest):
+                        if not ent[0].isdigit():
+                            ent.reverse()
                     break
 
-        return src, dest
+        return tuple(map(tuple, (src, dest)))
 
     def _get_delta(self, src, dest, player):
         """Intoarce diferenta de pozitie de la sursa la destinatie relativa
