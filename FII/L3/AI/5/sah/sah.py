@@ -22,6 +22,7 @@ class Player(object):
         self.table = None
         self.count = Table.SIZE
         self.enpassant = None
+        self.opponent = None
 
     def get_pawns(self, own=True):
         """Intoarce pionii proprii sau ai oponentului."""
@@ -397,6 +398,8 @@ def main():
     # Cream entitatile.
     table = Table()
     black, white = map(Player, [BLACK, WHITE])
+    black.opponent = white
+    white.opponent = black
 
     # Cream si dam drumul la joc.
     game = Game(black, white, table)
