@@ -385,7 +385,7 @@ class Game(object):
                     break
                 else:
                     print("[x] Invalid cpu move.")
-                    time.sleep(1)
+                    time.sleep(DELAY)
                     continue
 
         # Intoarce culoarea castigatorului.
