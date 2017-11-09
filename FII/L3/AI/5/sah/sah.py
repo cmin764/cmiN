@@ -174,6 +174,7 @@ class Game(object):
 
         self._cpu = None
         self._human = None
+        self._current_player = None
 
         self._winner = None
 
@@ -305,6 +306,7 @@ class Game(object):
         stop = False
 
         while not stop:
+            self._current_player = self._human
             # Verificam conditiile de oprire.
             # Stare de blocaj.
             if not self._human.generate_move():
@@ -356,6 +358,7 @@ class Game(object):
                 continue
 
             # Mutarea computerului.
+            self._current_player = self._cpu
             while True:
                 move = self._cpu.generate_move()
                 if not move:
