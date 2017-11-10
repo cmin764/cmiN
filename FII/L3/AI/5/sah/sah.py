@@ -47,7 +47,7 @@ class Player(object):
         src = pos_list[0]
         dir = 1 if self.ptype == BLACK else -1
         idx = Table.pos2idx(src)
-        idx = (idx[0] + dir, idx[1])
+        idx = (idx[0] + dir * 2, idx[1])
         dest = Table.idx2pos(idx)
         return src, dest
 
@@ -296,7 +296,14 @@ class Game(object):
                 # Doar in situatie de en passant mai putem manca.
                 if opponent.enpassant != dest:
                     return False, data
-            data["eat"] = True
+                else:
+                    idx = Table.pos2idx(dest)
+                    diff = 1 if opponent.ptype == BLACK else -1
+                    new_dest = Table.idx2pos((idx[0] + diff, idx[1]))
+                    eat = new_dest
+            else:
+                eat = dest
+            data["eat"] = eat
 
         # Miscarea este valida.
         return True, data
@@ -344,7 +351,7 @@ class Game(object):
             if status:
                 if data["eat"]:
                     # Mancam piesa adversarului.
-                    self._table.remove_pawn(dest)
+                    self._table.remove_pawn(data["eat"])
                     self._cpu.count -= 1
                 self._human.move_pawn(src, dest)
                 if data["enpassant"]:
@@ -373,7 +380,7 @@ class Game(object):
                 if status:
                     if data["eat"]:
                         # Mancam piesa adversarului.
-                        self._table.remove_pawn(dest)
+                        self._table.remove_pawn(data["eat"])
                         self._human.count -= 1
                     self._cpu.move_pawn(src, dest)
                     if data["enpassant"]:
