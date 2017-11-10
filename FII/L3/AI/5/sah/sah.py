@@ -11,6 +11,7 @@ BLACK = "b"
 WHITE = "w"
 
 DELAY = 1
+AZIMER = "remiza"
 
 
 class Player(object):
@@ -41,6 +42,9 @@ class Player(object):
         # TODO(Mihai): creare logica ce exploreaza tot spatiul de posibilitati
         # de nivel N (2) pornind din toate sursele disponibile si returnand
         # cea mai buna mutare (pereche sursa, destinatie).
+
+        if len(sys.argv) > 1 and AZIMER in sys.argv[1]:
+            return None
 
         # Pentru teste naive, muta pionul cu un singur pas pe coloana lui.
         pos_list = self.get_pawns()
