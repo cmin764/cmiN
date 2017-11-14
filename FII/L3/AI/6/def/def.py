@@ -12,11 +12,12 @@ import addict
 DEBUG = True
 
 class PATHS:
-    # Input used regular expressions.
+    # Expresii regulate folosite ca input pentru gasirea potrivirilor.
     REGEX = "regex.json"
-    # Extracted definitions output file.
-    DEFS = "defs.txt"
-    # Input file with words/expressions of interest.
+    # Aici punem definitiile extrase ca output.
+    DEFS = "output.txt"
+    # Fisier de intrare continand cuvintele sau expresiile ce
+    # trebuiesc a fi gasite.
     PHRASES = "phrases.txt"
 
 
