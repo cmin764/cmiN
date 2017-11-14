@@ -1,0 +1,24 @@
+{
+    "expressions": [
+        "(?P<word>{prefix})\\s*({middle})\\s*(?P<defn>.+?)({suffix})"
+    ],
+    "middles": [
+        ",\\s*(cea|cel|adica|atunci)",
+        "poate fi definit ca",
+        "poate fi considerat",
+        "este (si \\w+|ca)?",
+        "(care).+? este",
+        "si alte"
+    ],
+    "suffixes": [
+        "\\s+si\\s+",
+        "\\s+dar\\s+",
+        "\\s+iar\\s+",
+        "\\.",
+        "\\,",
+        ";",
+        "\\?",
+        "\\!",
+        "\\:"
+    ]
+}

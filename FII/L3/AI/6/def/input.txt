@@ -1,0 +1,41 @@
+Chiar daca nu le vedem, ambreiajele sunt peste tot in jurul nostru, sub diferite forme. De exemplu, o masina care are cutie automata, are mai multe astfel de ambreiaje de diferite feluri. In interiorul cutiei automate sunt mai multe discuri de frictiune, puse in miscare de lichidul hidraulic. Un alt exemplu ar fi compresorul de aer conditionat, care, in momentul in care dam drumul la AC apasand butonul, este angrenat de rotatia curelei printr-un ambreiaj. La fel putem discuta si despre ventilatoarele cu vasco-cuplaj sau diferentialele pentru roti, dar si mai multe alte sisteme chiar si de la noi de acasa sau de la birou. In general, un ambreiaj poate fi definit ca un sistem ce transmite energia dintr-o parte in alta, folosind frecarea.
+
+In acest articol vom discuta insa numai despre ceea ce ne intereseaza cel mai mult: ambreiajul unei masinii cu transmisie manuala. Cu siguranta, fiecare dintre noi a avut o masina la care a schimbat ambreiajul. Asta pentru ca un ambreiaj poate fi considerat o consumabila... mai longeviva. Insa, la un moment dat, orice ambreiaj necesita schimbarea.
+
+Din ce este format un ambreiaj?
+
+Cand te duci sa cumperi unul pentru masina ta, ca sa-l inlocuiesti, vei cumpara un kit de ambreiaj. Acesta este de obicei, compus dintr-un disc, o placa de presiune si un rulment. Aceste componente se schimba, insa un ambreiaj are mai multe elemente care nu se inlocuiesc: carcasa (clopot), furca de angrenare si diverse suruburi.
+
+Discul de ambreiaj este un disc din otel, acoperit pe ambele fete cu material de frictiune. Materialul de frictiune este un ferodou, la fel ca cel de pe placutele de frana.Ca si la placute, care pot fi mai mult sau mai putin performante, si ambreiajele sunt de strada, de curse sau speciale de anduranta.
+
+Un disc de ambreiaj este format din placa de baza centrala, in care sunt niste arcuri pentru a atenua socurile cand discul face contact cu volanta, si placa exterioara, nituita de cea centrala, pe care este materialul de frictiune.
+Placa de presiune este si ea compusa din mai multe elemente, insa vine in cutie ca un singur element. Carcasa placii de presiune (cea gri din poza de mai jos) se prinde in suruburi de volanta motorului. Sub carcasa este placa de presiune propriu-zisa, care are o diafragma metalica cu mai multe "petale". Placa de presiune este din otel foarte rezistent, imposibil de indoit cu mana goala, dar sub actiunea pedalei de ambreiaj, petalele elastice din metal se vor misca, ridicand discul de ambreiaj.
+Rulmentul care vine si el in kitul de ambreiaj este elementul care impinge diafragma placii de presiune. Acesta este legat la furca de angrenare, care poate fi actionata fie prin cablu, direct de la pedala, fie hidraulic, cum este la majoritatea masinilor moderne.
+
+Cum functioneaza ambreiajul?
+
+Ca sa-ti dai seama cum functioneaza exact ambreiajul, cel mai bine este sa urmaresti animatia de mai jos. Insa, pe scurt, ideea este urmatoarea. Ca sa transmiti miscarea de rotatie a motorului, prin volanta, catre cutia de viteze, e nevoie de un ambreiaj. Ce face ambreiajul? Transmite rotatia volantei direct axului din cutie.
+
+Atunci cand pedala de ambreiaj este apasata, legatura dintre motor si cutie este intrerupta. Atunci cand lasam pedala, angrenam ambreiajul. Discul sta mereu lipit de volanta, permitand astfel ca motorul sa se invarta cu aceeasi viteza ca si axul care intra in cutia de viteze. Atunci cand apasam pedala de ambreiaj, furca apasa asupra petalelor din diafragma care este in placa de presiune, si, prin constructia sa, va departa discul de volanta. In momentul in care ridicam piciorul de pe ambreiaj, diafragma revine la pozitia initiala, si discul incepe sa faca din nou contact cu volanta.
+
+Cum trebuie sa folosim un ambreiaj eficient?
+
+In primul rand, este bine sa angrenam ambreiajul la turatie cat mai mica a motorului. Cea mai comuna cauza a schimbarii unui ambreiaj este ca materialul de frictiune se uzeaza. Acesta se uzeaza numai cand discul merge la o alta rotatie fata de cea a volantei. Adica atunci cand bruscam ambreiajul sau cand mergem cu piciorul pe pedala de ambreiaj si nu face contact in totalitate.
+
+Viata unui ambreiaj tine de modul de condus al fiecaruia. Insa, pentru a menaja cat mai mult aceasta componenta, e bine sa ridicam incet piciorul de pe pedala, nu brusc, si la turatie mica. Este valabil si la compresorul de aer conditionat din masina - trebuie sa dam drumul la aer numai cand suntem la relanti, daca vrem sa ne tina mai mult. Odata cuplat discul de volanta, se invarte cu aceeasi viteza, si dispare orice urma de uzura. Uzurile apar numai atunci cand ridicam piciorul de pe pedala, adica atunci cand discul intra in contact cu volanta motorului.
+
+Probleme aparute la ambreiaj - cum le identificam
+
+Cel mai des, ne dam seama ca un ambreiaj este pe duca, atunci cand incepe sa alunece. Ce inseamna asta? Materialul de frictiune s-a uzat, asadar contactul dintre disc si volanta nu mai este perfect. Ca sa ne dam seama daca avem un ambreiaj pe duca, putem sa mergem cu masina in viteza a 2-a sau a 3-a, pana cand ajungem la o turatie de 3000 rpm, si o calcam brusc. Daca masina accelereaza normal, ambreiajul este bun. Daca insa motorul se tureaza si masina ramane pe loc, ambreiajul este pe moarte.
+
+Ambreiajul "lipicios" este o alta problema. Este total opus unui ambreiaj care aluneca, pentru ca aici vorbim de un ambreiaj care nu se decupleaza complet de volanta. Nu doar ca in timp se uzeaza mai repede, dar nu ne va permite uneori nici sa bagam in viteza sau ne va forta cutia de viteze. Asta se intampla de obicei din cauza unor altfel de probleme: la circuitul hidraulic, pentru ca furca nu se angreneaza complet, un cablu de ambreiaj slabit, etc.
+
+Mai exista probleme cauzate de modul in care pedala transmite miscarea la disc: un ambreiaj tare, de exemplu. Sau mai poate fi o problema cauzata de rulment, aceasta fiind insa cel mai usor depistata dupa un zumzait ce vine dinspre cutie, atunci cand apasam pedala.
+
+In orice caz insa, atunci cand simtim ca avem o problema cu ambreiajul, este de preferat sa o rezolvam cat mai repede. Si chiar daca este uzat discul, sau doar rulmentul, trebuie sa schimbam tot kitul. Si asta pentru ca si placa de presiune se poate crapa in timp, petalele isi pot pierde din eficienta de a ridica discul, arcurile de pe disc se sparg si el de la socuri, etc.
+
+Un ambreiaj nou ne va tine chiar si 100.000 de kilometri, daca avem grija de el.
+
+Un kit de ambreiaj costa intre 600 si 1000 de lei pentru o masina din clasa mica sau medie, de pret mijlociu. Evident, un ambreiaj performant, destinat curselor, sau unul normal pentru o masina puternica, poate ajunge si la 2000 de lei.La acesta se adauga si o manopera destul de costisitoare, in jur de 400 de lei, pentru ca este nevoie de indepartarea cutiei de viteze. Poti sa faci singur totalul, cam cat te-ar duce schimbul unui ambreiaj...
+
+Asadar, ai grija de ambreiajul tau. Acum stii exact, pas cu pas, ce se intampla cand apesi sau cobori pedala de care este raspunzator piciorul tau stang. Cu putina responsabilitate, poti sa te bucuri de el fara grija, stiind ca e mai bine sa stai cu banii in buzunar. De fapt, nu vei sta prea mult cu ei in buzunar, cu atatea taxe, asigurari, impozite si alte sume cerute aiurea de cei care ne conduc. Tocmai de aceea, e bine sa fii cat mai responsabil. Si daca te gandesti la masina ta si la piesele ei, este un pas inainte.
