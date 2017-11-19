@@ -78,22 +78,23 @@ def last_layer_error(last_layer_output, label):
             one_minus_target_output_vector * last_layer_output)
 
 
-def intermidiate_layer_error(previous_layer_error, weights, output):
+def intermediate_layer_error(previous_layer_error, weights, output):
     one_minus_output = numpy.ones(HIDDEN_LAYER) - output
     return (output * one_minus_output *
             numpy.dot(previous_layer_error, weights))
 
 
-def compute_overall_error(eta, previous_layer_error, current_layer_output):
+def compute_overall_error(rate, previous_layer_error, current_layer_output):
     for_dropout = random.sample(range(HIDDEN_LAYER), 50)
     for idx in range(len(for_dropout)):
         current_layer_output[for_dropout[idx]] = 0
     mat = numpy.array(previous_layer_error)[numpy.newaxis]
     biases = numpy.array(current_layer_output)[numpy.newaxis]
-    return eta * numpy.dot(mat.T, biases)
+    return rate * numpy.dot(mat.T, biases)
 
 
 def activate_last_layer(zet):
+    """Softmax folosit pt. activarea ultimului strat."""
     elements_sum = sum([math.pow(math.e, element) for element in zet])
     for idx in range(len(zet)):
         zet[idx] = math.pow(math.e, zet[idx]) / elements_sum
@@ -101,15 +102,23 @@ def activate_last_layer(zet):
 
 
 def network_output(weights, biases, pixels):
+    # Functia sigmoid de activare a primului strat.
     sigmoidify = numpy.vectorize(sigmoid)
+    # O matrice facuta din vectorul de pixeli, folosita pt. inmultire.
     mat = numpy.array(pixels)[numpy.newaxis]
+    # Inmultim parametrii (ponderile) cu pixelii si adunam cu biasurile.
     to_be_vectorized = (numpy.dot(weights[0], mat.T).reshape(HIDDEN_LAYER) +
                         biases[0])
+    # Trecem valorile prin sigmoid si obtinem un output.
     output = [sigmoidify(to_be_vectorized)]
+    # Din output calculam ultimul strat.
     last_layer = numpy.array(output[0])[numpy.newaxis]
     new_weights = weights[1] * 0.5
+    # Inmultindu-l cu ponderile ajustate si adunam biasurile.
     zet = (numpy.dot(new_weights, last_layer.T.reshape(HIDDEN_LAYER, 1))
              .reshape(10) + biases[1])
+    # Output format din primul strat trecut prin sigmoid,
+    # respectiv ultimul strat prin softmax.
     output.append(activate_last_layer(zet))
     return output
 
@@ -118,7 +127,7 @@ def backpropagation(weights, biases, pixels, label):
     output = network_output(weights, biases, pixels)
     delta = [last_layer_error(output[1], label)]
     delta.append(
-        intermidiate_layer_error(
+        intermediate_layer_error(
             delta[-1],
             weights[1],
             output[0]
