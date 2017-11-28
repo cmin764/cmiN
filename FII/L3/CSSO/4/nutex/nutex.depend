@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1511889061 source:c:\users\cmin\documents\projects\nutex\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	<windows.h>
+
