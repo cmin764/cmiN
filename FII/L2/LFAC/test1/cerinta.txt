@@ -1,0 +1,5 @@
+Gr. B4 seria 1
+Nr. 1:	scrieti intr-un fisier toate cuvintele formate din litere mici care incep cu v, se termina cu numar impar de cd si sunt incadrate de . .
+		afisati pe ecran toate numerele care incep cu 2 cifre pare si sunt divizibile cu 5 si contin macar o cifra impara
+Nr. 2:	Scrieti in fisier acele numere care sunt mai mari decat 1000, sau mai mici decat 100 sunt divizibile cu 2 sau cu 5 si sunt incadrate de { }
+		afisati pe ecran toate cuvintele formate din litere mici care incep cu "x" sau "y" sau "t" si se termina cu un numar de 3k "abc", k > 0
