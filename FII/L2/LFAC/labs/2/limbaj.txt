@@ -1,0 +1,7 @@
+int @e;
+float @f(int @a, float @b);
+begin_progr
+@a:=@b;
+@g(1,4);
+@v:=0;
+end_progr
