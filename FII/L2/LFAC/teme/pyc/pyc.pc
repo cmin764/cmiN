@@ -1,0 +1,32 @@
+int $var1
+int $var = 3
+str $var2
+const float $ct_var = 1.2
+const int $a = 1
+str $my_str = "ana are mere"
+
+func int $functie()
+    $var1 = 10
+    $var1 = 12
+    return 0
+endfunc
+
+func float $func3(int $a, float $b = 1, const str $c = "pere")
+    int[] $myvar
+    int[10] $myvar2
+    int[][][][][10][100] $myvar3
+
+    float[] $other = [1.1, 2.3, 4.5]
+    float[2][2] $other2 = [[1, 2], [3, 4.5]]
+
+    return $other2[1][1]
+endfunc
+
+
+const str[][2] $vec = [["a", "b"], ["c", "d"], ["e", 'f']]
+str $value = $vec[1][1]
+
+
+$functie()
+$func3(1, 2.2, $c="mere")
+float $ret = $func3($functie(), $func3(15), $c="mere")
