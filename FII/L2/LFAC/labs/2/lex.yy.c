@@ -804,7 +804,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 17 "limbaj.l"
+#line 15 "limbaj.l"
 ECHO;
 	YY_BREAK
 #line 811 "lex.yy.c"
@@ -1808,4 +1808,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "limbaj.l"
+#line 15 "limbaj.l"

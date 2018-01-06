@@ -6,7 +6,7 @@ all:
 	gcc -o $(name) lex.yy.c y.tab.c -ll -ly
 
 run:
-	./$(name)
+	./$(name) $(name).txt
 
 clean:
 	rm $(name) lex.yy.c y.tab.c
