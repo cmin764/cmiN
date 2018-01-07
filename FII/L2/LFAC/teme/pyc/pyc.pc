@@ -30,3 +30,60 @@ str $value = $vec[1][1]
 $functie()
 $func3(1, 2.2, $c="mere")
 float $ret = $func3($functie(), $func3(15), $c="mere")
+
+
+obj $MyObj
+    public: const int $tries = 3
+    private: float $nr
+    
+    public:
+        func bool $set_nr(float $new_nr)
+            $nr = $new_nr
+            return true
+        endfunc
+
+    public:
+        func float $get_nr()
+            return $nr
+        endfunc
+endobj
+
+obj $CoolObj($MyObj)
+    public: const bool $derived = true
+    public:
+        func bool $CoolObj(float $new_nr)
+            $nr = $new_nr
+            return false
+        endfunc
+endobj
+
+object $CoolObj $my_obj
+object $CoolObj $my_obj2 = object $CoolObj(10.10)
+
+func object $CoolObj $gen_obj()
+    return object $MyObj()
+endfunc
+
+object $CoolObj $ret_obj = $gen_obj()
+
+
+if not 1 == 2 then
+    $value = "mere"
+elif (2 / 4) * 10 == 1 and 5 != 6 or $my_obj then
+    $value = "pere"
+else
+    $value = "other"
+endif
+
+while 1
+    $value = "any"
+    break
+endwhile
+
+str $new_str = "1" + 'xyz' + "abc"
+str $new_str2 = 2 * 3 * "1" * 44 * 50
+
+print(23)
+print((40))
+print(10 + 20)
+print((10 + 20) * 100 - (2 * 3))
