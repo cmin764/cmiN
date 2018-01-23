@@ -4,3 +4,5 @@
 * Prezentat temele din doua in doua saptamani; prezenta optionala.
 * ttimcu@bitdefender.com
 * dmarculet@bitdefender.com
+
+backpropagation: http://neuralnetworksanddeeplearning.com/chap2.html
