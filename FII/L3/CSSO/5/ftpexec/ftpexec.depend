@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1513028830 source:c:\users\cmin\documents\projects\ftpexec\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<windows.h>
+	<wininet.h>
+
