@@ -6,3 +6,11 @@
 * dmarculet@bitdefender.com
 
 backpropagation: http://neuralnetworksanddeeplearning.com/chap2.html
+
+Hopfield
+--------
+
+1. https://www.youtube.com/watch?v=iQu1ZgmapJQ
+2. https://www.youtube.com/watch?v=gfPUWwBkXZY&t=1s
+3. https://www.youtube.com/watch?v=HoWJzeAT9uc
+4. https://www.youtube.com/watch?v=4JoblKhVnu0
