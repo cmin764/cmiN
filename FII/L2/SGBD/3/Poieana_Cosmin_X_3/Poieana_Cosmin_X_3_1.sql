@@ -45,14 +45,14 @@ CREATE OR REPLACE PACKAGE BODY FII AS
         zile := ROUND(data_crt - data_aux);
     END get_varsta;
     
-    FUNCTION random_char
+    FUNCTION random_char(gen_letter NUMBER := 0)
     RETURN VARCHAR AS
         -- Intoarce un caracter aleator.
         letter VARCHAR(1);
         nr NUMBER;
     BEGIN
         nr := ASCII('0') + rand(0, 9);
-        nr := nr + rand(0, 1) * (ASCII('A') - ASCII('0'));
+        nr := nr + gen_letter * (ASCII('A') - ASCII('0'));
         letter := CHR(nr);
         RETURN letter;
     END;
@@ -104,6 +104,8 @@ CREATE OR REPLACE PACKAGE BODY FII AS
     ) AS
         matricol_dim CONSTANT NUMBER := 6;
         dim NUMBER;
+        letter VARCHAR(1);
+        get_letter NUMBER;
     BEGIN
         -- Alegem ID unic.
         SELECT MAX(Studenti.id) + 1 INTO stud_id
@@ -114,7 +116,14 @@ CREATE OR REPLACE PACKAGE BODY FII AS
         WHILE TRUE LOOP
             stud_nr_matricol := '';
             FOR idx IN 1..matricol_dim LOOP
-                stud_nr_matricol := CONCAT(stud_nr_matricol, random_char());
+                IF (idx IN (4, 5)) THEN
+                    get_letter := 1;
+                ELSE
+                    get_letter := 0;
+                END IF;
+                
+                letter := random_char(get_letter);
+                stud_nr_matricol := CONCAT(stud_nr_matricol, letter);
             END LOOP;
             
             SELECT COUNT(1) INTO dim
