@@ -37,7 +37,6 @@ END Exceptii;
 
 CREATE OR REPLACE PACKAGE Erasmus_pack AS
     NMAX CONSTANT NUMBER := 100;
-    MMAX CONSTANT NUMBER := 10;
     
     PROCEDURE erasmus_populeaza;
 END Erasmus_pack;

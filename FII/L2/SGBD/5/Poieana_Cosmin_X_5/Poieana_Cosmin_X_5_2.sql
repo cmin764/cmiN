@@ -1,6 +1,7 @@
 CREATE OR REPLACE PACKAGE Majorare_pack AS
     NMAX CONSTANT NUMBER := 100;
     MMAX CONSTANT NUMBER := 10;
+    TOP_TOTI CONSTANT BOOLEAN := FALSE;
     
     PROCEDURE majoreaza_bursa(stud_id Studenti.id%TYPE);
     PROCEDURE top_burse;
@@ -24,6 +25,7 @@ CREATE OR REPLACE PACKAGE BODY Majorare_pack AS
         mariri := Bursa.lista_mariri(m1);
         
         Bursa.mareste_bursa(mariri);
+        COMMIT;
         
         -- Verifica conditiile bursei.
         SELECT Studenti.bursa INTO bursa_actuala
@@ -60,22 +62,24 @@ CREATE OR REPLACE PACKAGE BODY Majorare_pack AS
         total NUMBER := 1;
         
         delta Studenti.bursa%TYPE;
+        bursa_veche Studenti.bursa%TYPE;
     BEGIN
         OPEN studenti_crs;
         LOOP
             FETCH studenti_crs INTO studenti_line;
             EXIT WHEN studenti_crs%NOTFOUND;
             
-            IF (modificat(studenti_line.id) = FALSE) THEN
+            IF (TOP_TOTI = FALSE AND modificat(studenti_line.id) = FALSE) THEN
                 CONTINUE;
             END IF;
             
             -- Afisam si numerotam studentul.
             DBMS_OUTPUT.PUT_LINE('[i] ' || total || '. ' || studenti_line.nume || ' ' ||
                 studenti_line.prenume || ' (' || studenti_line.id || ').');
-            delta := studenti_line.bursa - studenti_line.istoric_bursa(studenti_line.istoric_bursa.LAST);
+            bursa_veche := studenti_line.istoric_bursa(studenti_line.istoric_bursa.LAST);
+            delta := studenti_line.bursa - bursa_veche;
             DBMS_OUTPUT.PUT_LINE('    Bursa noua: ' || studenti_line.bursa || ' (' ||
-                 '+' || delta || ').');
+                 '+' || delta || ') de la: ' || bursa_veche || '.');
             
             total := total + 1;
             IF (total > Majorare_pack.MMAX) THEN
