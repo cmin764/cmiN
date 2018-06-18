@@ -1,0 +1,4 @@
+0. Se adauga utilizatori in fisierul users.txt
+1. Dintr-o consola se ruleaza: ./run.sh (chmod +x run.sh)
+2. Din alta: ./test_app.py
+3. Enjoy!
