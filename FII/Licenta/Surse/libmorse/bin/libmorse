@@ -1,0 +1,144 @@
+#! /usr/bin/env python
+
+
+import argparse
+import logging
+import sys
+
+import libmorse
+
+
+log = libmorse.get_logger(__name__)
+
+
+def send_function(args):
+    items = list(args.text.upper())
+    if args.morse:
+        converter = libmorse.AlphabetConverter(
+            silence_errors=False, debug=args.verbose
+        )
+        symbols = converter.add(items)
+        result = "".join(symbols)
+    else:
+        translator = libmorse.AlphabetTranslator(
+            debug=args.verbose
+        )
+        for item in items:
+            translator.put(item)
+        _, result = libmorse.get_translator_results(
+            translator, force_wait=True
+        )
+        translator.close()
+
+    stream = args.output
+    if stream:
+        if args.morse:
+            stream.write(result)
+        else:
+            for pair in result:
+                stream.write("{} {}\n".format(int(pair[0]), pair[1]))
+        stream.close()
+    else:
+        print(result)
+
+
+def receive_function(args):
+    stream = args.file
+
+    if args.morse:
+        converter = libmorse.MorseConverter(
+            silence_errors=False, debug=args.verbose
+        )
+        items = []
+        gap = libmorse.MEDIUM_GAP
+        for word in stream.read().split(gap):
+            items.extend(list(word) + [gap])
+        symbols = converter.add(items)
+    else:
+        morse_code = libmorse.get_mor_code(stream)
+        translator = libmorse.MorseTranslator(
+            debug=args.verbose
+        )
+        for item in morse_code:
+            translator.put(item)
+        translator.wait()
+        ending = []
+        unit = translator.unit
+        if unit:
+            libmorse.humanize_mor_code(
+                ending, unit=unit,
+                ratio=translator.medium_gap_ratio, split=True
+            )
+        else:
+            log.warning("Not enough fed signals.")
+        for item in ending:
+            translator.put(item)
+        _, symbols = libmorse.get_translator_results(
+            translator, force_wait=True
+        )
+        translator.close()
+
+    stream.close()
+    result = "".join(symbols)
+    print(result)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Convert timed signals into alphabet."
+    )
+    parser.add_argument(
+        "-v", "--verbose", action="store_true",
+        help="show debugging messages"
+    )
+    subparsers = parser.add_subparsers(title="commands")
+
+    translate_common = argparse.ArgumentParser(add_help=False)
+    translate_common.add_argument(
+        "-m", "--morse", action="store_true",
+        help="expect morse code instead of signals & silences tuples"
+    )
+
+    send_parser = subparsers.add_parser(
+        "send", parents=[translate_common],
+        help="send morse code given text"
+    )
+    send_parser.add_argument(
+        "-o", "--output", metavar="FILE", type=argparse.FileType("w"),
+        help="save result to disk"
+    )
+    send_parser.add_argument(
+        "text", metavar="TEXT",
+        help="text to convert into morse code"
+    )
+    send_parser.set_defaults(function=send_function)
+
+    receive_parser = subparsers.add_parser(
+        "receive", parents=[translate_common],
+        help="translate received morse code"
+    )
+    receive_parser.add_argument(
+        "file", metavar="FILE", type=argparse.FileType("r"),
+        help="morse code input file"
+    )
+    receive_parser.set_defaults(function=receive_function)
+
+    args = parser.parse_args()
+    level = logging.DEBUG if args.verbose else logging.INFO
+    log.setLevel(level)
+    try:
+        args.function(args)
+    except Exception as exc:
+        log.error(exc)
+        # FIXME(cmiN): remove this after releasing a stable version
+        raise
+    else:
+        exc = None
+        log.info("Operation completed successfully.")
+    return libmorse.get_return_code(exc)
+
+
+if __name__ == "__main__":
+    rcode = main()
+    log.debug("Exiting with code %d.", rcode)
+    sys.exit(rcode)

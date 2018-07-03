@@ -1,0 +1,11 @@
+Homepage: https://cmin764.github.io/morseus
+Blog: https://cosminpoieana.wordpress.com/category/morseus/
+Slides (RO): http://slides.com/cmin/morseus#/
+Demo: https://www.youtube.com/watch?v=Ejb4y6vFssk
+Paper (RO): https://goo.gl/H6JfTw
+App: https://github.com/cmin764/morseus
+Library: https://github.com/cmin764/libmorse
+Resources: https://drive.google.com/open?id=0B2s9IgyoN1LRczB2NlUta2d5WVk
+
+License: MIT
+Author: Cosmin Poieana <cmin764@gmail.com>

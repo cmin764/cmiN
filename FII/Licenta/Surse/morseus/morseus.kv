@@ -1,0 +1,140 @@
+#:kivy 1.10.0
+
+
+<MorseusText@CapitalTextInput>:
+    size_hint: 0.4, 0.4
+    background_color: 0.8, 0.8, 0.8, 1
+    font_size: "30sp"
+
+
+<MorseusLayout>:
+    cols: 1
+    input_text: input_box.text
+    camera_box_value: camera_box.value
+    adaptive_state: adaptive_switch.active
+    debug_state: debug_switch.active
+
+    canvas:
+        Color:
+            rgb: 0.2, 0.2, 0.2
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    TabbedPanel:
+        do_default_tab: False
+
+        MorseusTab:
+            id: receive_tab
+            text: "Receive"
+
+            GridLayout:
+                cols: 1
+
+                MorseusCamera:
+                    id: morseus_camera
+                    play: True
+                    resolution: 640, 480
+                    canvas.after:
+                        Color:
+                            rgba: 1, 1, 1, 0.5
+                        Line:
+                            rectangle:
+                                self.center_pos[0], self.center_pos[1], \
+                                self.center_size[0], self.center_size[1]
+                            width: 2
+                    on_pos: self.update_center()
+                    on_size: self.update_center()
+
+                MorseusText:
+                    readonly: True
+                    text: root.output_text
+
+                Button:
+                    size_hint: 0.2, 0.2
+                    text: "Reset"
+                    on_release: root.reset_receiver()
+
+        MorseusTab:
+            id: send_tab
+            text: "Send"
+
+            GridLayout:
+                cols: 1
+
+                Widget:
+                    canvas:
+                        Color:
+                            rgb: root.transmitter_color
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                MorseusText:
+                    id: input_box
+                    hint_text: "YOUR TEXT HERE..."
+                    text: root.input_text
+
+                GridLayout:
+                    rows: 1
+                    size_hint: 0.2, 0.2
+
+                    Button:
+                        text: root.send_button_text
+                        on_release: root.toggle_send_button()
+
+                    Button:
+                        text: "Clear"
+                        on_release: root.input_text = ""
+
+        MorseusTab:
+            id: options_tab
+            text: "Options"
+
+            GridLayout:
+                cols: 1
+
+                GridLayout:
+                    rows: 1
+
+                    Label:
+                        text: "Camera box"
+                        halign: "left"
+
+                    GridLayout:
+                        rows: 1
+
+                        Slider:
+                            id: camera_box
+                            min: 10
+                            max: 50
+                            step: 1
+                            value: root.camera_box_value
+                            on_touch_up: morseus_camera.update_center(cache=False)
+                        Label:
+                            text: str(int(root.camera_box_value))
+
+                GridLayout:
+                    rows: 1
+
+                    Label:
+                        text: "Adaptive transmitter"
+                        halign: "left"
+                    Switch:
+                        id: adaptive_switch
+                        active: True
+
+                GridLayout:
+                    rows: 1
+
+                    Label:
+                        text: "Debug messages"
+                        halign: "left"
+                    Switch:
+                        id: debug_switch
+                        active: root.debug_state
+
+    Button:
+        size_hint: 0.1, 0.1
+        text: "Exit"
+        on_release: app.stop()

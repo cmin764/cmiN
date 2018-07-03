@@ -1,0 +1,29 @@
+Standard timings:
+
+- one variable unit of 100 to 300 milliseconds
+- 1 dot = 1 unit
+- 1 dash = 3 units (3 dots)
+- intra-character gap (between the dots and dashes within a character) = 1 unit
+- short gap (between letters) = 3 units
+- medium gap (between words) = 7 units
+- large gap (between statements) is optional
+
+We can process the whole input at the end of it, but this is not viable
+because we need to wait till the end and will also be not too useful, because
+we can't learn (and also not needing to) from the too distant past.
+So, a good idea may be to constantly process the newly added data every time
+something new is fed to the receiver. This will be done by taking into account
+a well defined range interval of signals and silences which will be enough to
+compute and predict what are the dots, dashes and gaps. The library will be
+able to adapt to the new changes of time duration perspective and also still
+distinguish a dot from a dash no matter how much these lengths may deviate.
+
+1. History to present limited offset + length processing.
+2. Identify dots and dashes by putting all the retrieved signals on a
+   graph and by finding a threshold between the dots and dashes, then
+   classifying the signals as dots or dashes based on their lengths.
+3. Do the same for gaps and use data retrieved from distant past if the
+   quanta interval is not enough.
+4. Watch the mean and standard deviation of quanta for better understanding
+   and learning the trend of the source over time. Based on this, try to
+   predict the possible upcoming errors and correct the past.
