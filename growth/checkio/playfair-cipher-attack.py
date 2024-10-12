@@ -79,7 +79,7 @@ def validate_bigrams(plain_pair: str, crypt_pair: str, *, encrypt: bool) -> KeyT
 
     This is triggered when we have at least one complete pair on any side:
     - the plain one which encrypts into crypt and fills/validates the key table
-    - the crypt one which decrypts into plan and fills/validates the key table
+    - the crypt one which decrypts into plain and fills/validates the key table
 
     This returns what new keys need to be added in the table.
     It raises `ValueError` when the rules cannot hold true anymore due to the current
@@ -176,7 +176,6 @@ def break_cipher(bigram_map: BigramType, *, index: int = 0) -> bool:
                 for char, pos in new_dest.items():
                     _set_key(*pos, value=None)
                     del IN_KEY[char]
-            return state
     elif max_pair == 1:
         target_pair, target_chars = (
             (plain_pair, plain_chars) if len(plain_chars) else (crypt_pair, crypt_chars)
@@ -191,8 +190,6 @@ def break_cipher(bigram_map: BigramType, *, index: int = 0) -> bool:
                 char_placement.send(state)
             except StopIteration:
                 break
-        if state:
-            return state
     else:
         # There is no char on the table at all, from none of the pairs, so place the
         #  first one randomly.
@@ -200,16 +197,14 @@ def break_cipher(bigram_map: BigramType, *, index: int = 0) -> bool:
         char_placement = place_char(missing_char)
         next(char_placement)
         while True:
-            # Keeping the same position in order to validate the complete pair.
+            # Keeping the same position in order to complete the partial pair.
             state = break_cipher(bigram_map, index=index)
             try:
                 char_placement.send(state)
             except StopIteration:
                 break
-        if state:
-            return state
 
-    return False
+    return state
 
 
 def complete_key_table():
