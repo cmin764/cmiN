@@ -1,6 +1,6 @@
 import string
 from collections import deque
-
+from typing import Generator
 
 KeyType = dict[str, tuple[int, int]]
 
@@ -22,6 +22,12 @@ def _set_key(row: int, col: int, *, value: str | None):
     assert 0 <= row < 5
     assert 0 <= col < 5
     KEY_TABLE[row * 5 + col] = value
+
+
+def _show_key_table():
+    for row in range(5):
+        print(*(_get_key(row, col) or " " for col in range(5)), sep=" ")
+    print()
 
 
 def _populate_key_lookup():
@@ -109,12 +115,30 @@ def validate_bigrams(plain_pair: str, crypt_pair: str, *, encrypt: bool) -> KeyT
     return new_dest
 
 
-def break_cipher(bigram_map: list[tuple[str, str]], *, pos: int = 0) -> bool:
-    if pos >= len(bigram_map):
+def place_char(char: str) -> Generator[tuple[int, int], bool, None]:
+    """Places a required character in the key table for every available position."""
+    for row in range(5):
+        for col in range(5):
+            if _get_key(row, col):
+                continue
+
+            _set_key(row, col, value=char)
+            IN_KEY[char] = row, col
+            state = (yield row, col)
+            if state:
+                return  # stop the generator early
+
+            _set_key(row, col, value=None)
+            del IN_KEY[char]
+
+
+def break_cipher(bigram_map: list[tuple[str, str]], *, index: int = 0) -> bool:
+    if index >= len(bigram_map):
         return True
 
-    plain_pair, crypt_pair = bigram_map[pos]
-    chars_in_key = lambda chrs: set(chrs) & IN_KEY.keys()
+    # _show_key_table()
+    plain_pair, crypt_pair = bigram_map[index]
+    chars_in_key = lambda chrs: set(chrs) & IN_KEY.keys()  # noqa
     plain_chars, crypt_chars = tuple(map(chars_in_key, (plain_pair, crypt_pair)))
 
     if (max_pair := max(len(plain_chars), len(crypt_chars))) == 2:
@@ -129,16 +153,45 @@ def break_cipher(bigram_map: list[tuple[str, str]], *, pos: int = 0) -> bool:
             for char, pos in new_dest.items():
                 _set_key(*pos, value=char)
                 IN_KEY[char] = pos
-            state = break_cipher(bigram_map, pos=pos + 1)
+            state = break_cipher(bigram_map, index=index + 1)
             if not state:
                 for char, pos in new_dest.items():
                     _set_key(*pos, value=None)
                     del IN_KEY[char]
             return state
     elif max_pair == 1:
-        raise NotImplementedError()
+        target_pair, target_chars = (
+            (plain_pair, plain_chars) if len(plain_chars) else (crypt_pair, crypt_chars)
+        )
+        missing_char = (set(target_pair) - target_chars).pop()
+        char_placement = place_char(missing_char)
+        next(char_placement)
+        while True:
+            # Keeping the same position in order to validate the complete pair.
+            state = break_cipher(bigram_map, index=index)
+            try:
+                char_placement.send(state)
+            except StopIteration:
+                break
+        if state:
+            return state
     else:
-        raise NotImplementedError()
+        # There is no char on the table at all, from none of the pairs, so place the
+        #  first one randomly.
+        missing_char = plain_pair[0]
+        char_placement = place_char(missing_char)
+        next(char_placement)
+        while True:
+            # Keeping the same position in order to validate the complete pair.
+            state = break_cipher(bigram_map, index=index)
+            try:
+                char_placement.send(state)
+            except StopIteration:
+                break
+        if state:
+            return state
+
+    return False
 
 
 def playfair_attack(plaintext: str, cryptogram: str) -> str:
@@ -147,11 +200,12 @@ def playfair_attack(plaintext: str, cryptogram: str) -> str:
         for idx in range(0, len(plaintext), 2)
     ]
     # TODO(cmin764): Sort the mapping based on character frequency.
-    _populate_key_lookup()
+    _populate_key_lookup()  # useful when debugging hardcoded key tables
     state = break_cipher(bigram_map)
     if not state:
         raise RuntimeError("couldn't break cipher")
 
+    _show_key_table()
     return encrypt("topsecretmessage")
 
 
