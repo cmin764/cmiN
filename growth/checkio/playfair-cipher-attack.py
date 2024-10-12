@@ -1,11 +1,12 @@
+import itertools
 import string
+import time
 from collections import deque
 from typing import Generator
 
 KeyType = dict[str, tuple[int, int]]
+BigramType = list[tuple[str, str]]
 
-# Letters available for usage in the key table.
-KEY_SPACE = set(string.ascii_lowercase) - {"j"}
 # At what position in the key table will we find a specific character.
 IN_KEY: KeyType = {}
 # The key table itself (5x5 2D matrix) linearized as a 1D vector.
@@ -36,6 +37,18 @@ def _populate_key_lookup():
             char = _get_key(row, col)
             if char:
                 IN_KEY[char] = (row, col)
+
+
+def sort_by_frequency(bigram_map: BigramType):
+    freq = {}
+    for plain, crypt in bigram_map:
+        for target in (plain, crypt):
+            for char in target:
+                freq[char] = freq.get(char, 0) + 1
+    bigram_map.sort(
+        key=lambda targets: sum(freq[char] for char in itertools.chain(*targets)),
+        reverse=True,
+    )
 
 
 def encrypt(plain_text: str) -> str:
@@ -112,6 +125,11 @@ def validate_bigrams(plain_pair: str, crypt_pair: str, *, encrypt: bool) -> KeyT
                 #  response.
                 new_dest.pop(char)
 
+    for char in new_dest:
+        if char in IN_KEY:
+            raise ValueError(
+                f"non unique char {char!r} would be required at different position"
+            )
     return new_dest
 
 
@@ -132,7 +150,7 @@ def place_char(char: str) -> Generator[tuple[int, int], bool, None]:
             del IN_KEY[char]
 
 
-def break_cipher(bigram_map: list[tuple[str, str]], *, index: int = 0) -> bool:
+def break_cipher(bigram_map: BigramType, *, index: int = 0) -> bool:
     if index >= len(bigram_map):
         return True
 
@@ -194,26 +212,81 @@ def break_cipher(bigram_map: list[tuple[str, str]], *, index: int = 0) -> bool:
     return False
 
 
+def complete_key_table():
+    missing_chars = set(string.ascii_lowercase) - ({"j"} | IN_KEY.keys())
+    if not missing_chars:
+        return
+
+    if len(missing_chars) > 1:
+        raise RuntimeError(
+            f"more than one char is missing from the key table: {missing_chars}"
+        )
+
+    missing_char = missing_chars.pop()
+    for row in range(5):
+        for col in range(5):
+            if not _get_key(row, col):
+                _set_key(row, col, value=missing_char)
+                return
+
+
+def _reset_key_table():
+    KEY_TABLE.clear()
+    KEY_TABLE.extend(None for _ in range(25))
+    IN_KEY.clear()
+
+
 def playfair_attack(plaintext: str, cryptogram: str) -> str:
+    _reset_key_table()
     bigram_map = [
         (plaintext[idx : idx + 2], cryptogram[idx : idx + 2])
         for idx in range(0, len(plaintext), 2)
     ]
-    # TODO(cmin764): Sort the mapping based on character frequency.
-    _populate_key_lookup()  # useful when debugging hardcoded key tables
+    print(f"Bigram pre sort: {bigram_map}")
+    sort_by_frequency(bigram_map)
+    print(f"Bigram post sort: {bigram_map}")
+    _populate_key_lookup()  # useful when debugging hardcoded pre-filled key tables
     state = break_cipher(bigram_map)
     if not state:
         raise RuntimeError("couldn't break cipher")
 
+    complete_key_table()
     _show_key_table()
     return encrypt("topsecretmessage")
 
 
 if __name__ == "__main__":
+    start = time.monotonic()
     print("Example:")
     print(
         playfair_attack(
-            "secret",
-            "dcembk",
+            "zombiesquicklyatetwelveofmyneighboursx",
+            "uzuywyksmzdcvhfgtnftonbnkfevywlgxzmxzd",
         )
     )
+    #
+    # # These "asserts" are used for self-checking and not for an auto-testing
+    assert (
+        playfair_attack(
+            "sixcrazykingsvowedtoabolishmyquitepitifulioust",
+            "zlgrcekqztvoolunhbvkemsvlzadnpzflrqlvlhwtluzkl",
+        )
+        == "vklprhcrixbpzebc"
+    )
+
+    assert (
+        playfair_attack(
+            "pythonsxstandardlibraryisveryextensiveofferingawiderangeofstuffx",
+            "aiwblarskwphydowzehmhoieksxlixgwvufxlvzqvizxbehdycxlphyxzqkwcvsi",
+        )
+        == "dmhfiulxgbxvqhyx"
+    )
+
+    assert (
+        playfair_attack(
+            "zombiesquicklyatetwelveofmyneighboursx",
+            "uzuywyksmzdcvhfgtnftonbnkfevywlgxzmxzd",
+        )
+        == "xnzpchtyrfcwpkth"
+    )
+    print(f"Total time: {time.monotonic() - start}")
