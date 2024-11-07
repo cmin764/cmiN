@@ -6,3 +6,4 @@ telethon
 haystack-ai
 transformers
 torch
+sentence-transformers

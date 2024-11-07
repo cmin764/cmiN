@@ -7,9 +7,15 @@ import sys
 import transformers
 from dotenv import load_dotenv
 from haystack import Document
-from haystack.components.retrievers.in_memory import InMemoryBM25Retriever
+from haystack.components.embedders import (
+    SentenceTransformersDocumentEmbedder,
+    SentenceTransformersTextEmbedder,
+)
+from haystack.components.retrievers.in_memory import InMemoryEmbeddingRetriever
 from haystack.document_stores.in_memory import InMemoryDocumentStore
 
+# Env:
+#  TOKENIZERS_PARALLELISM=false
 load_dotenv()
 logger = logging.getLogger(__name__)
 
@@ -24,9 +30,11 @@ class ThoughtfulChat:
         self._language_model = transformers.pipeline(
             "text-generation", model="gpt2", max_length=1024, truncation=True
         )
+        self._text_embedder = SentenceTransformersTextEmbedder()
+        self._text_embedder.warm_up()
 
     @staticmethod
-    def _init_retriever(qna_path: str) -> InMemoryBM25Retriever:
+    def _init_retriever(qna_path: str) -> InMemoryEmbeddingRetriever:
         try:
             with open(qna_path, "r") as file:
                 questions = json.load(file)["questions"]
@@ -34,16 +42,22 @@ class ThoughtfulChat:
             logger.error(f"Couldn't load Q&A file path due to: {exc}")
             questions = []
 
-        document_store = InMemoryDocumentStore()
         documents = [
             Document(content=item["answer"], meta={"question": item["question"]})
             for item in questions
         ]
-        document_store.write_documents(documents)
-        return InMemoryBM25Retriever(document_store=document_store)
+        doc_embedder = SentenceTransformersDocumentEmbedder()
+        doc_embedder.warm_up()
+        docs_with_embeddings = doc_embedder.run(documents)["documents"]
+        document_store = InMemoryDocumentStore()
+        document_store.write_documents(docs_with_embeddings)
+        return InMemoryEmbeddingRetriever(document_store)
 
     def _search_hardcoded_answer(self, query: str) -> str | None:
-        docs = self._retriever.run(query, top_k=1)["documents"]
+        query_embedding = self._text_embedder.run(query)["embedding"]
+        docs = self._retriever.run(query_embedding=query_embedding, top_k=1)[
+            "documents"
+        ]
         if not docs:
             return None
 
