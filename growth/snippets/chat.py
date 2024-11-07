@@ -91,6 +91,7 @@ def main(args) -> int:
             break
         response = chat.get_response(user_input)
         print(response)
+        return 0
 
 
 if __name__ == "__main__":
