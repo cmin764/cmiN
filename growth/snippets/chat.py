@@ -28,7 +28,7 @@ class ThoughtfulChat:
     def __init__(self, qna_path: str):
         self._retriever = self._init_retriever(qna_path)
         self._language_model = transformers.pipeline(
-            "text-generation", model="gpt2", max_length=1024, truncation=True
+            "text-generation", model="gpt2", max_length=128, truncation=True
         )
         self._text_embedder = SentenceTransformersTextEmbedder()
         self._text_embedder.warm_up()
@@ -91,7 +91,7 @@ def main(args) -> int:
             break
         response = chat.get_response(user_input)
         print(response)
-        return 0
+    return 0
 
 
 if __name__ == "__main__":
