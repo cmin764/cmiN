@@ -2,7 +2,6 @@ from enum import Enum
 from typing import Annotated, Literal
 
 from fastapi import FastAPI, Query  # , Request
-
 # from fastapi.exceptions import RequestValidationError
 # from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
@@ -62,7 +61,9 @@ async def create_item(item: Item):
 
 @app.get("/items/")
 async def read_items(q: Annotated[list[str], Query()] = ["foo", "bar"]):
-    results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
+    results: dict[str, list[dict[str, str]] | list[str]] = {
+        "items": [{"item_id": "Foo"}, {"item_id": "Bar"}]
+    }
     if q:
         q.append("rick")
         results.update({"q": q})
@@ -100,3 +101,29 @@ async def read_file(file_path: str):
     with open(file_path) as stream:
         data = stream.read()
     return {"file_path": file_path, "content": data}
+
+
+items = {
+    "foo": {"name": "Foo", "price": 50.2},
+    "bar": {"name": "Bar", "description": "The Bar fighters", "price": 62, "tax": 20.2},
+    "baz": {
+        "name": "Baz",
+        "description": "There goes my baz",
+        "price": 50.2,
+        "tax": 10.5,
+    },
+}
+
+
+@app.get(
+    "/items/{item_id}/name",
+    response_model=Item,
+    response_model_include={"name", "description"},  # include only
+)
+async def read_item_name(item_id: str):
+    return items[item_id]
+
+
+@app.get("/items/{item_id}/public", response_model=Item, response_model_exclude={"tax"})
+async def read_item_public_data(item_id: str):
+    return items[item_id]
