@@ -2,6 +2,7 @@ from enum import Enum
 from typing import Annotated, Literal
 
 from fastapi import FastAPI, Query  # , Request
+
 # from fastapi.exceptions import RequestValidationError
 # from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
