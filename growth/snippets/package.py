@@ -92,9 +92,11 @@ def main(width: float, height: float, length: float, mass: float):
         classification = classify_package(package)
         typer.echo(f"The package is classified as: {classification.value}")
     except ValidationError as exc:
-        typer.echo("Invalid package data:")
-        typer.echo(exc.json())
+        typer.echo(f"Invalid package data due to: {exc}")
 
 
 if __name__ == "__main__":
+    # From CLI:
+    # > ./package.py 10 10 10 15  # runs script
+    # > pytest  # runs tests
     app()
