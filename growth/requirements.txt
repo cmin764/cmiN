@@ -7,3 +7,4 @@ haystack-ai
 transformers
 torch
 sentence-transformers
+typer

@@ -2,7 +2,6 @@ from enum import Enum
 from typing import Annotated, Literal
 
 from fastapi import FastAPI, Query  # , Request
-
 # from fastapi.exceptions import RequestValidationError
 # from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
@@ -26,7 +25,7 @@ class Item(BaseModel):
 
 class FilterParams(BaseModel):
     limit: Annotated[int, Field(gt=0, le=100)] = 100
-    offset: Annotated[int, Field(ge=0)] = 0
+    offset: Annotated[int | None, Field(ge=0)] = 0
     order_by: Literal["created_at", "updated_at"] = "created_at"
     tags: list[str] = []
 
@@ -71,9 +70,10 @@ async def read_items(q: Annotated[list[str], Query()] = ["foo", "bar"]):
     return results
 
 
-@app.get("/my_items/")
-async def read_my_items(filter_query: Annotated[FilterParams, Query(deprecated=True)]):
+@app.get("/my_items/", response_model=FilterParams, response_model_exclude_unset=True)
+async def read_my_items(filter_query: Annotated[FilterParams, Query()]):
     return filter_query
+    # return {"tags": ["a", "b"]}
 
 
 @app.get("/users/me")
