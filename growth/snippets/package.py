@@ -9,6 +9,7 @@ from pydantic import BaseModel, ValidationError, confloat, Field
 # Constants for package classification.
 VOLUME_THRESHOLD = 1_000_000.0  # volume threshold in cm³
 DIMENSION_THRESHOLD = 150.0  # dimension threshold in cm
+MAX_WEIGHT = 20.0  # weight limit in kg
 
 app = typer.Typer()
 
@@ -37,8 +38,9 @@ class Package(BaseModel):
         Field(description="Length of the package in cm (must be > 0.0)"),
     ]
     mass: Annotated[
-        confloat(ge=0.0),
-        Field(description="Mass of the package in kg (must be >= 0.0)"),
+        confloat(gt=0.0),
+        # Since I don't believe is worth delivering photons.
+        Field(description="Mass of the package in kg (must be > 0.0)"),
     ]
 
 
@@ -62,7 +64,7 @@ def classify_package(package: Package) -> Stack:
         dim >= DIMENSION_THRESHOLD
         for dim in (package.width, package.height, package.length)
     )
-    is_heavy = package.mass >= 20.0
+    is_heavy = package.mass >= MAX_WEIGHT
 
     if is_heavy and is_bulky:
         return Stack.REJECTED

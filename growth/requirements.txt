@@ -8,3 +8,4 @@ transformers
 torch
 sentence-transformers
 typer
+pytest
