@@ -9,3 +9,4 @@ torch
 sentence-transformers
 typer
 pytest
+matplotlib
